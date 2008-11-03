@@ -1,0 +1,133 @@
+﻿@import url(Master/Master.css);
+@import url(Default/Default.css);
+
+.Item
+{
+    font-family: Verdana;
+}
+
+.ItemTitle
+{
+    font-size: x-large;
+    font-weight: bold;
+    
+    display: block;
+    
+    color: #004400;
+}
+
+.ItemDetail
+{
+   position: relative;
+   padding-top: 5px;
+   padding-right: 16px;
+   padding-left: 0px;
+   display: block;
+   clear: left;
+}
+
+.ItemDetailLabel
+{
+    text-align: right;
+    width: 120px;
+    display: block;
+    position: absolute;
+    left: 0px;
+      
+    font-weight: bold;
+}
+
+.ItemDetailText
+{
+   display: block; 
+   min-height:200px;
+   height:auto !important;
+   height:500px;
+}
+
+.ItemDetailImage
+{
+   border-width: 2px;
+   padding: 1px;
+   border-style: solid;
+   border-color: #BBCCBB;
+}
+
+.ItemDetailImagePanel
+{
+   float: right;
+   margin-bottom: 10px;
+   margin-left: 10px;
+}
+
+.ItemDetailListEdit
+{
+   margin-left: auto;
+   margin-right: auto;
+   
+   width: 530px;
+   clear: both;
+}
+
+.ItemDetailEdit
+{
+   padding: 0px;
+   display: block;
+}
+
+.ItemDetailControl
+{
+   width: 300px;
+   display: block;
+   float: left;
+   margin-top: 8px;
+}
+
+
+.ItemDetailControlLabel
+{
+    text-align: right;
+    width: 120px;
+    display: block;
+   float: left;
+   clear: left;
+   margin-top: 8px;
+      
+    font-weight: bold;
+}
+
+.Instructions
+{
+    font-family: Arial;
+    color: #666666;
+
+    text-decoration: none;
+    
+    margin-top: 14px;
+    margin-bottom: 18px;
+}
+
+.Instructions A
+{
+    text-decoration: none;
+    color: #6688FF;
+}
+
+.Instructions A:visited
+{
+    color: #6688AA;
+}
+
+.Instructions A:hover
+{
+   text-decoration: underline;
+}
+
+
+
+.LargeEditableArea > TEXTAREA
+{
+   width: 300px;
+   height: 100px;
+}
+

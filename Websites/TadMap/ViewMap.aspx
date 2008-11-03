@@ -1,0 +1,47 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeFile="ViewMap.aspx.cs"
+   Inherits="ViewMap" Title="Untitled Page" %>
+
+<%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+   Namespace="System.Web.UI" TagPrefix="asp" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+   <script type="text/javascript" src="JavaScript/jquery-1.2.6.min.js"></script>
+   <script type="text/javascript" src="JavaScript/jquery.jeditable.mini.js"></script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="main" runat="Server">
+   <asp:ScriptManager ID="ScriptManager1" runat="server">
+      <Scripts>
+         <asp:ScriptReference Path="http://localhost:56514/TadMap/WebServices/UpdateImage.asmx/js" />
+      </Scripts>
+   </asp:ScriptManager>
+
+   <asp:Label runat="server" ID="m_lblTitle" CssClass="EditTitle ItemTitle"></asp:Label>
+   <div runat="server" id="panelImage" class="ItemDetailImagePanel">
+      <asp:Image runat="server" ID="m_imgPicture" CssClass="ItemDetailImage" BorderWidth="2px" />
+      <asp:LinkButton runat="server" ID="m_lbCreateTileSet" OnClick="m_lbCreateTileSet_Click">Create Tileset</asp:LinkButton>
+      <asp:LinkButton runat="server" ID="m_lbViewTileSet">View Tileset</asp:LinkButton>
+   </div>
+
+   <div class="ItemDetail">
+      <asp:Label runat="server" ID="m_lblDescription" CssClass="EditDescription ItemDetailText"></asp:Label>
+   </div>
+
+   <script language="javascript" type="text/javascript">
+       $(document).ready(function() {
+           $(".EditTitle").editable(function(value, settings){ UpdateImage.UpdateTitle(imageId, value); return value; }, {
+               indicator : "Saving...",
+               tooltip   : "Click to edit...",
+               cancel    : "Cancel",
+               submit    : "Save"
+           });
+           $(".EditDescription").editable(function(value, settings){ UpdateImage.UpdateDescription(imageId, value); return value; }, {
+               type      : "textarea",
+               cancel    : "Cancel",
+               submit    : "Save",
+               indicator : "Saving...",
+               tooltip   : "Click to edit...",
+               cssclass  : "LargeEditableArea"
+           });
+       });
+   </script>
+</asp:Content>
