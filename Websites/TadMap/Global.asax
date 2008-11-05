@@ -28,6 +28,25 @@
       //     "\nSTACKTRACE: " + ex.StackTrace,
       //     System.Diagnostics.EventLogEntryType.Error
       //);
+      
+      // Get the actual error that brought us here
+      Exception ex = Server.GetLastError().InnerException;
+      StringBuilder message = new StringBuilder( "An error occurred in the application:");
+      message.AppendLine(ex.Message);
+      message.AppendLine("Stack trace:");
+      message.AppendLine(ex.StackTrace);
+      
+      StringBuilder s = new StringBuilder(ex.StackTrace);
+      message.Append(s.Replace(" at ", " at \n"));
+
+      // Mail the message to the developer
+      System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("mail.tadmap.com");
+      
+      client.Send("error@tadmap.com", "trevor_power@yahoo.com", "Tadmap Error", message.ToString());
+      
+      Server.ClearError();
+      Response.Write("We're sorry, but an unexpected error has occurred.");
+      Response.End();
    }
 
 

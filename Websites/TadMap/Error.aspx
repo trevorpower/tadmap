@@ -10,10 +10,10 @@
     <form id="form1" runat="server">
     <div>
         <h1>
-            <asp:Label runat="server" ID="lblHeading">Internal Server Error</asp:Label>
+            <asp:Label runat="server" ID="Heading">Internal Server Error</asp:Label>
         </h1>
         <p>
-            <asp:Label runat="server" ID="lblInfo"></asp:Label>
+            <asp:Label runat="server" ID="Info"></asp:Label>
         </p>
     </div>
     </form>
