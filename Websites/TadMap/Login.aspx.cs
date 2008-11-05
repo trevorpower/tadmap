@@ -28,6 +28,12 @@ public partial class Login : System.Web.UI.Page
          {
             case AuthenticationStatus.Authenticated:
                {
+                  if (Session["LoginAttemptOpenIdUrl"] == null)
+                     throw new Exception("'LoginAttemptOpenIdUrl' is expected in the session.");
+
+                  if (!(Session["LoginAttemptOpenIdUrl"] is Identifier))
+                     throw new Exception("'LoginAttemptOpenIdUrl' is an unexptected type: " + Session["LoginAttemptOpenIdUrl"].GetType().ToString());
+
                   Identifier identifier = (Identifier)Session["LoginAttemptOpenIdUrl"];
 
                   if (Request["NewId"] != null)
@@ -36,7 +42,6 @@ public partial class Login : System.Web.UI.Page
                      // existing user.
                      // for now we assume the want to be a new user
                      CreateNewUser(identifier.ToString());
-
                   }
 
                   if (Request.QueryString["ReturnUrl"] != null)
