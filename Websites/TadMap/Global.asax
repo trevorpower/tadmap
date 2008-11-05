@@ -16,19 +16,6 @@
 
    void Application_Error(object sender, EventArgs e)
    {
-      //Exception ex = Server.GetLastError().GetBaseException(); 
-
-      //System.Diagnostics.EventLog.WriteEntry(
-      //     "Tadmap",
-      //     "MESSAGE: " + ex.Message +
-      //     "\nSOURCE: " + ex.Source +
-      //     "\nFORM: " + Request.Form.ToString() +
-      //     "\nQUERYSTRING: " + Request.QueryString.ToString() +
-      //     "\nTARGETSITE: " + ex.TargetSite +
-      //     "\nSTACKTRACE: " + ex.StackTrace,
-      //     System.Diagnostics.EventLogEntryType.Error
-      //);
-      
       // Get the actual error that brought us here
       Exception ex = Server.GetLastError().InnerException;
       StringBuilder message = new StringBuilder( "An error occurred in the application:");
@@ -39,6 +26,12 @@
       StringBuilder s = new StringBuilder(ex.StackTrace);
       message.Append(s.Replace(" at ", " at \n"));
 
+      message.AppendLine("Source:");
+      message.AppendLine(ex.Source);
+
+      message.AppendLine("Querystring:");
+      message.AppendLine(Request.QueryString.ToString());
+      
       // Mail the message to the developer
       System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("mail.tadmap.com");
       
