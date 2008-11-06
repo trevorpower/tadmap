@@ -28,13 +28,19 @@ public partial class Login : System.Web.UI.Page
          {
             case AuthenticationStatus.Authenticated:
                {
+                  Identifier identifier;
+
                   if (Session["LoginAttemptOpenIdUrl"] == null)
-                     throw new Exception("'LoginAttemptOpenIdUrl' is expected in the session.");
+                  {
+                     if (!(Session["LoginAttemptOpenIdUrl"] is Identifier))
+                        throw new Exception("'LoginAttemptOpenIdUrl' is an unexptected type: " + Session["LoginAttemptOpenIdUrl"].GetType().ToString());
 
-                  if (!(Session["LoginAttemptOpenIdUrl"] is Identifier))
-                     throw new Exception("'LoginAttemptOpenIdUrl' is an unexptected type: " + Session["LoginAttemptOpenIdUrl"].GetType().ToString());
-
-                  Identifier identifier = (Identifier)Session["LoginAttemptOpenIdUrl"];
+                     identifier = rp.Response.ClaimedIdentifier;
+                  }
+                  else
+                  {
+                     identifier = Identifier.Parse(Session["LoginAttemptOpenIdUrl"].ToString());
+                  }
 
                   if (Request["NewId"] != null)
                   {
@@ -64,6 +70,9 @@ public partial class Login : System.Web.UI.Page
             case AuthenticationStatus.Failed:
                {
                   lblError.Text = "Authentication failed.";
+                  if (rp.Response.Exception != null)
+                     lblError.Text += " (" + rp.Response.Exception.Message + ")";
+
                   break;
                }
             case AuthenticationStatus.SetupRequired:
@@ -157,7 +166,7 @@ public partial class Login : System.Web.UI.Page
          {
             Identifier openId = Identifier.Parse(openIdUrl);
 
-            Session["LoginAttemptOpenIdUrl"] = openId;
+            Session["LoginAttemptOpenIdUrl"] = openId.ToString();
 
             using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
             {
@@ -181,7 +190,7 @@ public partial class Login : System.Web.UI.Page
                      }
                      else
                      {
-                        returnTo = new Uri(OpenId.LoginUrl + "?NewId=true");
+                        returnTo = new Uri(OpenId.LoginUrl + "?NewId=true&OpenId=");
                      }
 
                      IAuthenticationRequest request = rp.CreateRequest(openId, realm, returnTo);
