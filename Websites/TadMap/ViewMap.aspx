@@ -10,9 +10,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="Server">
    <asp:ScriptManager ID="ScriptManager1" runat="server">
-      <Scripts>
-         <asp:ScriptReference Path="http://localhost:56514/TadMap/WebServices/UpdateImage.asmx/js" />
-      </Scripts>
    </asp:ScriptManager>
 
    <asp:Label runat="server" ID="m_lblTitle" CssClass="EditTitle ItemTitle"></asp:Label>
