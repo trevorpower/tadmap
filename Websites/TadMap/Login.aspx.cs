@@ -32,34 +32,40 @@ public partial class Login : System.Web.UI.Page
 
                   if (Session["LoginAttemptOpenIdUrl"] == null)
                   {
-                     if (!(Session["LoginAttemptOpenIdUrl"] is Identifier))
-                        throw new Exception("'LoginAttemptOpenIdUrl' is an unexptected type: " + Session["LoginAttemptOpenIdUrl"].GetType().ToString());
-
-                     identifier = rp.Response.ClaimedIdentifier;
+                     identifier = null;
                   }
                   else
                   {
+                     if (!(Session["LoginAttemptOpenIdUrl"] is string))
+                        throw new Exception("'LoginAttemptOpenIdUrl' is an unexptected type: " + Session["LoginAttemptOpenIdUrl"].GetType().ToString());
+
                      identifier = Identifier.Parse(Session["LoginAttemptOpenIdUrl"].ToString());
                   }
 
-                  if (Request["NewId"] != null)
+                  if (identifier == null)
                   {
-                     // a new openId. It might be a new user or they might want to attach to an
-                     // existing user.
-                     // for now we assume the want to be a new user
-                     CreateNewUser(identifier.ToString());
-                  }
-
-                  if (Request.QueryString["ReturnUrl"] != null)
-                  {
-                     FormsAuthentication.RedirectFromLoginPage(identifier.ToString(), false);
+                     lblError.Text = "Oops! We lost the ID you tried to log in with. Can you try again? (" + Session.Mode.ToString() + ")";
                   }
                   else
                   {
-                     FormsAuthentication.SetAuthCookie(identifier.ToString(), false);
-                     Response.Redirect("Default.aspx", false);
-                  }
+                     if (Request["NewId"] != null)
+                     {
+                        // a new openId. It might be a new user or they might want to attach to an
+                        // existing user.
+                        // for now we assume the want to be a new user
+                        CreateNewUser(identifier.ToString());
+                     }
 
+                     if (Request.QueryString["ReturnUrl"] != null)
+                     {
+                        FormsAuthentication.RedirectFromLoginPage(identifier.ToString(), false);
+                     }
+                     else
+                     {
+                        FormsAuthentication.SetAuthCookie(identifier.ToString(), false);
+                        Response.Redirect("Default.aspx", false);
+                     }
+                  }
                   break;
                }
             case AuthenticationStatus.Canceled:
