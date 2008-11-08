@@ -36,6 +36,7 @@ public partial class ViewMap : System.Web.UI.Page
 
             m_imgPicture.ImageUrl = mImage.GetLargeThumbUrl();
 
+            DownloadOriginal.NavigateUrl = mImage.GetOriginalUrl();
 
             // tilesets are not implemented for version the beta version one so we hide this button for now
             m_lbViewTileSet.Visible = false;
