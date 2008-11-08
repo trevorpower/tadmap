@@ -18,7 +18,9 @@ public partial class ViewMap : System.Web.UI.Page
       }
       else
       {
-         ScriptManager1.Scripts.Add(new System.Web.UI.ScriptReference(Request.ApplicationPath + "/WebServices/UpdateImage.asmx/js"));
+         ScriptManager1.Scripts.Add(
+            new System.Web.UI.ScriptReference(Page.ResolveClientUrl("WebServices/UpdateImage.asmx/js"))
+         );
 
          if (string.IsNullOrEmpty(Request["ImageId"]))
             throw new Exception("This page requires a 'ImageId' as part of the request.");
