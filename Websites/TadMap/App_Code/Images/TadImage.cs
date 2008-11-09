@@ -32,6 +32,8 @@ namespace TadMap
 
       bool mHasTileSet;
 
+      int _imageSet;
+
       public Guid Id
       {
          get { return mId; }
@@ -93,6 +95,15 @@ namespace TadMap
       }
 
       /// <summary>
+      /// The version of the imageset created for this image.
+      /// </summary>
+      public int ImageSet
+      {
+         get { return _imageSet; }
+         set { _imageSet = value; }
+      }
+
+      /// <summary>
       /// Creates a new image based on a stream and storage key.
       /// </summary>
       /// 
@@ -132,6 +143,7 @@ namespace TadMap
          string strSquareKey = "Square_" + mStorageKey;
          string strThumbKey = "Thumb_" + mStorageKey;
          string strLargeThumbKey = "LargeThumb_" + mStorageKey;
+         string strPreviewKey = "Preview_" + mStorageKey;
 
          using (System.Drawing.Image oImage = Bitmap.FromStream(oStream, true, true))
          {
@@ -164,10 +176,23 @@ namespace TadMap
                   UploadImage(service, oMemoryStream, strLargeThumbKey, "image/jpeg");
                }
             }
+
+            using (System.Drawing.Image oLargeThumb = ImageManipulator.FitToRectangle(oImage as Bitmap, 560, 560)) 
+            {
+               using (MemoryStream oMemoryStream = new MemoryStream())
+               {
+                  oLargeThumb.Save(oMemoryStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                  oMemoryStream.Position = 0;
+                  UploadImage(service, oMemoryStream, strPreviewKey, "image/jpeg");
+               }
+            }
          }
 
          oStream.Position = 0;
          UploadImage(service, oStream, mStorageKey, ThreeSharpUtils.ConvertExtensionToMimeType(Path.GetExtension(mStorageKey)));
+
+         ImageSet = 1; // this is the version of the imageset if you change any of the above sizes names or add new ones
+                       // this needs to be updated.
       }
 
       private void UploadImage(IThreeSharp service, Stream oStream, string strKey, string contentType)
@@ -285,12 +310,22 @@ namespace TadMap
          mZoomLevels = oDataReader["ZoomLevels"] == DBNull.Value ? 0 : Convert.ToInt32(oDataReader["ZoomLevels"]);
          mTileSize = oDataReader["TileSize"] == DBNull.Value ? 0 : Convert.ToInt32(oDataReader["TileSize"]);
          mHasTileSet = oDataReader["TileSize"] != DBNull.Value && oDataReader["ZoomLevels"] != DBNull.Value;
+         _imageSet = Convert.ToInt32(oDataReader["ImageSet"]);
       }
 
       public string GetLargeThumbUrl()
       {
          ThreeSharpWrapper s3 = new ThreeSharpWrapper(S3Storage.AccessKey, S3Storage.SecretAccessKey);
          return s3.GetUrl(S3Storage.BucketName, "LargeThumb_" + StorageKey);
+      }
+
+      public string GetPreviewUrl()
+      {
+         ThreeSharpWrapper s3 = new ThreeSharpWrapper(S3Storage.AccessKey, S3Storage.SecretAccessKey);
+         if (ImageSet == 0)
+            return s3.GetUrl(S3Storage.BucketName, "LargeThumb_" + StorageKey);
+
+         return s3.GetUrl(S3Storage.BucketName, "Preview_" + StorageKey);
       }
 
       public string GetOriginalUrl()
@@ -411,6 +446,7 @@ namespace TadMap
                   cm.Parameters.AddWithValue("@StorageKey", StorageKey);
                   cm.Parameters.AddWithValue("@ZoomLevels", HasTileSet ? (object)ZoomLevels : DBNull.Value);
                   cm.Parameters.AddWithValue("@TileSize", HasTileSet ? (object)TileSize : DBNull.Value);
+                  cm.Parameters.AddWithValue("@ImageSet", ImageSet);
 
                   cm.ExecuteNonQuery();
                }

@@ -34,7 +34,7 @@ public partial class ViewMap : System.Web.UI.Page
             m_lblTitle.Text = mImage.Title;
             m_lblDescription.Text = mImage.Description;
 
-            m_imgPicture.ImageUrl = mImage.GetLargeThumbUrl();
+            m_imgPicture.ImageUrl = mImage.GetPreviewUrl();
 
             DownloadOriginal.NavigateUrl = mImage.GetOriginalUrl();
 
