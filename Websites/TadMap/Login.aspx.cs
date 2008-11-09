@@ -28,44 +28,7 @@ public partial class Login : System.Web.UI.Page
          {
             case AuthenticationStatus.Authenticated:
                {
-                  Identifier identifier;
-
-                  if (Session["LoginAttemptOpenIdUrl"] == null)
-                  {
-                     identifier = null;
-                  }
-                  else
-                  {
-                     if (!(Session["LoginAttemptOpenIdUrl"] is string))
-                        throw new Exception("'LoginAttemptOpenIdUrl' is an unexptected type: " + Session["LoginAttemptOpenIdUrl"].GetType().ToString());
-
-                     identifier = Identifier.Parse(Session["LoginAttemptOpenIdUrl"].ToString());
-                  }
-
-                  if (identifier == null)
-                  {
-                     lblError.Text = "Oops! We lost the ID you tried to log in with. Can you try again? (" + Session.Mode.ToString() + ")";
-                  }
-                  else
-                  {
-                     if (Request["NewId"] != null)
-                     {
-                        // a new openId. It might be a new user or they might want to attach to an
-                        // existing user.
-                        // for now we assume the want to be a new user
-                        CreateNewUser(identifier.ToString());
-                     }
-
-                     if (Request.QueryString["ReturnUrl"] != null)
-                     {
-                        FormsAuthentication.RedirectFromLoginPage(identifier.ToString(), false);
-                     }
-                     else
-                     {
-                        FormsAuthentication.SetAuthCookie(identifier.ToString(), false);
-                        Response.Redirect("Default.aspx", false);
-                     }
-                  }
+                  AuthenticateUser(rp.Response);
                   break;
                }
             case AuthenticationStatus.Canceled:
@@ -86,6 +49,64 @@ public partial class Login : System.Web.UI.Page
                   lblError.Text = "Authentication failed. (Setup required?)";
                   break;
                }
+         }
+      }
+   }
+
+   /// <summary>
+   /// This authenticates a user based on a response from an openid provider.
+   /// </summary>
+   /// <param name="response"></param>
+   private void AuthenticateUser(IAuthenticationResponse response)
+   {
+      if (response.Status != AuthenticationStatus.Authenticated)
+         throw new ArgumentException("The response status must be 'Authenticated'. (" + response.Status.ToString() + ")", "response");
+
+      Identifier identifier = response.ClaimedIdentifier;
+
+      if (identifier == null)
+      {
+         lblError.Text = "Oops! We lost the ID you tried to log in with. Can you try again?";
+      }
+      else
+      {
+         using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+         {
+            cn.Open();
+            using (SqlCommand cm = cn.CreateCommand())
+            {
+               cm.CommandType = CommandType.StoredProcedure;
+               cm.CommandText = "GetUserId";
+               cm.Parameters.AddWithValue("@OpenIdUrl", identifier.ToString());
+
+               using (SqlDataReader dr = cm.ExecuteReader())
+               {
+                  if (dr.Read())
+                  {
+                     // a record was found so the user already exists
+                     // in the future we can use this to populate the identity
+                     // with display name and image...
+                  }
+                  else
+                  {
+                     // no user was found so we create it now.
+                     CreateNewUser(identifier.ToString());
+                  }
+               }
+            }
+         }
+
+         // somehow we need to put the response.FriendlyIdentifierForDisplay
+         // into the identity/principal
+
+         if (Request.QueryString["ReturnUrl"] != null)
+         {
+            FormsAuthentication.RedirectFromLoginPage(identifier.ToString(), false);
+         }
+         else
+         {
+            FormsAuthentication.SetAuthCookie(identifier.ToString(), false);
+            Response.Redirect("Default.aspx", false);
          }
       }
    }
@@ -172,38 +193,9 @@ public partial class Login : System.Web.UI.Page
          {
             Identifier openId = Identifier.Parse(openIdUrl);
 
-            Session["LoginAttemptOpenIdUrl"] = openId.ToString();
-
-            using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
-            {
-               cn.Open();
-               using (SqlCommand cm = cn.CreateCommand())
-               {
-                  cm.CommandType = CommandType.StoredProcedure;
-                  cm.CommandText = "GetUserId";
-                  cm.Parameters.AddWithValue("@OpenIdUrl", openId.ToString());
-
-                  using (SqlDataReader dr = cm.ExecuteReader())
-                  {
-                     OpenIdRelyingParty rp = new OpenIdRelyingParty();
-                     Realm realm = new Realm(OpenId.Realm);
-                     Uri returnTo = null;
-
-                     if (dr.Read())
-                     {
-                        Guid guidUserId = (Guid)dr["UserId"];
-                        returnTo = new Uri(OpenId.LoginUrl);
-                     }
-                     else
-                     {
-                        returnTo = new Uri(OpenId.LoginUrl + "?NewId=true&OpenId=");
-                     }
-
-                     IAuthenticationRequest request = rp.CreateRequest(openId, realm, returnTo);
-                     request.RedirectToProvider();
-                  }
-               }
-            }
+            OpenIdRelyingParty rp = new OpenIdRelyingParty();
+            IAuthenticationRequest request = rp.CreateRequest(openId, new Realm(OpenId.Realm), new Uri(OpenId.LoginUrl));
+            request.RedirectToProvider();
          }
          catch (DotNetOpenId.OpenIdException exception)
          {
