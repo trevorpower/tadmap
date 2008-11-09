@@ -16,7 +16,7 @@ public partial class Main : System.Web.UI.MasterPage
 {
    protected void Page_Load(object sender, EventArgs e)
    {
-      btnMyMaps.Visible = false;
+      btnMyMaps.Visible = HttpContext.Current.User.IsInRole(TadMapRoles.Collector);
    }
 
    protected void Page_PreRender(object sender, EventArgs e)
