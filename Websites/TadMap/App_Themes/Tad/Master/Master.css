@@ -18,11 +18,13 @@
 #MasterPageLogo
 {
     font-family: Arial;
+    /*font-variant: small-caps;*/
     color: #339933;
-    font-weight: bold;
+    /*font-weight: bold;*/
     float: left;
     clear: none;
     text-decoration: none;
+    border-width: 0px;
 }
 
 .MasterPageSubText
@@ -114,4 +116,9 @@
     
     background: url('login-bg.png') no-repeat scroll 0pt 50%;
     padding-left: 18px;
+}
+
+#MasterPageLogo IMG
+{
+    border-width: 0px;
 }
