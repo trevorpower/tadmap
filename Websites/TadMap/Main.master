@@ -30,7 +30,7 @@
    <div id="MasterPageFooter">
       <span class="MasterPageSubText">tadmap.com - Online services for map collectors.</span><br />
       <div id="MasterPageFooterLinks">
-         <a href="http://tadmap.blogspot.com">blog</a>|<a href="http://tadmap.uservoice.com">feedback</a>
+         <a href="http://blog.tadmap.com">blog</a>|<a href="http://feedback.tadmap.com">feedback</a>
       </div>
    </div>
    </form>
