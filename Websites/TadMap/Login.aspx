@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeFile="Login.aspx.cs"
-   Inherits="Login" Title="tadmap - Sign In" %>
+   Inherits="Login" Title="Tadmap - Sign In" %>
 
 <%@ Register Assembly="DotNetOpenId" Namespace="DotNetOpenId.RelyingParty" TagPrefix="RP" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">

@@ -31,6 +31,7 @@ public partial class ViewMap : System.Web.UI.Page
 
          if (mImage != null)
          {
+             Title = "Tadmap - " + mImage.Title;
             m_lblTitle.Text = mImage.Title;
             m_lblDescription.Text = mImage.Description;
 

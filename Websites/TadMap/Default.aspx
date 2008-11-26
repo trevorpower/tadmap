@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeFile="Default.aspx.cs"
-   Inherits="_Default" Title="tadmap" %>
+   Inherits="_Default" Title="Tadmap - Image hosting for map collectors" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
