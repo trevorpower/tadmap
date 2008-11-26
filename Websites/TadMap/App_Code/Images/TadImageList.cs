@@ -43,6 +43,36 @@ namespace TadMap
          return imageList;
       }
 
+      public static TadImageList GetAllImages(IIdentity identity)
+      {
+          if (!identity.IsAuthenticated)
+              throw new System.Security.SecurityException("User not authorized to view a map list.");
+
+          TadImageList imageList = new TadImageList();
+
+          using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+          {
+              cn.Open();
+
+              using (SqlCommand cm = cn.CreateCommand())
+              {
+                  cm.CommandType = CommandType.StoredProcedure;
+                  cm.CommandText = "GetAllImages";
+                  cm.Parameters.AddWithValue("@OpenIdUrl", identity.Name);
+                  using (SqlDataReader dr = cm.ExecuteReader())
+                  {
+                      while (dr.Read())
+                      {
+                          TadImage info = new TadImage(dr);
+                          imageList.Add(info);
+                      }
+                  }
+              }
+          }
+
+          return imageList;
+      }
+
       private TadImageList()
       { /* require use of factory methods */ }
 
