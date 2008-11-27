@@ -5,6 +5,11 @@ using Affirma.ThreeSharp.Wrapper;
 using TadMap;
 using System.Web;
 using System.Web.Security;
+using TadMap.Security;
+using System.Web.UI;
+using TadMap.Configuration;
+using System.Linq;
+using System.Security;
 
 public partial class ViewMap : System.Web.UI.Page
 {
@@ -12,46 +17,80 @@ public partial class ViewMap : System.Web.UI.Page
 
    protected void Page_Load(object sender, EventArgs e)
    {
-      if (!HttpContext.Current.User.Identity.IsAuthenticated)
+      ScriptManager1.Scripts.Add(
+         new System.Web.UI.ScriptReference(Page.ResolveClientUrl("WebServices/UpdateImage.asmx/js"))
+      );
+
+      if (string.IsNullOrEmpty(Request["ImageId"]))
+         throw new Exception("This page requires a 'ImageId' as part of the request.");
+
+      Guid imageId = new Guid(Request["ImageId"]);
+
+      Tadmap db = new Tadmap(Database.TadMapConnection);
+
+      Tadmap tadmap = new Tadmap(Database.TadMapConnection);
+
+      UserImage image = tadmap.UserImages.Single(i => i.Id == imageId);
+
+      if (image != null)
       {
-         FormsAuthentication.RedirectToLoginPage();
-      }
-      else
-      {
-         ScriptManager1.Scripts.Add(
-            new System.Web.UI.ScriptReference(Page.ResolveClientUrl("WebServices/UpdateImage.asmx/js"))
-         );
+         ScriptManager.RegisterClientScriptBlock(Page, GetType(), "MapId", "var imageId = '" + image.Id + "';", true);
 
-         if (string.IsNullOrEmpty(Request["ImageId"]))
-            throw new Exception("This page requires a 'ImageId' as part of the request.");
-
-         Guid imageId = new Guid(Request["ImageId"]);
-
-         mImage = TadImage.Get(imageId, HttpContext.Current.User);
-
-         if (mImage != null)
+         if (image.OffensiveCount > 0)
          {
-             Title = "Tadmap - " + mImage.Title;
-            m_lblTitle.Text = mImage.Title;
-            m_lblDescription.Text = mImage.Description;
+            if (!HttpContext.Current.User.IsInRole(TadMapRoles.Administrator))
+               throw new SecurityException("Only administrator can view images marked as offensive");
+         }
+         else if (HttpContext.Current.User.Identity.IsAuthenticated)
+         {
+            UserOpenId openId = tadmap.UserOpenIds.Single(i => i.OpenIdUrl == HttpContext.Current.User.Identity.Name);
 
-            m_imgPicture.ImageUrl = mImage.GetPreviewUrl();
+            if (image.Privacy > 0 && image.UserId != openId.UserId)
+               throw new SecurityException("Cannot view another users image if it is marked as private.");
 
-            DownloadOriginal.NavigateUrl = mImage.GetOriginalUrl();
+            if (image.UserId != openId.UserId)
+            {
+               ScriptManager.RegisterClientScriptInclude(Page, GetType(), "EditDetails", Page.ResolveClientUrl("JavaScript/ViewMap.js"));
+            }
+         }
+         else
+         {
+            if (image.Privacy > 0)
+               throw new Exception("Guest cannot view private image");
+         }
 
-            // tilesets are not implemented for version the beta version one so we hide this button for now
-            m_lbViewTileSet.Visible = false;
-            m_lbCreateTileSet.Visible = false;
-            //if (mImage.HasTileSet)
-            //{
-            //   m_lbViewTileSet.Visible = true;
-            //   m_lbViewTileSet.PostBackUrl = "Dev.aspx?MapId=" + mImage.Id;
-            //}
-            //else
-            //{
-            //   m_lbViewTileSet.Visible = false;
-            //}
-            System.Web.UI.ScriptManager.RegisterClientScriptBlock(Page, GetType(), "MapId", "var imageId = '" + mImage.Id + "';", true);
+         Title = "Tadmap - " + image.Title;
+         m_lblTitle.Text = image.Title;
+         m_lblDescription.Text = image.Description;
+
+         m_imgPicture.ImageUrl = TadImage.GetPreviewUrl(image);
+
+         DownloadOriginal.NavigateUrl = TadImage.GetOriginalUrl(image);
+
+         // tilesets are not implemented for version the beta version one so we hide this button for now
+         m_lbViewTileSet.Visible = false;
+         m_lbCreateTileSet.Visible = false;
+         //if (mImage.HasTileSet)
+         //{
+         //   m_lbViewTileSet.Visible = true;
+         //   m_lbViewTileSet.PostBackUrl = "Dev.aspx?MapId=" + mImage.Id;
+         //}
+         //else
+         //{
+         //   m_lbViewTileSet.Visible = false;
+         //}
+
+         if (HttpContext.Current.User.IsInRole(TadMapRoles.Administrator))
+         {
+            Offensive.Visible = true;
+            UnOffensive.Visible = true;
+            Offensive.OnClientClick = "UpdateImage.Mark(imageId); return false;";
+            UnOffensive.OnClientClick = "UpdateImage.UnMark(imageId); return false;";
+         }
+         else
+         {
+            Offensive.Visible = false;
+            UnOffensive.Visible = false;
          }
       }
    }
@@ -95,5 +134,5 @@ public partial class ViewMap : System.Web.UI.Page
          mImage.Save(HttpContext.Current.User.Identity);
       }
    }
-   
+
 }

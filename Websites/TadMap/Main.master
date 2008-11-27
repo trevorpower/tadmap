@@ -21,7 +21,7 @@
             LoginText="Sign In" LogoutText="Sign Out" OnLoggingOut="LoginStatus1_LoggingOut" />
       </span><span style="margin-left: auto; margin-right: auto;">
          <asp:LinkButton ID="btnMyMaps" runat="server" CssClass="MasterPageNavigationLink"
-            PostBackUrl="~/Default.aspx">My Maps</asp:LinkButton>
+            PostBackUrl="~/MyImages.aspx">My Maps</asp:LinkButton>
       </span>
    </div>
    <div id="MasterPageBody">

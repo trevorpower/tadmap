@@ -106,7 +106,7 @@ public partial class Login : System.Web.UI.Page
          else
          {
             FormsAuthentication.SetAuthCookie(identifier.ToString(), false);
-            Response.Redirect("Default.aspx", false);
+            Response.Redirect("MyImages.aspx", false);
          }
       }
    }

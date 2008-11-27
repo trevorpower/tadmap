@@ -5,6 +5,10 @@ using System.Web.Services;
 using System.Web.Services.Protocols;
 using System.Web.Script.Services;
 using TadMap;
+using System.Linq;
+using TadMap.Configuration;
+using TadMap.Security;
+using System.Security;
 
 /// <summary>
 /// Summary description for UpdateTitle
@@ -42,6 +46,40 @@ public class UpdateImage : System.Web.Services.WebService
          throw new ArgumentNullException("description");
 
       return TadImage.UpdateDescription(new Guid(id), description, HttpContext.Current.User) > 0;
+   }
+
+   [WebMethod]
+   public bool Mark(string id)
+   {
+       if (!HttpContext.Current.User.IsInRole(TadMapRoles.Administrator))
+           throw new SecurityException("Only administrators can mark images as offensive.");
+
+       Tadmap tadmap = new Tadmap(Database.TadMapConnection);
+
+       UserImage image = tadmap.UserImages.Single(i => i.Id == new Guid(id));
+
+       image.OffensiveCount = 1;
+
+       tadmap.SubmitChanges();
+
+       return true;
+   }
+
+   [WebMethod]
+   public bool UnMark(string id)
+   {
+       if (!HttpContext.Current.User.IsInRole(TadMapRoles.Administrator))
+           throw new SecurityException("Only administrators can mark images as un-offensive.");
+
+       Tadmap tadmap = new Tadmap(Database.TadMapConnection);
+
+       UserImage image = tadmap.UserImages.Single(i => i.Id == new Guid(id));
+
+       image.OffensiveCount = 0;
+
+       tadmap.SubmitChanges();
+
+       return true;
    }
 }
 
