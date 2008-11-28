@@ -1,0 +1,7 @@
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.Wrapper.dll
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.Wrapper.pdb
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.dll
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.pdb
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\obj\Release\Affirma.ThreeSharp.Wrapper.dll
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\obj\Release\Affirma.ThreeSharp.Wrapper.pdb

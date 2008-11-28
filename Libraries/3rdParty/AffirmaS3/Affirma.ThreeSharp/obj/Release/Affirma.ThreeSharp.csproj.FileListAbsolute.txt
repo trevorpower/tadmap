@@ -1,0 +1,5 @@
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp\bin\Release\Affirma.ThreeSharp.dll
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp\bin\Release\Affirma.ThreeSharp.pdb
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp\obj\Release\Affirma.ThreeSharp.dll
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp\obj\Release\Affirma.ThreeSharp.pdb
