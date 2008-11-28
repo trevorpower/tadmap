@@ -5,8 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="Server">
     <div runat="server" id="divMapList" style="padding: 10px 30px 10px 30px;">
-        <div style="border: none; margin: 5px; float: left; padding: 5px; height: 80px; width: 300px;
-            background: #EEFFEE;">
+        <div class="NoteBox">
             <p>
                 You are browsing all <b>public</b> images.
             </p>

@@ -34,3 +34,18 @@
 }
 
 .NoteBox
+{
+   border: none;
+   margin: 5px;
+   float: left;
+   padding: 5px;
+   height: 80px;
+   width: 300px;
+   background: #EEFFEE;
+}
+
+.NoteBox > P
+{
+   margin-top: 0px;
+   margin-bottom: 6px;
+}

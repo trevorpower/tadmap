@@ -5,10 +5,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="Server">
    <div runat="server" id="divMapList" style="padding: 10px 30px 10px 30px;">
-      <div style="border: none; margin: 5px; float: left; padding: 5px; height: 80px; width: 300px;
-         background: #EEFFEE;">
-         You are browsing all the images you have uploaded.<br />
-         <asp:HyperLink ID="btnAddMap" runat="server" NavigateUrl="~/AddMap.aspx">Upload Image</asp:HyperLink>
+      <div class="NoteBox">
+         <p>You are browsing all <b>your</b> images.</p>
+         <p><asp:HyperLink ID="btnAddMap" runat="server" NavigateUrl="~/AddMap.aspx">Upload Image</asp:HyperLink></p>
       </div>
       <asp:Repeater ID="m_repMapRepeater" runat="server">
          <ItemTemplate>
