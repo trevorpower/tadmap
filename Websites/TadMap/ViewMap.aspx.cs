@@ -10,6 +10,7 @@ using System.Web.UI;
 using TadMap.Configuration;
 using System.Linq;
 using System.Security;
+using System.Web.Services;
 
 public partial class ViewMap : System.Web.UI.Page
 {
@@ -34,7 +35,8 @@ public partial class ViewMap : System.Web.UI.Page
 
       if (image != null)
       {
-         ScriptManager.RegisterClientScriptBlock(Page, GetType(), "MapId", "var imageId = '" + image.Id + "';", true);
+            ScriptManager.RegisterClientScriptBlock(Page, GetType(), "MapId", "var imageId = '" + image.Id + "';", true);
+            privacyCheckBox.Visible = false;
 
          if (image.OffensiveCount > 0)
          {
@@ -45,17 +47,19 @@ public partial class ViewMap : System.Web.UI.Page
          {
             UserOpenId openId = tadmap.UserOpenIds.Single(i => i.OpenIdUrl == HttpContext.Current.User.Identity.Name);
 
-            if (image.Privacy > 0 && image.UserId != openId.UserId)
+            if (image.Privacy == 0 && image.UserId != openId.UserId)
                throw new SecurityException("Cannot view another users image if it is marked as private.");
 
-            if (image.UserId != openId.UserId)
+            if (image.UserId == openId.UserId)
             {
                ScriptManager.RegisterClientScriptInclude(Page, GetType(), "EditDetails", Page.ResolveClientUrl("JavaScript/ViewMap.js"));
+               privacyCheckBox.Visible = true;
+               privacyCheckBox.Checked = image.Privacy > 0;
             }
          }
          else
          {
-            if (image.Privacy > 0)
+            if (image.Privacy == 0)
                throw new Exception("Guest cannot view private image");
          }
 
@@ -135,4 +139,55 @@ public partial class ViewMap : System.Web.UI.Page
       }
    }
 
+   [WebMethod]
+   public static int MakePublic(string id)
+   {
+      Tadmap tadmap = new Tadmap(Database.TadMapConnection);
+
+      var images = from i in tadmap.UserImages
+                   join u in tadmap.UserOpenIds on i.UserId equals u.UserId
+                   where i.Id == new Guid(id) && u.OpenIdUrl == HttpContext.Current.User.Identity.Name
+                   select i;
+
+      if (images.Count() == 1)
+      {
+         UserImage image = images.First();
+
+         image.Privacy = 1;
+
+         tadmap.SubmitChanges();
+
+         return image.Privacy;
+      }
+      else
+      {
+         throw new Exception("Could not marke as public");
+      }
+   }
+
+   [WebMethod]
+   public static int MakePrivate(string id)
+   {
+      Tadmap tadmap = new Tadmap(Database.TadMapConnection); 
+      
+      var images = from i in tadmap.UserImages
+                   join u in tadmap.UserOpenIds on i.UserId equals u.UserId
+                   where i.Id == new Guid(id) && u.OpenIdUrl == HttpContext.Current.User.Identity.Name
+                   select i;
+
+      if (images.Count() == 1)
+      {
+         UserImage image = images.First();
+
+         image.Privacy = 0;
+
+         tadmap.SubmitChanges();
+
+         return image.Privacy;
+      }
+      else
+      {
+         throw new Exception("Could not marke as public");
+      }
+   }
 }

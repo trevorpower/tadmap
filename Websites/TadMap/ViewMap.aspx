@@ -11,7 +11,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="Server">
-   <asp:ScriptManager ID="ScriptManager1" runat="server">
+   <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
    </asp:ScriptManager>
    <asp:Label runat="server" ID="m_lblTitle" CssClass="EditTitle ItemTitle"></asp:Label>
    <div runat="server" id="panelImage" class="ImagePanel">
@@ -27,5 +27,5 @@
    </div>
    <asp:LinkButton runat="server" ID="Offensive">Offensive</asp:LinkButton>
    <asp:LinkButton runat="server" ID="UnOffensive">Un-offensive</asp:LinkButton>
-
+   <asp:CheckBox CssClass="PrivacyCheckBox" ID="privacyCheckBox" runat="server" Text="Public" />
 </asp:Content>
