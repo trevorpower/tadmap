@@ -15,6 +15,7 @@ using System.Security.Principal;
 using System.Collections.Generic;
 using TadMap.Configuration;
 using System.Transactions;
+using TadMap.Security;
 
 public partial class Login : System.Web.UI.Page
 {
@@ -113,33 +114,25 @@ public partial class Login : System.Web.UI.Page
 
    private void CreateNewUser(string openIdUrl)
    {
-      Guid identity = Guid.NewGuid();
+      Tadmap db = new Tadmap(Database.TadMapConnection);
 
-      using (TransactionScope transaction = new TransactionScope())
-      {
-         using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
-         {
-            cn.Open();
+      User newUser = new User();
+      newUser.Id = Guid.NewGuid();
+      newUser.Name = string.Empty;
 
-            using (SqlCommand cm = cn.CreateCommand())
-            {
-               cm.CommandText = "AddUser";
-               cm.CommandType = CommandType.StoredProcedure;
+      UserRole newUserRole = new UserRole();
+      newUserRole.UserId = newUser.Id;
+      newUserRole.Role = TadMapRoles.Collector;
 
-               cm.Parameters.AddWithValue("@id", identity);
+      UserOpenId newOpenId = new UserOpenId();
+      newOpenId.UserId = newUser.Id;
+      newOpenId.OpenIdUrl = openIdUrl;
 
-               int count = cm.ExecuteNonQuery();
+      db.Users.InsertOnSubmit(newUser);
+      db.UserRoles.InsertOnSubmit(newUserRole);
+      db.UserOpenIds.InsertOnSubmit(newOpenId);
 
-               if (count == 0)
-               {
-                  throw new Exception("Unable to create user");
-               }
-            }
-         }
-         AttachId(identity, openIdUrl);
-
-         transaction.Complete();
-      }
+      db.SubmitChanges();
    }
 
    private void AttachId(Guid userId, string openIdUrl)
