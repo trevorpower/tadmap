@@ -20,7 +20,13 @@ public partial class Admin_AllImages : System.Web.UI.Page
             if (HttpContext.Current.User.IsInRole(TadMapRoles.Administrator))
             {
                 m_repMapRepeater.ItemDataBound += new RepeaterItemEventHandler(m_repMapRepeater_ItemDataBound);
-                m_repMapRepeater.DataSource = TadImageList.GetAllImages(HttpContext.Current.User.Identity);
+
+                Tadmap db = new Tadmap(Database.TadMapConnection);
+
+                var images = from i in db.UserImages
+                             select i;
+
+                m_repMapRepeater.DataSource = images;
                 m_repMapRepeater.DataBind();
                 divMapList.Visible = true;
             }
@@ -37,28 +43,28 @@ public partial class Admin_AllImages : System.Web.UI.Page
 
     void m_repMapRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
     {
-        TadImage oImageInfo = e.Item.DataItem as TadImage;
+       UserImage imageInfo = e.Item.DataItem as UserImage;
 
-        LinkButton oLink = e.Item.FindControl("m_lbName") as LinkButton;
-        oLink.Text = oImageInfo.Title;
-        oLink.PostBackUrl = "ViewMap.aspx?ImageId=" + oImageInfo.Id;
+       LinkButton oLink = e.Item.FindControl("m_lbName") as LinkButton;
+       oLink.Text = imageInfo.Title;
+       oLink.PostBackUrl = "ViewMap.aspx?ImageId=" + imageInfo.Id;
 
-        Label oLabel = e.Item.FindControl("m_lblDescription") as Label;
-        oLabel.Text = oImageInfo.Description;
+       Label oLabel = e.Item.FindControl("m_lblDescription") as Label;
+       oLabel.Text = imageInfo.Description;
 
-        Image oImage = e.Item.FindControl("m_imgImage") as Image;
-        oImage.Width = 80;
-        oImage.Height = 80;
+       Image oImage = e.Item.FindControl("m_imgImage") as Image;
+       oImage.Width = 80;
+       oImage.Height = 80;
 
-        PostBackOptions options = new PostBackOptions(oLink, "", "../ViewMap.aspx?ImageId=" + oImageInfo.Id, true, false, false, true, false, "");
+       PostBackOptions options = new PostBackOptions(oLink, "", "../ViewMap.aspx?ImageId=" + imageInfo.Id, true, false, false, true, false, "");
 
-        HtmlControl oDiv = e.Item.FindControl("ListItem") as HtmlControl;
-        oDiv.Attributes.Add("onClick", ClientScript.GetPostBackEventReference(options));
-        oDiv.Attributes.Add("onMouseOver", "this.style.background = '#FFFFCC';");
-        oDiv.Attributes.Add("onMouseOut", "this.style.background = '#FFFFFF';");
+       HtmlControl oDiv = e.Item.FindControl("ListItem") as HtmlControl;
+       oDiv.Attributes.Add("onClick", ClientScript.GetPostBackEventReference(options));
+       oDiv.Attributes.Add("onMouseOver", "this.style.background = '#FFFFCC';");
+       oDiv.Attributes.Add("onMouseOut", "this.style.background = '#FFFFFF';");
 
-        ThreeSharpWrapper s3 = new ThreeSharpWrapper(S3Storage.AccessKey, S3Storage.SecretAccessKey);
-        oImage.ImageUrl = s3.GetUrl(S3Storage.BucketName, "Square_" + oImageInfo.StorageKey);
-        //oImage.ImageUrl = "http://" + S3Storage.BucketName + ".s3.amazonaws.com/Square_" + oImageInfo.StorageKey;
+       ThreeSharpWrapper s3 = new ThreeSharpWrapper(S3Storage.AccessKey, S3Storage.SecretAccessKey);
+       oImage.ImageUrl = s3.GetUrl(S3Storage.BucketName, "Square_" + imageInfo.Key);
+       //oImage.ImageUrl = "http://" + S3Storage.BucketName + ".s3.amazonaws.com/Square_" + oImageInfo.StorageKey;
     }
 }

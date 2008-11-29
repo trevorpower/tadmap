@@ -48,7 +48,10 @@ public partial class ViewMap : System.Web.UI.Page
             UserOpenId openId = tadmap.UserOpenIds.Single(i => i.OpenIdUrl == HttpContext.Current.User.Identity.Name);
 
             if (image.Privacy == 0 && image.UserId != openId.UserId)
-               throw new SecurityException("Cannot view another users image if it is marked as private.");
+            {
+               if (!HttpContext.Current.User.IsInRole(TadMapRoles.Administrator))
+                  throw new SecurityException("Cannot view another users image if it is marked as private.");
+            }
 
             if (image.UserId == openId.UserId)
             {
