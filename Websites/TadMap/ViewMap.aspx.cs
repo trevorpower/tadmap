@@ -35,8 +35,8 @@ public partial class ViewMap : System.Web.UI.Page
 
       if (image != null)
       {
-            ScriptManager.RegisterClientScriptBlock(Page, GetType(), "MapId", "var imageId = '" + image.Id + "';", true);
-            privacyCheckBox.Visible = false;
+         ScriptManager.RegisterClientScriptBlock(Page, GetType(), "MapId", "var imageId = '" + image.Id + "';", true);
+         OwnerControls.Visible = false;
 
          if (image.OffensiveCount > 0)
          {
@@ -52,9 +52,10 @@ public partial class ViewMap : System.Web.UI.Page
 
             if (image.UserId == openId.UserId)
             {
+               OwnerControls.Visible = true;
                ScriptManager.RegisterClientScriptInclude(Page, GetType(), "EditDetails", Page.ResolveClientUrl("JavaScript/ViewMap.js"));
-               privacyCheckBox.Visible = true;
                privacyCheckBox.Checked = image.Privacy > 0;
+               PrivacyStatus.Text = image.Privacy == 0 ? "<b>Only you</b> can view this image." : "<b>Anyone</b> can view this image.";
             }
          }
          else
@@ -168,8 +169,8 @@ public partial class ViewMap : System.Web.UI.Page
    [WebMethod]
    public static int MakePrivate(string id)
    {
-      Tadmap tadmap = new Tadmap(Database.TadMapConnection); 
-      
+      Tadmap tadmap = new Tadmap(Database.TadMapConnection);
+
       var images = from i in tadmap.UserImages
                    join u in tadmap.UserOpenIds on i.UserId equals u.UserId
                    where i.Id == new Guid(id) && u.OpenIdUrl == HttpContext.Current.User.Identity.Name

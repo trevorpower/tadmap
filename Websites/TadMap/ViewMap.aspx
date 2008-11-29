@@ -25,7 +25,14 @@
    <div class="ItemDetail">
       <asp:Label runat="server" ID="m_lblDescription" CssClass="EditDescription MapDescriptionText"></asp:Label>
    </div>
-   <asp:LinkButton runat="server" ID="Offensive">Offensive</asp:LinkButton>
-   <asp:LinkButton runat="server" ID="UnOffensive">Un-offensive</asp:LinkButton>
-   <asp:CheckBox CssClass="PrivacyCheckBox" ID="privacyCheckBox" runat="server" Text="Public" />
+   <div runat="server" id="AdministratorControls">
+      <asp:LinkButton runat="server" ID="Offensive">Offensive</asp:LinkButton>
+      <asp:LinkButton runat="server" ID="UnOffensive">Un-offensive</asp:LinkButton>
+   </div>
+   <div runat="server" id="OwnerControls">
+      <asp:CheckBox CssClass="PrivacyCheckBox" ID="privacyCheckBox" runat="server" Text="Public" />
+      <div style="font-size: 12px;">
+         <asp:Label ID="PrivacyStatus" CssClass="PrivacyStatus" runat="server"></asp:Label>
+      </div>
+   </div>
 </asp:Content>

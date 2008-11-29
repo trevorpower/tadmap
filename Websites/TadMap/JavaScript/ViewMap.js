@@ -9,6 +9,15 @@
    });
 };
 
+function MadePublic() {
+   $(".PrivacyStatus").html("<b>Anyone</b> can view this image.");
+}
+
+function MadePrivate() {
+   $(".PrivacyStatus").html("<b>Only you</b> can view this image.");
+}
+
+
 $(document).ready(function() {
    $(".EditTitle").editable(function(value, settings) { UpdateImage.UpdateTitle(imageId, value); return value; }, {
       cssclass: "ItemTitleEdit",
@@ -27,10 +36,10 @@ $(document).ready(function() {
    });
    $("#ctl00_main_privacyCheckBox").checkBoxClick(
       function() {
-         PageMethods.MakePublic(imageId);
+         PageMethods.MakePublic(imageId, MadePublic);
       },
       function() {
-         PageMethods.MakePrivate(imageId);
+         PageMethods.MakePrivate(imageId, MadePrivate);
       }
     );
 });
