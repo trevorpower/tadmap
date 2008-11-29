@@ -17,7 +17,6 @@ function MadePrivate() {
    $(".PrivacyStatus").html("<b>Only you</b> can view this image.");
 }
 
-
 $(document).ready(function() {
    $(".EditTitle").editable(function(value, settings) { UpdateImage.UpdateTitle(imageId, value); return value; }, {
       cssclass: "ItemTitleEdit",

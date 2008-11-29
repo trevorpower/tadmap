@@ -9,7 +9,7 @@
             <p>
                 You are browsing all <b>public</b> images.
             </p>
-            <p>
+            <p runat="server" id="LoginText">
                 <asp:Label runat="server" ID="SignInText">
                     <asp:LoginStatus ID="LoginStatus1" runat="server" LoginText="Sign in" />
                     to view your own <i>private</i> images or <i>upoload</i> new images.</asp:Label>

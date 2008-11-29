@@ -17,19 +17,21 @@ public partial class _Default : System.Web.UI.Page
 {
    protected void Page_Load(object sender, EventArgs e)
    {
-     m_repMapRepeater.ItemDataBound += new RepeaterItemEventHandler(m_repMapRepeater_ItemDataBound);
+      m_repMapRepeater.ItemDataBound += new RepeaterItemEventHandler(m_repMapRepeater_ItemDataBound);
 
-     Tadmap db = new Tadmap(Database.TadMapConnection);
+      Tadmap db = new Tadmap(Database.TadMapConnection);
 
-     var images = from i in db.UserImages
-                  where i.OffensiveCount == 0 && i.Privacy > 0
-                  select i;
+      var images = from i in db.UserImages
+                   where i.OffensiveCount == 0 && i.Privacy > 0
+                   select i;
 
-     m_repMapRepeater.DataSource = images;
-     m_repMapRepeater.DataBind();
-     divMapList.Visible = true;
+      m_repMapRepeater.DataSource = images;
+      m_repMapRepeater.DataBind();
+      divMapList.Visible = true;
+
+      LoginText.Visible = !HttpContext.Current.User.Identity.IsAuthenticated;
    }
-   
+
    void m_repMapRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
    {
       UserImage imageInfo = e.Item.DataItem as UserImage;
@@ -46,7 +48,7 @@ public partial class _Default : System.Web.UI.Page
       oImage.Height = 80;
 
       PostBackOptions options = new PostBackOptions(oLink, "", "ViewMap.aspx?ImageId=" + imageInfo.Id, true, false, false, true, false, "");
-      
+
       HtmlControl oDiv = e.Item.FindControl("ListItem") as HtmlControl;
       oDiv.Attributes.Add("onClick", ClientScript.GetPostBackEventReference(options));
       oDiv.Attributes.Add("onMouseOver", "this.style.background = '#FFFFCC';");
