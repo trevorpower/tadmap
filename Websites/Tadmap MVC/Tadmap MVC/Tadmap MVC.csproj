@@ -30,12 +30,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Affirma.ThreeSharp, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp\bin\Debug\Affirma.ThreeSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Affirma.ThreeSharp.Wrapper, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.Wrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="ClassLibrary1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\ImageManipulation\ClassLibrary1\bin\Release\ClassLibrary1.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Web.Abstractions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -75,6 +90,22 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tadmap\Configuration\Database.cs" />
+    <Compile Include="Tadmap\Configuration\S3Storage.cs" />
+    <Compile Include="Tadmap\Images\TadImage.cs" />
+    <Compile Include="Tadmap\Security\TadMapRoles.cs" />
+    <Compile Include="Tadmap\Tadmap.designer.cs" />
+    <Compile Include="Tadmap\Tadmap1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tadmap.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Tadmap\TadPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tadmap\UpdateImage.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Views\Account\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -131,6 +162,10 @@
     <Compile Include="Views\Shared\LoginUserControl.ascx.designer.cs">
       <DependentUpon>LoginUserControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Main.master.cs">
+      <DependentUpon>Main.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Views\Shared\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -160,6 +195,44 @@
     <Content Include="Views\Shared\LoginUserControl.ascx" />
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Tad\Button.css" />
+    <Content Include="App_Themes\Tad\Default\Default.css" />
+    <Content Include="App_Themes\Tad\ImageList.css" />
+    <Content Include="App_Themes\Tad\Login\login-bg.gif" />
+    <Content Include="App_Themes\Tad\Login\Login.css" />
+    <Content Include="App_Themes\Tad\Login\openid-logo-icon.gif" />
+    <Content Include="App_Themes\Tad\Login\openid-logo-small.png" />
+    <Content Include="App_Themes\Tad\Main.css" />
+    <Content Include="App_Themes\Tad\Master\FooterBack.png" />
+    <Content Include="App_Themes\Tad\Master\HeaderBack.png" />
+    <Content Include="App_Themes\Tad\Master\login-bg.gif" />
+    <Content Include="App_Themes\Tad\Master\login-bg.png" />
+    <Content Include="App_Themes\Tad\Master\Master.css" />
+    <Content Include="App_Themes\Tad\Master\TadmapSmall.ico.png" />
+    <Content Include="App_Themes\Tad\Master\TadmapSmall.png" />
+    <Content Include="App_Themes\Tad\tadicon.png" />
+    <Content Include="App_Themes\Tad\TextBox\TextBox.css" />
+    <Content Include="App_Themes\Tad\TextBox\TextBoxBackground.png" />
+    <Content Include="App_Themes\Tad\ViewMap.css" />
+    <Content Include="Views\Shared\Main.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Themes\Tad\.htaccess" />
+    <None Include="App_Themes\Tad\Master\.htaccess" />
+    <None Include="App_Themes\Tad\Master\login-bg.pdn" />
+    <None Include="Tadmap\Tadmap.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Tadmap1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Tadmap\Tadmap.dbml.layout">
+      <DependentUpon>Tadmap.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

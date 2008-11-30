@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C# Express 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Affirma.ThreeSharp", "Affirma.ThreeSharp\Affirma.ThreeSharp.csproj", "{1A12C68D-7C3B-46A6-8406-10ADCFA51B7A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Affirma.ThreeSharp.ConsoleSample", "Affirma.ThreeSharp.ConsoleSample\Affirma.ThreeSharp.ConsoleSample.csproj", "{93D0D5A5-23E5-4DA0-BFC9-E5DE851250F3}"
