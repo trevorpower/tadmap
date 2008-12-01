@@ -1,4 +1,3 @@
-C:\Users\Trevor\Development\tadmap\branches\mvc\Websites\Tadmap MVC\Tadmap MVC\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Trevor\Development\tadmap\branches\mvc\Websites\Tadmap MVC\Tadmap MVC\bin\Tadmap MVC.dll
 C:\Users\Trevor\Development\tadmap\branches\mvc\Websites\Tadmap MVC\Tadmap MVC\bin\Tadmap MVC.pdb
 C:\Users\Trevor\Development\tadmap\branches\mvc\Websites\Tadmap MVC\Tadmap MVC\bin\Affirma.ThreeSharp.dll
@@ -8,5 +7,6 @@ C:\Users\Trevor\Development\tadmap\branches\mvc\Websites\Tadmap MVC\Tadmap MVC\b
 C:\Users\Trevor\Development\tadmap\branches\mvc\Websites\Tadmap MVC\Tadmap MVC\bin\Affirma.ThreeSharp.xml
 C:\Users\Trevor\Development\tadmap\branches\mvc\Websites\Tadmap MVC\Tadmap MVC\bin\Affirma.ThreeSharp.Wrapper.pdb
 C:\Users\Trevor\Development\tadmap\branches\mvc\Websites\Tadmap MVC\Tadmap MVC\bin\ClassLibrary1.pdb
+C:\Users\Trevor\Development\tadmap\branches\mvc\Websites\Tadmap MVC\Tadmap MVC\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Trevor\Development\tadmap\branches\mvc\Websites\Tadmap MVC\Tadmap MVC\obj\Debug\Tadmap MVC.dll
 C:\Users\Trevor\Development\tadmap\branches\mvc\Websites\Tadmap MVC\Tadmap MVC\obj\Debug\Tadmap MVC.pdb

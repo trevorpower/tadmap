@@ -1,7 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="Main" %>
-
-<%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
-   Namespace="System.Web.UI" TagPrefix="asp" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="Tadmap_MVC.Views.Shared.Main" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,16 +12,19 @@
 <body runat="server" id="MainBody">
    <form id="form1" runat="server">
    <div id="MasterPageHeader" style="text-align: center;">
-      <a id="MasterPageLogo" href="Default.aspx"><asp:Image runat="server" ID="MasterPageLogoImage" AlternateText="Tadmap" ImageUrl="~/App_Themes/Tad/Master/TadmapSmall.png" /></a> <span id="MasterPageNavigationBar">
+      <a id="MasterPageLogo" href="Default.aspx">
+         <asp:Image runat="server" ID="MasterPageLogoImage" AlternateText="Tadmap" ImageUrl="~/App_Themes/Tad/Master/TadmapSmall.png" /></a>
+      <span id="MasterPageNavigationBar">
          <asp:Label ID="m_lblOpenId" runat="server" CssClass="MasterPageLoginName" />
          <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="MasterPageAdministrationLink"
             LoginText="Sign In" LogoutText="Sign Out" OnLoggingOut="LoginStatus1_LoggingOut" />
       </span><span style="margin-left: auto; margin-right: auto;">
-         <asp:LinkButton ID="btnMyMaps" runat="server" CssClass="MasterPageNavigationLink"
-            PostBackUrl="~/MyImages.aspx">My Maps</asp:LinkButton>
+         <asp:LinkButton ID="MyMaps" runat="server" CssClass="MasterPageNavigationLink"
+            PostBackUrl="~/MyImages.aspx" onclick="MyMaps_Click">My Maps</asp:LinkButton>
       </span>
    </div>
    <div id="MasterPageBody">
+      <%= Html.ActionLink("Home", "Default", "Home")%>
       <asp:ContentPlaceHolder ID="MainContent" runat="server">
       </asp:ContentPlaceHolder>
    </div>

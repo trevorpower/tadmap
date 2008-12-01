@@ -24,5 +24,12 @@ namespace Tadmap_MVC.Controllers
 
          return View();
       }
+
+      public ActionResult Default()
+      {
+         ViewData["Title"] = "Default Page";
+
+         return View();
+      }
    }
 }

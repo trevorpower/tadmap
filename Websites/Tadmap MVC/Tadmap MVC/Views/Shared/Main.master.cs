@@ -11,24 +11,39 @@ using System.Web.UI.HtmlControls;
 using System.IO;
 using System.Text;
 using TadMap.Security;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
 
-public partial class Main : System.Web.UI.MasterPage
+
+namespace Tadmap_MVC.Views.Shared
 {
-   protected void Page_Load(object sender, EventArgs e)
+   public partial class Main : ViewMasterPage
    {
-      //btnMyMaps.Visible = HttpContext.Current.User.IsInRole(TadMapRoles.Collector);
-   }
+      protected override void OnLoad(EventArgs e)
+      {
 
-   protected void Page_PreRender(object sender, EventArgs e)
-   {
-      //m_lblOpenId.Visible = HttpContext.Current.User.Identity.IsAuthenticated;
-      //m_lblOpenId.Text = HttpContext.Current.User.Identity.Name;
-   }
+         //MyMaps.Visible = Context.User.IsInRole(TadMapRoles.Collector);
 
-   protected void LoginStatus1_LoggingOut(object sender, LoginCancelEventArgs e)
-   {
-      //Session.Abandon();
-      //FormsAuthentication.SignOut();
-      //Response.Redirect("Default.aspx");
-   }
+         
+         base.OnLoad(e);
+      }
+
+      protected void Page_PreRender(object sender, EventArgs e)
+      {
+         //m_lblOpenId.Visible = HttpContext.Current.User.Identity.IsAuthenticated;
+         //m_lblOpenId.Text = HttpContext.Current.User.Identity.Name;
+      }
+
+      protected void LoginStatus1_LoggingOut(object sender, LoginCancelEventArgs e)
+      {
+         Session.Abandon();
+         FormsAuthentication.SignOut();
+         Response.Redirect("Default.aspx");
+      }
+      protected void MyMaps_Click(object sender, EventArgs e)
+      {
+
+      }
+}
 }

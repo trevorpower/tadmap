@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Master.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,6 +141,10 @@
     </Compile>
     <Compile Include="Views\Home\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Home\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -216,12 +221,18 @@
     <Content Include="App_Themes\Tad\TextBox\TextBox.css" />
     <Content Include="App_Themes\Tad\TextBox\TextBoxBackground.png" />
     <Content Include="App_Themes\Tad\ViewMap.css" />
+    <Content Include="Views\Home\Default.aspx" />
     <Content Include="Views\Shared\Main.master" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App_Themes\Tad\.htaccess" />
     <None Include="App_Themes\Tad\Master\.htaccess" />
     <None Include="App_Themes\Tad\Master\login-bg.pdn" />
+    <Content Include="Configuration\appSettings.DEV.config" />
+    <Content Include="Configuration\appSettings.LIVE.config" />
+    <Content Include="Configuration\connectionStrings.DEV.config" />
+    <Content Include="Configuration\connectionStrings.LIVE.config" />
+    <Content Include="Configuration\httpRuntime.config" />
     <None Include="Tadmap\Tadmap.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Tadmap1.designer.cs</LastGenOutput>
