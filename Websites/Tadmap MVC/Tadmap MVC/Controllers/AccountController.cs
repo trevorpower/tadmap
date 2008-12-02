@@ -7,6 +7,12 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using System.Web.UI;
+using DotNetOpenId.RelyingParty;
+using DotNetOpenId;
+using System.Data.SqlClient;
+using TadMap.Configuration;
+using System.Data;
+using TadMap.Security;
 
 namespace Tadmap_MVC.Controllers
 {
@@ -119,53 +125,81 @@ namespace Tadmap_MVC.Controllers
 
       public ActionResult Login()
       {
-
          ViewData["Title"] = "Login";
 
          return View();
       }
 
-      [AcceptVerbs(HttpVerbs.Post)]
-      public ActionResult Login(string username, string password, bool rememberMe, string returnUrl)
+      public ActionResult OpenIdReturn()
       {
+         OpenIdRelyingParty rp = new OpenIdRelyingParty();
 
-         ViewData["Title"] = "Login";
+         string error = string.Empty;
 
-         // Basic parameter validation
-         if (String.IsNullOrEmpty(username))
+         if (rp.Response != null)
          {
-            ModelState.AddModelError("username", "You must specify a username.");
-         }
-         if (String.IsNullOrEmpty(password))
-         {
-            ModelState.AddModelError("password", "You must specify a password.");
-         }
-
-         if (ViewData.ModelState.IsValid)
-         {
-            // Attempt to login
-            bool loginSuccessful = Provider.ValidateUser(username, password);
-
-            if (loginSuccessful)
+            switch (rp.Response.Status)
             {
-               FormsAuth.SetAuthCookie(username, rememberMe);
-               if (!String.IsNullOrEmpty(returnUrl))
-               {
-                  return Redirect(returnUrl);
-               }
-               else
-               {
-                  return RedirectToAction("Index", "Home");
-               }
-            }
-            else
-            {
-               ModelState.AddModelError("_FORM", "The username or password provided is incorrect.");
+               case AuthenticationStatus.Authenticated:
+                  {
+                     AuthenticateUser(rp.Response);
+                     break;
+                  }
+               case AuthenticationStatus.Canceled:
+                  {
+                     error = "Authentication canceled.";
+                     break;
+                  }
+               case AuthenticationStatus.Failed:
+                  {
+                     error = "Authentication failed.";
+
+                     if (rp.Response.Exception != null)
+                        error += " (" + rp.Response.Exception.Message + ")";
+
+                     break;
+                  }
+               case AuthenticationStatus.SetupRequired:
+                  {
+                     error = "Authentication failed. (Setup required?)";
+                     break;
+                  }
             }
          }
 
-         // If we got this far, something failed, redisplay form
-         ViewData["rememberMe"] = rememberMe;
+         ViewData["LoginErrorMessage"] = error;
+
+         return View();
+      }
+
+      [AcceptVerbs(HttpVerbs.Post)]
+      public ActionResult Login(string openid_url)
+      {
+         if (Identifier.IsValid(openid_url))
+         {
+            try
+            {
+               Identifier openId = Identifier.Parse(openid_url);
+
+               OpenIdRelyingParty rp = new OpenIdRelyingParty();
+               IAuthenticationRequest request = rp.CreateRequest(openId, new Realm(OpenId.Realm), new Uri(OpenId.LoginUrl));
+               request.RedirectToProvider();
+            }
+            catch (DotNetOpenId.OpenIdException exception)
+            {
+               ModelState.AddModelError("OpenIdException", exception);
+            }
+            catch (Exception exception)
+            {
+               ModelState.AddModelError("Authentication", exception);
+            }
+         }
+         else
+         {
+            ModelState.AddModelError("openid_url", "The OpenID you provided is not in the correct format.");
+         }
+
+         // if we got here then something went wrong so wego back to the login view.
          return View();
       }
 
@@ -280,6 +314,82 @@ namespace Tadmap_MVC.Controllers
                return "An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
          }
       }
+
+      /// <summary>
+      /// This authenticates a user based on a response from an openid provider.
+      /// </summary>
+      /// <param name="response"></param>
+      private void AuthenticateUser(IAuthenticationResponse response)
+      {
+         if (response.Status != AuthenticationStatus.Authenticated)
+            throw new ArgumentException("The response status must be 'Authenticated'. (" + response.Status.ToString() + ")", "response");
+
+         Identifier identifier = response.ClaimedIdentifier;
+
+         {
+            using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+            {
+               cn.Open();
+               using (SqlCommand cm = cn.CreateCommand())
+               {
+                  cm.CommandType = CommandType.StoredProcedure;
+                  cm.CommandText = "GetUserId";
+                  cm.Parameters.AddWithValue("@OpenIdUrl", identifier.ToString());
+
+                  using (SqlDataReader dr = cm.ExecuteReader())
+                  {
+                     if (dr.Read())
+                     {
+                        // a record was found so the user already exists
+                        // in the future we can use this to populate the identity
+                        // with display name and image...
+                     }
+                     else
+                     {
+                        // no user was found so we create it now.
+                        CreateNewUser(identifier.ToString());
+                     }
+                  }
+               }
+            }
+
+            // somehow we need to put the response.FriendlyIdentifierForDisplay
+            // into the identity/principal
+
+            if (Request.QueryString["ReturnUrl"] != null)
+            {
+               FormsAuthentication.RedirectFromLoginPage(identifier.ToString(), false);
+            }
+            else
+            {
+               FormsAuthentication.SetAuthCookie(identifier.ToString(), false);
+               Response.Redirect("MyImages.aspx", false);
+            }
+         }
+      }
+
+      private void CreateNewUser(string openIdUrl)
+      {
+         TadmapDb db = new TadmapDb(Database.TadMapConnection);
+
+         User newUser = new User();
+         newUser.Id = Guid.NewGuid();
+         newUser.Name = string.Empty;
+
+         UserRole newUserRole = new UserRole();
+         newUserRole.UserId = newUser.Id;
+         newUserRole.Role = TadMapRoles.Collector;
+
+         UserOpenId newOpenId = new UserOpenId();
+         newOpenId.UserId = newUser.Id;
+         newOpenId.OpenIdUrl = openIdUrl;
+
+         db.Users.InsertOnSubmit(newUser);
+         db.UserRoles.InsertOnSubmit(newUserRole);
+         db.UserOpenIds.InsertOnSubmit(newOpenId);
+
+         db.SubmitChanges();
+      }
    }
 
    // The FormsAuthentication type is sealed and contains static members, so it is difficult to
@@ -304,4 +414,6 @@ namespace Tadmap_MVC.Controllers
          FormsAuthentication.SignOut();
       }
    }
+
+   
 }

@@ -1,47 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses">
-  <DataContextMoniker Name="/Tadmap" />
+  <DataContextMoniker Name="/TadmapDb" />
   <nestedChildShapes>
     <classShape Id="4d52f9f9-2b2e-4312-9f71-445f5eeebb4a" absoluteBounds="5.375, 2.5, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/Tadmap/User" />
+      <DataClassMoniker Name="/TadmapDb/User" />
       <nestedChildShapes>
         <elementListCompartment Id="956b117d-b1dd-4e1c-bc37-68047e0974c7" absoluteBounds="5.39, 2.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="4815022e-d44f-4e70-af5e-64d3d6ed8cc0" absoluteBounds="5.375, 0.75, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/Tadmap/UserRole" />
+      <DataClassMoniker Name="/TadmapDb/UserRole" />
       <nestedChildShapes>
         <elementListCompartment Id="5e7ce1b8-eec6-4a91-9972-7ba8242358af" absoluteBounds="5.39, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="55bea39f-f85c-46d3-a1d6-94aef12e4874" absoluteBounds="5.375, 4.25, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/Tadmap/UserOpenId" />
+      <DataClassMoniker Name="/TadmapDb/UserOpenId" />
       <nestedChildShapes>
         <elementListCompartment Id="e936ddde-83ce-4fa4-9c05-6342a15df998" absoluteBounds="5.3900000000000006, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.375 : 2.5); (6.375 : 1.94399251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Tadmap/User/User_UserRole" />
+    <associationConnector edgePoints="[(6.375 : 2.5); (6.375 : 1.94399251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TadmapDb/User/User_UserRole" />
       <nodes>
         <classShapeMoniker Id="4d52f9f9-2b2e-4312-9f71-445f5eeebb4a" />
         <classShapeMoniker Id="4815022e-d44f-4e70-af5e-64d3d6ed8cc0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.375 : 3.69399251302083); (6.375 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Tadmap/User/User_UserOpenId" />
+    <associationConnector edgePoints="[(6.375 : 3.69399251302083); (6.375 : 4.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TadmapDb/User/User_UserOpenId" />
       <nodes>
         <classShapeMoniker Id="4d52f9f9-2b2e-4312-9f71-445f5eeebb4a" />
         <classShapeMoniker Id="55bea39f-f85c-46d3-a1d6-94aef12e4874" />
       </nodes>
     </associationConnector>
     <classShape Id="ae3faa56-2747-4c9c-9d40-2d0bd2605fdf" absoluteBounds="1.25, 1.875, 2, 2.9247054036458331">
-      <DataClassMoniker Name="/Tadmap/UserImage" />
+      <DataClassMoniker Name="/TadmapDb/UserImage" />
       <nestedChildShapes>
         <elementListCompartment Id="c023d79b-c5e1-4311-aad6-3dece6c442ef" absoluteBounds="1.2650000000000006, 2.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.375 : 3.09699625651042); (3.25 : 3.09699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Tadmap/User/User_Image" />
+    <associationConnector edgePoints="[(5.375 : 3.09699625651042); (3.25 : 3.09699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TadmapDb/User/User_UserImage" />
       <nodes>
         <classShapeMoniker Id="4d52f9f9-2b2e-4312-9f71-445f5eeebb4a" />
         <classShapeMoniker Id="ae3faa56-2747-4c9c-9d40-2d0bd2605fdf" />

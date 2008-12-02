@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Database Name="tadmap" Class="Tadmap" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+<Database Name="tadmap" EntityNamespace="Tadmap" ContextNamespace="Tadmap" Class="TadmapDb" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=TREVOR-PC\SQLEXPRESS;Initial Catalog=tadmap;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="tadmapConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Users" Member="Users">
     <Type Name="User">
@@ -7,7 +7,7 @@
       <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="User_UserRole" Member="UserRoles" ThisKey="Id" OtherKey="UserId" Type="UserRole" />
       <Association Name="User_UserOpenId" Member="UserOpenIds" Storage="_OpenIds" ThisKey="Id" OtherKey="UserId" Type="UserOpenId" />
-      <Association Name="User_Image" Member="UserImages" ThisKey="Id" OtherKey="UserId" Type="UserImage" />
+      <Association Name="User_UserImage" Member="UserImages" ThisKey="Id" OtherKey="UserId" Type="UserImage" />
     </Type>
   </Table>
   <Table Name="dbo.UserRoles" Member="UserRoles">
@@ -37,7 +37,7 @@
       <Column Name="ImageSet" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
       <Column Name="OffensiveCount" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
       <Column Name="Privacy" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Association Name="User_Image" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
+      <Association Name="User_UserImage" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

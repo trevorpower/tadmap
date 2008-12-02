@@ -54,7 +54,7 @@ public class UpdateImage : System.Web.Services.WebService
        if (!HttpContext.Current.User.IsInRole(TadMapRoles.Administrator))
            throw new SecurityException("Only administrators can mark images as offensive.");
 
-       Tadmap tadmap = new Tadmap(Database.TadMapConnection);
+       TadmapDb tadmap = new TadmapDb(Database.TadMapConnection);
 
        UserImage image = tadmap.UserImages.Single(i => i.Id == new Guid(id));
 
@@ -71,7 +71,7 @@ public class UpdateImage : System.Web.Services.WebService
        if (!HttpContext.Current.User.IsInRole(TadMapRoles.Administrator))
            throw new SecurityException("Only administrators can mark images as un-offensive.");
 
-       Tadmap tadmap = new Tadmap(Database.TadMapConnection);
+       TadmapDb tadmap = new TadmapDb(Database.TadMapConnection);
 
        UserImage image = tadmap.UserImages.Single(i => i.Id == new Guid(id));
 

@@ -15,9 +15,7 @@
       <a id="MasterPageLogo" href="Default.aspx">
          <asp:Image runat="server" ID="MasterPageLogoImage" AlternateText="Tadmap" ImageUrl="~/App_Themes/Tad/Master/TadmapSmall.png" /></a>
       <span id="MasterPageNavigationBar">
-         <asp:Label ID="m_lblOpenId" runat="server" CssClass="MasterPageLoginName" />
-         <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="MasterPageAdministrationLink"
-            LoginText="Sign In" LogoutText="Sign Out" OnLoggingOut="LoginStatus1_LoggingOut" />
+            <% Html.RenderPartial("LoginUserControl"); %>
       </span><span style="margin-left: auto; margin-right: auto;">
          <asp:LinkButton ID="MyMaps" runat="server" CssClass="MasterPageNavigationLink"
             PostBackUrl="~/MyImages.aspx" onclick="MyMaps_Click">My Maps</asp:LinkButton>

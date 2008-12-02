@@ -16,7 +16,7 @@
                 <tr>
                     <td>Current password:</td>
                     <td>
-                        <%= Html.Password("currentPassword") %>
+                        <%= Password("currentPassword") %>
                         <%= Html.ValidationMessage("currentPassword") %>
                     </td>
                 </tr>

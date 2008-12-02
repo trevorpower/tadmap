@@ -42,6 +42,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Libraries\ImageManipulation\ClassLibrary1\bin\Release\ClassLibrary1.dll</HintPath>
     </Reference>
+    <Reference Include="DotNetOpenId, Version=2.4.3.8264, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\TadMap\Bin\DotNetOpenId.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core">
@@ -94,6 +98,8 @@
     <Compile Include="Tadmap\Configuration\Database.cs" />
     <Compile Include="Tadmap\Configuration\S3Storage.cs" />
     <Compile Include="Tadmap\Images\TadImage.cs" />
+    <Compile Include="Tadmap\Security\OpenId.cs" />
+    <Compile Include="Tadmap\Security\TadMapRoleProvider.cs" />
     <Compile Include="Tadmap\Security\TadMapRoles.cs" />
     <Compile Include="Tadmap\Tadmap.designer.cs" />
     <Compile Include="Tadmap\Tadmap1.designer.cs">
@@ -124,9 +130,6 @@
     <Compile Include="Views\Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Account\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -233,6 +236,8 @@
     <Content Include="Configuration\connectionStrings.DEV.config" />
     <Content Include="Configuration\connectionStrings.LIVE.config" />
     <Content Include="Configuration\httpRuntime.config" />
+    <Content Include="Configuration\System.web\roleManager.config" />
+    <Content Include="Configuration\System.web\pages.config" />
     <None Include="Tadmap\Tadmap.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Tadmap1.designer.cs</LastGenOutput>

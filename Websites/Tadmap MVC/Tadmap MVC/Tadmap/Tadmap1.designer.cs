@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tadmap_MVC.Tadmap
+namespace Tadmap
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -23,7 +23,7 @@ namespace Tadmap_MVC.Tadmap
 	
 	
 	[System.Data.Linq.Mapping.DatabaseAttribute(Name="tadmap")]
-	public partial class Tadmap : System.Data.Linq.DataContext
+	public partial class TadmapDb : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -44,31 +44,31 @@ namespace Tadmap_MVC.Tadmap
     partial void DeleteUserImage(UserImage instance);
     #endregion
 		
-		public Tadmap() : 
+		public TadmapDb() : 
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["tadmapConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public Tadmap(string connection) : 
+		public TadmapDb(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public Tadmap(System.Data.IDbConnection connection) : 
+		public TadmapDb(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public Tadmap(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public TadmapDb(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public Tadmap(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public TadmapDb(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
