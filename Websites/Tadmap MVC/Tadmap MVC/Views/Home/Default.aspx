@@ -11,7 +11,7 @@
          </p>
          <p runat="server" id="LoginText">
             <asp:Label runat="server" ID="SignInText">
-               <asp:LoginStatus ID="LoginStatus1" runat="server" LoginText="Sign in" />
+               <%= Html.ActionLink("Sign in", "Login", "Account") %>
                to view your own <i>private</i> images or <i>upoload</i> new images.</asp:Label>
          </p>
       </div>

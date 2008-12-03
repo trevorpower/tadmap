@@ -130,6 +130,7 @@ namespace Tadmap_MVC.Controllers
          return View();
       }
 
+      
       public ActionResult OpenIdReturn()
       {
          OpenIdRelyingParty rp = new OpenIdRelyingParty();
@@ -142,8 +143,7 @@ namespace Tadmap_MVC.Controllers
             {
                case AuthenticationStatus.Authenticated:
                   {
-                     AuthenticateUser(rp.Response);
-                     break;
+                     return AuthenticateUser(rp.Response);
                   }
                case AuthenticationStatus.Canceled:
                   {
@@ -169,7 +169,7 @@ namespace Tadmap_MVC.Controllers
 
          ViewData["LoginErrorMessage"] = error;
 
-         return View();
+         return View("Login");
       }
 
       [AcceptVerbs(HttpVerbs.Post)]
@@ -319,7 +319,7 @@ namespace Tadmap_MVC.Controllers
       /// This authenticates a user based on a response from an openid provider.
       /// </summary>
       /// <param name="response"></param>
-      private void AuthenticateUser(IAuthenticationResponse response)
+      private ActionResult AuthenticateUser(IAuthenticationResponse response)
       {
          if (response.Status != AuthenticationStatus.Authenticated)
             throw new ArgumentException("The response status must be 'Authenticated'. (" + response.Status.ToString() + ")", "response");
@@ -363,8 +363,9 @@ namespace Tadmap_MVC.Controllers
             else
             {
                FormsAuthentication.SetAuthCookie(identifier.ToString(), false);
-               Response.Redirect("MyImages.aspx", false);
             }
+
+            return RedirectToAction("Index", new { controller = "Home" });
          }
       }
 

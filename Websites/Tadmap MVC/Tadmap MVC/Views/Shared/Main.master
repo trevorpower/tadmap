@@ -10,15 +10,13 @@
    </asp:ContentPlaceHolder>
 </head>
 <body runat="server" id="MainBody">
-   <form id="form1" runat="server">
    <div id="MasterPageHeader" style="text-align: center;">
       <a id="MasterPageLogo" href="Default.aspx">
          <asp:Image runat="server" ID="MasterPageLogoImage" AlternateText="Tadmap" ImageUrl="~/App_Themes/Tad/Master/TadmapSmall.png" /></a>
       <span id="MasterPageNavigationBar">
             <% Html.RenderPartial("LoginUserControl"); %>
       </span><span style="margin-left: auto; margin-right: auto;">
-         <asp:LinkButton ID="MyMaps" runat="server" CssClass="MasterPageNavigationLink"
-            PostBackUrl="~/MyImages.aspx" onclick="MyMaps_Click">My Maps</asp:LinkButton>
+         <%= Html.ActionLink("My Maps", "My", "Images", new { Class = "MasterPageNavigationLink" }) %>
       </span>
    </div>
    <div id="MasterPageBody">
@@ -32,6 +30,5 @@
          <a href="http://blog.tadmap.com">blog</a>|<a href="http://feedback.tadmap.com">feedback</a>
       </div>
    </div>
-   </form>
 </body>
 </html>

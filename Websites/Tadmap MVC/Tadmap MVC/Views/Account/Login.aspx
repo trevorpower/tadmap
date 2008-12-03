@@ -9,7 +9,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-   <% using (Html.BeginForm())
+   <% using (MvcForm form = Html.BeginForm())
       { %>
    <div style="margin-left: auto; margin-right: auto; width: 540px; padding-top: 40px;
       padding-bottom: 40px;">
@@ -27,8 +27,8 @@
       </div>
       <br />
       <div style="border: solid 0px red; vertical-align: top;">
-         <input type="text" id="openid_url" name="openid_url" class="OpenIdUrlBox" size="40" />
-         <%= Html.ActionLink("Sign In", "Login", null, new { Class = "LoginInButton" }) %>
+         <%= Html.TextBox("openid_url", null, new { Class = "OpenIdUrlBox", Size = "40" })%>
+         <input type="submit" value="Sign In" class="LoginInButton" />
       </div>
       <span class="ErrorMessage">
          <%= ViewData["LoginErrorMessage"] %></span>

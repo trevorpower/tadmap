@@ -4,13 +4,13 @@
        // css style MasterPageAdministrationLink
        //           MasterPageLoginName
 %>
-        <b><%= Html.Encode(Page.User.Identity.Name) %></b>
-        <%= Html.ActionLink("Sign Out", "Logout", "Account") %>
+        <b class="MasterPageLoginName"><%= Html.Encode(Page.User.Identity.Name) %></b>
+        <%= Html.ActionLink("Sign Out", "Logout", "Account", null, new { Class = "MasterPageAdministrationLink" } )%>
 <%
     }
     else {
 %> 
-        <%= Html.ActionLink("Sign In", "Login", "Account") %>
+        <%= Html.ActionLink("Sign In", "Login", "Account", null, new { Class = "MasterPageAdministrationLink" })%>
 <%
     }
 %>
