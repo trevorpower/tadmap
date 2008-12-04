@@ -5,9 +5,6 @@ using System.Data;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
 using DotNetOpenId;
 using DotNetOpenId.RelyingParty;
@@ -19,14 +16,6 @@ using System.Web.Mvc;
 
 public partial class Login : ViewPage
 {
-   protected void Page_Load(object sender, EventArgs e)
-   {
-   }
-
-   
-
-   
-
    private void AttachId(Guid userId, string openIdUrl)
    {
       using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))

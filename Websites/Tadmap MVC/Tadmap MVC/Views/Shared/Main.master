@@ -16,7 +16,7 @@
       <span id="MasterPageNavigationBar">
             <% Html.RenderPartial("LoginUserControl"); %>
       </span><span style="margin-left: auto; margin-right: auto;">
-         <%= Html.ActionLink("My Maps", "My", "Images", new { Class = "MasterPageNavigationLink" }) %>
+         <%= Html.ActionLink("My Maps", "Index", "UserImages", null, new { Class = "MasterPageNavigationLink" }) %>
       </span>
    </div>
    <div id="MasterPageBody">

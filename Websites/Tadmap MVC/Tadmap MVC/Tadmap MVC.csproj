@@ -87,6 +87,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Master.cs" />
+    <Compile Include="Controllers\UploadController.cs">
+    </Compile>
+    <Compile Include="Controllers\UserImagesController.cs">
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -98,6 +102,7 @@
     <Compile Include="Tadmap\Configuration\Database.cs" />
     <Compile Include="Tadmap\Configuration\S3Storage.cs" />
     <Compile Include="Tadmap\Images\TadImage.cs" />
+    <Compile Include="Tadmap\Images\TadImageList.cs" />
     <Compile Include="Tadmap\Security\OpenId.cs" />
     <Compile Include="Tadmap\Security\TadMapRoleProvider.cs" />
     <Compile Include="Tadmap\Security\TadMapRoles.cs" />
@@ -181,6 +186,14 @@
     <Compile Include="Views\Shared\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Views\Upload\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserImages\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
@@ -238,6 +251,8 @@
     <Content Include="Configuration\httpRuntime.config" />
     <Content Include="Configuration\System.web\roleManager.config" />
     <Content Include="Configuration\System.web\pages.config" />
+    <Content Include="Views\Upload\Index.aspx" />
+    <Content Include="Views\UserImages\Index.aspx" />
     <None Include="Tadmap\Tadmap.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Tadmap1.designer.cs</LastGenOutput>

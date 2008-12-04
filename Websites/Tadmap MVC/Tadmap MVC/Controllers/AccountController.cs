@@ -205,7 +205,6 @@ namespace Tadmap_MVC.Controllers
 
       public ActionResult Logout()
       {
-
          FormsAuth.SignOut();
 
          return RedirectToAction("Index", "Home");
