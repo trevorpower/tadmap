@@ -12,23 +12,11 @@ namespace Tadmap_MVC.Controllers
    {
       public ActionResult Index()
       {
-         ViewData["Title"] = "Home Page";
-         ViewData["Message"] = "Welcome to ASP.NET MVC!";
-
          return View();
       }
 
       public ActionResult About()
       {
-         ViewData["Title"] = "About Page";
-
-         return View();
-      }
-
-      public ActionResult Default()
-      {
-         ViewData["Title"] = "Default Page";
-
          return View();
       }
    }

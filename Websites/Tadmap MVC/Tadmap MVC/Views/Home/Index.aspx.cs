@@ -4,15 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public partial class _Default : ViewPage
+public partial class Index : ViewPage
 {
-   protected void Page_Load(object sender, EventArgs e)
-   {
-      //divMapList.Visible = true;
-
-      //LoginText.Visible = !HttpContext.Current.User.Identity.IsAuthenticated;
-   }
-
    public static List<UserImage> ImageList
    {
       get

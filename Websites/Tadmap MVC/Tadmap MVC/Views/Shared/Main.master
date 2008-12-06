@@ -11,21 +11,21 @@
 </head>
 <body runat="server" id="MainBody">
    <div id="MasterPageHeader" style="text-align: center;">
+      <%= Html.ActionLink("Home", "Index", "Home")%>
       <a id="MasterPageLogo" href="Default.aspx">
-         <asp:Image runat="server" ID="MasterPageLogoImage" AlternateText="Tadmap" ImageUrl="~/App_Themes/Tad/Master/TadmapSmall.png" /></a>
+         <img id="MasterPageLogoImage" alternatetext="Tadmap" imageurl="~/App_Themes/Tad/Master/TadmapSmall.png" /></a>
       <span id="MasterPageNavigationBar">
-            <% Html.RenderPartial("LoginUserControl"); %>
+         <% Html.RenderPartial("LoginUserControl"); %>
       </span><span style="margin-left: auto; margin-right: auto;">
-         <%= Html.ActionLink("My Maps", "Index", "UserImages", null, new { Class = "MasterPageNavigationLink" }) %>
+         <% Html.RenderPartial("NavigationBar"); %>
       </span>
    </div>
    <div id="MasterPageBody">
-      <%= Html.ActionLink("Home", "Default", "Home")%>
       <asp:ContentPlaceHolder ID="MainContent" runat="server">
       </asp:ContentPlaceHolder>
    </div>
    <div id="MasterPageFooter">
-      <span class="MasterPageSubText">tadmap.com - Online services for map collectors.</span><br />
+      <span class="MasterPageSubText">Tadmap - Online services for map collectors.</span><br />
       <div id="MasterPageFooterLinks">
          <a href="http://blog.tadmap.com">blog</a>|<a href="http://feedback.tadmap.com">feedback</a>
       </div>
