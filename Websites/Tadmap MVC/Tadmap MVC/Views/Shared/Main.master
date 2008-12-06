@@ -11,9 +11,8 @@
 </head>
 <body runat="server" id="MainBody">
    <div id="MasterPageHeader" style="text-align: center;">
-      <%= Html.ActionLink("Home", "Index", "Home")%>
-      <a id="MasterPageLogo" href="Default.aspx">
-         <img id="MasterPageLogoImage" alternatetext="Tadmap" imageurl="~/App_Themes/Tad/Master/TadmapSmall.png" /></a>
+      <a id="MasterPageLogo" href="<%= Url.Action("Index", "Home") %>">         
+         <img id="MasterPageLogoImage" alt="Tadmap" src="<%= Url.Content("~/App_Themes/Tad/Master/TadmapSmall.png") %>" /></a>
       <span id="MasterPageNavigationBar">
          <% Html.RenderPartial("LoginUserControl"); %>
       </span><span style="margin-left: auto; margin-right: auto;">
