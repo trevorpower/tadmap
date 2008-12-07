@@ -4,19 +4,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public partial class Index : ViewPage
+namespace TadMap_MVC.Views.Home
 {
-   public static List<UserImage> ImageList
+   public partial class Index : ViewPage
    {
-      get
+      public static List<UserImage> ImageList
       {
-         TadmapDb db = new TadmapDb(Database.TadMapConnection);
+         get
+         {
+            TadmapDb db = new TadmapDb(Database.TadMapConnection);
 
-         var images = from i in db.UserImages
-                      where i.OffensiveCount == 0 && i.Privacy > 0
-                      select i;
+            var images = from i in db.UserImages
+                         where i.OffensiveCount == 0 && i.Privacy > 0
+                         select i;
 
-         return images.ToList();
+            return images.ToList();
+         }
       }
    }
 }
