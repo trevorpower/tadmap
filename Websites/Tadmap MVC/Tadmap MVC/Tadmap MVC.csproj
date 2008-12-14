@@ -202,6 +202,9 @@
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Views\UserImages\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
@@ -258,6 +261,7 @@
     <Content Include="Configuration\System.web\roleManager.config" />
     <Content Include="Configuration\System.web\pages.config" />
     <Content Include="Scripts\jquery.jeditable.mini.js" />
+    <Content Include="Scripts\ViewMap.js" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Image\Index.aspx" />
     <Content Include="Views\Shared\NavigationBar.ascx" />

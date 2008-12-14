@@ -4,6 +4,7 @@ using System.Web;
 using System;
 using System.IO;
 using TadMap.Security;
+using TadMap;
 
 namespace Tadmap_MVC.Controllers
 {
@@ -14,25 +15,23 @@ namespace Tadmap_MVC.Controllers
          if (!Request.IsAuthenticated)
             return new RedirectResult(FormsAuthentication.LoginUrl);
 
-         return View("Upload");
+         return View();
       }
 
       [AcceptVerbs(HttpVerbs.Post)]
-      public ActionResult Upload()
+      public ActionResult Index(string title, string description)
       {
-         //HttpPostedFile oFile = FileInput.PostedFile;
+         HttpPostedFileBase oFile = Request.Files["file"];
 
-         //if (oFile.ContentLength > 0)
-         //{
-         //   TadImage oNewImage = TadImage.NewTadImage(oFile.InputStream, Guid.NewGuid() + Path.GetExtension(oFile.FileName));
-         //   oNewImage.Title = m_txtTitle.Text;
-         //   oNewImage.Description = m_txtDescription.Text;
-         //   oNewImage.Save(HttpContext.Current.User.Identity);
-         //}
+         if (oFile.ContentLength > 0)
+         {
+            TadImage oNewImage = TadImage.NewTadImage(oFile.InputStream, Guid.NewGuid() + Path.GetExtension(oFile.FileName));
+            oNewImage.Title = title;
+            oNewImage.Description = description;
+            oNewImage.Save(HttpContext.User.Identity);
+         }
 
-         //Response.Redirect("Default.aspx", true);
-
-         return View();
+         return RedirectToAction("Index", "Home");
       }
    }
 }

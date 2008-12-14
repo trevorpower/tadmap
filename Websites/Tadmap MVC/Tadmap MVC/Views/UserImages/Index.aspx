@@ -3,7 +3,7 @@
    Theme="Tad" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-   <div runat="server" id="divMapList" style="padding: 10px 30px 10px 30px;">
+   <div  style="padding: 10px 30px 10px 30px;">
       <div class="NoteBox">
          <p>
             You are browsing all <b>your</b> images.</p>
@@ -14,7 +14,7 @@
          Affirma.ThreeSharp.Wrapper.ThreeSharpWrapper s3 = new Affirma.ThreeSharp.Wrapper.ThreeSharpWrapper(TadMap.Configuration.S3Storage.AccessKey, TadMap.Configuration.S3Storage.SecretAccessKey);
          foreach (TadMap.TadImage image in ViewData["ImageList"] as IEnumerable)
          {%>
-      <div class="ImageListItem" onclick="window.location = ''" onmouseout="this.style.background = '#FFFFFF';"
+      <div class="ImageListItem" onclick="window.location = '<%= Url.Action("Index", "Image", new { id = image.Id }) %>'" onmouseout="this.style.background = '#FFFFFF';"
          onmouseover="this.style.background = '#FFFFCC';">
          <img alt="<%= image.Title %>" src="<%= s3.GetUrl(TadMap.Configuration.S3Storage.BucketName, "Square_" + image.StorageKey) %>"
             width="80" height="80" style="float: left; margin-right: 5px;" />

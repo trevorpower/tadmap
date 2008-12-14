@@ -8,6 +8,9 @@
          <asp:ScriptReference Path="~/Scripts/jquery.jeditable.mini.js" />
       </Scripts>
    </asp:ScriptManager>--%>
+   <script type="text/javascript" language="javascript" src="/Scripts/jquery-1.2.6.min.js"></script>
+   <script type="text/javascript" language="javascript" src="/Scripts/jquery.jeditable.mini.js"></script>
+   <script type="text/javascript" language="javascript" src="/Scripts/ViewMap.js"></script>
    <span class="EditTitle ItemTitle">
       <%= ViewData["Title"] %></span>
    <div runat="server" id="panelImage" class="ImagePanel">
@@ -15,10 +18,9 @@
       <% if (Convert.ToBoolean(ViewData["CanEdit"]))
          { %>
       <div class="ImageButtons">
-         <%= Html.ActionLink("Original", "Original", "Image", new { id = "DownloadOriginal" ), new { id = "DownloadOriginal" )%>
-         <asp:HyperLink runat="server" ID="DownloadOriginal">Original</asp:HyperLink>
-         <%= Html.ActionLink("Create Tileset", "CreateTileset")%>
-         <%--<%= Html.ActionLink("View Tileset", "ViewTileset")%>--%>
+         <a href="<%= ViewData["OriginalUrl"] %>">Original</a>
+<%--         <%= Html.ActionLink("Create Tileset", "CreateTileset")%>
+--%>         <%--<%= Html.ActionLink("View Tileset", "ViewTileset")%>--%>
       </div>
       <% } %>
    </div>

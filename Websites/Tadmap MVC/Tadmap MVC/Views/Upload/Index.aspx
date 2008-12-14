@@ -1,24 +1,29 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Main.master" AutoEventWireup="true" CodeFile="Upload.aspx.cs"
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Main.master" AutoEventWireup="true" CodeFile="Index.aspx.cs"
    Inherits="Tadmap_MVC.Views.Upload.Index" Title="Tadmap - Upload Image" Theme="Tad" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+   <% using (Html.BeginForm("Index", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+      { %>
    <div class="ItemDetailListEdit">
       <div class="ItemDetailEdit">
-         <asp:Label ID="Label2" runat="server" CssClass="ItemDetailControlLabel">Title</asp:Label>
-         <asp:TextBox ID="m_txtTitle" runat="server" CssClass="ItemDetailControl"></asp:TextBox>
+         <span class="ItemDetailControlLabel">Title</span>
+         <%= Html.TextBox("title", null, new { Class = "ItemDetailControl" })%>
       </div>
       <div class="ItemDetailEdit">
-         <asp:Label ID="Label1" runat="server" CssClass="ItemDetailControlLabel">Description</asp:Label>
-         <asp:TextBox ID="m_txtDescription" runat="server" CssClass="ItemDetailControl" MaxLength="1024"
-            TextMode="MultiLine"></asp:TextBox>
+         <span class="ItemDetailControlLabel">Description</span>
+         <%= Html.TextBox("description", null, new { Class = "ItemDetailControl", MaxLength = "1024" })%>
+         <%--<asp:TextBox ID="m_txtDescription" runat="server" CssClass="ItemDetailControl" MaxLength="1024"
+            TextMode="MultiLine"></asp:TextBox>--%>
       </div>
       <div class="ItemDetailEdit">
-         <asp:Label ID="Label3" runat="server" CssClass="ItemDetailControlLabel">File</asp:Label>
-         <input id="FileInput" runat="server" type="file" class="ItemDetailControl" />
+         <span class="ItemDetailControlLabel">File</span>
+         <input id="file" name="file" type="file" class="ItemDetailControl" />
       </div>
    </div>
    <div style="margin-left: auto; margin-right: auto; clear: both; text-align: center;
       padding: 12px;">
-      <asp:LinkButton CssClass="Button" Style="width: 80px;" ID="m_btnAdd" runat="server" Text="Upload" OnClick="m_btnAdd_Click" />
+      <%= Html.ActionLink("Upload", "Upload", null, new { Class = "Button", style = "width: 80px;" })%>
+      <input type="submit" value="Sign In" class="LoginInButton" />
    </div>
+   <% } %>
 </asp:Content>

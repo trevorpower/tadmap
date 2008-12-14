@@ -88,7 +88,7 @@ namespace Tadmap_MVC.Controllers
 
          //   m_imgPicture.ImageUrl = TadImage.GetPreviewUrl(image);
 
-         //   DownloadOriginal.NavigateUrl = TadImage.GetOriginalUrl(image);
+            ViewData["OriginalUrl"] = TadImage.GetOriginalUrl(image);
 
          //   // tilesets are not implemented for version the beta version one so we hide this button for now
          //   m_lbViewTileSet.Visible = false;

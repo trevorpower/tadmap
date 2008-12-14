@@ -8,11 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tadmap_MVC.Views.UserImages
-{
-
-
-   public partial class Index
-   {
-   }
+namespace Tadmap_MVC.Views.UserImages {
+    
+    
+    public partial class Index {
+    }
 }
