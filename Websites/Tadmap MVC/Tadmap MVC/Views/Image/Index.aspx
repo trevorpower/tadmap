@@ -10,7 +10,11 @@
    </asp:ScriptManager>--%>
    <script type="text/javascript" language="javascript" src="/Scripts/jquery-1.2.6.min.js"></script>
    <script type="text/javascript" language="javascript" src="/Scripts/jquery.jeditable.mini.js"></script>
+   <script>
+      var imageId = '<%= ViewData["Id"] %>';
+   </script>
    <script type="text/javascript" language="javascript" src="/Scripts/ViewMap.js"></script>
+   
    <span class="EditTitle ItemTitle">
       <%= ViewData["Title"] %></span>
    <div runat="server" id="panelImage" class="ImagePanel">

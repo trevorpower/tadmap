@@ -15,6 +15,9 @@ namespace Tadmap_MVC.Controllers
    {
       public ActionResult Index(Guid id)
       {
+         if (id == Guid.Empty)
+            throw new ArgumentException("Cannot be empty(zeros)", "id");
+
          TadmapDb db = new TadmapDb(Database.TadMapConnection);
 
          UserImage image = db.UserImages.Single(i => i.Id == id);
@@ -49,6 +52,7 @@ namespace Tadmap_MVC.Controllers
             throw new SecurityException("User must be authenticated to view a private image");
          }
 
+         ViewData["Id"] = image.Id;
          ViewData["Title"] = image.Title;
          ViewData["Description"] = image.Description;
          ViewData["IsPublic"] = image.Privacy > 0;
@@ -130,79 +134,80 @@ namespace Tadmap_MVC.Controllers
          //}      
       }
 
-      public Action MakePublic()
+      public ActionResult MakePublic(Guid id)
       {
-         //Tadmap tadmap = new Tadmap(Database.TadMapConnection);
+         if (id == Guid.Empty)
+            throw new ArgumentException("Cannot be empty(zeros)", "id");
 
-         //var images = from i in tadmap.UserImages
-         //             join u in tadmap.UserOpenIds on i.UserId equals u.UserId
-         //             where i.Id == new Guid(id) && u.OpenIdUrl == HttpContext.Current.User.Identity.Name
-         //             select i;
+         TadmapDb tadmap = new TadmapDb(Database.TadMapConnection);
 
-         //if (images.Count() == 1)
-         //{
-         //   UserImage image = images.First();
+         var images = from i in tadmap.UserImages
+                      join u in tadmap.UserOpenIds on i.UserId equals u.UserId
+                      where i.Id == id && u.OpenIdUrl == HttpContext.User.Identity.Name
+                      select i;
 
-         //   image.Privacy = 1;
+         if (images.Count() == 1)
+         {
+            UserImage image = images.First();
 
-         //   tadmap.SubmitChanges();
+            image.Privacy = 1;
 
-         //   return image.Privacy;
-         //}
-         //else
-         //{
-         //   throw new Exception("Could not marke as public");
-         //}
+            tadmap.SubmitChanges();
+
+            return Json(image.Privacy);
+         }
+         else
+         {
+            throw new Exception("Could not mark as public");
+         }
          throw new NotImplementedException();
       }
 
-      public ActionResult MakePrivate()
+      public ActionResult MakePrivate(Guid id)
       {
-         throw new NotImplementedException();
-         //Tadmap tadmap = new Tadmap(Database.TadMapConnection);
+         TadmapDb tadmap = new TadmapDb(Database.TadMapConnection);
 
-         //var images = from i in tadmap.UserImages
-         //             join u in tadmap.UserOpenIds on i.UserId equals u.UserId
-         //             where i.Id == new Guid(id) && u.OpenIdUrl == HttpContext.Current.User.Identity.Name
-         //             select i;
+         var images = from i in tadmap.UserImages
+                      join u in tadmap.UserOpenIds on i.UserId equals u.UserId
+                      where i.Id == id && u.OpenIdUrl == HttpContext.User.Identity.Name
+                      select i;
 
-         //if (images.Count() == 1)
-         //{
-         //   UserImage image = images.First();
+         if (images.Count() == 1)
+         {
+            UserImage image = images.First();
 
-         //   image.Privacy = 0;
+            image.Privacy = 0;
 
-         //   tadmap.SubmitChanges();
+            tadmap.SubmitChanges();
 
-         //   return image.Privacy;
-         //}
-         //else
-         //{
-         //   throw new Exception("Could not marke as public");
-         //}
+            return Json(image.Privacy);
+         }
+         else
+         {
+            throw new Exception("Could not mark as public");
+         }
       }
 
-
-      public ActionResult UpdateTitle(string id, string title)
+      public ActionResult UpdateTitle(Guid id, string title)
       {
-         if (id == null)
-            throw new ArgumentNullException("id");
+         if (id == Guid.Empty)
+            throw new ArgumentException("Cannot be empty(zeros)", "id");
 
          if (title == null)
             throw new ArgumentNullException("title");
 
-         return Json(TadImage.UpdateTitle(new Guid(id), title, HttpContext.User) > 0);
+         return Json(TadImage.UpdateTitle(id, title, HttpContext.User) > 0);
       }
 
-      public ActionResult UpdateDescription(string id, string description)
+      public ActionResult UpdateDescription(Guid id, string description)
       {
-         if (id == null)
+         if (id == Guid.Empty)
             throw new ArgumentNullException("id");
 
          if (description == null)
             throw new ArgumentNullException("description");
 
-         return Json(TadImage.UpdateDescription(new Guid(id), description, HttpContext.User) > 0);
+         return Json(TadImage.UpdateDescription(id, description, HttpContext.User) > 0);
       }
 
       public ActionResult Mark(string id)

@@ -17,7 +17,7 @@ namespace Tadmap_MVC.Controllers
 
       public ActionResult About()
       {
-         return View();
+         throw new NotImplementedException("'About' not implemented.");
       }
    }
 }

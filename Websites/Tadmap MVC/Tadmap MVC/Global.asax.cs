@@ -17,8 +17,14 @@ namespace Tadmap_MVC
          routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
          routes.MapRoute(
-             "mage",                                           // Route name
-             "Image/{id}",                                           // URL with parameters
+             "imageaction",                                                      // Route name
+             "ImageAction/{action}/{id}",                                // URL with parameters
+             new { controller = "Image", action = "Index", id = "" } // Parameter defaults
+         );
+
+         routes.MapRoute(
+             "image",                                                // Route name
+             "Image/{id}/{action}",                                  // URL with parameters
              new { controller = "Image", action = "Index", id = "" } // Parameter defaults
          );
 
