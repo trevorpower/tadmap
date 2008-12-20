@@ -109,7 +109,7 @@ namespace Tadmap_MVC.Controllers
 
          //   m_imgPicture.ImageUrl = TadImage.GetPreviewUrl(image);
 
-            ViewData["OriginalUrl"] = TadImage.GetOriginalUrl(image);
+         ViewData["OriginalUrl"] = TadImage.GetOriginalUrl(image);
 
          //   // tilesets are not implemented for version the beta version one so we hide this button for now
          //   m_lbViewTileSet.Visible = false;
@@ -256,20 +256,30 @@ namespace Tadmap_MVC.Controllers
          }
       }
 
-      public ActionResult UnMark(string id)
+      public ActionResult UnMark(Guid id)
       {
-         if (!HttpContext.User.IsInRole(TadMapRoles.Administrator))
+         if (id == Guid.Empty)
+            throw new ArgumentException("Cannot be empty(zeros)", "id");
+
+         if (!_principal.IsInRole(TadMapRoles.Administrator))
             throw new SecurityException("Only administrators can mark images as un-offensive.");
 
-         TadmapDb tadmap = new TadmapDb(Database.TadMapConnection);
+         try
+         {
+            TadmapDb db = new TadmapDb();
 
-         UserImage image = tadmap.UserImages.Single(i => i.Id == new Guid(id));
+            UserImage image = db.UserImages.Single(i => i.Id == id);
 
-         image.OffensiveCount = 0;
+            image.OffensiveCount = 0;
 
-         tadmap.SubmitChanges();
+            db.SubmitChanges();
 
-         return Json(true);
+            return Json(true);
+         }
+         catch (InvalidOperationException e)
+         {
+            throw new ImageNotFound();
+         }
       }
    }
 }
