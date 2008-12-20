@@ -12,7 +12,7 @@ using Tadmap_MVC.Models.Images;
 namespace TadmapTests.Controllers.Image
 {
    [TestFixture]
-   public class MakePublic
+   public class MakePrivate
    {
       [Test]
       public void WithEmptyGuid()
@@ -32,7 +32,7 @@ namespace TadmapTests.Controllers.Image
 
          try
          {
-            ActionResult result = imageController.MakePublic(id);
+            ActionResult result = imageController.MakePrivate(id);
             Assert.Fail("Execption expected.");
          }
          catch (Exception e)

@@ -37,106 +37,52 @@ namespace Tadmap_MVC.Controllers
 
          TadmapDb db = new TadmapDb();
 
-         UserImage image = db.UserImages.Single(i => i.Id == id);
-
-         if (image.OffensiveCount > 0)
+         try
          {
-            if (!HttpContext.User.IsInRole(TadMapRoles.Administrator))
-               throw new SecurityException("Only administrator can view images marked as offensive");
-         }
+            UserImage image = db.UserImages.Single(i => i.Id == id);
 
-         ViewData["CanEdit"] = false;
-
-         if (HttpContext.User.Identity.IsAuthenticated)
-         {
-            UserOpenId openId = db.UserOpenIds.Single(i => i.OpenIdUrl == HttpContext.User.Identity.Name);
-
-            if (image.UserId == openId.UserId)
+            if (image.OffensiveCount > 0)
             {
-               // Owning user
-               ViewData["CanEdit"] = true;
+               if (!HttpContext.User.IsInRole(TadMapRoles.Administrator))
+                  throw new SecurityException("Only administrator can view images marked as offensive");
             }
-            else
+
+            ViewData["CanEdit"] = false;
+
+            if (HttpContext.User.Identity.IsAuthenticated)
             {
-               // Other registered user
-               if (image.Privacy == 0)
-                  if (!HttpContext.User.IsInRole(TadMapRoles.Administrator))
-                     throw new SecurityException("Only owner or administrator can view private image");
+               UserOpenId openId = db.UserOpenIds.Single(i => i.OpenIdUrl == HttpContext.User.Identity.Name);
+
+               if (image.UserId == openId.UserId)
+               {
+                  // Owning user
+                  ViewData["CanEdit"] = true;
+               }
+               else
+               {
+                  // Other registered user
+                  if (image.Privacy == 0)
+                     if (!HttpContext.User.IsInRole(TadMapRoles.Administrator))
+                        throw new SecurityException("Only owner or administrator can view private image");
+               }
             }
+            else if (image.Privacy == 0)
+            {
+               throw new SecurityException("User must be authenticated to view a private image");
+            }
+
+            ViewData["Id"] = image.Id;
+            ViewData["Title"] = image.Title;
+            ViewData["Description"] = image.Description;
+            ViewData["IsPublic"] = image.Privacy > 0;
+
+            ViewData["OriginalUrl"] = TadImage.GetOriginalUrl(image);
          }
-         else if (image.Privacy == 0)
+         catch (InvalidOperationException e)
          {
-            throw new SecurityException("User must be authenticated to view a private image");
+            throw new ImageNotFound();
          }
 
-         ViewData["Id"] = image.Id;
-         ViewData["Title"] = image.Title;
-         ViewData["Description"] = image.Description;
-         ViewData["IsPublic"] = image.Privacy > 0;
-
-         //if (image != null)
-         //{
-         //   ScriptManager.RegisterClientScriptBlock(Page, GetType(), "MapId", "var imageId = '" + image.Id + "';", true);
-         //   OwnerControls.Visible = false;
-
-         //   if (HttpContext.Current.User.Identity.IsAuthenticated)
-         //   {
-         //      UserOpenId openId = tadmap.UserOpenIds.Single(i => i.OpenIdUrl == HttpContext.Current.User.Identity.Name);
-
-         //      if (image.Privacy == 0 && image.UserId != openId.UserId)
-         //      {
-         //         if (!HttpContext.Current.User.IsInRole(TadMapRoles.Administrator))
-         //            throw new SecurityException("Cannot view another users image if it is marked as private.");
-         //      }
-
-         //      if (image.UserId == openId.UserId)
-         //      {
-         //         OwnerControls.Visible = true;
-         //         ScriptManager.RegisterClientScriptInclude(Page, GetType(), "EditDetails", Page.ResolveClientUrl("JavaScript/ViewMap.js"));
-         //         privacyCheckBox.Checked = image.Privacy > 0;
-         //         PrivacyStatus.Text = image.Privacy == 0 ? "<b>Only you</b> can view this image." : "<b>Anyone</b> can view this image.";
-         //      }
-         //   }
-         //   else
-         //   {
-         //      if (image.Privacy == 0)
-         //         throw new Exception("Guest cannot view private image");
-         //   }
-
-         //   Title = "Tadmap - " + image.Title;
-         //   m_lblTitle.Text = image.Title;
-         //   m_lblDescription.Text = image.Description;
-
-         //   m_imgPicture.ImageUrl = TadImage.GetPreviewUrl(image);
-
-         ViewData["OriginalUrl"] = TadImage.GetOriginalUrl(image);
-
-         //   // tilesets are not implemented for version the beta version one so we hide this button for now
-         //   m_lbViewTileSet.Visible = false;
-         //   m_lbCreateTileSet.Visible = false;
-         //   //if (mImage.HasTileSet)
-         //   //{
-         //   //   m_lbViewTileSet.Visible = true;
-         //   //   m_lbViewTileSet.PostBackUrl = "Dev.aspx?MapId=" + mImage.Id;
-         //   //}
-         //   //else
-         //   //{
-         //   //   m_lbViewTileSet.Visible = false;
-         //   //}
-
-         //   if (HttpContext.Current.User.IsInRole(TadMapRoles.Administrator))
-         //   {
-         //      Offensive.Visible = true;
-         //      UnOffensive.Visible = true;
-         //      Offensive.OnClientClick = "UpdateImage.Mark(imageId); return false;";
-         //      UnOffensive.OnClientClick = "UpdateImage.UnMark(imageId); return false;";
-         //   }
-         //   else
-         //   {
-         //      Offensive.Visible = false;
-         //      UnOffensive.Visible = false;
-         //   }
-         //}
          return View();
       }
 
@@ -156,52 +102,44 @@ namespace Tadmap_MVC.Controllers
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
 
-         TadmapDb tadmap = new TadmapDb(Database.TadMapConnection);
+         TadmapDb db = new TadmapDb();
 
-         var images = from i in tadmap.UserImages
-                      join u in tadmap.UserOpenIds on i.UserId equals u.UserId
-                      where i.Id == id && u.OpenIdUrl == HttpContext.User.Identity.Name
-                      select i;
-
-         if (images.Count() == 1)
+         try
          {
-            UserImage image = images.First();
+            UserImage image = db.UserImages.Single(i => i.Id == id);
 
             image.Privacy = 1;
 
-            tadmap.SubmitChanges();
+            db.SubmitChanges();
 
             return Json(image.Privacy);
          }
-         else
+         catch (InvalidOperationException e)
          {
-            throw new Exception("Could not mark as public");
+            throw new ImageNotFound();
          }
-         throw new NotImplementedException();
       }
 
       public ActionResult MakePrivate(Guid id)
       {
-         TadmapDb tadmap = new TadmapDb(Database.TadMapConnection);
+         if (id == Guid.Empty)
+            throw new ArgumentException("Cannot be empty(zeros)", "id");
 
-         var images = from i in tadmap.UserImages
-                      join u in tadmap.UserOpenIds on i.UserId equals u.UserId
-                      where i.Id == id && u.OpenIdUrl == HttpContext.User.Identity.Name
-                      select i;
+         TadmapDb db = new TadmapDb();
 
-         if (images.Count() == 1)
+         try
          {
-            UserImage image = images.First();
+            UserImage image = db.UserImages.Single(i => i.Id == id);
 
             image.Privacy = 0;
 
-            tadmap.SubmitChanges();
+            db.SubmitChanges();
 
             return Json(image.Privacy);
          }
-         else
+         catch (InvalidOperationException e)
          {
-            throw new Exception("Could not mark as public");
+            throw new ImageNotFound();
          }
       }
 
@@ -276,7 +214,7 @@ namespace Tadmap_MVC.Controllers
 
             return Json(true);
          }
-         catch (InvalidOperationException e)
+         catch (InvalidOperationException)
          {
             throw new ImageNotFound();
          }
