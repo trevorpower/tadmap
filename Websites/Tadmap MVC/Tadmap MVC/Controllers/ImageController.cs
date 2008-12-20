@@ -8,17 +8,34 @@ using TadMap.Security;
 using TadMap.Configuration;
 using System.Security;
 using TadMap;
+using System.Security.Principal;
+using Tadmap_MVC.Models.Images;
 
 namespace Tadmap_MVC.Controllers
 {
    public class ImageController : Controller
    {
+      IPrincipal _principal;
+
+      public ImageController()
+      {
+         _principal = HttpContext.User;
+      }
+
+      public ImageController(IPrincipal principal)
+      {
+         if (principal == null)
+            throw new ArgumentNullException("principal");
+
+         _principal = principal;
+      }
+
       public ActionResult Index(Guid id)
       {
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
 
-         TadmapDb db = new TadmapDb(Database.TadMapConnection);
+         TadmapDb db = new TadmapDb();
 
          UserImage image = db.UserImages.Single(i => i.Id == id);
 
@@ -210,20 +227,33 @@ namespace Tadmap_MVC.Controllers
          return Json(TadImage.UpdateDescription(id, description, HttpContext.User) > 0);
       }
 
-      public ActionResult Mark(string id)
+      public ActionResult Mark(Guid id)
       {
-         if (!HttpContext.User.IsInRole(TadMapRoles.Administrator))
+         if (id == Guid.Empty)
+            throw new ArgumentException("Cannot be empty(zeros)", "id");
+
+         if (!_principal.IsInRole(TadMapRoles.Administrator))
             throw new SecurityException("Only administrators can mark images as offensive.");
 
-         TadmapDb tadmap = new TadmapDb(Database.TadMapConnection);
+         try
+         {
+            TadmapDb db = new TadmapDb();
 
-         UserImage image = tadmap.UserImages.Single(i => i.Id == new Guid(id));
+            UserImage image = db.UserImages.Single(i => i.Id == id);
 
-         image.OffensiveCount = 1;
+            if (image == null)
+               throw new ImageNotFound();
 
-         tadmap.SubmitChanges();
+            image.OffensiveCount = 1;
 
-         return Json(true);
+            db.SubmitChanges();
+
+            return Json(true);
+         }
+         catch (InvalidOperationException e)
+         {
+            throw new ImageNotFound();
+         }
       }
 
       public ActionResult UnMark(string id)

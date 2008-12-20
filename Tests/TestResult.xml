@@ -1,18 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\Trevor\Development\tadmap\branches\mvc\Tests\Tadmap.nunit" total="2" failures="0" not-run="0" date="2008-12-16" time="21:18:01">
+<test-results name="C:\Users\Trevor\Development\tadmap\branches\mvc\Tests\Tadmap.nunit" total="16" failures="0" not-run="0" date="2008-12-20" time="11:04:10">
   <environment nunit-version="2.4.8.0" clr-version="2.0.50727.3053" os-version="Microsoft Windows NT 6.0.6001 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.4.8\bin" machine-name="TREVOR-PC" user="Trevor" user-domain="Trevor-PC" />
   <culture-info current-culture="en-IE" current-uiculture="en-US" />
-  <test-suite name="C:\Users\Trevor\Development\tadmap\branches\mvc\Tests\Tadmap.nunit" success="True" time="0.125" asserts="0">
+  <test-suite name="C:\Users\Trevor\Development\tadmap\branches\mvc\Tests\Tadmap.nunit" success="True" time="2.614" asserts="0">
     <results>
-      <test-suite name="C:\Users\Trevor\Development\tadmap\branches\mvc\Tests\TadmapTests\TadmapTests\bin\Release\TadmapTests.dll" success="True" time="0.109" asserts="0">
+      <test-suite name="C:\Users\Trevor\Development\tadmap\branches\mvc\Tests\TadmapTests\TadmapTests\bin\Release\TadmapTests.dll" success="True" time="2.601" asserts="0">
         <results>
-          <test-suite name="TadmapTests" success="True" time="0.109" asserts="0">
+          <test-suite name="TadmapTests" success="True" time="2.597" asserts="0">
             <results>
-              <test-suite name="HomeController" success="True" time="0.094" asserts="0">
+              <test-suite name="Controllers" success="True" time="2.595" asserts="0">
                 <results>
-                  <test-case name="TadmapTests.HomeController.SimpleAboutAction" executed="True" success="True" time="0.047" asserts="0" />
-                  <test-case name="TadmapTests.HomeController.SimpleIndexAction" executed="True" success="True" time="0.031" asserts="4" />
+                  <test-suite name="Home" success="True" time="0.103" asserts="0">
+                    <results>
+                      <test-suite name="IndexAction" success="True" time="0.083" asserts="0">
+                        <results>
+                          <test-case name="TadmapTests.Controllers.Home.IndexAction.Simple" executed="True" success="True" time="0.064" asserts="4" />
+                          <test-case name="TadmapTests.Controllers.Home.IndexAction.SimpleAboutAction" executed="True" success="True" time="0.005" asserts="0" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                  <test-suite name="Image" success="True" time="2.485" asserts="0">
+                    <results>
+                      <test-suite name="IndexAction" success="True" time="0.012" asserts="0">
+                        <results>
+                          <test-case name="TadmapTests.Controllers.Image.IndexAction.WithEmptyGuid" executed="True" success="True" time="0.012" asserts="0" />
+                        </results>
+                      </test-suite>
+                      <test-suite name="MakePublic" success="True" time="0.006" asserts="0">
+                        <results>
+                          <test-case name="TadmapTests.Controllers.Image.MakePublic.WithEmptyGuid" executed="True" success="True" time="0.005" asserts="0" />
+                        </results>
+                      </test-suite>
+                      <test-suite name="Mark" success="True" time="2.442" asserts="0">
+                        <results>
+                          <test-case name="TadmapTests.Controllers.Image.Mark.Collector" executed="True" success="True" time="0.003" asserts="1" />
+                          <test-case name="TadmapTests.Controllers.Image.Mark.Guest" executed="True" success="True" time="0.000" asserts="1" />
+                          <test-case name="TadmapTests.Controllers.Image.Mark.NonAdministrator" executed="True" success="True" time="0.001" asserts="1" />
+                          <test-case name="TadmapTests.Controllers.Image.Mark.NonExistingImage" executed="True" success="True" time="2.432" asserts="1" />
+                          <test-case name="TadmapTests.Controllers.Image.Mark.WithEmptyGuid" executed="True" success="True" time="0.001" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite name="UpdateDescription" success="True" time="0.006" asserts="0">
+                        <results>
+                          <test-case name="TadmapTests.Controllers.Image.UpdateDescription.WithEmptyGuidAndEmptyString" executed="True" success="True" time="0.001" asserts="0" />
+                          <test-case name="TadmapTests.Controllers.Image.UpdateDescription.WithEmptyGuidAndNullString" executed="True" success="True" time="0.001" asserts="0" />
+                          <test-case name="TadmapTests.Controllers.Image.UpdateDescription.WithEmptyGuidAndSimpleString" executed="True" success="True" time="0.001" asserts="0" />
+                        </results>
+                      </test-suite>
+                      <test-suite name="UpdateTitle" success="True" time="0.009" asserts="0">
+                        <results>
+                          <test-case name="TadmapTests.Controllers.Image.UpdateTitle.WithEmptyGuidAndComplexString" executed="True" success="True" time="0.002" asserts="0" />
+                          <test-case name="TadmapTests.Controllers.Image.UpdateTitle.WithEmptyGuidAndEmptyString" executed="True" success="True" time="0.000" asserts="0" />
+                          <test-case name="TadmapTests.Controllers.Image.UpdateTitle.WithEmptyGuidAndNullString" executed="True" success="True" time="0.001" asserts="0" />
+                          <test-case name="TadmapTests.Controllers.Image.UpdateTitle.WithEmptyGuidAndSimpleString" executed="True" success="True" time="0.000" asserts="0" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
                 </results>
               </test-suite>
             </results>

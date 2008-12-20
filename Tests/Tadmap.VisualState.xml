@@ -1,19 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
   <TopNode>[0-1000]C:\Users\Trevor\Development\tadmap\branches\mvc\Tests\Tadmap.nunit</TopNode>
-  <SelectedNode>[0-1005]TadmapTests</SelectedNode>
+  <SelectedNode>[0-1013]TadmapTests.Controllers.Image.IndexAction.WithEmptyGuid</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
     <Node UniqueName="[0-1000]C:\Users\Trevor\Development\tadmap\branches\mvc\Tests\Tadmap.nunit" Expanded="true">
       <Nodes>
-        <Node UniqueName="[0-1004]C:\Users\Trevor\Development\tadmap\branches\mvc\Tests\TadmapTests\TadmapTests\bin\Release\TadmapTests.dll" Expanded="true">
+        <Node UniqueName="[0-1023]C:\Users\Trevor\Development\tadmap\branches\mvc\Tests\TadmapTests\TadmapTests\bin\Release\TadmapTests.dll" Expanded="true">
           <Nodes>
-            <Node UniqueName="[0-1005]TadmapTests" Expanded="true">
+            <Node UniqueName="[0-1024]TadmapTests" Expanded="true">
               <Nodes>
-                <Node UniqueName="[0-1001]TadmapTests.HomeController" Expanded="true">
+                <Node UniqueName="[0-1025]TadmapTests.Controllers" Expanded="true">
                   <Nodes>
-                    <Node UniqueName="[0-1003]TadmapTests.HomeController.SimpleAboutAction" />
-                    <Node UniqueName="[0-1002]TadmapTests.HomeController.SimpleIndexAction" />
+                    <Node UniqueName="[0-1027]TadmapTests.Controllers.Home" Expanded="true">
+                      <Nodes>
+                        <Node UniqueName="[0-1020]TadmapTests.Controllers.Home.IndexAction" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1021]TadmapTests.Controllers.Home.IndexAction.Simple" />
+                            <Node UniqueName="[0-1022]TadmapTests.Controllers.Home.IndexAction.SimpleAboutAction" />
+                          </Nodes>
+                        </Node>
+                      </Nodes>
+                    </Node>
+                    <Node UniqueName="[0-1026]TadmapTests.Controllers.Image" Expanded="true">
+                      <Nodes>
+                        <Node UniqueName="[0-1012]TadmapTests.Controllers.Image.IndexAction" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1013]TadmapTests.Controllers.Image.IndexAction.WithEmptyGuid" />
+                          </Nodes>
+                        </Node>
+                        <Node UniqueName="[0-1014]TadmapTests.Controllers.Image.MakePublic" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1015]TadmapTests.Controllers.Image.MakePublic.WithEmptyGuid" />
+                          </Nodes>
+                        </Node>
+                        <Node UniqueName="[0-1001]TadmapTests.Controllers.Image.Mark" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1004]TadmapTests.Controllers.Image.Mark.Collector" />
+                            <Node UniqueName="[0-1005]TadmapTests.Controllers.Image.Mark.Guest" />
+                            <Node UniqueName="[0-1003]TadmapTests.Controllers.Image.Mark.NonAdministrator" />
+                            <Node UniqueName="[0-1006]TadmapTests.Controllers.Image.Mark.NonExistingImage" />
+                            <Node UniqueName="[0-1002]TadmapTests.Controllers.Image.Mark.WithEmptyGuid" />
+                          </Nodes>
+                        </Node>
+                        <Node UniqueName="[0-1016]TadmapTests.Controllers.Image.UpdateDescription" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1018]TadmapTests.Controllers.Image.UpdateDescription.WithEmptyGuidAndEmptyString" />
+                            <Node UniqueName="[0-1017]TadmapTests.Controllers.Image.UpdateDescription.WithEmptyGuidAndNullString" />
+                            <Node UniqueName="[0-1019]TadmapTests.Controllers.Image.UpdateDescription.WithEmptyGuidAndSimpleString" />
+                          </Nodes>
+                        </Node>
+                        <Node UniqueName="[0-1007]TadmapTests.Controllers.Image.UpdateTitle" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1011]TadmapTests.Controllers.Image.UpdateTitle.WithEmptyGuidAndComplexString" />
+                            <Node UniqueName="[0-1009]TadmapTests.Controllers.Image.UpdateTitle.WithEmptyGuidAndEmptyString" />
+                            <Node UniqueName="[0-1008]TadmapTests.Controllers.Image.UpdateTitle.WithEmptyGuidAndNullString" />
+                            <Node UniqueName="[0-1010]TadmapTests.Controllers.Image.UpdateTitle.WithEmptyGuidAndSimpleString" />
+                          </Nodes>
+                        </Node>
+                      </Nodes>
+                    </Node>
                   </Nodes>
                 </Node>
               </Nodes>
