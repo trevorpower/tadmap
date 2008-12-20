@@ -25,6 +25,9 @@ namespace TadmapTests.Controllers.Home
          Assert.AreEqual("", viewResult.ViewName);
          Assert.IsEmpty(home.ViewData);
          Assert.IsEmpty(home.ModelState);
+
+         Assert.IsNotNull(home.ViewData.Model);
+         Assert.IsInstanceOfType(typeof(List<UserImage>), home.ViewData.Model);
       }
 
       [Test]

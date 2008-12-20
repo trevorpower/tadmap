@@ -12,6 +12,14 @@ namespace Tadmap_MVC.Controllers
    {
       public ActionResult Index()
       {
+         TadmapDb db = new TadmapDb();
+
+         var images = from i in db.UserImages
+                      where i.OffensiveCount == 0 && i.Privacy > 0
+                      select i;
+
+         ViewData.Model = images.ToList();
+
          return View();
       }
 

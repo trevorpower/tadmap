@@ -28,7 +28,7 @@ namespace TadmapTests.Controllers.Image
 
       private static void AssertThrowsException(Guid id, Type type, IPrincipal principal)
       {
-         ImageController imageController = new ImageController(principal);
+         ImageController imageController = new ImageController();
 
          try
          {

@@ -20,7 +20,7 @@ function MadePrivate() {
 $(document).ready(function() {
    $(".EditTitle").editable(
       function(value, settings) {
-         $.getJSON("/ImageAction/UpdateTitle/" + imageId + "/?title=" + value, function(json) {
+         $.getJSON("/Image/" + imageId + "/UpdateTitle/?title=" + value, function(json) {
          });
          return value;
       },
@@ -33,7 +33,7 @@ $(document).ready(function() {
       }
    );
    $(".EditDescription").editable(function(value, settings) {
-      $.getJSON("/ImageAction/UpdateDescription/" + imageId + "/?description=" + value, function(json) {
+   $.getJSON("/Image/" + imageId + "/UpdateDescription/?scription=" + value, function(json) {
       }); return value;
    }, {
       cssclass: "MapDescriptionEdit",
@@ -45,13 +45,13 @@ $(document).ready(function() {
    });
    $("#PublicCheckBox").checkBoxClick(
       function() {
-         $.getJSON("/ImageAction/MakePublic/" + imageId, function(json) {
+         $.getJSON("/Image/" + imageId + "/MakePublic", function(json) {
             MadePublic();
          })
       },
       function() {
-         $.getJSON("/ImageAction/MakePrivate/" + imageId, function(json) {
-             MadePrivate();
+         $.getJSON("/Image/" + imageId + "/MakePrivate", function(json) {
+            MadePrivate();
          })
       }
    );

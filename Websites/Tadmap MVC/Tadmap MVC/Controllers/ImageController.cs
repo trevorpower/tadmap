@@ -15,22 +15,12 @@ namespace Tadmap_MVC.Controllers
 {
    public class ImageController : Controller
    {
-      IPrincipal _principal;
-
       public ImageController()
       {
-         _principal = HttpContext.User;
+         ActionInvoker = new ActionInvokers.ActionInvoker();
       }
 
-      public ImageController(IPrincipal principal)
-      {
-         if (principal == null)
-            throw new ArgumentNullException("principal");
-
-         _principal = principal;
-      }
-
-      public ActionResult Index(Guid id)
+      public ActionResult Index(Guid id, IPrincipal principal)
       {
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
@@ -165,12 +155,12 @@ namespace Tadmap_MVC.Controllers
          return Json(TadImage.UpdateDescription(id, description, HttpContext.User) > 0);
       }
 
-      public ActionResult Mark(Guid id)
+      public ActionResult Mark(Guid id, IPrincipal principal)
       {
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
 
-         if (!_principal.IsInRole(TadMapRoles.Administrator))
+         if (!principal.IsInRole(TadMapRoles.Administrator))
             throw new SecurityException("Only administrators can mark images as offensive.");
 
          try
@@ -194,12 +184,12 @@ namespace Tadmap_MVC.Controllers
          }
       }
 
-      public ActionResult UnMark(Guid id)
+      public ActionResult UnMark(Guid id, IPrincipal principal)
       {
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
 
-         if (!_principal.IsInRole(TadMapRoles.Administrator))
+         if (!principal.IsInRole(TadMapRoles.Administrator))
             throw new SecurityException("Only administrators can mark images as un-offensive.");
 
          try
@@ -209,7 +199,7 @@ namespace Tadmap_MVC.Controllers
             UserImage image = db.UserImages.Single(i => i.Id == id);
 
             image.OffensiveCount = 0;
-
+            
             db.SubmitChanges();
 
             return Json(true);

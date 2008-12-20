@@ -33,7 +33,7 @@ namespace TadmapTests.Controllers.Image
 
       private static void AssertArgumentException(Guid id, string description, IPrincipal principal)
       {
-         ImageController imageController = new ImageController(principal);
+         ImageController imageController = new ImageController();
 
          try
          {

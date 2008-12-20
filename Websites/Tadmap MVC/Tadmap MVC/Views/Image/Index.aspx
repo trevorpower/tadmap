@@ -34,8 +34,8 @@
    </div>
    <% if (HttpContext.Current.User.IsInRole(TadMap.Security.TadMapRoles.Administrator))
       { %>
-   <%= Html.ActionLink("Mark", "Mark") %>
-   <%= Html.ActionLink("Un-Mark", "UnMark") %>
+   <%= Html.ActionLink("Mark", "Mark", new { id = ViewData["Id"] })%>
+   <%= Html.ActionLink("Un-Mark", "UnMark", new { id = ViewData["Id"] })%>
    <%} %>
    <% if (Convert.ToBoolean(ViewData["CanEdit"]))
       { %>

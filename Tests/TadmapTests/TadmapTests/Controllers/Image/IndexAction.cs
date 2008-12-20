@@ -29,11 +29,11 @@ namespace TadmapTests.Controllers.Image
 
       private static void AssertThrowsException(Guid id, Type type, IPrincipal principal)
       {
-         ImageController home = new ImageController(Principals.Guest);
+         ImageController home = new ImageController();
 
          try
          {
-            ActionResult result = home.Index(id);
+            ActionResult result = home.Index(id, principal);
             Assert.Fail("Execption expected.");
          }
          catch (Exception e)

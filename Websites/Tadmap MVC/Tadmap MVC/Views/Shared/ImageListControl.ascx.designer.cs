@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TadMap_MVC.Views.Home {
+namespace Tadmap_MVC.Views.Shared {
     
     
-    public partial class Index {
+    public partial class ImageListControl {
     }
 }
