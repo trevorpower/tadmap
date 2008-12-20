@@ -5,6 +5,7 @@ using System.Text;
 using NUnit.Framework;
 using Tadmap_MVC.Controllers;
 using System.Web.Mvc;
+using TadmapTests.Mocks.Security;
 
 namespace TadmapTests.Controllers.Image
 {
@@ -14,7 +15,7 @@ namespace TadmapTests.Controllers.Image
       [Test]
       public void WithEmptyGuid()
       {
-         ImageController imageController = new ImageController();
+         ImageController imageController = new ImageController(Principals.Guest);
 
          try
          {

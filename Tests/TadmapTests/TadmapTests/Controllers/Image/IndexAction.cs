@@ -8,6 +8,7 @@ namespace TadmapTests.Controllers.Image
    using NUnit.Framework;
    using System.Web.Mvc;
    using Tadmap_MVC.Controllers;
+   using TadmapTests.Mocks.Security;
 
    [TestFixture]
    public class IndexAction
@@ -15,7 +16,7 @@ namespace TadmapTests.Controllers.Image
       [Test]
       public void WithEmptyGuid()
       {
-         ImageController home = new ImageController();
+         ImageController home = new ImageController(Principals.Guest);
 
          try
          {
