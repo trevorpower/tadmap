@@ -46,6 +46,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Websites\Tadmap MVC\Tadmap MVC\bin\System.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -61,6 +64,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Account\IndexAction.cs" />
+    <Compile Include="Controllers\Admin\IndexAction.cs" />
     <Compile Include="Controllers\Home\IndexAction.cs" />
     <Compile Include="Controllers\Image\MakePrivate.cs" />
     <Compile Include="Controllers\Image\UnMark.cs" />
@@ -69,12 +74,12 @@
     <Compile Include="Controllers\Image\IndexAction.cs" />
     <Compile Include="Controllers\Image\MakePublic.cs" />
     <Compile Include="Controllers\Image\UpdateTitle.cs" />
+    <Compile Include="DataAccess\TestImageRepository.cs" />
+    <Compile Include="DataAccess\ImageRepositoryTest.cs" />
+    <Compile Include="Mocks\Security\Identity.cs" />
     <Compile Include="Mocks\Security\Principals.cs" />
+    <Compile Include="Models\TadmapImageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Tadmap.config">
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

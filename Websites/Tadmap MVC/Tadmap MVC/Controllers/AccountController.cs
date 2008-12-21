@@ -125,8 +125,6 @@ namespace Tadmap_MVC.Controllers
 
       public ActionResult Login()
       {
-         ViewData["Title"] = "Login";
-
          return View();
       }
 

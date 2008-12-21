@@ -4,11 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
-using Tadmap_MVC.Models.Images;
 
-namespace Tadmap_MVC.Views.Shared
+namespace Tadmap_MVC.Views.Admin
 {
-   public partial class ImageListControl : System.Web.Mvc.ViewUserControl<List<TadmapImage>>
+   public partial class Index : ViewPage
    {
    }
 }

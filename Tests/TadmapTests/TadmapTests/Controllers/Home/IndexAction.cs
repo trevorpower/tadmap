@@ -7,6 +7,9 @@ namespace TadmapTests.Controllers.Home
 {
    using NUnit.Framework;
    using System.Web.Mvc;
+   using Tadmap_MVC.Models.Images;
+   using Tadmap_MVC.Controllers;
+   using TadmapTests.DataAccess;
 
    [TestFixture]
    public class IndexAction
@@ -14,7 +17,7 @@ namespace TadmapTests.Controllers.Home
       [Test]
       public void Simple()
       {
-         Tadmap_MVC.Controllers.HomeController home = new Tadmap_MVC.Controllers.HomeController();
+         HomeController home = new HomeController(new TestImageRepository());
 
          ActionResult result = home.Index();
 
@@ -27,7 +30,11 @@ namespace TadmapTests.Controllers.Home
          Assert.IsEmpty(home.ModelState);
 
          Assert.IsNotNull(home.ViewData.Model);
-         Assert.IsInstanceOfType(typeof(List<UserImage>), home.ViewData.Model);
+         Assert.IsInstanceOfType(typeof(List<TadmapImage>), viewResult.ViewData.Model);
+
+         List<TadmapImage> images = viewResult.ViewData.Model as List<TadmapImage>;
+
+         Assert.AreEqual(5, images.Count);
       }
 
       [Test]

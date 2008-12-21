@@ -88,7 +88,7 @@
     <Compile Include="ActionFIlters\PrincipalActionFilter.cs" />
     <Compile Include="ActionInvokers\ActionInvoker.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Administration.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs">
     </Compile>
@@ -96,6 +96,8 @@
     </Compile>
     <Compile Include="Controllers\UserImagesController.cs">
     </Compile>
+    <Compile Include="DataAccess\IImageRepository.cs" />
+    <Compile Include="DataAccess\SQL\SqlImageRepository.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,6 +107,8 @@
     </Compile>
     <Compile Include="Helpers\AppHelper.cs" />
     <Compile Include="Models\Images\ImageNotFound.cs" />
+    <Compile Include="Models\Images\TadmapImage.cs" />
+    <Compile Include="Models\Images\TadmapImageFilters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tadmap\Configuration\Database.cs" />
     <Compile Include="Tadmap\Configuration\S3Storage.cs" />
@@ -149,6 +153,13 @@
     </Compile>
     <Compile Include="Views\Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -275,6 +286,7 @@
     <Content Include="Configuration\System.web\pages.config" />
     <Content Include="Scripts\jquery.jeditable.mini.js" />
     <Content Include="Scripts\ViewMap.js" />
+    <Content Include="Views\Admin\Index.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Image\Index.aspx" />
     <Content Include="Views\Shared\NavigationBar.ascx" />
