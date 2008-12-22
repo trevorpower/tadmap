@@ -35,41 +35,39 @@ namespace Tadmap_MVC.Controllers
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
 
-         TadmapDb db = new TadmapDb();
-
          try
          {
             TadmapImage image = _imageRepository.GetAllImages().WithId(id).Single();
 
-            //if (image.IsOffensive)
-            //{
-            //   if (!HttpContext.User.IsInRole(TadMapRoles.Administrator))
-            //      throw new SecurityException("Only administrator can view images marked as offensive");
-            //}
+            if (image.IsOffensive)
+            {
+               if (!principal.IsInRole(TadMapRoles.Administrator))
+                  throw new SecurityException("Only administrator can view images marked as offensive");
+            }
 
             //ViewData["CanEdit"] = false;
 
-            //if (HttpContext.User.Identity.IsAuthenticated)
-            //{
-            //   //UserOpenId openId = db.UserOpenIds.Single(i => i.OpenIdUrl == HttpContext.User.Identity.Name);
+            if (principal.Identity.IsAuthenticated)
+            {
+               //UserOpenId openId = db.UserOpenIds.Single(i => i.OpenIdUrl == HttpContext.User.Identity.Name);
 
-            //   //if (image.UserId == openId.UserId)
-            //   //{
-            //   //   // Owning user
-            //   //   ViewData["CanEdit"] = true;
-            //   //}
-            //   //else
-            //   //{
-            //   //   // Other registered user
-            //   //   if (image.Privacy == 0)
-            //   //      if (!HttpContext.User.IsInRole(TadMapRoles.Administrator))
-            //   //         throw new SecurityException("Only owner or administrator can view private image");
-            //   //}
-            //}
-            //else if (!image.IsPublic)
-            //{
-            //   throw new SecurityException("User must be authenticated to view a private image");
-            //}
+               //if (image.UserId == openId.UserId)
+               //{
+               //   // Owning user
+               //   ViewData["CanEdit"] = true;
+               //}
+               //else
+               //{
+               //   // Other registered user
+               //   if (image.Privacy == 0)
+               //      if (!HttpContext.User.IsInRole(TadMapRoles.Administrator))
+               //         throw new SecurityException("Only owner or administrator can view private image");
+               //}
+            }
+            else if (!image.IsPublic)
+            {
+               throw new SecurityException("User must be authenticated to view a private image");
+            }
 
             //ViewData["Id"] = image.Id;
             //ViewData["Title"] = image.Title;

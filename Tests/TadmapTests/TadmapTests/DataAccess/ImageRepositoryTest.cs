@@ -48,5 +48,29 @@ namespace TadmapTests.Models
 
          Assert.AreEqual(5, repository.GetAllImages().IsPublic().Count());
       }
+
+      [Test]
+      public void OffensiveFilter()
+      {
+         IImageRepository repository = new TestImageRepository();
+
+         Assert.AreEqual(8, repository.GetAllImages().IsNotOffensive().Count());
+      }
+
+      [Test]
+      public void With_Known_Id_Returns_1_Image()
+      {
+         IImageRepository repository = new TestImageRepository();
+
+         Assert.AreEqual(1, repository.GetAllImages().WithId(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1")).Count());
+      }
+
+      [Test]
+      public void With_Non_Existant_Id_Returns_No_Image()
+      {
+         IImageRepository repository = new TestImageRepository();
+
+         Assert.AreEqual(0, repository.GetAllImages().WithId(Guid.NewGuid()).Count());
+      }
    }
 }

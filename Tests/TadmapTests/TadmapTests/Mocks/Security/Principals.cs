@@ -18,7 +18,7 @@ namespace TadmapTests.Mocks.Security
       {
          get
          {
-            return new System.Security.Principal.GenericPrincipal(new GenericIdentity(string.Empty, string.Empty), NoRoles);
+            return new System.Security.Principal.GenericPrincipal(new Identity("", false), NoRoles);
          }
       }
 

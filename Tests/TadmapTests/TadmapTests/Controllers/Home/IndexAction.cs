@@ -15,7 +15,7 @@ namespace TadmapTests.Controllers.Home
    public class IndexAction
    {
       [Test]
-      public void Simple()
+      public void Returns_4_Images()
       {
          HomeController home = new HomeController(new TestImageRepository());
 
@@ -34,7 +34,7 @@ namespace TadmapTests.Controllers.Home
 
          List<TadmapImage> images = viewResult.ViewData.Model as List<TadmapImage>;
 
-         Assert.AreEqual(5, images.Count);
+         Assert.AreEqual(4, images.Count);
       }
 
       [Test]
