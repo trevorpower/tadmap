@@ -10,12 +10,18 @@
    </asp:ScriptManager>--%>
    <script type="text/javascript" language="javascript" src="/Scripts/jquery-1.2.6.min.js"></script>
    <script type="text/javascript" language="javascript" src="/Scripts/jquery.jeditable.mini.js"></script>
-   <script>
+   <script type="text/javascript" language="javascript">
       var imageId = '<%= ViewData["Id"] %>';
+      
+//      function Mark()
+//      {
+//         $.getJSON("/Image/" + imageId + "/Mark", function(json) {});
+//         return value;
+//      }
    </script>
    <script type="text/javascript" language="javascript" src="/Scripts/ViewMap.js"></script>
    
-   <span class="EditTitle ItemTitle">
+   <spa vn class="EditTitle ItemTitle">
       <%= ViewData["Title"] %></span>
    <div runat="server" id="panelImage" class="ImagePanel">
       <asp:Image runat="server" ID="m_imgPicture" CssClass="ItemDetailImage" BorderWidth="2px" />
@@ -32,11 +38,12 @@
       <span class="EditDescription MapDescriptionText">
          <%= ViewData["Description"] %></span>
    </div>
+   
    <% if (HttpContext.Current.User.IsInRole(TadMap.Security.TadMapRoles.Administrator))
       { %>
-   <%= Html.ActionLink("Mark", "Mark", new { id = ViewData["Id"] })%>
-   <%= Html.ActionLink("Un-Mark", "UnMark", new { id = ViewData["Id"] })%>
+      <%--<a onclick="return Mark();">Mark</a>--%>
    <%} %>
+   
    <% if (Convert.ToBoolean(ViewData["CanEdit"]))
       { %>
    <%= Html.CheckBox("PublicCheckBox", Convert.ToBoolean(ViewData["IsPublic"]) , new { Class = "PrivacyCheckBox" }) %><label for="PublicCheckBox">Public</label>
