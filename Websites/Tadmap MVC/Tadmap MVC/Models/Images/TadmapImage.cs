@@ -11,13 +11,21 @@ namespace Tadmap_MVC.Models.Images
       {
       }
 
-      public TadmapImage(Guid id, string title, string description, string key, bool isPublic)
+      public TadmapImage(
+         Guid id,
+         string title,
+         string description,
+         string key,
+         bool isPublic,
+         bool isOffensive
+      )
       {
          Id = id;
          Title = title;
          Description = description;
          Key = key;
          IsPublic = isPublic;
+         IsOffensive = isOffensive;
       }
 
       public Guid Id { get; set; }
@@ -25,5 +33,6 @@ namespace Tadmap_MVC.Models.Images
       public string Description { get; set; }
       public string Key { get; set; }
       public bool IsPublic { get; set; }
+      public bool IsOffensive { get; set; }
    }
 }

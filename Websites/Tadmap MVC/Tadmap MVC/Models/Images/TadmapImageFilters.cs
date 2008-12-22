@@ -14,5 +14,11 @@ namespace Tadmap_MVC.Models.Images
                 select i;
       }
 
+      public static IQueryable<TadmapImage> IsNotOffensive(this IQueryable<TadmapImage> query)
+      {
+         return from i in query
+                where !i.IsOffensive
+                select i;
+      }
    }
 }
