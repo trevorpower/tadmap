@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Security.Principal;
+using TadMap.Security;
 
 namespace Tadmap_MVC.Models.Images
 {
@@ -34,5 +36,10 @@ namespace Tadmap_MVC.Models.Images
       public string Key { get; set; }
       public bool IsPublic { get; set; }
       public bool IsOffensive { get; set; }
+
+      public bool CanUserMarkAsOffensive(IPrincipal principal)
+      {
+         return principal.Identity.IsAuthenticated && principal.IsInRole(TadMapRoles.Administrator);
+      }
    }
 }

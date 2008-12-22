@@ -39,7 +39,7 @@
          <%= ViewData["Description"] %></span>
    </div>
    
-   <% if (HttpContext.Current.User.IsInRole(TadMap.Security.TadMapRoles.Administrator))
+   <% if (ViewData.Model.CanUserMarkAsOffensive(HttpContext.Current.User))
       { %>
       <%--<a onclick="return Mark();">Mark</a>--%>
    <%} %>

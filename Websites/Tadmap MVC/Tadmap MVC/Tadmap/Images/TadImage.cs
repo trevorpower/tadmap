@@ -334,10 +334,10 @@ namespace TadMap
             return s3.GetUrl(S3Storage.BucketName, StorageKey);
         }
 
-        public static string GetOriginalUrl(UserImage image)
+        public static string GetOriginalUrl(string key)
         {
            ThreeSharpWrapper s3 = new ThreeSharpWrapper(S3Storage.AccessKey, S3Storage.SecretAccessKey);
-           return s3.GetUrl(S3Storage.BucketName, image.Key);
+           return s3.GetUrl(S3Storage.BucketName, key);
         }
 
         public void CreateTileset()

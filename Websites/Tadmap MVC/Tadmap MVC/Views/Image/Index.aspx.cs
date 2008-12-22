@@ -1,7 +1,8 @@
 ﻿using System.Web.Mvc;
 using System;
+using Tadmap_MVC.Models.Images;
 
-public partial class Index : ViewPage
+public partial class Index : ViewPage<TadmapImage>
 {
    protected void Page_Load(object sender, EventArgs e)
    {

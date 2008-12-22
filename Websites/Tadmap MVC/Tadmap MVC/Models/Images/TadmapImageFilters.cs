@@ -20,5 +20,13 @@ namespace Tadmap_MVC.Models.Images
                 where !i.IsOffensive
                 select i;
       }
+
+      public static IQueryable<TadmapImage> WithId(this IQueryable<TadmapImage> query, Guid id)
+      {
+         
+         return from i in query
+                where i.Id == id
+                select i;
+      }
    }
 }
