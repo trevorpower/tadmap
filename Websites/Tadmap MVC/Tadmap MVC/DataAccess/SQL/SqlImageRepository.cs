@@ -21,7 +21,8 @@ namespace Tadmap_MVC.DataAccess.SQL
                    Title = i.Title,
                    Description = i.Description,
                    Key = i.Key,
-                   IsPublic = i.Privacy == 1
+                   IsPublic = i.Privacy == 1,
+                   IsOffensive = i.OffensiveCount > 0
                 };
       }
 

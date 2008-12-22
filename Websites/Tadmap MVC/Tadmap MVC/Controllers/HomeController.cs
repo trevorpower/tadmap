@@ -27,7 +27,9 @@ namespace Tadmap_MVC.Controllers
 
       public ActionResult Index()
       {
-         ViewData.Model = _imageRepository.GetAllImages().IsPublic().ToList();
+         ViewData.Model =_imageRepository.GetAllImages()
+            .IsPublic()
+            .IsNotOffensive().ToList();
 
          return View();
       }
