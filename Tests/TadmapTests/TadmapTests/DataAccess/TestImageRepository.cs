@@ -9,25 +9,68 @@ namespace TadmapTests.DataAccess
 {
    internal class TestImageRepository : IImageRepository
    {
+      List<TadmapImage> _images;
 
+      public TestImageRepository()
+      {
+         _images = new List<TadmapImage>();
+
+         for (int i = 0; i < 10; i++)
+            _images.Add(new TadmapImage { Description = "description", Key = "Key", Title = "Title " + i, IsPublic = i < 5 });
+
+         _images[0].IsOffensive = true;
+         _images[1].Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1");
+         _images[8].Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf8");
+         _images[9].Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf9");
+         _images[9].IsOffensive = true;
+      }
+      
       #region IImageRepository Members
 
       public IQueryable<Tadmap_MVC.Models.Images.TadmapImage> GetAllImages()
       {
-         List<TadmapImage> images = new List<TadmapImage>();
-
-         for (int i = 0; i < 10; i++)
-            images.Add(new TadmapImage { Description = "description", Key = "Key", Title = "Title " + i, IsPublic = i < 5 });
-
-         images[0].IsOffensive = true;
-         images[1].Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1");
-         images[8].Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf8");
-         images[9].Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf9");
-         images[9].IsOffensive = true;
-
-         return images.AsQueryable();
+         return _images.AsQueryable();
       }
 
+      public void MarkAsOffensive(Guid id)
+      {
+         TadmapImage image = _images.Find(i => i.Id == id);
+         
+         if (image == null)
+            throw new ImageNotFound();
+         
+         image.IsOffensive = true;
+      }
+
+      public void MarkAsUnOffensive(Guid id)
+      {
+         TadmapImage image = _images.Find(i => i.Id == id);
+
+         if (image == null)
+            throw new ImageNotFound();
+
+         image.IsOffensive = false;
+      }
+
+      public void MarkAsPublic(Guid id)
+      {
+         TadmapImage image = _images.Find(i => i.Id == id);
+
+         if (image == null)
+            throw new ImageNotFound();
+
+         image.IsPublic = true;
+      }
+
+      public void MarkAsPrivate(Guid id)
+      {
+         TadmapImage image = _images.Find(i => i.Id == id);
+
+         if (image == null)
+            throw new ImageNotFound();
+
+         image.IsPublic = false;
+      }
       #endregion
    }
 }

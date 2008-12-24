@@ -82,5 +82,10 @@ namespace TadmapTests.Models
          Assert.IsFalse(image.CanUserMarkAsOffensive(Principals.Collector));
       }
 
+      [Test]
+      public void Administrator_Can_Mark_As_Offensive()
+      {
+         TadmapImage image = new TadmapImage(_imageId, "title", "description", "key", false, false);
+      }
    }
 }

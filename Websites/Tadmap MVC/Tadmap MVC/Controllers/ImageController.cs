@@ -78,7 +78,7 @@ namespace Tadmap_MVC.Controllers
 
             ViewData.Model = image;
          }
-         catch (InvalidOperationException e)
+         catch (InvalidOperationException)
          {
             throw new ImageNotFound();
          }
@@ -102,19 +102,13 @@ namespace Tadmap_MVC.Controllers
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
 
-         TadmapDb db = new TadmapDb();
-
          try
          {
-            UserImage image = db.UserImages.Single(i => i.Id == id);
+            _imageRepository.MarkAsPublic(id);
 
-            image.Privacy = 1;
-
-            db.SubmitChanges();
-
-            return Json(image.Privacy);
+            return Json(true);
          }
-         catch (InvalidOperationException e)
+         catch (InvalidOperationException)
          {
             throw new ImageNotFound();
          }
@@ -125,19 +119,13 @@ namespace Tadmap_MVC.Controllers
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
 
-         TadmapDb db = new TadmapDb();
-
          try
          {
-            UserImage image = db.UserImages.Single(i => i.Id == id);
+            _imageRepository.MarkAsPrivate(id);
 
-            image.Privacy = 0;
-
-            db.SubmitChanges();
-
-            return Json(image.Privacy);
+            return Json(0);
          }
-         catch (InvalidOperationException e)
+         catch (InvalidOperationException)
          {
             throw new ImageNotFound();
          }
@@ -175,20 +163,11 @@ namespace Tadmap_MVC.Controllers
 
          try
          {
-            TadmapDb db = new TadmapDb();
-
-            UserImage image = db.UserImages.Single(i => i.Id == id);
-
-            if (image == null)
-               throw new ImageNotFound();
-
-            image.OffensiveCount = 1;
-
-            db.SubmitChanges();
+            _imageRepository.MarkAsOffensive(id);
 
             return Json(true);
          }
-         catch (InvalidOperationException e)
+         catch (InvalidOperationException)
          {
             throw new ImageNotFound();
          }
@@ -204,13 +183,7 @@ namespace Tadmap_MVC.Controllers
 
          try
          {
-            TadmapDb db = new TadmapDb();
-
-            UserImage image = db.UserImages.Single(i => i.Id == id);
-
-            image.OffensiveCount = 0;
-            
-            db.SubmitChanges();
+            _imageRepository.MarkAsUnOffensive(id);
 
             return Json(true);
          }

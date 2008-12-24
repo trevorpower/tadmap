@@ -26,6 +26,26 @@ namespace Tadmap_MVC.DataAccess.SQL
                 };
       }
 
+      public void MarkAsOffensive(Guid id)
+      {
+         throw new NotImplementedException();
+      }
+
+      public void MarkAsUnOffensive(Guid id)
+      {
+         throw new NotImplementedException();
+      }
+
+      public void MarkAsPublic(Guid id)
+      {
+         throw new NotImplementedException();
+      }
+
+      public void MarkAsPrivate(Guid id)
+      {
+         throw new NotImplementedException();
+      }
+
       #endregion
    }
 }

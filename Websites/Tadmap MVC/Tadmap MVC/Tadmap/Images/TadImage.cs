@@ -456,7 +456,7 @@ namespace TadMap
 
                         cm.ExecuteNonQuery();
                     }
-                    catch (SqlException oException)
+                    catch (SqlException)
                     {
                         throw;
                     }
@@ -513,7 +513,7 @@ namespace TadMap
 
                         return cm.ExecuteNonQuery();
                     }
-                    catch (SqlException oException)
+                    catch (SqlException)
                     {
                         throw;
                     }
@@ -544,7 +544,7 @@ namespace TadMap
 
                         return cm.ExecuteNonQuery();
                     }
-                    catch (SqlException oException)
+                    catch (SqlException)
                     {
                         throw;
                     }
