@@ -4,13 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Security.Principal;
 using TadMap.Security;
+using Tadmap_MVC.DataAccess;
+using Tadmap_MVC.DataAccess.SQL;
+using Tadmap_MVC.DataAccess.S3;
 
 namespace Tadmap_MVC.Models.Images
 {
    public class TadmapImage
    {
+      IImageRepository _imageRepository;
+      IBinaryRepository _binaryRepository;
+
       public TadmapImage()
       {
+         _imageRepository = new SqlImageRepository();
+         _binaryRepository = new S3BinaryRepository();
       }
 
       public TadmapImage(
@@ -19,15 +27,22 @@ namespace Tadmap_MVC.Models.Images
          string description,
          string key,
          bool isPublic,
-         bool isOffensive
+         bool isOffensive,
+         Guid userId,
+         IImageRepository imageRepository,
+         IBinaryRepository binaryRepository
       )
       {
+         _imageRepository = imageRepository;
+         _binaryRepository = binaryRepository;
+
          Id = id;
          Title = title;
          Description = description;
          Key = key;
          IsPublic = isPublic;
          IsOffensive = isOffensive;
+         UserId = userId;
       }
 
       public Guid Id { get; set; }
@@ -36,6 +51,7 @@ namespace Tadmap_MVC.Models.Images
       public string Key { get; set; }
       public bool IsPublic { get; set; }
       public bool IsOffensive { get; set; }
+      public Guid UserId { get; set; }
 
       public bool CanUserMarkAsOffensive(IPrincipal principal)
       {

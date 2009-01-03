@@ -5,27 +5,35 @@ using System;
 using System.IO;
 using TadMap.Security;
 using TadMap;
+using System.Security.Principal;
+using Tadmap_MVC.DataAccess;
 
 namespace Tadmap_MVC.Controllers
 {
    public class UploadController : Controller
    {
-      public ActionResult Index()
+      public UploadController()
       {
-         if (!Request.IsAuthenticated)
-            return new RedirectResult(FormsAuthentication.LoginUrl);
+         ActionInvoker = new ActionInvokers.ActionInvoker();
+      }
+
+      public ActionResult Index(IPrincipal principal)
+      {
+         if (!principal.Identity.IsAuthenticated)
+            return new RedirectResult(FormsAuthentication.LoginUrl); 
 
          return View();
       }
 
       [AcceptVerbs(HttpVerbs.Post)]
-      public ActionResult Index(string title, string description)
+      public ActionResult Upload(string title, string description, IPrincipal principal, IUploadedFile file)
       {
-         HttpPostedFileBase oFile = Request.Files["file"];
+         if (!principal.Identity.IsAuthenticated)
+            return new RedirectResult(FormsAuthentication.LoginUrl);
 
-         if (oFile.ContentLength > 0)
+         if (file.ContentLength > 0)
          {
-            TadImage oNewImage = TadImage.NewTadImage(oFile.InputStream, Guid.NewGuid() + Path.GetExtension(oFile.FileName));
+            TadImage oNewImage = TadImage.NewTadImage(file.InputStream, Guid.NewGuid() + Path.GetExtension(file.FileName));
             oNewImage.Title = title;
             oNewImage.Description = description;
             oNewImage.Save(HttpContext.User.Identity);

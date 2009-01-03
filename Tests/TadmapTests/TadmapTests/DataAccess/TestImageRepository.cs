@@ -16,12 +16,9 @@ namespace TadmapTests.DataAccess
          _images = new List<TadmapImage>();
 
          for (int i = 0; i < 10; i++)
-            _images.Add(new TadmapImage { Description = "description", Key = "Key", Title = "Title " + i, IsPublic = i < 5 });
+            _images.Add(new TadmapImage { Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf" + i), Description = "description", Key = "Key", Title = "Title " + i, IsPublic = i < 5 });
 
          _images[0].IsOffensive = true;
-         _images[1].Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1");
-         _images[8].Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf8");
-         _images[9].Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf9");
          _images[9].IsOffensive = true;
       }
       
@@ -71,6 +68,16 @@ namespace TadmapTests.DataAccess
 
          image.IsPublic = false;
       }
+      #endregion
+
+      #region IImageRepository Members
+
+
+      public void Save(TadmapImage image)
+      {
+         
+      }
+
       #endregion
    }
 }

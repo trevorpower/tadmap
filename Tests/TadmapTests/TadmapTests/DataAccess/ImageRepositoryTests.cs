@@ -111,5 +111,16 @@ namespace TadmapTests.Models
          Assert.AreEqual(4, repository.GetAllImages().IsPublic().Count());
       }
 
+      [Test]
+      public void Contains_Save_Method()
+      {
+         IImageRepository repository = new TestImageRepository();
+
+         TadmapImage image = new TadmapImage();
+
+         repository.Save(image);
+      }
+
+      
    }
 }

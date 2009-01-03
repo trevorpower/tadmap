@@ -96,7 +96,11 @@
     </Compile>
     <Compile Include="Controllers\UserImagesController.cs">
     </Compile>
+    <Compile Include="DataAccess\HttpPostedFile\HttpPostedFileUploadedFile.cs" />
+    <Compile Include="DataAccess\IBinaryRepository.cs" />
     <Compile Include="DataAccess\IImageRepository.cs" />
+    <Compile Include="DataAccess\IUploadedFile.cs" />
+    <Compile Include="DataAccess\S3\S3BinaryRepsoitory.cs" />
     <Compile Include="DataAccess\SQL\SqlImageRepository.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

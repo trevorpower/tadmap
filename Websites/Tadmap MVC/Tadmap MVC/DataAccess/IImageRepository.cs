@@ -14,5 +14,7 @@ namespace Tadmap_MVC.DataAccess
       void MarkAsUnOffensive(Guid id);
       void MarkAsPublic(Guid id);
       void MarkAsPrivate(Guid id);
+
+      void Save(TadmapImage image);
    }
 }

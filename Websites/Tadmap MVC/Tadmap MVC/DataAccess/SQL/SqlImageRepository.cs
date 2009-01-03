@@ -46,6 +46,39 @@ namespace Tadmap_MVC.DataAccess.SQL
          throw new NotImplementedException();
       }
 
+      public void Save(TadmapImage image)
+      {
+         bool isNew = false;
+
+         TadmapDb db = new TadmapDb();
+         UserImage dbImage = db.UserImages.SingleOrDefault(i => i.Id == image.Id);
+         
+         if (dbImage == null)
+         {
+            dbImage = new UserImage();
+
+            // can't chage date added or owner
+            dbImage.DateAdded = DateTime.Now;
+            dbImage.UserId = image.UserId;
+
+            isNew = true;
+         }
+         else
+         {
+            isNew = false;
+         }
+
+         dbImage.Id = image.Id;
+         dbImage.Title = image.Title;
+         dbImage.Description = image.Description;
+         dbImage.Key = image.Key;
+         
+         if (isNew)
+            db.UserImages.InsertOnSubmit(dbImage);
+         
+         db.SubmitChanges();
+      }
+
       #endregion
    }
 }

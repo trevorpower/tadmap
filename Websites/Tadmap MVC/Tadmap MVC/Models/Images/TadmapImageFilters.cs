@@ -23,7 +23,6 @@ namespace Tadmap_MVC.Models.Images
 
       public static IQueryable<TadmapImage> WithId(this IQueryable<TadmapImage> query, Guid id)
       {
-         
          return from i in query
                 where i.Id == id
                 select i;
