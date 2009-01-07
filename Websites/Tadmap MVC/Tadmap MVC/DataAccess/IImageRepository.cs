@@ -10,11 +10,6 @@ namespace Tadmap_MVC.DataAccess
    {
       IQueryable<TadmapImage> GetAllImages();
 
-      void MarkAsOffensive(Guid id);
-      void MarkAsUnOffensive(Guid id);
-      void MarkAsPublic(Guid id);
-      void MarkAsPrivate(Guid id);
-
       void Save(TadmapImage image);
    }
 }

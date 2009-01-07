@@ -17,6 +17,14 @@ namespace TadmapTests.Controllers.Image
    [TestFixture]
    public class UnMark
    {
+      private ImageController _imageController;
+
+      [SetUp]
+      public void CreateController()
+      {
+         _imageController = new ImageController(new TestImageRepository(), new TestBinaryRepository());
+      }
+
       [Test]
       public void WithEmptyGuid()
       {
@@ -44,16 +52,36 @@ namespace TadmapTests.Controllers.Image
       [Test]
       public void NonExistingImage()
       {
-         AssertThrowsException(Guid.NewGuid(), typeof(ImageNotFound), Principals.Administrator);
+         AssertThrowsException(Guid.NewGuid(), typeof(ImageNotFoundException), Principals.Administrator);
       }
 
-      private static void AssertThrowsException(Guid id, Type type, IPrincipal principal)
+      [Test]
+      public void Administrator_Can_Mark_Existing_Image_As_Offensive()
       {
-         ImageController imageController = new ImageController(new TestImageRepository());
- 
+         ActionResult result = _imageController.UnMark(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf0"), Principals.Administrator);
+      }
+
+      [Test]
+      public void Returns_Json_Result_On_Success()
+      {
+         ActionResult result = _imageController.UnMark(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf0"), Principals.Administrator);
+         Assert.IsInstanceOfType(typeof(JsonResult), result);
+      }
+
+      [Test]
+      public void Returns_Json_Result_With_True_On_Success()
+      {
+         ActionResult result = _imageController.UnMark(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf0"), Principals.Administrator);
+         JsonResult jsonResult = result as JsonResult;
+
+         Assert.AreEqual(true, jsonResult.Data);
+      }
+
+      private void AssertThrowsException(Guid id, Type type, IPrincipal principal)
+      {
          try
          {
-            ActionResult result = imageController.UnMark(id, principal);
+            ActionResult result = _imageController.UnMark(id, principal);
             Assert.Fail("Execption expected.");
          }
          catch (Exception e)

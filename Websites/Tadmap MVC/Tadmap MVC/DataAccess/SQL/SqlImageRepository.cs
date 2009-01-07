@@ -26,26 +26,6 @@ namespace Tadmap_MVC.DataAccess.SQL
                 };
       }
 
-      public void MarkAsOffensive(Guid id)
-      {
-         throw new NotImplementedException();
-      }
-
-      public void MarkAsUnOffensive(Guid id)
-      {
-         throw new NotImplementedException();
-      }
-
-      public void MarkAsPublic(Guid id)
-      {
-         throw new NotImplementedException();
-      }
-
-      public void MarkAsPrivate(Guid id)
-      {
-         throw new NotImplementedException();
-      }
-
       public void Save(TadmapImage image)
       {
          bool isNew = false;
@@ -57,9 +37,10 @@ namespace Tadmap_MVC.DataAccess.SQL
          {
             dbImage = new UserImage();
 
-            // can't chage date added or owner
+            // can't change date added, id or owner
             dbImage.DateAdded = DateTime.Now;
             dbImage.UserId = image.UserId;
+            dbImage.Id = image.Id;
 
             isNew = true;
          }
@@ -68,11 +49,12 @@ namespace Tadmap_MVC.DataAccess.SQL
             isNew = false;
          }
 
-         dbImage.Id = image.Id;
          dbImage.Title = image.Title;
          dbImage.Description = image.Description;
          dbImage.Key = image.Key;
-         
+         dbImage.OffensiveCount = image.IsOffensive ? (byte)1 : (byte)0;
+         dbImage.Privacy = image.IsPublic ? (byte)1 : (byte)0;
+
          if (isNew)
             db.UserImages.InsertOnSubmit(dbImage);
          

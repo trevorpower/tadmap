@@ -83,5 +83,80 @@ namespace RepositoryIntegrationTests.SQL
             Assert.AreEqual(4, repository.GetAllImages().Count());
          }
       }
+
+      [Test]
+      public void Making_First_Offensive_Image_Not_Offensive_Gives_Non_Offensive_Images_A_Count_Of_2()
+      {
+         using (TransactionScope transaction = new TransactionScope())
+         {
+            IImageRepository repository = new SqlImageRepository();
+
+            TadmapImage image = repository.GetAllImages().FirstOrDefault(i => i.IsOffensive);
+
+            image.IsOffensive = false;
+
+            repository.Save(image);
+
+            Assert.AreEqual(2, repository.GetAllImages().IsNotOffensive().Count());
+         }
+      }
+
+      [Test]
+      public void Making_First_Private_Image_Public_Gives_Public_Images_A_Count_Of_3()
+      {
+         using (TransactionScope transaction = new TransactionScope())
+         {
+            IImageRepository repository = new SqlImageRepository();
+
+            TadmapImage image = repository.GetAllImages().FirstOrDefault(i => !i.IsPublic);
+
+            image.IsPublic = true;
+
+            repository.Save(image);
+
+            Assert.AreEqual(3, repository.GetAllImages().IsPublic().Count());
+         }
+      }
+
+      [Test]
+      public void Change_To_Title_Is_Saved_And_Returned_Correctly()
+      {
+         using (TransactionScope transaction = new TransactionScope())
+         {
+            IImageRepository repository = new SqlImageRepository();
+
+            TadmapImage image = repository.GetAllImages().FirstOrDefault();
+
+            image.Title = "First Image Title - Changed";
+            
+            string oldDescription = image.Description;
+
+            repository.Save(image);
+
+            Assert.AreEqual(oldDescription, repository.GetAllImages().FirstOrDefault().Description);
+            Assert.AreEqual("First Image Title - Changed", repository.GetAllImages().FirstOrDefault().Title);
+         }
+      }
+
+      [Test]
+      public void Change_To_Description_Is_Saved_And_Returned_Correctly()
+      {
+         using (TransactionScope transaction = new TransactionScope())
+         {
+            IImageRepository repository = new SqlImageRepository();
+
+            TadmapImage image = repository.GetAllImages().FirstOrDefault();
+
+            image.Description = "First Image Title - Changed";
+
+            string oldTitle = image.Title;
+
+            repository.Save(image);
+
+            Assert.AreEqual(oldTitle, repository.GetAllImages().FirstOrDefault().Title);
+            Assert.AreEqual("First Image Title - Changed", repository.GetAllImages().FirstOrDefault().Description);
+         }
+      }
+
    }
 }

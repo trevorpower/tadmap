@@ -36,22 +36,6 @@ namespace TadmapTests.Controllers.Home
 
          Assert.AreEqual(4, images.Count);
       }
-
-      [Test]
-      public void SimpleAboutAction()
-      {
-         Tadmap_MVC.Controllers.HomeController home = new Tadmap_MVC.Controllers.HomeController();
-
-         try
-         {
-            ActionResult result = home.About();
-            Assert.Fail("Execption expected.");
-         }
-         catch (NotImplementedException)
-         {
-            // this is expected
-         }
-      }
    }
 
 }

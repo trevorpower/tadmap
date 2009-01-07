@@ -9,5 +9,7 @@ namespace Tadmap_MVC.DataAccess
    public interface IBinaryRepository
    {
       void Add(Stream data, string key, string contentType);
+
+      string GetUrl(string key);
    }
 }

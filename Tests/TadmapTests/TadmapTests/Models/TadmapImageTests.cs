@@ -31,7 +31,7 @@ namespace TadmapTests.Models
       }
 
       [Test]
-      public void IsPublic_Can_False()
+      public void IsPublic_Can_Be_False()
       {
          Guid id = Guid.NewGuid();
 

@@ -74,44 +74,6 @@ namespace TadmapTests.Models
       }
 
       [Test]
-      public void Can_Mark_Image_As_Offensive()
-      {
-         IImageRepository repository = new TestImageRepository();
-         TadmapImage image = repository.GetAllImages().WithId(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1")).SingleOrDefault();
-         repository.MarkAsOffensive(image.Id);
-
-         Assert.AreEqual(7, repository.GetAllImages().IsNotOffensive().Count());
-      }
-
-      [Test]
-      public void Can_Mark_Image_As_UnOffensive()
-      {
-         IImageRepository repository = new TestImageRepository();
-         TadmapImage image = repository.GetAllImages().WithId(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf9")).SingleOrDefault();
-         repository.MarkAsUnOffensive(image.Id);
-
-         Assert.AreEqual(9, repository.GetAllImages().IsNotOffensive().Count());
-      }
-
-      [Test]
-      public void Can_Mark_Image_As_Public()
-      {
-         IImageRepository repository = new TestImageRepository();
-         repository.MarkAsPublic(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf9"));
-
-         Assert.AreEqual(6, repository.GetAllImages().IsPublic().Count());
-      }
-
-      [Test]
-      public void Can_Mark_Image_As_Private()
-      {
-         IImageRepository repository = new TestImageRepository();
-         repository.MarkAsPrivate(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1"));
-
-         Assert.AreEqual(4, repository.GetAllImages().IsPublic().Count());
-      }
-
-      [Test]
       public void Contains_Save_Method()
       {
          IImageRepository repository = new TestImageRepository();
@@ -120,7 +82,5 @@ namespace TadmapTests.Models
 
          repository.Save(image);
       }
-
-      
    }
 }

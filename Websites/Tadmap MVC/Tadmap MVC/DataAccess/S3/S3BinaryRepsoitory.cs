@@ -44,6 +44,11 @@ namespace Tadmap_MVC.DataAccess.S3
          }
       }
 
+      public string GetUrl(string key)
+      {
+         throw new NotImplementedException();
+      }
+
       #endregion
    }
 }

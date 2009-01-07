@@ -15,6 +15,14 @@ namespace TadmapTests.Controllers.Image
    [TestFixture]
    public class MakePrivate
    {
+      private ImageController _imageController;
+
+      [SetUp]
+      public void CreateController()
+      {
+         _imageController = new ImageController(new TestImageRepository(), new TestBinaryRepository());
+      }
+
       [Test]
       public void WithEmptyGuid()
       {
@@ -24,16 +32,14 @@ namespace TadmapTests.Controllers.Image
       [Test]
       public void WithNonExistantGuid()
       {
-         AssertThrowsException(Guid.NewGuid(), typeof(ImageNotFound), Principals.Guest);
+         AssertThrowsException(Guid.NewGuid(), typeof(ImageNotFoundException), Principals.Guest);
       }
 
-      private static void AssertThrowsException(Guid id, Type type, IPrincipal principal)
+      private void AssertThrowsException(Guid id, Type type, IPrincipal principal)
       {
-         ImageController imageController = new ImageController(new TestImageRepository());
-
          try
          {
-            ActionResult result = imageController.MakePrivate(id);
+            ActionResult result = _imageController.MakePrivate(id);
             Assert.Fail("Execption expected.");
          }
          catch (Exception e)

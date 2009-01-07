@@ -84,6 +84,7 @@
     <Compile Include="DataAccess\TestUploadedFile.cs" />
     <Compile Include="Mocks\Security\Identity.cs" />
     <Compile Include="Mocks\Security\Principals.cs" />
+    <Compile Include="Models\ImageViewTests.cs" />
     <Compile Include="Models\TadmapImageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

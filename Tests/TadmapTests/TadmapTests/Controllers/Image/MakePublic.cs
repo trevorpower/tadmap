@@ -24,12 +24,12 @@ namespace TadmapTests.Controllers.Image
       [Test]
       public void WithNonExistantGuid()
       {
-         AssertThrowsException(Guid.NewGuid(), typeof(ImageNotFound), Principals.Guest);
+         AssertThrowsException(Guid.NewGuid(), typeof(ImageNotFoundException), Principals.Guest);
       }
 
       private static void AssertThrowsException(Guid id, Type type, IPrincipal principal)
       {
-         ImageController imageController = new ImageController(new TestImageRepository());
+         ImageController imageController = new ImageController(new TestImageRepository(), new TestBinaryRepository());
 
          try
          {

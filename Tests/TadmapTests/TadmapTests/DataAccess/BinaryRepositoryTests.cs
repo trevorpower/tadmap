@@ -18,5 +18,13 @@ namespace TadmapTests.DataAccess
 
          repository.Add(new MemoryStream(), "", "");
       }
+
+      [Test]
+      public void Contains_GetUrl_Function()
+      {
+         IBinaryRepository repository = new TestBinaryRepository();
+
+         string url = repository.GetUrl("key1");
+      }
    }
 }

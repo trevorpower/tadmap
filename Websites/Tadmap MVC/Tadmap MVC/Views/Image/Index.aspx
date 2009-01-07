@@ -1,54 +1,43 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Main.Master" AutoEventWireup="true"
-   CodeFile="Index.aspx.cs" Inherits="Index" Title="Tadmap" Theme="Tad" %>
+   CodeFile="Index.aspx.cs" Inherits="Tadmap_MVC.Views.Image.Index" Title="Tadmap"
+   Theme="Tad" %>
 
+<asp:Content ContentPlaceHolderID="head" ID="HeadContent" runat="server">
+
+   <script src="../../Scripts/jquery-1.2.6.min.js" type="text/javascript"></script>
+
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-   <%-- <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
-      <Scripts>
-         <asp:ScriptReference Path="~/Scripts/jquery-1.2.6.min.js" />
-         <asp:ScriptReference Path="~/Scripts/jquery.jeditable.mini.js" />
-      </Scripts>
-   </asp:ScriptManager>--%>
-   <script type="text/javascript" language="javascript" src="/Scripts/jquery-1.2.6.min.js"></script>
-   <script type="text/javascript" language="javascript" src="/Scripts/jquery.jeditable.mini.js"></script>
-   <script type="text/javascript" language="javascript">
-      var imageId = '<%= ViewData["Id"] %>';
-      
-//      function Mark()
-//      {
-//         $.getJSON("/Image/" + imageId + "/Mark", function(json) {});
-//         return value;
-//      }
-   </script>
-   <script type="text/javascript" language="javascript" src="/Scripts/ViewMap.js"></script>
-   
-   <spa vn class="EditTitle ItemTitle">
-      <%= ViewData["Title"] %></span>
-   <div runat="server" id="panelImage" class="ImagePanel">
-      <asp:Image runat="server" ID="m_imgPicture" CssClass="ItemDetailImage" BorderWidth="2px" />
-      <% if (Convert.ToBoolean(ViewData["CanEdit"]))
-         { %>
+   <span class="EditTitle ItemTitle">
+      <%= ViewData.Model.Title %></span>
+   <div class="ImagePanel">
+      <img class="ItemDetailImage" src="<%= ViewData.Model.PreviewUrl %>" alt="<%= ViewData.Model.Title %>" />
       <div class="ImageButtons">
-         <a href="<%= ViewData["OriginalUrl"] %>">Original</a>
-<%--         <%= Html.ActionLink("Create Tileset", "CreateTileset")%>
---%>         <%--<%= Html.ActionLink("View Tileset", "ViewTileset")%>--%>
+         <% if (ViewData.Model.OriginalUrl != null)
+            { %>
+         <a href="<%= ViewData.Model.OriginalUrl %>">Original</a>
+         <%} %>
       </div>
-      <% } %>
    </div>
    <div class="ItemDetail">
       <span class="EditDescription MapDescriptionText">
-         <%= ViewData["Description"] %></span>
+         <%= ViewData.Model.Description %></span>
    </div>
-   
-   <% if (ViewData.Model.CanUserMarkAsOffensive(HttpContext.Current.User))
+   <% if (ViewData.Model.IsEditable)
       { %>
-      <%--<a onclick="return Mark();">Mark</a>--%>
-   <%} %>
-   
-   <% if (Convert.ToBoolean(ViewData["CanEdit"]))
-      { %>
-   <%= Html.CheckBox("PublicCheckBox", Convert.ToBoolean(ViewData["IsPublic"]) , new { Class = "PrivacyCheckBox" }) %><label for="PublicCheckBox">Public</label>
+   <%= Html.CheckBox("PublicCheckBox", ViewData.Model.IsPublic, new { Class = "PrivacyCheckBox" })%><label
+      for="PublicCheckBox">Public</label>
    <div style="font-size: 12px;">
-      <span id="PrivacyStatus" class="PrivacyStatus"><%= Convert.ToBoolean(ViewData["IsPublic"]) ? "<b>Anyone</b> can view this image." : "<b>Only you</b> can view this image." %></span>
+      <span id="PrivacyStatus" class="PrivacyStatus"><b>
+         <%= ViewData.Model.IsPublic ? Tadmap_MVC.Views.Image.ViewResources.Anyone : Tadmap_MVC.Views.Image.ViewResources.OnlyYou %></b>
+         <%= Tadmap_MVC.Views.Image.ViewResources.PrivacyStatusMessageSuffix %>
+      </span>
    </div>
    <%} %>
+   <%
+      if (ViewData.Model.ShowOffensiveCount)
+      {
+         Html.RenderPartial("OffensiveControl", ViewData.Model);
+      }
+   %>
 </asp:Content>

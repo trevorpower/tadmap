@@ -34,7 +34,7 @@ namespace TadmapTests.DataAccess
          TadmapImage image = _images.Find(i => i.Id == id);
          
          if (image == null)
-            throw new ImageNotFound();
+            throw new ImageNotFoundException();
          
          image.IsOffensive = true;
       }
@@ -44,7 +44,7 @@ namespace TadmapTests.DataAccess
          TadmapImage image = _images.Find(i => i.Id == id);
 
          if (image == null)
-            throw new ImageNotFound();
+            throw new ImageNotFoundException();
 
          image.IsOffensive = false;
       }
@@ -54,7 +54,7 @@ namespace TadmapTests.DataAccess
          TadmapImage image = _images.Find(i => i.Id == id);
 
          if (image == null)
-            throw new ImageNotFound();
+            throw new ImageNotFoundException();
 
          image.IsPublic = true;
       }
@@ -64,7 +64,7 @@ namespace TadmapTests.DataAccess
          TadmapImage image = _images.Find(i => i.Id == id);
 
          if (image == null)
-            throw new ImageNotFound();
+            throw new ImageNotFoundException();
 
          image.IsPublic = false;
       }

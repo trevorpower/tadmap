@@ -110,6 +110,19 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AppHelper.cs" />
+    <Compile Include="Views\Image\OffensiveControl.ascx.cs">
+      <DependentUpon>OffensiveControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Image\OffensiveControl.ascx.designer.cs">
+      <DependentUpon>OffensiveControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Image\ViewResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewResources.resx</DependentUpon>
+      <CustomToolNamespace>Tadmap_MVC.Views.Image</CustomToolNamespace>
+    </Compile>
     <Compile Include="Models\Images\ImageNotFound.cs" />
     <Compile Include="Models\Images\TadmapImage.cs" />
     <Compile Include="Models\Images\TadmapImageFilters.cs" />
@@ -179,6 +192,7 @@
     <Compile Include="Views\Home\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Images\ImageView.cs" />
     <Compile Include="Views\Image\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,6 +307,7 @@
     <Content Include="Views\Admin\Index.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Image\Index.aspx" />
+    <Content Include="Views\Image\OffensiveControl.ascx" />
     <Content Include="Views\Shared\NavigationBar.ascx" />
     <Content Include="Views\Shared\ImageListControl.ascx" />
     <Content Include="Views\Upload\Index.aspx" />
@@ -308,6 +323,13 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Image\ViewResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ViewResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Tadmap_MVC.Views.Image</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
