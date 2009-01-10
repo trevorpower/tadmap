@@ -228,6 +228,36 @@ namespace TadmapTests.Controllers.Image
          Assert.IsNull(model.OriginalUrl);
       }
 
+      [Test]
+      public void Image_IsEditable_Is_True_For_Owner()
+      {
+         ActionResult result = _imageController.Index(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1"), Principals.Collector);
+         ViewResult viewResult = result as ViewResult;
+         ImageView model = viewResult.ViewData.Model as ImageView;
+
+         Assert.IsTrue(model.IsEditable);
+      }
+
+      [Test]
+      public void Model_IsPublic_Is_True_For_Public_Image_For_Collector()
+      {
+         ActionResult result = _imageController.Index(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1"), Principals.Collector);
+         ViewResult viewResult = result as ViewResult;
+         ImageView model = viewResult.ViewData.Model as ImageView;
+
+         Assert.IsTrue(model.IsPublic);
+      }
+
+      [Test]
+      public void Model_IsPublic_Is_False_For_Private_Image_For_Collector()
+      {
+         ActionResult result = _imageController.Index(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf6"), Principals.Collector);
+         ViewResult viewResult = result as ViewResult;
+         ImageView model = viewResult.ViewData.Model as ImageView;
+
+         Assert.IsFalse(model.IsPublic);
+      }
+
       private void AssertThrowsException(Guid id, Type type, IPrincipal principal)
       {
          try

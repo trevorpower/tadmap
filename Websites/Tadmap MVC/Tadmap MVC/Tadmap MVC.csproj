@@ -117,6 +117,13 @@
     <Compile Include="Views\Image\OffensiveControl.ascx.designer.cs">
       <DependentUpon>OffensiveControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Image\PrivacyControl.ascx.cs">
+      <DependentUpon>PrivacyControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Image\PrivacyControl.ascx.designer.cs">
+      <DependentUpon>PrivacyControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Image\ViewResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -308,6 +315,7 @@
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Image\Index.aspx" />
     <Content Include="Views\Image\OffensiveControl.ascx" />
+    <Content Include="Views\Image\PrivacyControl.ascx" />
     <Content Include="Views\Shared\NavigationBar.ascx" />
     <Content Include="Views\Shared\ImageListControl.ascx" />
     <Content Include="Views\Upload\Index.aspx" />

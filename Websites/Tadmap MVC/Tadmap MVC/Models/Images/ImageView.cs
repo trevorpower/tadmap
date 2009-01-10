@@ -16,7 +16,6 @@ namespace Tadmap_MVC.Views.Image
          string title,
          string description,
          bool isEditable,
-         bool isPublic,
          string previewUrl,
          string originalUrl
       )
@@ -25,7 +24,6 @@ namespace Tadmap_MVC.Views.Image
          Title = title;
          Description = description;
          IsEditable = isEditable;
-         IsPublic = isPublic;
          PreviewUrl = previewUrl;
          OriginalUrl = originalUrl;
       }

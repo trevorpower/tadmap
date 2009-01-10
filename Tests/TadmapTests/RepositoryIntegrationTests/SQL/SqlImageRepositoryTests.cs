@@ -158,5 +158,48 @@ namespace RepositoryIntegrationTests.SQL
          }
       }
 
+      [Test]
+      public void Change_Private_Image_To_Public_Saves_And_Returns_Correctly()
+      {
+         using (TransactionScope transaction = new TransactionScope())
+         {
+            IImageRepository repository = new SqlImageRepository();
+
+            TadmapImage image = repository.GetAllImages().WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
+
+            Assert.IsNotNull(image);
+            Assert.IsFalse(image.IsPublic);
+
+            image.IsPublic = true;
+
+            repository.Save(image);
+
+            TadmapImage latestImage = repository.GetAllImages().WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
+
+            Assert.IsTrue(latestImage.IsPublic);
+         }
+      }
+
+      [Test]
+      public void Change_Public_Image_To_Private_Saves_And_Returns_Correctly()
+      {
+         using (TransactionScope transaction = new TransactionScope())
+         {
+            IImageRepository repository = new SqlImageRepository();
+
+            TadmapImage image = repository.GetAllImages().WithId(new Guid("57c95cb2-dea3-486b-a951-d650e346ab59")).SingleOrDefault();
+
+            Assert.IsNotNull(image);
+            Assert.IsTrue(image.IsPublic);
+
+            image.IsPublic = false;
+
+            repository.Save(image);
+
+            TadmapImage latestImage = repository.GetAllImages().WithId(new Guid("57c95cb2-dea3-486b-a951-d650e346ab59")).SingleOrDefault();
+
+            Assert.IsFalse(latestImage.IsPublic);
+         }
+      }
    }
 }

@@ -7,7 +7,7 @@ using TadMap.Security;
 
 namespace TadmapTests.Mocks.Security
 {
-   internal class Principals
+   public class Principals
    {
       private static readonly string[] NoRoles = { };
       private static readonly string[] CollectorRole = {TadMapRoles.Collector};

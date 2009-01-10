@@ -23,18 +23,11 @@
       <span class="EditDescription MapDescriptionText">
          <%= ViewData.Model.Description %></span>
    </div>
-   <% if (ViewData.Model.IsEditable)
-      { %>
-   <%= Html.CheckBox("PublicCheckBox", ViewData.Model.IsPublic, new { Class = "PrivacyCheckBox" })%><label
-      for="PublicCheckBox">Public</label>
-   <div style="font-size: 12px;">
-      <span id="PrivacyStatus" class="PrivacyStatus"><b>
-         <%= ViewData.Model.IsPublic ? Tadmap_MVC.Views.Image.ViewResources.Anyone : Tadmap_MVC.Views.Image.ViewResources.OnlyYou %></b>
-         <%= Tadmap_MVC.Views.Image.ViewResources.PrivacyStatusMessageSuffix %>
-      </span>
-   </div>
-   <%} %>
    <%
+      if (ViewData.Model.IsEditable)
+      {
+         Html.RenderPartial("PrivacyControl", ViewData.Model);
+      }
       if (ViewData.Model.ShowOffensiveCount)
       {
          Html.RenderPartial("OffensiveControl", ViewData.Model);

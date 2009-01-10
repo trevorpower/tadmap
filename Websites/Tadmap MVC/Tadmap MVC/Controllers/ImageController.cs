@@ -44,7 +44,7 @@ namespace Tadmap_MVC.Controllers
          {
             TadmapImage image = _imageRepository.GetAllImages().WithId(id).Single();
 
-            ImageView model = new ImageView(image.Id, image.Title, image.Description, false, false, "PreviewUrl", null);
+            ImageView model = new ImageView(image.Id, image.Title, image.Description, false, "PreviewUrl", null);
 
             if (image.IsOffensive)
             {
@@ -62,6 +62,9 @@ namespace Tadmap_MVC.Controllers
                model.CanMarkOffensive = principal.IsInRole(TadMapRoles.Administrator);
             }
 
+            model.IsEditable = true;
+
+            model.IsPublic = image.IsPublic;
 
             //ViewData["CanEdit"] = false;
 
@@ -139,7 +142,7 @@ namespace Tadmap_MVC.Controllers
 
          _imageRepository.Save(image);
 
-         return Json(0);
+         return Json(false);
       }
 
       public ActionResult UpdateTitle(Guid id, string title)

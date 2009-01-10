@@ -15,13 +15,13 @@ namespace TadmapTests.Models
       {
          Guid id = Guid.NewGuid();
 
-         ImageView view = new ImageView(id, "Title", "Description", true, true, "PreviewUrl", "OriginalUrl");
+         ImageView view = new ImageView(id, "Title", "Description", true, "PreviewUrl", "OriginalUrl");
 
          Assert.AreEqual(id, view.Id);
          Assert.AreEqual("Title", view.Title);
          Assert.AreEqual("Description", view.Description);
          Assert.AreEqual(true, view.IsEditable);
-         Assert.AreEqual(true, view.IsPublic);
+         Assert.IsNotNull(view.IsPublic);
          Assert.AreEqual("PreviewUrl", view.PreviewUrl);
          Assert.AreEqual("OriginalUrl", view.OriginalUrl);
       }
@@ -31,29 +31,13 @@ namespace TadmapTests.Models
       {
          Guid id = Guid.NewGuid();
 
-         ImageView view = new ImageView(id, "TitleF", "DescriptionF", false, true, "PreviewUrlF", "OriginalUrlF");
+         ImageView view = new ImageView(id, "TitleF", "DescriptionF", false, "PreviewUrlF", "OriginalUrlF");
 
          Assert.AreEqual(id, view.Id);
          Assert.AreEqual("TitleF", view.Title);
          Assert.AreEqual("DescriptionF", view.Description);
          Assert.AreEqual(false, view.IsEditable);
-         Assert.AreEqual(true, view.IsPublic);
-         Assert.AreEqual("PreviewUrlF", view.PreviewUrl);
-         Assert.AreEqual("OriginalUrlF", view.OriginalUrl);
-      }
-
-      [Test]
-      public void Has_Title_Description_IsEditable_IsPublic_With_False_Value_And_PreviewUrl()
-      {
-         Guid id = Guid.NewGuid();
-
-         ImageView view = new ImageView(id, "TitleF", "DescriptionF", true, false, "PreviewUrlF", "OriginalUrlF");
-
-         Assert.AreEqual(id, view.Id);
-         Assert.AreEqual("TitleF", view.Title);
-         Assert.AreEqual("DescriptionF", view.Description);
-         Assert.AreEqual(true, view.IsEditable);
-         Assert.AreEqual(false, view.IsPublic);
+         Assert.IsNotNull(view.IsPublic);
          Assert.AreEqual("PreviewUrlF", view.PreviewUrl);
          Assert.AreEqual("OriginalUrlF", view.OriginalUrl);
       }
