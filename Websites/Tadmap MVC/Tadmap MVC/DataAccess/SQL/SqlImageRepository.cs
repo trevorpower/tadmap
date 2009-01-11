@@ -22,7 +22,8 @@ namespace Tadmap_MVC.DataAccess.SQL
                    Description = i.Description,
                    Key = i.Key,
                    IsPublic = i.Privacy == 1,
-                   IsOffensive = i.OffensiveCount > 0
+                   IsOffensive = i.OffensiveCount > 0,
+                   OwnerName = i.User.UserOpenIds.Single().OpenIdUrl
                 };
       }
 

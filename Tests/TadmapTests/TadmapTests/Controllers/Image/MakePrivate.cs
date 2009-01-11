@@ -9,6 +9,7 @@ using TadmapTests.Mocks.Security;
 using System.Security.Principal;
 using Tadmap_MVC.Models.Images;
 using TadmapTests.DataAccess;
+using System.Security;
 
 namespace TadmapTests.Controllers.Image
 {
@@ -39,7 +40,7 @@ namespace TadmapTests.Controllers.Image
       {
          try
          {
-            ActionResult result = _imageController.MakePrivate(id);
+            ActionResult result = _imageController.MakePrivate(id, Principals.Guest);
             Assert.Fail("Execption expected.");
          }
          catch (Exception e)

@@ -11,6 +11,7 @@ namespace TadmapTests.Mocks.Security
       public Identity(string name, bool isAuthenticated)
       {
          IsAuthenticated = isAuthenticated;
+         Name = name;
       }
 
       string IIdentity.AuthenticationType

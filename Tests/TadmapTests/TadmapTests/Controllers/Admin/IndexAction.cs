@@ -15,31 +15,6 @@ namespace TadmapTests.Controllers.Admin
    [TestFixture]
    public class IndexAction
    {
-
-      [Test]
-      public void Redirects_To_Default_For_Guest_User()
-      {
-         AdminController admin = new AdminController(new TestImageRepository());
-
-         RedirectToRouteResult result = (RedirectToRouteResult)admin.Index(Principals.Guest);
-
-         Assert.AreEqual("Default", result.RouteName);
-         Assert.AreEqual("Home", result.Values["Controller"]);
-         Assert.AreEqual("Index", result.Values["Action"]);
-      }
-
-      [Test]
-      public void Redirects_To_Default_For_Collector_User()
-      {
-         AdminController admin = new AdminController(new TestImageRepository());
-
-         RedirectToRouteResult result = (RedirectToRouteResult)admin.Index(Principals.Collector);
-
-         Assert.AreEqual("Default", result.RouteName);
-         Assert.AreEqual("Home", result.Values["controller"]);
-         Assert.AreEqual("Index", result.Values["action"]);
-      }
-
       [Test]
       public void Returns_View_Result_With_No_Name_For_Administrator()
       {

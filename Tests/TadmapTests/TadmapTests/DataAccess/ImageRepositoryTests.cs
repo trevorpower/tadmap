@@ -66,6 +66,14 @@ namespace TadmapTests.Models
       }
 
       [Test]
+      public void With_Known_Id_Returns_1_Image_With_Correct_OwnerName()
+      {
+         IImageRepository repository = new TestImageRepository();
+         TadmapImage image = repository.GetAllImages().WithId(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1")).SingleOrDefault();
+         Assert.AreEqual("the owner", image.OwnerName);
+      }
+
+      [Test]
       public void With_Non_Existant_Id_Returns_No_Image()
       {
          IImageRepository repository = new TestImageRepository();

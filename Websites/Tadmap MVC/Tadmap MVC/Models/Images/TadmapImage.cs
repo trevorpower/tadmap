@@ -52,6 +52,7 @@ namespace Tadmap_MVC.Models.Images
       public bool IsPublic { get; set; }
       public bool IsOffensive { get; set; }
       public Guid UserId { get; set; }
+      public string OwnerName { get; set; }
 
       public bool CanUserMarkAsOffensive(IPrincipal principal)
       {

@@ -26,7 +26,7 @@ namespace TadmapTests.Mocks.Security
       {
          get
          {
-            return new System.Security.Principal.GenericPrincipal(new Identity("", true), CollectorRole);
+            return new System.Security.Principal.GenericPrincipal(new Identity("the owner", true), CollectorRole);
          }
       }
 

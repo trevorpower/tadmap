@@ -15,7 +15,6 @@ namespace Tadmap_MVC.Views.Image
          Guid id,
          string title,
          string description,
-         bool isEditable,
          string previewUrl,
          string originalUrl
       )
@@ -23,7 +22,6 @@ namespace Tadmap_MVC.Views.Image
          Id = id;
          Title = title;
          Description = description;
-         IsEditable = isEditable;
          PreviewUrl = previewUrl;
          OriginalUrl = originalUrl;
       }

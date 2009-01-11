@@ -101,6 +101,8 @@ namespace RepositoryIntegrationTests.SQL
          }
       }
 
+
+
       [Test]
       public void Making_First_Private_Image_Public_Gives_Public_Images_A_Count_Of_3()
       {
@@ -177,6 +179,19 @@ namespace RepositoryIntegrationTests.SQL
             TadmapImage latestImage = repository.GetAllImages().WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
 
             Assert.IsTrue(latestImage.IsPublic);
+         }
+      }
+
+      [Test]
+      public void Returns_Image_With_Correct_Owner_Name()
+      {
+         using (TransactionScope transaction = new TransactionScope())
+         {
+            IImageRepository repository = new SqlImageRepository();
+
+            TadmapImage image = repository.GetAllImages().WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
+
+            Assert.AreEqual("http://taduser.myopenid.com/", image.OwnerName);
          }
       }
 

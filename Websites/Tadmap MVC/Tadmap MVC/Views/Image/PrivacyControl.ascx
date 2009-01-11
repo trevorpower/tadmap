@@ -3,13 +3,18 @@
 
 <script language="javascript" type="text/javascript">
    function PrivacyChanged(isPublic) {
-      $(".PrivacyCheckBox").attr("checked", isPublic);
-      if (isPublic)
-         $(".PrivacyStatus").html("<%= IsPublicDescription %>");
-      else
-         $(".PrivacyStatus").html("<%= IsPrivateDescription %>");
+      $("#PrivacyStatus").css("color", "green");
+      if (isPublic) {
+         $("#PrivacyStatus").html("<%= IsPublicDescription %>");
+         $("#PublicCheckBox").attr("checked", "checked");
+      }
+      else {
+         $("#PrivacyStatus").html("<%= IsPrivateDescription %>");
+         $("#PublicCheckBox").removeAttr("checked", "checked");
+      }
    }
    function SetPrivacy(imageId, isPublic) {
+      $("#PrivacyStatus").css("color", "orange");
       if (isPublic)
          $.getJSON("/Image/" + imageId + "/MakePublic", PrivacyChanged);
       else
@@ -20,7 +25,7 @@
 <%= Html.CheckBox(
       "PublicCheckBox",
       ViewData.Model.IsPublic,
-            new { id = "PublicCheckBox", onClick = "SetPrivacy('" + ViewData.Model.Id + "', this.checked);" })
+            new { onClick = "SetPrivacy('" + ViewData.Model.Id + "', this.checked);" })
 %><label for="PublicCheckBox">Public</label>
 <div style="font-size: 12px;">
    <span id="PrivacyStatus">

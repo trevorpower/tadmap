@@ -16,7 +16,17 @@ namespace TadmapTests.DataAccess
          _images = new List<TadmapImage>();
 
          for (int i = 0; i < 10; i++)
-            _images.Add(new TadmapImage { Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf" + i), Description = "description", Key = "Key", Title = "Title " + i, IsPublic = i < 5 });
+            _images.Add(
+               new TadmapImage
+               {
+                  Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf" + i),
+                  Description = "description",
+                  Key = "Key",
+                  Title = "Title " + i,
+                  IsPublic = i < 5,
+                  OwnerName = "the owner"
+               }
+            );
 
          _images[0].IsOffensive = true;
          _images[9].IsOffensive = true;

@@ -44,7 +44,7 @@ namespace Tadmap_MVC.Controllers
          {
             TadmapImage image = _imageRepository.GetAllImages().WithId(id).Single();
 
-            ImageView model = new ImageView(image.Id, image.Title, image.Description, false, "PreviewUrl", null);
+            ImageView model = new ImageView(image.Id, image.Title, image.Description, "PreviewUrl", null);
 
             if (image.IsOffensive)
             {
@@ -62,11 +62,9 @@ namespace Tadmap_MVC.Controllers
                model.CanMarkOffensive = principal.IsInRole(TadMapRoles.Administrator);
             }
 
-            model.IsEditable = true;
+            model.IsEditable = principal.Identity.Name == image.OwnerName;
 
             model.IsPublic = image.IsPublic;
-
-            //ViewData["CanEdit"] = false;
 
             if (principal.Identity.IsAuthenticated)
             {
@@ -100,17 +98,7 @@ namespace Tadmap_MVC.Controllers
          return View();
       }
 
-      public ActionResult CreateTileSet()
-      {
-         throw new NotImplementedException();
-
-         //if (mImage != null)
-         //{
-         //   mImage.CreateTileset();
-         //   mImage.Save(HttpContext.Current.User.Identity);
-         //}      
-      }
-
+      [Authorize(Roles = TadMapRoles.Collector)]
       public ActionResult MakePublic(Guid id)
       {
          if (id == Guid.Empty)
@@ -125,10 +113,11 @@ namespace Tadmap_MVC.Controllers
 
          _imageRepository.Save(image);
 
-         return Json(true);
+         return Json(1);
       }
 
-      public ActionResult MakePrivate(Guid id)
+      [Authorize(Roles = TadMapRoles.Collector)]
+      public ActionResult MakePrivate(Guid id, IPrincipal principal)
       {
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
@@ -142,9 +131,10 @@ namespace Tadmap_MVC.Controllers
 
          _imageRepository.Save(image);
 
-         return Json(false);
+         return Json(0);
       }
 
+      [Authorize(Roles = TadMapRoles.Collector)]
       public ActionResult UpdateTitle(Guid id, string title)
       {
          if (id == Guid.Empty)
@@ -156,6 +146,7 @@ namespace Tadmap_MVC.Controllers
          return Json(TadImage.UpdateTitle(id, title, HttpContext.User) > 0);
       }
 
+      [Authorize(Roles = TadMapRoles.Collector)]
       public ActionResult UpdateDescription(Guid id, string description)
       {
          if (id == Guid.Empty)
@@ -167,6 +158,7 @@ namespace Tadmap_MVC.Controllers
          return Json(TadImage.UpdateDescription(id, description, HttpContext.User) > 0);
       }
 
+      [Authorize(Roles = TadMapRoles.Administrator)]
       public ActionResult Mark(Guid id, IPrincipal principal)
       {
          if (id == Guid.Empty)
@@ -188,6 +180,7 @@ namespace Tadmap_MVC.Controllers
          return Json(true);
       }
 
+      [Authorize(Roles = TadMapRoles.Administrator)]
       public ActionResult UnMark(Guid id, IPrincipal principal)
       {
          if (id == Guid.Empty)

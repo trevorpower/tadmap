@@ -45,6 +45,13 @@ namespace TadmapTests.Models
          Assert.AreEqual(true, image.IsOffensive);
       }
 
+      public void Contains_OwnerName()
+      {
+         TadmapImage image = new TadmapImage { OwnerName = "Owner" };
+
+         Assert.AreEqual("Owner", image.OwnerName);
+      }
+
       [Test]
       public void IsOffensive_Can_Be_False()
       {

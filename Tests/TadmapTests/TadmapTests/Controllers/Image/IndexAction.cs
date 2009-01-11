@@ -258,6 +258,16 @@ namespace TadmapTests.Controllers.Image
          Assert.IsFalse(model.IsPublic);
       }
 
+      [Test]
+      public void Model_IsEditable_Is_False_For_Guest()
+      {
+         ActionResult result = _imageController.Index(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf2"), Principals.Guest);
+         ViewResult viewResult = result as ViewResult;
+         ImageView model = viewResult.ViewData.Model as ImageView;
+
+         Assert.IsFalse(model.IsEditable);
+      }
+
       private void AssertThrowsException(Guid id, Type type, IPrincipal principal)
       {
          try

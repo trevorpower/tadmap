@@ -8,6 +8,7 @@ using System.Security.Principal;
 using Tadmap_MVC.DataAccess;
 using Tadmap_MVC.DataAccess.SQL;
 using TadMap.Security;
+using System.Security;
 
 namespace Tadmap_MVC.Controllers
 {
@@ -26,16 +27,17 @@ namespace Tadmap_MVC.Controllers
          _imageRepository = imageRepository;
       }
 
+      [Authorize(Roles=TadMapRoles.Administrator)]
       public ActionResult Index(IPrincipal principal)
       {
-         if (principal.Identity.IsAuthenticated && principal.IsInRole(TadMapRoles.Administrator))
+         //if (principal.Identity.IsAuthenticated && principal.IsInRole(TadMapRoles.Administrator))
          {
             ViewData.Model = _imageRepository.GetAllImages().ToList();
 
             return View();
          }
 
-         return RedirectToRoute("Default", new { Controller = "Home", Action = "Index" });
+         //return RedirectToRoute("Default", new { Controller = "Home", Action = "Index" });
       }
    }
 }
