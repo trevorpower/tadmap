@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Tadmap_MVC.DataAccess;
 using Tadmap_MVC.Models.Images;
+using Tadmap_MVC.Models.ImageSets;
 
 namespace TadmapTests.DataAccess
 {
@@ -24,7 +25,8 @@ namespace TadmapTests.DataAccess
                   Key = "Key",
                   Title = "Title " + i,
                   IsPublic = i < 5,
-                  OwnerName = "the owner"
+                  OwnerName = "the owner",
+                  ImageSet = new ImageSet1("Key")
                }
             );
 

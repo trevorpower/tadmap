@@ -110,6 +110,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AppHelper.cs" />
+    <Compile Include="Models\ImageSets\IImageSet.cs" />
+    <Compile Include="Models\ImageSets\ImageSet1.cs" />
     <Compile Include="Views\Image\OffensiveControl.ascx.cs">
       <DependentUpon>OffensiveControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

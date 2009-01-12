@@ -7,6 +7,7 @@ using Affirma.ThreeSharp.Model;
 using TadMap.Configuration;
 using Affirma.ThreeSharp;
 using Affirma.ThreeSharp.Query;
+using Affirma.ThreeSharp.Wrapper;
 
 namespace Tadmap_MVC.DataAccess.S3
 {
@@ -46,7 +47,8 @@ namespace Tadmap_MVC.DataAccess.S3
 
       public string GetUrl(string key)
       {
-         throw new NotImplementedException();
+         ThreeSharpWrapper s3 = new ThreeSharpWrapper(S3Storage.AccessKey, S3Storage.SecretAccessKey);
+         return s3.GetUrl(S3Storage.BucketName, key);
       }
 
       #endregion

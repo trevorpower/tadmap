@@ -15,14 +15,14 @@ namespace TadmapTests.Models
       {
          Guid id = Guid.NewGuid();
 
-         ImageView view = new ImageView(id, "Title", "Description", "PreviewUrl", "OriginalUrl");
+         ImageView view = new ImageView(id, "Title", "Description", "OriginalUrl");
 
          Assert.AreEqual(id, view.Id);
          Assert.AreEqual("Title", view.Title);
          Assert.AreEqual("Description", view.Description);
          Assert.IsNotNull(view.IsPublic);
          Assert.IsNotNull(view.IsEditable);
-         Assert.AreEqual("PreviewUrl", view.PreviewUrl);
+         Assert.IsNull(view.PreviewUrl);
          Assert.AreEqual("OriginalUrl", view.OriginalUrl);
       }
 
@@ -31,14 +31,14 @@ namespace TadmapTests.Models
       {
          Guid id = Guid.NewGuid();
 
-         ImageView view = new ImageView(id, "TitleF", "DescriptionF", "PreviewUrlF", "OriginalUrlF");
+         ImageView view = new ImageView(id, "TitleF", "DescriptionF", "OriginalUrlF");
 
          Assert.AreEqual(id, view.Id);
          Assert.AreEqual("TitleF", view.Title);
          Assert.AreEqual("DescriptionF", view.Description);
          Assert.IsNotNull(view.IsEditable);
          Assert.IsNotNull(view.IsPublic);
-         Assert.AreEqual("PreviewUrlF", view.PreviewUrl);
+         Assert.IsNull(view.PreviewUrl);
          Assert.AreEqual("OriginalUrlF", view.OriginalUrl);
       }
 

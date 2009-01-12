@@ -15,14 +15,12 @@ namespace Tadmap_MVC.Views.Image
          Guid id,
          string title,
          string description,
-         string previewUrl,
          string originalUrl
       )
       {
          Id = id;
          Title = title;
          Description = description;
-         PreviewUrl = previewUrl;
          OriginalUrl = originalUrl;
       }
 

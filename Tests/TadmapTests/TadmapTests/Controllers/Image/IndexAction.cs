@@ -229,6 +229,46 @@ namespace TadmapTests.Controllers.Image
       }
 
       [Test]
+      public void Original_Url_Returned_For_Admin()
+      {
+         ActionResult result = _imageController.Index(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1"), Principals.Administrator);
+         ViewResult viewResult = result as ViewResult;
+         ImageView model = viewResult.ViewData.Model as ImageView;
+
+         Assert.IsNotNull(model.OriginalUrl);
+      }
+
+      [Test]
+      public void Original_Url_Returned_For_Owner()
+      {
+         ActionResult result = _imageController.Index(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1"), Principals.Collector);
+         ViewResult viewResult = result as ViewResult;
+         ImageView model = viewResult.ViewData.Model as ImageView;
+
+         Assert.IsNotNull(model.OriginalUrl);
+      }
+
+      [Test]
+      public void Has_Url_Equal_To_Key_Plus_Url()
+      {
+         ActionResult result = _imageController.Index(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1"), Principals.Collector);
+         ViewResult viewResult = result as ViewResult;
+         ImageView model = viewResult.ViewData.Model as ImageView;
+
+         Assert.AreEqual("Keyurl", model.OriginalUrl);
+      }
+
+      [Test]
+      public void Has_Preview_Url_Equal_To_PreviewKey_Plus_Url_For_Owner()
+      {
+         ActionResult result = _imageController.Index(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1"), Principals.Collector);
+         ViewResult viewResult = result as ViewResult;
+         ImageView model = viewResult.ViewData.Model as ImageView;
+
+         Assert.AreEqual("Preview_Keyurl", model.PreviewUrl);
+      }
+
+      [Test]
       public void Image_IsEditable_Is_True_For_Owner()
       {
          ActionResult result = _imageController.Index(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1"), Principals.Collector);

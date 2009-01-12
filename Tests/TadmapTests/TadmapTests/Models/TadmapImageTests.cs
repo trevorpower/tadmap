@@ -92,6 +92,14 @@ namespace TadmapTests.Models
       }
 
       [Test]
+      public void Has_ImageSet_Accessor()
+      {
+         TadmapImage image = new TadmapImage();
+
+         Assert.IsNull(image.ImageSet);
+      }
+
+      [Test]
       public void Administrator_Can_Mark_As_Offensive()
       {
          IImageRepository imageRepository = new TestImageRepository();

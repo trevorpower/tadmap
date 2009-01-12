@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Tadmap_MVC.Models.Images;
+using Tadmap_MVC.Models.ImageSets;
 
 namespace Tadmap_MVC.DataAccess.SQL
 {
@@ -23,7 +24,8 @@ namespace Tadmap_MVC.DataAccess.SQL
                    Key = i.Key,
                    IsPublic = i.Privacy == 1,
                    IsOffensive = i.OffensiveCount > 0,
-                   OwnerName = i.User.UserOpenIds.Single().OpenIdUrl
+                   OwnerName = i.User.UserOpenIds.Single().OpenIdUrl,
+                   ImageSet = new ImageSet1(i.Key)
                 };
       }
 
@@ -33,7 +35,7 @@ namespace Tadmap_MVC.DataAccess.SQL
 
          TadmapDb db = new TadmapDb();
          UserImage dbImage = db.UserImages.SingleOrDefault(i => i.Id == image.Id);
-         
+
          if (dbImage == null)
          {
             dbImage = new UserImage();
@@ -58,7 +60,7 @@ namespace Tadmap_MVC.DataAccess.SQL
 
          if (isNew)
             db.UserImages.InsertOnSubmit(dbImage);
-         
+
          db.SubmitChanges();
       }
 

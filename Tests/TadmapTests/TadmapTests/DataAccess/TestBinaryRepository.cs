@@ -17,7 +17,7 @@ namespace TadmapTests.DataAccess
 
       public string GetUrl(string key)
       {
-         return null;
+         return key + "url";
       }
 
       #endregion

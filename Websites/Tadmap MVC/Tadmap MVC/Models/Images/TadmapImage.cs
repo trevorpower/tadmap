@@ -7,6 +7,7 @@ using TadMap.Security;
 using Tadmap_MVC.DataAccess;
 using Tadmap_MVC.DataAccess.SQL;
 using Tadmap_MVC.DataAccess.S3;
+using Tadmap_MVC.Models.ImageSets;
 
 namespace Tadmap_MVC.Models.Images
 {
@@ -53,6 +54,8 @@ namespace Tadmap_MVC.Models.Images
       public bool IsOffensive { get; set; }
       public Guid UserId { get; set; }
       public string OwnerName { get; set; }
+
+      public IImageSet ImageSet { get; set; }
 
       public bool CanUserMarkAsOffensive(IPrincipal principal)
       {

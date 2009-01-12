@@ -44,7 +44,7 @@ namespace Tadmap_MVC.Controllers
          {
             TadmapImage image = _imageRepository.GetAllImages().WithId(id).Single();
 
-            ImageView model = new ImageView(image.Id, image.Title, image.Description, "PreviewUrl", null);
+            ImageView model = new ImageView(image.Id, image.Title, image.Description, null);
 
             if (image.IsOffensive)
             {
@@ -62,7 +62,21 @@ namespace Tadmap_MVC.Controllers
                model.CanMarkOffensive = principal.IsInRole(TadMapRoles.Administrator);
             }
 
-            model.IsEditable = principal.Identity.Name == image.OwnerName;
+            if (principal.Identity.Name == image.OwnerName) // owner
+            {
+               model.IsEditable = principal.Identity.Name == image.OwnerName;
+               model.OriginalUrl = _binaryRepository.GetUrl(image.Key);
+            }
+            else if (principal.IsInRole(TadMapRoles.Administrator)) // administrator
+            {
+               model.OriginalUrl = _binaryRepository.GetUrl(image.Key);
+            }
+            else // guest
+            {
+               model.OriginalUrl = null;
+            }
+
+            model.PreviewUrl = _binaryRepository.GetUrl(image.ImageSet.Preview);
 
             model.IsPublic = image.IsPublic;
 

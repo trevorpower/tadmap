@@ -196,6 +196,46 @@ namespace RepositoryIntegrationTests.SQL
       }
 
       [Test]
+      public void Returns_Image_With_ImageSet()
+      {
+         using (TransactionScope transaction = new TransactionScope())
+         {
+            IImageRepository repository = new SqlImageRepository();
+
+            TadmapImage image = repository.GetAllImages().WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
+
+            Assert.IsNotNull(image.ImageSet);
+         }
+      }
+
+
+      [Test]
+      public void Returns_Image_With_Correct_Original_Key()
+      {
+         using (TransactionScope transaction = new TransactionScope())
+         {
+            IImageRepository repository = new SqlImageRepository();
+
+            TadmapImage image = repository.GetAllImages().WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
+
+            Assert.AreEqual("f0b999ba-36b1-4cc2-beb1-455367b5897a.gif", image.ImageSet.Original);
+         }
+      }
+
+      [Test]
+      public void Returns_Image_With_Correct_Original_Preview_Key()
+      {
+         using (TransactionScope transaction = new TransactionScope())
+         {
+            IImageRepository repository = new SqlImageRepository();
+
+            TadmapImage image = repository.GetAllImages().WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
+
+            Assert.AreEqual("Preview_f0b999ba-36b1-4cc2-beb1-455367b5897a.gif", image.ImageSet.Preview);
+         }
+      }
+
+      [Test]
       public void Change_Public_Image_To_Private_Saves_And_Returns_Correctly()
       {
          using (TransactionScope transaction = new TransactionScope())
