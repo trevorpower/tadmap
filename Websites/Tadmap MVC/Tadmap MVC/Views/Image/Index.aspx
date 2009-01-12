@@ -8,7 +8,43 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-   <span class="EditTitle ItemTitle">
+   <% if (ViewData.Model.IsEditable)
+      { %>
+
+   <script src="../../Scripts/jquery.jeditable.mini.js" type="text/javascript"></script>
+
+   <script language="javascript" type="text/javascript">
+      $(document).ready(function() {
+         $("#EditTitle").editable(
+            function(value, settings) {
+               $.getJSON("/Image/<%= ViewData.Model.Id %>/UpdateTitle/?title=" + value, function(json) {
+               });
+               return value;
+            },
+            {
+               cssclass: "ItemTitleEdit",
+               indicator: "Saving...",
+               tooltip: "Click to edit...",
+               cancel: "Cancel",
+               submit: "Save"
+            }
+         );
+         $("#EditDescription").editable(function(value, settings) {
+            $.getJSON("/Image/<%= ViewData.Model.Id %>/UpdateDescription/?description=" + value, function(json) {
+            }); return value;
+         }, {
+            cssclass: "MapDescriptionEdit",
+            type: "textarea",
+            cancel: "Cancel",
+            submit: "Save",
+            indicator: "Saving...",
+            tooltip: "Click to edit..."
+         });
+      });
+   </script>
+
+   <% } %>
+   <span id="EditTitle" class="ItemTitle">
       <%= ViewData.Model.Title %></span>
    <div class="ImagePanel">
       <img class="ItemDetailImage" src="<%= ViewData.Model.PreviewUrl %>" alt="<%= ViewData.Model.Title %>" />
@@ -20,7 +56,7 @@
       </div>
    </div>
    <div class="ItemDetail">
-      <span class="EditDescription MapDescriptionText">
+      <span id="EditDescription" class="MapDescriptionText">
          <%= ViewData.Model.Description %></span>
    </div>
    <%
