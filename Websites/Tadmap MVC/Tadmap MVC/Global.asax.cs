@@ -14,6 +14,13 @@ namespace Tadmap_MVC
    {
       public static void RegisterRoutes(RouteCollection routes)
       {
+         
+
+
+
+
+
+
          routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
          //routes.MapRoute(
@@ -24,18 +31,21 @@ namespace Tadmap_MVC
 
          routes.MapRoute(
              "image",                                                // Route name
-             "Image/{id}/{action}",                                  // URL with parameters
+             "Image.mvc/{id}/{action}",                                  // URL with parameters
              new { controller = "Image", action = "Index", id = "" } // Parameter defaults
          );
 
          routes.MapRoute(
              "Default",                                              // Route name
-             "{controller}/{action}/{id}",                           // URL with parameters
+             "{controller}.mvc/{action}/{id}",                           // URL with parameters
              new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
          );
 
-         
-
+         routes.MapRoute(
+           "Root",
+           "",
+           new { controller = "Home", action = "Index", id = "" }
+         );
       }
 
       protected void Application_Start()
