@@ -37,7 +37,7 @@ namespace TadmapTests.Controllers.Upload
 
 
       [Test]
-      public void Returns_ViewResult_For_Collector()
+      public void Returns_Redirect_For_Collector()
       {
          UploadController upload = new UploadController();
 

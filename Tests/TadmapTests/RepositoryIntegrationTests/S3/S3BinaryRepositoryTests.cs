@@ -12,7 +12,7 @@ namespace RepositoryIntegrationTests.S3
    public class S3BinaryRepositoryTests
    {
       [Test]
-      public void Get_Url_Is_Implemented()
+      public void Can_Call_Get_URL()
       {
          IBinaryRepository repository = new S3BinaryRepository();
 
