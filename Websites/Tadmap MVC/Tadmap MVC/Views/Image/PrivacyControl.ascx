@@ -16,12 +16,11 @@
    function SetPrivacy(imageId, isPublic) {
       $("#PrivacyStatus").css("color", "orange");
       if (isPublic)
-         $.getJSON("/Image/" + imageId + "/MakePublic", PrivacyChanged);
+         $.getJSON('<%= Url.RouteUrl("Image", new { action = "MakePublic", id = ViewData.Model.Id }) %>', PrivacyChanged);
       else
-         $.getJSON("/Image/" + imageId + "/MakePrivate", PrivacyChanged);
+         $.getJSON('<%= Url.RouteUrl("Image", new { action = "MakePrivate", id = ViewData.Model.Id }) %>', PrivacyChanged);
    } 
 </script>
-
 <%= Html.CheckBox(
       "PublicCheckBox",
       ViewData.Model.IsPublic,

@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Main.Master" AutoEventWireup="true"
-   CodeFile="Index.aspx.cs" Inherits="Tadmap_MVC.Views.Image.Index" Title="Tadmap"
+   CodeBehind="Index.aspx.cs" Inherits="Tadmap_MVC.Views.Image.Index" Title="Tadmap"
    Theme="Tad" %>
 
 <asp:Content ContentPlaceHolderID="head" ID="HeadContent" runat="server">
@@ -17,7 +17,7 @@
       $(document).ready(function() {
          $("#EditTitle").editable(
             function(value, settings) {
-               $.getJSON("/Image/<%= ViewData.Model.Id %>/UpdateTitle/?title=" + value, function(json) {
+               $.getJSON('<%= Url.RouteUrl("Image", new { action = "UpdateTitle", id = ViewData.Model.Id }) %>' + '?title=' + value, function(json) {
                });
                return value;
             },
@@ -30,7 +30,7 @@
             }
          );
          $("#EditDescription").editable(function(value, settings) {
-            $.getJSON("/Image/<%= ViewData.Model.Id %>/UpdateDescription/?description=" + value, function(json) {
+            $.getJSON('<%= Url.RouteUrl("Image", new { action = "UpdateDescription", id = ViewData.Model.Id }) %>' + '?description=' + value, function(json) {
             }); return value;
          }, {
             cssclass: "MapDescriptionEdit",
@@ -62,7 +62,7 @@
    <%
       if (ViewData.Model.IsEditable)
       {
-         Html.RenderPartial("PrivacyControl", ViewData.Model);
+          Html.RenderPartial("PrivacyControl", ViewData.Model);
       }
       if (ViewData.Model.ShowOffensiveCount)
       {
