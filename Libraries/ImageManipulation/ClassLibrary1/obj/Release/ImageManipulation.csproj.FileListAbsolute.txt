@@ -8,3 +8,8 @@ C:\Users\Trevor\Development\tadmap\trunk\Libraries\ImageManipulation\ClassLibrar
 C:\Users\Trevor\Development\tadmap\trunk\Libraries\ImageManipulation\ClassLibrary1\obj\Release\ResolveAssemblyReference.cache
 C:\Users\Trevor\Development\tadmap\trunk\Libraries\ImageManipulation\ClassLibrary1\obj\Release\ClassLibrary1.dll
 C:\Users\Trevor\Development\tadmap\trunk\Libraries\ImageManipulation\ClassLibrary1\obj\Release\ClassLibrary1.pdb
+C:\Users\Trevor\Development\tadmap\branches\mvc\Libraries\ImageManipulation\ClassLibrary1\bin\Release\ClassLibrary1.dll
+C:\Users\Trevor\Development\tadmap\branches\mvc\Libraries\ImageManipulation\ClassLibrary1\bin\Release\ClassLibrary1.pdb
+C:\Users\Trevor\Development\tadmap\branches\mvc\Libraries\ImageManipulation\ClassLibrary1\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Trevor\Development\tadmap\branches\mvc\Libraries\ImageManipulation\ClassLibrary1\obj\Release\ClassLibrary1.dll
+C:\Users\Trevor\Development\tadmap\branches\mvc\Libraries\ImageManipulation\ClassLibrary1\obj\Release\ClassLibrary1.pdb
