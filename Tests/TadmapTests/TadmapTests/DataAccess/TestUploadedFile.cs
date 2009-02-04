@@ -7,7 +7,7 @@ using System.IO;
 
 namespace TadmapTests.DataAccess
 {
-   internal class TestUploadedFile : IUploadedFile
+   internal class TestEmptyFile : IUploadedFile
    {
       #region IUploadedFile Members
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Security.Principal;
 using TadMap.Security;
+using Tadmap_MVC.Tadmap.Security;
 
 namespace TadmapTests.Mocks.Security
 {
@@ -26,7 +27,7 @@ namespace TadmapTests.Mocks.Security
       {
          get
          {
-            return new System.Security.Principal.GenericPrincipal(new Identity("the owner", true), CollectorRole);
+            return new System.Security.Principal.GenericPrincipal(new TadmapIdentity("the owner", "the owner display name", Guid.NewGuid(), "Mock"), CollectorRole);
          }
       }
 

@@ -14,31 +14,11 @@ namespace TadmapTests.Controllers.Upload
    public class Index
    {
       [Test]
-      public void Does_Redirect_For_Guest()
-      {
-         UploadController upload = new UploadController();
-
-         ActionResult result = upload.Index(Principals.Guest);
-
-         Assert.IsInstanceOfType(typeof(RedirectResult), result);
-      }
-
-      [Test]
-      public void Redirect_For_Guest_Is_TestURL()
-      {
-         UploadController upload = new UploadController();
-
-         RedirectResult result = upload.Index(Principals.Guest) as RedirectResult;
-
-         Assert.AreEqual("/TestURL", result.Url);
-      }
-
-      [Test]
       public void Returns_ViewResult_For_Collector()
       {
          UploadController upload = new UploadController();
 
-         ActionResult result = upload.Index(Principals.Collector);
+         ActionResult result = upload.Index();
 
          Assert.IsInstanceOfType(typeof(ViewResult), result); 
       }
@@ -48,7 +28,7 @@ namespace TadmapTests.Controllers.Upload
       {
          UploadController upload = new UploadController();
 
-         ViewResult result = upload.Index(Principals.Collector) as ViewResult;
+         ViewResult result = upload.Index() as ViewResult;
 
          Assert.IsEmpty(result.ViewName);
          Assert.IsNull(result.ViewData.Model);

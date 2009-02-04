@@ -13,7 +13,7 @@ namespace TadmapTests.DataAccess
       [Test]
       public void Has_InputStream_FileName_And_ContentLength()
       {
-         IUploadedFile file = new TestUploadedFile();
+         IUploadedFile file = new TestEmptyFile();
 
          Assert.IsNotNull(file.InputStream);
          Assert.IsNotNull(file.FileName);
