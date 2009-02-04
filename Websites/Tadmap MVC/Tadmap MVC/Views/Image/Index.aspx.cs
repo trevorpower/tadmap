@@ -1,7 +1,7 @@
-﻿using System.Web.Mvc;
-using System;
+﻿using System;
 using Tadmap_MVC.Models.Images;
 using Tadmap_MVC.Views.Image;
+using System.Web.Mvc;
 
 namespace Tadmap_MVC.Views.Image
 {

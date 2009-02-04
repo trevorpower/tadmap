@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.Security;
+using System.Security.Principal;
+using Tadmap_MVC.Tadmap.Security;
 
 namespace Tadmap_MVC
 {
@@ -38,6 +41,24 @@ namespace Tadmap_MVC
       protected void Application_Start()
       {
          RegisterRoutes(RouteTable.Routes);
+      }
+
+      protected void Application_AuthenticateRequest(Object sender, EventArgs e)
+      {
+         HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+
+         if (authCookie != null)
+         {
+            FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+
+            // the database id for the user is stored along with the list of roles in the user
+            // data of the ticket. they are seperated by a '+' character
+            CookieUserData userData = CookieUserData.Parse(authTicket.UserData);
+
+            var identity = new TadmapIdentity(authTicket.Name, userData.DisplayName, userData.Id, "Forms");
+
+            Context.User = new GenericPrincipal(identity, userData.Roles);
+         }
       }
    }
 }

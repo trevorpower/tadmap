@@ -59,25 +59,23 @@
     </Reference>
     <Reference Include="System.Web.Abstractions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC Beta\Assemblies\System.Web.Abstractions.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC RC\Assemblies\System.Web.Abstractions.dll</HintPath>
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
-      <Private>False</Private>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC Beta\Assemblies\System.Web.Mvc.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC RC\Assemblies\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Routing, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC Beta\Assemblies\System.Web.Routing.dll</HintPath>
-      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC RC\Assemblies\System.Web.Routing.dll</HintPath>
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -112,6 +110,10 @@
     <Compile Include="Helpers\AppHelper.cs" />
     <Compile Include="Models\ImageSets\IImageSet.cs" />
     <Compile Include="Models\ImageSets\ImageSet1.cs" />
+    <Compile Include="Tadmap\Security\Authentication.cs" />
+    <Compile Include="Tadmap\Security\CookieUserData.cs" />
+    <Compile Include="Tadmap\Security\TadmapIdentity.cs" />
+    <Compile Include="Tadmap\Security\TadmapPrincipal.cs" />
     <Compile Include="Views\Image\OffensiveControl.ascx.cs">
       <DependentUpon>OffensiveControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,9 +153,6 @@
     </Compile>
     <Compile Include="Tadmap\TadPage.cs">
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tadmap\UpdateImage.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\Account\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
@@ -314,10 +313,6 @@
     <Content Include="bin\DotNetOpenId.dll" />
     <Content Include="bin\DotNetOpenId.pdb" />
     <Content Include="bin\DotNetOpenId.xml" />
-    <Content Include="bin\System.Web.Abstractions.dll" />
-    <Content Include="bin\System.Web.Mvc.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="bin\Tadmap MVC.dll" />
     <Content Include="bin\Tadmap MVC.pdb" />
     <Content Include="Configuration\appSettings.DEV.config" />
@@ -328,7 +323,11 @@
     <Content Include="Configuration\System.web\roleManager.config" />
     <Content Include="Configuration\System.web\pages.config" />
     <Content Include="Scripts\jquery.jeditable.mini.js" />
+    <Content Include="Scripts\swfupload.js" />
+    <Content Include="Scripts\swfuploadhandlers.js" />
     <Content Include="Scripts\ViewMap.js" />
+    <Content Include="SWF\default.css" />
+    <Content Include="SWF\swfupload.swf" />
     <Content Include="Views\Admin\Index.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Image\Index.aspx" />

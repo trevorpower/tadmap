@@ -6,20 +6,21 @@ using System.Web.Mvc;
 using System.Security.Principal;
 using Tadmap_MVC.DataAccess;
 using Tadmap_MVC.DataAccess.HttpPostedFile;
+using System.Reflection;
 
 namespace Tadmap_MVC.ActionInvokers
 {
    public class ActionInvoker : ControllerActionInvoker
    {
-      protected override object GetParameterValue(System.Reflection.ParameterInfo parameterInfo)
+      protected override object GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
       {
-         if (parameterInfo.ParameterType == typeof(IPrincipal))
+         if (parameterDescriptor.ParameterType == typeof(IPrincipal))
             return HttpContext.Current.User;
 
-         if (parameterInfo.ParameterType == typeof(IUploadedFile))
-            return new HttpPostedFileUploadedFile( HttpContext.Current.Request.Files[parameterInfo.Name] );
+         if (parameterDescriptor.ParameterType == typeof(IUploadedFile))
+            return new HttpPostedFileUploadedFile(HttpContext.Current.Request.Files[0]);
 
-         return base.GetParameterValue(parameterInfo);
+         return base.GetParameterValue(controllerContext, parameterDescriptor);
       }
    }
 }

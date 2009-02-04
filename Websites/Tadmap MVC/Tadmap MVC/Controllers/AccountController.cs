@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using TadMap.Configuration;
 using System.Data;
 using TadMap.Security;
+using Tadmap_MVC.Tadmap.Security;
 
 namespace Tadmap_MVC.Controllers
 {
@@ -21,6 +22,7 @@ namespace Tadmap_MVC.Controllers
    [OutputCache(Location = OutputCacheLocation.None)]
    public class AccountController : Controller
    {
+
 
       // This constructor is used by the MVC framework to instantiate the controller using
       // the default forms authentication and membership providers.
@@ -128,7 +130,7 @@ namespace Tadmap_MVC.Controllers
          return View();
       }
 
-      
+
       public ActionResult OpenIdReturn()
       {
          OpenIdRelyingParty rp = new OpenIdRelyingParty();
@@ -200,7 +202,7 @@ namespace Tadmap_MVC.Controllers
             ModelState.AddModelError("openid_url", "The OpenID you provided is not in the correct format.");
          }
 
-         // if we got here then something went wrong so wego back to the login view.
+         // if we got here then something went wrong so we go back to the login view.
          return View();
       }
 
@@ -318,58 +320,54 @@ namespace Tadmap_MVC.Controllers
       /// <summary>
       /// This authenticates a user based on a response from an openid provider.
       /// </summary>
-      /// <param name="response"></param>
       private ActionResult AuthenticateUser(IAuthenticationResponse response)
       {
          if (response.Status != AuthenticationStatus.Authenticated)
             throw new ArgumentException("The response status must be 'Authenticated'. (" + response.Status.ToString() + ")", "response");
 
-         Identifier identifier = response.ClaimedIdentifier;
+         TadmapDb db = new TadmapDb();
 
+         var user = db.UserOpenIds.Where(u => u.OpenIdUrl == response.ClaimedIdentifier.ToString()).SingleOrDefault();
+         Guid userId;
+
+         if (user != null)
          {
-            using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
-            {
-               cn.Open();
-               using (SqlCommand cm = cn.CreateCommand())
-               {
-                  cm.CommandType = CommandType.StoredProcedure;
-                  cm.CommandText = "GetUserId";
-                  cm.Parameters.AddWithValue("@OpenIdUrl", identifier.ToString());
-
-                  using (SqlDataReader dr = cm.ExecuteReader())
-                  {
-                     if (dr.Read())
-                     {
-                        // a record was found so the user already exists
-                        // in the future we can use this to populate the identity
-                        // with display name and image...
-                     }
-                     else
-                     {
-                        // no user was found so we create it now.
-                        CreateNewUser(identifier.ToString());
-                     }
-                  }
-               }
-            }
-
-            // somehow we need to put the response.FriendlyIdentifierForDisplay
-            // into the identity/principal
-
-            if (Request.QueryString["ReturnUrl"] != null)
-            {
-               FormsAuthentication.RedirectFromLoginPage(identifier.ToString(), false);
-            }
-            else
-            {
-               FormsAuthentication.SetAuthCookie(identifier.ToString(), false);
-            }
-
-            return RedirectToAction("Index", new { controller = "Home" });
+            userId = user.UserId;
          }
+         else
+         {
+            userId = CreateNewUser(response.ClaimedIdentifier.ToString());
+         }
+
+         var roles = from role in db.UserRoles
+                     where role.UserId == userId
+                     select role.Role;
+
+         CookieUserData userData = new CookieUserData(
+            userId,
+            response.FriendlyIdentifierForDisplay.ToString(),
+            roles.ToArray()
+         );
+         
+         FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
+           1,
+           response.ClaimedIdentifier.ToString(),
+           DateTime.Now,
+           DateTime.Now.AddMinutes(30),
+           false,
+           userData.ToString()
+         );
+
+         // Encrypt the ticket.
+         string encTicket = FormsAuthentication.Encrypt(ticket);
+
+         // Create the cookie.
+         Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket));
+
+         return RedirectToAction("Index", new { controller = "Home" });
       }
 
-      private void CreateNewUser(string openIdUrl)
+      private Guid CreateNewUser(string openIdUrl)
       {
          TadmapDb db = new TadmapDb(Database.TadMapConnection);
 
@@ -390,6 +388,8 @@ namespace Tadmap_MVC.Controllers
          db.UserOpenIds.InsertOnSubmit(newOpenId);
 
          db.SubmitChanges();
+
+         return newUser.Id;
       }
    }
 
@@ -416,5 +416,5 @@ namespace Tadmap_MVC.Controllers
       }
    }
 
-   
+
 }

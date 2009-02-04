@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Tadmap_MVC.DataAccess;
+using System.IO;
 
 namespace Tadmap_MVC.Models.ImageSets
 {
@@ -9,5 +11,7 @@ namespace Tadmap_MVC.Models.ImageSets
    {
       string Original { get; }
       string Preview { get; }
+
+      void Create(Stream stream, IBinaryRepository binaryRepository);
    }
 }
