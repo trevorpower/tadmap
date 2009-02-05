@@ -22,9 +22,11 @@
  </ProjectOptions>
  <Targets>
   <AssemblyReferenceDirectories>
+   <Directory>$(ProjectDir)/../../../../../../Program Files (x86)/Microsoft ASP.NET/ASP.NET MVC RC/Assemblies/</Directory>
    <Directory>$(ProjectDir)/../../../../../Program Files (x86)/Microsoft ASP.NET/ASP.NET MVC RC/Assemblies/</Directory>
+   <Directory>$(ProjectDir)/Websites/Tadmap MVC/Tadmap MVC/bin/</Directory>
   </AssemblyReferenceDirectories>
-  <Target Name="$(ProjectDir)/Websites/Tadmap MVC/Tadmap MVC/bin/Tadmap MVC.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Websites/Tadmap MVC/Tadmap MVC/bin/Tadmap MVC.dll" Analyze="True" AnalyzeAllChildren="True" />
  </Targets>
  <Rules>
   <RuleFiles>
@@ -45,15 +47,16 @@
   <Namespaces>
    <Namespace Name="Tadmap">
     <Messages>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldDifferByMoreThanCase" Category="Microsoft.Naming" CheckId="CA1708" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>'TadMap'</Item>
+       <Item>Tadmap</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap</Item>
        <Item>Tadmap</Item>
       </Issue>
      </Message>
@@ -72,6 +75,24 @@
        <Item>Tadmap</Item>
       </Issue>
      </Message>
+     <Message Id="TadMap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>TadMap</Item>
+       <Item>TadMap</Item>
+       <Item>Tadmap</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="TadMap.Configuration">
+    <Messages>
+     <Message Id="TadMap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>TadMap</Item>
+       <Item>TadMap.Configuration</Item>
+       <Item>Tadmap</Item>
+      </Issue>
+     </Message>
     </Messages>
    </Namespace>
    <Namespace Name="TadMap.Security">
@@ -79,6 +100,13 @@
      <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-01-29 22:12:58Z">
       <Issue>
        <Item>TadMap.Security</Item>
+      </Issue>
+     </Message>
+     <Message Id="TadMap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>TadMap</Item>
+       <Item>TadMap.Security</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -97,15 +125,16 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -137,15 +166,16 @@
        <Item>Tadmap_MVC.ActionFIlters</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.ActionFIlters</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.ActionFIlters</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.ActionFIlters</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -164,15 +194,16 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.ActionInvokers</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.ActionInvokers</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.ActionInvokers</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -186,15 +217,16 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.Controllers</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.Controllers</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.Controllers</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -213,15 +245,16 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.DataAccess</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.DataAccess</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.DataAccess</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -240,15 +273,16 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.DataAccess.HttpPostedFile</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.DataAccess.HttpPostedFile</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.DataAccess.HttpPostedFile</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -267,15 +301,16 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.DataAccess.S3</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.DataAccess.S3</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.DataAccess.S3</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -301,15 +336,16 @@
        <Item>Sql</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.DataAccess.SQL</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.DataAccess.SQL</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.DataAccess.SQL</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -328,15 +364,16 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.Helpers</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.Helpers</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.Helpers</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -355,15 +392,16 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.Models.Images</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.Models.Images</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.Models.Images</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -382,15 +420,16 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.Models.ImageSets</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.Models.ImageSets</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.Models.ImageSets</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -409,19 +448,21 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.Tadmap.Security</Item>
-      </Issue>
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.Tadmap.Security</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.Tadmap.Security</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.Tadmap.Security</Item>
+       <Item>Tadmap</Item>
+      </Issue>
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.Tadmap.Security</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -440,15 +481,16 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.Views.Account</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.Views.Account</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.Views.Account</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -467,15 +509,16 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.Views.Admin</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.Views.Admin</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.Views.Admin</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -494,12 +537,6 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.Views.Home</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldDifferByMoreThanCase" Category="Microsoft.Naming" CheckId="CA1708" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>'TadMap_MVC.Views.Home'</Item>
@@ -509,6 +546,13 @@
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.Views.Home</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.Views.Home</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -538,6 +582,13 @@
        <Item>TadMap_MVC.Views.Home</Item>
       </Issue>
      </Message>
+     <Message Id="TadMap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>TadMap</Item>
+       <Item>TadMap_MVC.Views.Home</Item>
+       <Item>Tadmap</Item>
+      </Issue>
+     </Message>
     </Messages>
    </Namespace>
    <Namespace Name="Tadmap_MVC.Views.Shared">
@@ -549,12 +600,6 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.Views.Shared</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.Views.Shared</Item>
@@ -564,6 +609,13 @@
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.Views.Shared</Item>
        <Item>Shared</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.Views.Shared</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -582,15 +634,16 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.Views.Upload</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.Views.Upload</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.Views.Upload</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
@@ -609,22 +662,23 @@
        <Item>Mvc</Item>
       </Issue>
      </Message>
-     <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap</Item>
-       <Item>Tadmap_MVC.Views.UserImages</Item>
-      </Issue>
-     </Message>
      <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-01-29 22:12:58Z">
       <Issue Name="Namespace">
        <Item>Tadmap_MVC.Views.UserImages</Item>
+      </Issue>
+     </Message>
+     <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+      <Issue Name="Namespace">
+       <Item>Tadmap</Item>
+       <Item>Tadmap_MVC.Views.UserImages</Item>
+       <Item>Tadmap</Item>
       </Issue>
      </Message>
     </Messages>
    </Namespace>
   </Namespaces>
   <Targets>
-   <Target Name="$(ProjectDir)/Websites/Tadmap MVC/Tadmap MVC/bin/Tadmap MVC.dll">
+   <Target Name="$(ProjectDir)/../Websites/Tadmap MVC/Tadmap MVC/bin/Tadmap MVC.dll">
     <Modules>
      <Module Name="tadmap mvc.dll">
       <Messages>
@@ -640,12 +694,6 @@
          <Item>Mvc</Item>
         </Issue>
        </Message>
-       <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
-        <Issue Name="Assembly">
-         <Item>Tadmap</Item>
-         <Item>'Tadmap MVC.dll'</Item>
-        </Issue>
-       </Message>
        <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Created="2009-01-29 22:12:58Z">
         <Issue>
          <Item>'Tadmap MVC.dll'</Item>
@@ -654,6 +702,13 @@
        <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Created="2009-01-29 22:12:58Z">
         <Issue>
          <Item>'Tadmap MVC.dll'</Item>
+        </Issue>
+       </Message>
+       <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+        <Issue Name="Assembly">
+         <Item>Tadmap</Item>
+         <Item>'Tadmap MVC.dll'</Item>
+         <Item>Tadmap</Item>
         </Issue>
        </Message>
       </Messages>
@@ -747,10 +802,11 @@
              <Item>DB</Item>
             </Issue>
            </Message>
-           <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
+           <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
             <Issue Name="Type">
              <Item>Tadmap</Item>
              <Item>'TadmapDb'</Item>
+             <Item>Tadmap</Item>
             </Issue>
            </Message>
           </Messages>
@@ -760,6 +816,13 @@
            <Message TypeName="DeclareTypesInNamespaces" Category="Microsoft.Design" CheckId="CA1050" Created="2009-01-29 22:12:58Z">
             <Issue>
              <Item>'TadMapRoleProvider'</Item>
+            </Issue>
+           </Message>
+           <Message Id="TadMap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+            <Issue Name="Type">
+             <Item>TadMap</Item>
+             <Item>'TadMapRoleProvider'</Item>
+             <Item>Tadmap</Item>
             </Issue>
            </Message>
           </Messages>
@@ -877,10 +940,11 @@
              <Item>DB</Item>
             </Issue>
            </Message>
-           <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
+           <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
             <Issue Name="Type">
              <Item>Tadmap</Item>
              <Item>'TadmapDb'</Item>
+             <Item>Tadmap</Item>
             </Issue>
            </Message>
           </Messages>
@@ -1192,6 +1256,21 @@
        </Namespace>
        <Namespace Name="TadMap.Configuration">
         <Types>
+         <Type Name="Database">
+          <Members>
+           <Member Name="#TadMapConnection">
+            <Messages>
+             <Message Id="TadMap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+              <Issue Name="Member">
+               <Item>TadMap</Item>
+               <Item>'Database.TadMapConnection'</Item>
+               <Item>Tadmap</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
          <Type Name="S3Storage">
           <Messages>
            <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Created="2009-01-29 22:12:58Z">
@@ -1244,6 +1323,13 @@
              <Item>'TadMapAuthentication'</Item>
             </Issue>
            </Message>
+           <Message Id="TadMap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+            <Issue Name="Type">
+             <Item>TadMap</Item>
+             <Item>'TadMapAuthentication'</Item>
+             <Item>Tadmap</Item>
+            </Issue>
+           </Message>
           </Messages>
          </Type>
          <Type Name="TadMapRoles">
@@ -1251,6 +1337,13 @@
            <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Created="2009-01-29 22:12:58Z">
             <Issue>
              <Item>'TadMapRoles'</Item>
+            </Issue>
+           </Message>
+           <Message Id="TadMap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
+            <Issue Name="Type">
+             <Item>TadMap</Item>
+             <Item>'TadMapRoles'</Item>
+             <Item>Tadmap</Item>
             </Issue>
            </Message>
           </Messages>
@@ -1278,6 +1371,15 @@
            </Message>
           </Messages>
           <Members>
+           <Member Name="#Application_AuthenticateRequest(System.Object,System.EventArgs)">
+            <Messages>
+             <Message TypeName="ReviewVisibleEventHandlers" Category="Microsoft.Security" CheckId="CA2109" Created="2009-02-05 20:39:19Z">
+              <Issue>
+               <Item>'MvcApplication.Application_AuthenticateRequest(object, EventArgs)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
            <Member Name="#Application_Start()">
             <Messages>
              <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2009-01-29 22:12:58Z" FixCategory="DependsOnFix">
@@ -1524,10 +1626,11 @@
          </Type>
          <Type Name="TadmapImage">
           <Messages>
-           <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
+           <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
             <Issue Name="Type">
              <Item>Tadmap</Item>
              <Item>'TadmapImage'</Item>
+             <Item>Tadmap</Item>
             </Issue>
            </Message>
           </Messages>
@@ -1563,10 +1666,11 @@
          </Type>
          <Type Name="TadmapImageFilters">
           <Messages>
-           <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
+           <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
             <Issue Name="Type">
              <Item>Tadmap</Item>
              <Item>'TadmapImageFilters'</Item>
+             <Item>Tadmap</Item>
             </Issue>
            </Message>
           </Messages>
@@ -1607,22 +1711,47 @@
        </Namespace>
        <Namespace Name="Tadmap_MVC.Tadmap.Security">
         <Types>
+         <Type Name="CookieUserData">
+          <Members>
+           <Member Name="#NameSpace">
+            <Messages>
+             <Message TypeName="UseLiteralsWhereAppropriate" Category="Microsoft.Performance" CheckId="CA1802" Created="2009-02-05 20:39:19Z">
+              <Issue>
+               <Item>'CookieUserData.NameSpace'</Item>
+               <Item>http://tadmap.com/schemas/cookiedata</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Roles">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2009-02-05 20:39:19Z">
+              <Issue>
+               <Item>'CookieUserData.Roles'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
          <Type Name="TadmapIdentity">
           <Messages>
-           <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
+           <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
             <Issue Name="Type">
              <Item>Tadmap</Item>
              <Item>'TadmapIdentity'</Item>
+             <Item>Tadmap</Item>
             </Issue>
            </Message>
           </Messages>
          </Type>
          <Type Name="TadmapPrincipal">
           <Messages>
-           <Message Id="Tadmap" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-01-29 22:12:58Z">
+           <Message Id="Tadmap" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 20:39:19Z">
             <Issue Name="Type">
              <Item>Tadmap</Item>
              <Item>'TadmapPrincipal'</Item>
+             <Item>Tadmap</Item>
             </Issue>
            </Message>
           </Messages>
@@ -1774,7 +1903,6 @@
     <Resolution Name="Type">Correct the casing of '{0}' in type name {1} by changing it to '{2}'.</Resolution>
    </Rule>
    <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
-    <Resolution Name="Assembly">Correct the spelling of '{0}' in assembly name {1}.</Resolution>
     <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
     <Resolution Name="MemberParameter">In method {0}, correct the spelling of '{1}' in parameter name {2} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
     <Resolution Name="Namespace">Correct the spelling of '{0}' in namespace name '{1}'.</Resolution>
@@ -1815,8 +1943,14 @@
    <Rule TypeName="PassSystemUriObjectsInsteadOfStrings" Category="Microsoft.Usage" CheckId="CA2234">
     <Resolution Name="Default">Modify {0} to call {1} instead of {2}.</Resolution>
    </Rule>
+   <Rule TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819">
+    <Resolution Name="Default">Change {0} to return a collection or make it a method.</Resolution>
+   </Rule>
    <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
     <Resolution Name="Default">Parameter {0} of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+   </Rule>
+   <Rule TypeName="ReviewVisibleEventHandlers" Category="Microsoft.Security" CheckId="CA2109">
+    <Resolution Name="Default">Consider making {0} not externally visible.</Resolution>
    </Rule>
    <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
     <Resolution Name="Default">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Resolution>
@@ -1833,8 +1967,13 @@
    <Rule TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055">
     <Resolution Name="Default">Change the return type of {0} from string to System.Uri.</Resolution>
    </Rule>
+   <Rule TypeName="UseLiteralsWhereAppropriate" Category="Microsoft.Performance" CheckId="CA1802">
+    <Resolution Name="Default">Field {0} is declared as 'static readonly' but is initialized with a constant value '{1}'. Mark this field as 'const' instead.</Resolution>
+   </Rule>
    <Rule TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726">
+    <Resolution Name="Assembly">Replace the term '{0}' in assembly name {1} with the preferred alternate '{2}'.</Resolution>
     <Resolution Name="Member">Replace the term '{0}' in member name {1} with the preferred alternate '{2}'.</Resolution>
+    <Resolution Name="Namespace">Replace the term '{0}' in namespace name '{1}' with the preferred alternate '{2}'.</Resolution>
     <Resolution Name="Type">Replace the term '{0}' in type name {1} with the preferred alternate '{2}'.</Resolution>
    </Rule>
    <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
