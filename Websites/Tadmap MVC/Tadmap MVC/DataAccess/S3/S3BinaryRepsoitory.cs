@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using Affirma.ThreeSharp.Model;
-using TadMap.Configuration;
+using Tadmap.Configuration;
 using Affirma.ThreeSharp;
 using Affirma.ThreeSharp.Query;
 using Affirma.ThreeSharp.Wrapper;

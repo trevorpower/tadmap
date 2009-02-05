@@ -3,8 +3,7 @@ using System.Web.Security;
 using System.Web;
 using System;
 using System.IO;
-using TadMap.Security;
-using TadMap;
+using Tadmap.Security;
 using System.Security.Principal;
 using Tadmap_MVC.DataAccess;
 using Tadmap_MVC.Models.Images;
@@ -33,14 +32,14 @@ namespace Tadmap_MVC.Controllers
          _binaryRepository = binaryRepository;
       }
 
-      [Authorize(Roles = TadMapRoles.Collector)]
+      [Authorize(Roles = TadmapRoles.Collector)]
       public ActionResult Index()
       {
          return View();
       }
 
       [AcceptVerbs(HttpVerbs.Post)]
-      [Authorize(Roles = TadMapRoles.Collector)]
+      [Authorize(Roles = TadmapRoles.Collector)]
       public ActionResult Upload(string title, string description, IPrincipal principal, IUploadedFile file)
       {
          if (file.ContentLength > 0)

@@ -10,15 +10,14 @@ using DotNetOpenId;
 using DotNetOpenId.RelyingParty;
 using System.Security.Principal;
 using System.Collections.Generic;
-using TadMap.Configuration;
-using TadMap.Security;
+using Tadmap.Configuration;
 using System.Web.Mvc;
 
 public partial class Login : ViewPage
 {
    private void AttachId(Guid userId, string openIdUrl)
    {
-      using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+      using (SqlConnection cn = new SqlConnection(Database.TadmapConnection))
       {
          cn.Open();
 
@@ -35,7 +34,7 @@ public partial class Login : ViewPage
 
    private List<string> GetRoles(string openIdUrl)
    {
-      using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+      using (SqlConnection cn = new SqlConnection(Database.TadmapConnection))
       {
          cn.Open();
 

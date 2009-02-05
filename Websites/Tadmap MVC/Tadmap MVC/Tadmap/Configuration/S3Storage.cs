@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Configuration;
 
-namespace TadMap.Configuration
+namespace Tadmap.Configuration
 {
    public class S3Storage
    {

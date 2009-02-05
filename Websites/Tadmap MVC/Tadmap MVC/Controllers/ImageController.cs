@@ -4,16 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
-using TadMap.Security;
-using TadMap.Configuration;
+using Tadmap.Configuration;
 using System.Security;
-using TadMap;
+using Tadmap;
 using System.Security.Principal;
 using Tadmap_MVC.Models.Images;
 using Tadmap_MVC.DataAccess;
 using Tadmap_MVC.DataAccess.SQL;
 using Tadmap_MVC.Views.Image;
 using Tadmap_MVC.DataAccess.S3;
+using Tadmap.Security;
 
 namespace Tadmap_MVC.Controllers
 {
@@ -48,7 +48,7 @@ namespace Tadmap_MVC.Controllers
 
             if (image.IsOffensive)
             {
-               if (!principal.IsInRole(TadMapRoles.Administrator))
+               if (!principal.IsInRole(TadmapRoles.Administrator))
                   throw new SecurityException("Only administrator can view images marked as offensive");
 
                model.OffensiveCount = 1;
@@ -58,8 +58,8 @@ namespace Tadmap_MVC.Controllers
             else
             {
                model.OffensiveCount = 0;
-               model.ShowOffensiveCount = principal.IsInRole(TadMapRoles.Administrator);
-               model.CanMarkOffensive = principal.IsInRole(TadMapRoles.Administrator);
+               model.ShowOffensiveCount = principal.IsInRole(TadmapRoles.Administrator);
+               model.CanMarkOffensive = principal.IsInRole(TadmapRoles.Administrator);
             }
 
             if (principal.Identity.Name == image.OwnerName) // owner
@@ -67,7 +67,7 @@ namespace Tadmap_MVC.Controllers
                model.IsEditable = principal.Identity.Name == image.OwnerName;
                model.OriginalUrl = _binaryRepository.GetUrl(image.Key);
             }
-            else if (principal.IsInRole(TadMapRoles.Administrator)) // administrator
+            else if (principal.IsInRole(TadmapRoles.Administrator)) // administrator
             {
                model.OriginalUrl = _binaryRepository.GetUrl(image.Key);
             }
@@ -93,7 +93,7 @@ namespace Tadmap_MVC.Controllers
                //{
                //   // Other registered user
                //   if (image.Privacy == 0)
-               //      if (!HttpContext.User.IsInRole(TadMapRoles.Administrator))
+               //      if (!HttpContext.User.IsInRole(TadmapRoles.Administrator))
                //         throw new SecurityException("Only owner or administrator can view private image");
                //}
             }
@@ -112,7 +112,7 @@ namespace Tadmap_MVC.Controllers
          return View();
       }
 
-      [Authorize(Roles = TadMapRoles.Collector)]
+      [Authorize(Roles = TadmapRoles.Collector)]
       public ActionResult MakePublic(Guid id)
       {
          if (id == Guid.Empty)
@@ -130,7 +130,7 @@ namespace Tadmap_MVC.Controllers
          return Json(1);
       }
 
-      [Authorize(Roles = TadMapRoles.Collector)]
+      [Authorize(Roles = TadmapRoles.Collector)]
       public ActionResult MakePrivate(Guid id, IPrincipal principal)
       {
          if (id == Guid.Empty)
@@ -148,7 +148,7 @@ namespace Tadmap_MVC.Controllers
          return Json(0);
       }
 
-      [Authorize(Roles = TadMapRoles.Collector)]
+      [Authorize(Roles = TadmapRoles.Collector)]
       public ActionResult UpdateTitle(Guid id, string title)
       {
          if (id == Guid.Empty)
@@ -160,7 +160,7 @@ namespace Tadmap_MVC.Controllers
          return Json(TadImage.UpdateTitle(id, title, HttpContext.User) > 0);
       }
 
-      [Authorize(Roles = TadMapRoles.Collector)]
+      [Authorize(Roles = TadmapRoles.Collector)]
       public ActionResult UpdateDescription(Guid id, string description)
       {
          if (id == Guid.Empty)
@@ -172,13 +172,13 @@ namespace Tadmap_MVC.Controllers
          return Json(TadImage.UpdateDescription(id, description, HttpContext.User) > 0);
       }
 
-      [Authorize(Roles = TadMapRoles.Administrator)]
+      [Authorize(Roles = TadmapRoles.Administrator)]
       public ActionResult Mark(Guid id, IPrincipal principal)
       {
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
 
-         if (!principal.IsInRole(TadMapRoles.Administrator))
+         if (!principal.IsInRole(TadmapRoles.Administrator))
             throw new SecurityException("Only administrators can mark images as offensive.");
 
          TadmapImage image = _imageRepository.GetAllImages().WithId(id).SingleOrDefault();
@@ -194,13 +194,13 @@ namespace Tadmap_MVC.Controllers
          return Json(true);
       }
 
-      [Authorize(Roles = TadMapRoles.Administrator)]
+      [Authorize(Roles = TadmapRoles.Administrator)]
       public ActionResult UnMark(Guid id, IPrincipal principal)
       {
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
 
-         if (!principal.IsInRole(TadMapRoles.Administrator))
+         if (!principal.IsInRole(TadmapRoles.Administrator))
             throw new SecurityException("Only administrators can mark images as un-offensive.");
 
          TadmapImage image = _imageRepository.GetAllImages().WithId(id).SingleOrDefault();

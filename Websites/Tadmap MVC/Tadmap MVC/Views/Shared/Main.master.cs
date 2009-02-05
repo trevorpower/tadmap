@@ -10,7 +10,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.IO;
 using System.Text;
-using TadMap.Security;
+using Tadmap.Security;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -23,7 +23,7 @@ namespace Tadmap_MVC.Views.Shared
       protected override void OnLoad(EventArgs e)
       {
 
-         //MyMaps.Visible = Context.User.IsInRole(TadMapRoles.Collector);
+         //MyMaps.Visible = Context.User.IsInRole(TadmapRoles.Collector);
 
          
          base.OnLoad(e);

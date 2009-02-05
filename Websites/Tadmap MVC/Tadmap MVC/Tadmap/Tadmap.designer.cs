@@ -44,7 +44,7 @@ public partial class TadmapDb : System.Data.Linq.DataContext
   #endregion
 	
 	public TadmapDb() : 
-			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["tadmapConnectionString"].ConnectionString, mappingSource)
+			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["TadmapConnectionString"].ConnectionString, mappingSource)
 	{
 		OnCreated();
 	}

@@ -7,8 +7,9 @@ using System.Web.Mvc.Ajax;
 using System.Security.Principal;
 using Tadmap_MVC.DataAccess;
 using Tadmap_MVC.DataAccess.SQL;
-using TadMap.Security;
+using Tadmap.Security;
 using System.Security;
+using Tadmap.Security;
 
 namespace Tadmap_MVC.Controllers
 {
@@ -27,10 +28,10 @@ namespace Tadmap_MVC.Controllers
          _imageRepository = imageRepository;
       }
 
-      [Authorize(Roles=TadMapRoles.Administrator)]
+      [Authorize(Roles=TadmapRoles.Administrator)]
       public ActionResult Index(IPrincipal principal)
       {
-         //if (principal.Identity.IsAuthenticated && principal.IsInRole(TadMapRoles.Administrator))
+         //if (principal.Identity.IsAuthenticated && principal.IsInRole(TadmapRoles.Administrator))
          {
             ViewData.Model = _imageRepository.GetAllImages().ToList();
 

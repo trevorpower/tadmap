@@ -1,8 +1,9 @@
 ﻿using System.Security.Principal;
+using Tadmap.Security;
 
-namespace TadMap.Security
+namespace Tadmap.Security
 {
-   public class TadMapAuthentication
+   public class TadmapAuthentication
    {
       static public IIdentity UnauthenticatedIdentity
       {
@@ -16,7 +17,7 @@ namespace TadMap.Security
       {
          get
          {
-            string[] roles = { TadMapRoles.Guest };
+            string[] roles = { TadmapRoles.Guest };
             return new GenericPrincipal(UnauthenticatedIdentity, roles);
          }
       }

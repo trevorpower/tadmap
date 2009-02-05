@@ -9,8 +9,10 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tadmap_MVC</RootNamespace>
-    <AssemblyName>Tadmap MVC</AssemblyName>
+    <AssemblyName>Tadmap</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>TadmapAssemblyKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,21 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Affirma.ThreeSharp, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Affirma.ThreeSharp, Version=1.4.0.0, Culture=neutral, PublicKeyToken=6ece7f1c56fee447, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp\bin\Debug\Affirma.ThreeSharp.dll</HintPath>
+      <HintPath>..\..\..\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp\bin\Release\Affirma.ThreeSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Affirma.ThreeSharp.Wrapper, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Affirma.ThreeSharp.Wrapper, Version=1.4.0.0, Culture=neutral, PublicKeyToken=e7a43f14caa11592, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.Wrapper.dll</HintPath>
-    </Reference>
-    <Reference Include="ClassLibrary1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\ImageManipulation\ClassLibrary1\bin\Release\ClassLibrary1.dll</HintPath>
     </Reference>
     <Reference Include="DotNetOpenId, Version=2.4.3.8264, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\TadMap\Bin\DotNetOpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageManipulation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59f47d59501e07f9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\ImageManipulation\ClassLibrary1\bin\Release\ImageManipulation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -303,13 +305,6 @@
     <None Include="App_Themes\Tad\.htaccess" />
     <None Include="App_Themes\Tad\Master\.htaccess" />
     <None Include="App_Themes\Tad\Master\login-bg.pdn" />
-    <Content Include="bin\Affirma.ThreeSharp.dll" />
-    <Content Include="bin\Affirma.ThreeSharp.pdb" />
-    <Content Include="bin\Affirma.ThreeSharp.Wrapper.dll" />
-    <Content Include="bin\Affirma.ThreeSharp.Wrapper.pdb" />
-    <Content Include="bin\Affirma.ThreeSharp.xml" />
-    <Content Include="bin\ClassLibrary1.dll" />
-    <Content Include="bin\ClassLibrary1.pdb" />
     <Content Include="bin\DotNetOpenId.dll" />
     <Content Include="bin\DotNetOpenId.pdb" />
     <Content Include="bin\DotNetOpenId.xml" />
@@ -338,6 +333,7 @@
     <Content Include="Views\Upload\Index.aspx" />
     <Content Include="Views\UserImages\Index.aspx" />
     <Content Include="Web.LIVE.config" />
+    <None Include="TadmapAssemblyKey.snk" />
     <None Include="Tadmap\Tadmap.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Tadmap1.designer.cs</LastGenOutput>

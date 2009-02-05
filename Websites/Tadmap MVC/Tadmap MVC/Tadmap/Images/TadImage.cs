@@ -13,10 +13,10 @@ using System.Net;
 using System.Security.Principal;
 using System.Security;
 using Affirma.ThreeSharp.Wrapper;
-using TadMap.Configuration;
-using TadMap.Security;
+using Tadmap.Configuration;
+using Tadmap.Security;
 
-namespace TadMap
+namespace Tadmap
 {
     public class TadImage
     {
@@ -247,7 +247,7 @@ namespace TadMap
 
         internal void Insert(TadImage oMap)
         {
-            using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+            using (SqlConnection cn = new SqlConnection(Database.TadmapConnection))
             {
                 cn.Open();
 
@@ -263,7 +263,7 @@ namespace TadMap
 
         internal void Update(TadImage oMap)
         {
-            using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+            using (SqlConnection cn = new SqlConnection(Database.TadmapConnection))
             {
                 cn.Open();
 
@@ -433,7 +433,7 @@ namespace TadMap
 
         public void Save(IIdentity identity)
         {
-            using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+            using (SqlConnection cn = new SqlConnection(Database.TadmapConnection))
             {
                 cn.Open();
 
@@ -466,7 +466,7 @@ namespace TadMap
 
         public static TadImage Get(Guid imageId, IPrincipal principal)
         {
-            using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+            using (SqlConnection cn = new SqlConnection(Database.TadmapConnection))
             {
                 cn.Open();
 
@@ -495,7 +495,7 @@ namespace TadMap
             if (!iPrincipal.Identity.IsAuthenticated)
                 throw new SecurityException("User must be authenticated before changing image title");
 
-            using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+            using (SqlConnection cn = new SqlConnection(Database.TadmapConnection))
             {
                 cn.Open();
 
@@ -526,7 +526,7 @@ namespace TadMap
             if (!principal.Identity.IsAuthenticated)
                 throw new SecurityException("User must be authenticated before changing image description");
 
-            using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+            using (SqlConnection cn = new SqlConnection(Database.TadmapConnection))
             {
                 cn.Open();
 

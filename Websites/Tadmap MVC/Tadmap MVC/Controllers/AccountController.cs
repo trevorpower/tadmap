@@ -10,10 +10,10 @@ using System.Web.UI;
 using DotNetOpenId.RelyingParty;
 using DotNetOpenId;
 using System.Data.SqlClient;
-using TadMap.Configuration;
 using System.Data;
-using TadMap.Security;
 using Tadmap_MVC.Tadmap.Security;
+using Tadmap.Configuration;
+using Tadmap.Security;
 
 namespace Tadmap_MVC.Controllers
 {
@@ -369,7 +369,7 @@ namespace Tadmap_MVC.Controllers
 
       private Guid CreateNewUser(string openIdUrl)
       {
-         TadmapDb db = new TadmapDb(Database.TadMapConnection);
+         TadmapDb db = new TadmapDb(Database.TadmapConnection);
 
          User newUser = new User();
          newUser.Id = Guid.NewGuid();
@@ -377,7 +377,7 @@ namespace Tadmap_MVC.Controllers
 
          UserRole newUserRole = new UserRole();
          newUserRole.UserId = newUser.Id;
-         newUserRole.Role = TadMapRoles.Collector;
+         newUserRole.Role = TadmapRoles.Collector;
 
          UserOpenId newOpenId = new UserOpenId();
          newOpenId.UserId = newUser.Id;

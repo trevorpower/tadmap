@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Configuration;
 
-namespace TadMap.Configuration
+namespace Tadmap.Configuration
 {
    public static class Database
    {
-      public static string TadMapConnection
+      public static string TadmapConnection
       {
          get
          {

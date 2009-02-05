@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 using System.Web.Security;
 using System;
 using System.Data;
-using TadMap.Configuration;
+using Tadmap.Configuration;
 
 public class TadMapRoleProvider : RoleProvider
 {
@@ -46,7 +46,7 @@ public class TadMapRoleProvider : RoleProvider
 
    public override string[] GetRolesForUser(string username)
    {
-      using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+      using (SqlConnection cn = new SqlConnection(Database.TadmapConnection))
       {
          cn.Open();
 

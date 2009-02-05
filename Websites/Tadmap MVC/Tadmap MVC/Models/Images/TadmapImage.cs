@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Security.Principal;
-using TadMap.Security;
 using Tadmap_MVC.DataAccess;
 using Tadmap_MVC.DataAccess.SQL;
 using Tadmap_MVC.DataAccess.S3;
 using Tadmap_MVC.Models.ImageSets;
+using Tadmap.Security;
 
 namespace Tadmap_MVC.Models.Images
 {
@@ -59,7 +59,7 @@ namespace Tadmap_MVC.Models.Images
 
       public bool CanUserMarkAsOffensive(IPrincipal principal)
       {
-         return principal.Identity.IsAuthenticated && principal.IsInRole(TadMapRoles.Administrator);
+         return principal.Identity.IsAuthenticated && principal.IsInRole(TadmapRoles.Administrator);
       }
    }
 }

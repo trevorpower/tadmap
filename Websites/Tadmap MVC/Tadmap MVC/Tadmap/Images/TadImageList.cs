@@ -4,10 +4,10 @@ using System.Data.SqlClient;
 using System;
 using System.Data;
 using System.Web;
-using TadMap.Configuration;
-using TadMap.Security;
+using Tadmap.Security;
+using Tadmap.Configuration;
 
-namespace TadMap
+namespace Tadmap
 {
    public class TadImageList : Collection<TadImage>
    {
@@ -20,7 +20,7 @@ namespace TadMap
 
          TadImageList imageList = new TadImageList();
 
-         using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+         using (SqlConnection cn = new SqlConnection(Database.TadmapConnection))
          {
             cn.Open();
 
@@ -50,7 +50,7 @@ namespace TadMap
 
           TadImageList imageList = new TadImageList();
 
-          using (SqlConnection cn = new SqlConnection(Database.TadMapConnection))
+          using (SqlConnection cn = new SqlConnection(Database.TadmapConnection))
           {
               cn.Open();
 
@@ -109,7 +109,7 @@ namespace TadMap
 
       public static bool CanGetObject()
       {
-         return HttpContext.Current.User.IsInRole(TadMapRoles.Collector);
+         return HttpContext.Current.User.IsInRole(TadmapRoles.Collector);
       }
    }
 }

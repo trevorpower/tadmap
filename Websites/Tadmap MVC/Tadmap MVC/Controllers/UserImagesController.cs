@@ -2,8 +2,8 @@
 using System.Web.Security;
 using System;
 using System.IO;
-using TadMap.Security;
-using TadMap;
+using Tadmap.Security;
+using Tadmap;
 
 namespace Tadmap_MVC.Controllers
 {
