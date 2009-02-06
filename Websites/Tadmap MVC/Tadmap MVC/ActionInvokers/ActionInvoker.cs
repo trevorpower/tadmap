@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Security.Principal;
-using Tadmap_MVC.DataAccess;
-using Tadmap_MVC.DataAccess.HttpPostedFile;
+using Tadmap.DataAccess;
+using Tadmap.DataAccess.HttpPostedFile;
 using System.Reflection;
 
-namespace Tadmap_MVC.ActionInvokers
+namespace Tadmap.ActionInvokers
 {
    public class ActionInvoker : ControllerActionInvoker
    {

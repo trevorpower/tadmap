@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace Tadmap_MVC.Models.Images
+namespace Tadmap.Models.Images
 {
    public class ImageNotFoundException : Exception
    {

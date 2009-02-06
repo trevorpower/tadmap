@@ -1,9 +1,9 @@
 ﻿using System;
-using Tadmap_MVC.Models.Images;
-using Tadmap_MVC.Views.Image;
+using Tadmap.Models.Images;
+using Tadmap.Views.Image;
 using System.Web.Mvc;
 
-namespace Tadmap_MVC.Views.Image
+namespace Tadmap.Views.Image
 {
    public partial class Index : ViewPage<ImageView>
    {

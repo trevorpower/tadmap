@@ -6,8 +6,9 @@ using System.Drawing;
 using ImageManipulation;
 using System.IO;
 using Affirma.ThreeSharp;
+using Tadmap.DataAccess;
 
-namespace Tadmap_MVC.Models.ImageSets
+namespace Tadmap.Models.ImageSets
 {
    public class ImageSet1 : IImageSet
    {
@@ -45,7 +46,7 @@ namespace Tadmap_MVC.Models.ImageSets
          get { return "Preview_" + Key; }
       }
 
-      public void Create(System.IO.Stream stream, Tadmap_MVC.DataAccess.IBinaryRepository binaryRepository)
+      public void Create(System.IO.Stream stream, IBinaryRepository binaryRepository)
       {
          using (System.Drawing.Image oImage = Bitmap.FromStream(stream, true, true))
          {

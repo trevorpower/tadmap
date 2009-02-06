@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tadmap_MVC.Views.Shared
+namespace Tadmap.Views.Shared
 {
 
 

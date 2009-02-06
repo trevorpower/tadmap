@@ -5,14 +5,14 @@ using System;
 using System.IO;
 using Tadmap.Security;
 using System.Security.Principal;
-using Tadmap_MVC.DataAccess;
-using Tadmap_MVC.Models.Images;
-using Tadmap_MVC.DataAccess.SQL;
-using Tadmap_MVC.DataAccess.S3;
-using Tadmap_MVC.Models.ImageSets;
-using Tadmap_MVC.Tadmap.Security;
+using Tadmap.DataAccess;
+using Tadmap.Models.Images;
+using Tadmap.DataAccess.SQL;
+using Tadmap.DataAccess.S3;
+using Tadmap.Models.ImageSets;
+using Tadmap.Tadmap.Security;
 
-namespace Tadmap_MVC.Controllers
+namespace Tadmap.Controllers
 {
    public class UploadController : Controller
    {

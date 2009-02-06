@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Main.master" AutoEventWireup="true"
-   CodeBehind="Index.aspx.cs" Inherits="Tadmap_MVC.Views.Upload.Index" Title="Tadmap - Upload Image"
+   CodeBehind="Index.aspx.cs" Inherits="Tadmap.Views.Upload.Index" Title="Tadmap - Upload Image"
    Theme="Tad" %>
 
 <asp:Content ID="HeadContent" ContentPlaceHolderID="head" runat="server">

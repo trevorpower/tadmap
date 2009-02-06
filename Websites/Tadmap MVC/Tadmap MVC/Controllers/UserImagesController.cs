@@ -5,7 +5,7 @@ using System.IO;
 using Tadmap.Security;
 using Tadmap;
 
-namespace Tadmap_MVC.Controllers
+namespace Tadmap.Controllers
 {
    public class UserImagesController : Controller
    {

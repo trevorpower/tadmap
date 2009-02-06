@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Tadmap_MVC.Views.Upload
+namespace Tadmap.Views.Upload
 {
    public partial class Index : ViewPage
    {

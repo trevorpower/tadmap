@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Tadmap_MVC.DataAccess.HttpPostedFile
+namespace Tadmap.DataAccess.HttpPostedFile
 {
    public class HttpPostedFileUploadedFile : IUploadedFile
    {

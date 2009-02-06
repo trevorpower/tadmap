@@ -5,7 +5,7 @@ using System.Web;
 using System.Security.Principal;
 using System.Web.Security;
 
-namespace Tadmap_MVC.Tadmap.Security
+namespace Tadmap.Tadmap.Security
 {
    [Serializable]
    public class TadmapIdentity : MarshalByRefObject, IIdentity

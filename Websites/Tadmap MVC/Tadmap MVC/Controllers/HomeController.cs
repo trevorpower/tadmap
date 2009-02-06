@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
-using Tadmap_MVC.DataAccess;
-using Tadmap_MVC.DataAccess.SQL;
-using Tadmap_MVC.Models.Images;
+using Tadmap.DataAccess;
+using Tadmap.DataAccess.SQL;
+using Tadmap.Models.Images;
 
-namespace Tadmap_MVC.Controllers
+namespace Tadmap.Controllers
 {
    [HandleError]
    public class HomeController : Controller

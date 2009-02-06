@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Tadmap_MVC.Views.Image
+namespace Tadmap.Views.Image
 {
    public partial class OffensiveControl : System.Web.Mvc.ViewUserControl<ImageView>
    {

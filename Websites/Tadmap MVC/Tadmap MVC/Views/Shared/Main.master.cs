@@ -16,7 +16,7 @@ using System.Linq;
 using System.Web.Mvc;
 
 
-namespace Tadmap_MVC.Views.Shared
+namespace Tadmap.Views.Shared
 {
    public partial class Main : ViewMasterPage
    {

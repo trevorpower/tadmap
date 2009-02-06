@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Tadmap_MVC.Models.Images
+namespace Tadmap.Models.Images
 {
    public static class TadmapImageFilters
    {

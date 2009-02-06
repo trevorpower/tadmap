@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tadmap_MVC.Views.Account {
+namespace Tadmap.Views.Account {
     
     
     public partial class ChangePassword {

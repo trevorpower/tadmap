@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Tadmap_MVC.Models.Images;
-using Tadmap_MVC.Models.ImageSets;
+using Tadmap.Models.Images;
+using Tadmap.Models.ImageSets;
 
-namespace Tadmap_MVC.DataAccess.SQL
+namespace Tadmap.DataAccess.SQL
 {
    public class SqlImageRepository : IImageRepository
    {

@@ -8,11 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tadmap_MVC.Views.Home
-{
-
-
-   public partial class About
-   {
-   }
+namespace Tadmap.Views.Home {
+    
+    
+    public partial class About {
+    }
 }

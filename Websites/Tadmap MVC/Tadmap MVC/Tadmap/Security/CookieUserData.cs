@@ -6,7 +6,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.IO;
 
-namespace Tadmap_MVC.Tadmap.Security
+namespace Tadmap.Tadmap.Security
 {
    public class CookieUserData
    {

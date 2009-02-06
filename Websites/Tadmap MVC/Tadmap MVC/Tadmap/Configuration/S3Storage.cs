@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Configuration;
+using System.Globalization;
 
 namespace Tadmap.Configuration
 {
-   public class S3Storage
+   public static class S3Storage
    {
       public static string AccessKey
       {
@@ -35,7 +36,7 @@ namespace Tadmap.Configuration
       {
          get
          {
-            return int.Parse(ConfigurationSettings.AppSettings["S3LargeFileTimeout"]);
+            return int.Parse(ConfigurationSettings.AppSettings["S3LargeFileTimeout"], CultureInfo.InvariantCulture);
          }
       }
 
@@ -43,7 +44,7 @@ namespace Tadmap.Configuration
       {
          get
          {
-            return int.Parse(ConfigurationSettings.AppSettings["S3SmallFileTimeout"]);
+            return int.Parse(ConfigurationSettings.AppSettings["S3SmallFileTimeout"], CultureInfo.InvariantCulture);
          }
       }
 

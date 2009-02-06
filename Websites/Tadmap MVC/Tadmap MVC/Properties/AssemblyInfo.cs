@@ -7,11 +7,11 @@ using System;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Tadmap_MVC")]
+[assembly: AssemblyTitle("Tadmap")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tadmap")]
-[assembly: AssemblyProduct("Tadmap_MVC")]
+[assembly: AssemblyProduct("Tadmap")]
 [assembly: AssemblyCopyright("Copyright © Tadmap 2008")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

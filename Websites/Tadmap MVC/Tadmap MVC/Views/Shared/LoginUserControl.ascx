@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LoginUserControl.ascx.cs" Inherits="Tadmap_MVC.Views.Shared.LoginUserControl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LoginUserControl.ascx.cs" Inherits="Tadmap.Views.Shared.LoginUserControl" %>
 <%
     if (Request.IsAuthenticated) {
 %>

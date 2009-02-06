@@ -8,11 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tadmap_MVC.Views.Image
-{
-
-
-   public partial class OffensiveControl
-   {
-   }
+namespace Tadmap.Views.Image {
+    
+    
+    public partial class OffensiveControl {
+    }
 }

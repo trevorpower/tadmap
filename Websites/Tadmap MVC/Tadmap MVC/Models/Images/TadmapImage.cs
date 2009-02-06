@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Security.Principal;
-using Tadmap_MVC.DataAccess;
-using Tadmap_MVC.DataAccess.SQL;
-using Tadmap_MVC.DataAccess.S3;
-using Tadmap_MVC.Models.ImageSets;
+using Tadmap.DataAccess;
+using Tadmap.DataAccess.SQL;
+using Tadmap.DataAccess.S3;
+using Tadmap.Models.ImageSets;
 using Tadmap.Security;
 
-namespace Tadmap_MVC.Models.Images
+namespace Tadmap.Models.Images
 {
    public class TadmapImage
    {

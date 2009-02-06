@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 
-namespace Tadmap_MVC.Views.Admin
+namespace Tadmap.Views.Admin
 {
    public partial class Index : ViewPage
    {

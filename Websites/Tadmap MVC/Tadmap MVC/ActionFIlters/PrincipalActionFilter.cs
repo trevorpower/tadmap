@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Tadmap_MVC.ActionFIlters
+namespace Tadmap.ActionFIlters
 {
    public class PrincipalActionFilterAttribute : ActionFilterAttribute
    {

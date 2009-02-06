@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OffensiveControl.ascx.cs"
-   Inherits="Tadmap_MVC.Views.Image.OffensiveControl" %>
+   Inherits="Tadmap.Views.Image.OffensiveControl" %>
 
 <script language="javascript" type="text/javascript">
       function MadeOffensive(newCount) {
@@ -25,8 +25,8 @@
       <%= ViewData.Model.OffensiveCount %>
    </span><span id="markOffensive" style='display: <%= ViewData.Model.CanMarkOffensive ? "inline" : "none" %>;'
       onclick="MarkAsOffensive('<%= ViewData.Model.Id %>');">
-      <%= Tadmap_MVC.Views.Image.ViewResources.MarkAsOffensive %>
+      <%= Tadmap.Views.Image.ViewResources.MarkAsOffensive %>
    </span><span id="unmarkOffensive" style='display: <%= ViewData.Model.CanUnmarkOffensive ? "inline" : "none" %>;'
       onclick="UnmarkAsOffensive('<%= ViewData.Model.Id %>');">
-      <%= Tadmap_MVC.Views.Image.ViewResources.MarkAsNotOffensive %></span>
+      <%= Tadmap.Views.Image.ViewResources.MarkAsNotOffensive %></span>
 </div>

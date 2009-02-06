@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PrivacyControl.ascx.cs"
-   Inherits="Tadmap_MVC.Views.Image.PrivacyControl" %>
+   Inherits="Tadmap.Views.Image.PrivacyControl" %>
 
 <script language="javascript" type="text/javascript">
    function PrivacyChanged(isPublic) {

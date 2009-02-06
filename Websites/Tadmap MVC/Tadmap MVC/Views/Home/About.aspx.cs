@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Tadmap_MVC.Views.Home
+namespace Tadmap.Views.Home
 {
    public partial class About : ViewPage
    {

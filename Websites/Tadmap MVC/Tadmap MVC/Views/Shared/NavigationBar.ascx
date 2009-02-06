@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NavigationBar.ascx.cs"
-   Inherits="Tadmap_MVC.Views.Shared.NavigationBar" %>
+   Inherits="Tadmap.Views.Shared.NavigationBar" %>
 <%
    if (Request.IsAuthenticated)
    {

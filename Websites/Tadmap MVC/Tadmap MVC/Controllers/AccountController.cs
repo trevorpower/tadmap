@@ -11,11 +11,11 @@ using DotNetOpenId.RelyingParty;
 using DotNetOpenId;
 using System.Data.SqlClient;
 using System.Data;
-using Tadmap_MVC.Tadmap.Security;
+using Tadmap.Tadmap.Security;
 using Tadmap.Configuration;
 using Tadmap.Security;
 
-namespace Tadmap_MVC.Controllers
+namespace Tadmap.Controllers
 {
 
    [HandleError]

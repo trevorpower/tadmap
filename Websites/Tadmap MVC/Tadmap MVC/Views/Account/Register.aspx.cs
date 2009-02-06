@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Tadmap_MVC.Views.Account
+namespace Tadmap.Views.Account
 {
    public partial class Register : ViewPage
    {

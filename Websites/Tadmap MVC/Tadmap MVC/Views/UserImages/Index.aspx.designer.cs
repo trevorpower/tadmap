@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tadmap_MVC.Views.UserImages {
+namespace Tadmap.Views.UserImages {
     
     
     public partial class Index {

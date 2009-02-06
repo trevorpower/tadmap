@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Tadmap_MVC.Models.Images;
+using Tadmap.Models.Images;
 
-namespace Tadmap_MVC.DataAccess
+namespace Tadmap.DataAccess
 {
    public interface IImageRepository
    {

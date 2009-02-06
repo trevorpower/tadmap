@@ -9,7 +9,7 @@ using Affirma.ThreeSharp;
 using Affirma.ThreeSharp.Query;
 using Affirma.ThreeSharp.Wrapper;
 
-namespace Tadmap_MVC.DataAccess.S3
+namespace Tadmap.DataAccess.S3
 {
    public class S3BinaryRepository : IBinaryRepository
    {
