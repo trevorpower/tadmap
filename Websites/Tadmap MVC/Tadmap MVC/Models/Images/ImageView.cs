@@ -15,7 +15,7 @@ namespace Tadmap.Views.Image
          Guid id,
          string title,
          string description,
-         string originalUrl
+         Uri originalUrl
       )
       {
          Id = id;
@@ -29,8 +29,8 @@ namespace Tadmap.Views.Image
       public string Description { get; set; }
       public bool IsEditable { get; set; }
       public bool IsPublic { get; set; }
-      public string PreviewUrl { get; set; }
-      public string OriginalUrl { get; set; }
+      public Uri PreviewUrl { get; set; }
+      public Uri OriginalUrl { get; set; }
 
       public int OffensiveCount { get; set; }
       public bool ShowOffensiveCount { get; set; }

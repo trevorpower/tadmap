@@ -45,6 +45,107 @@
  </Rules>
  <FxCopReport Version="1.36">
   <Namespaces>
+   <Namespace Name="Tadmap.ActionFIlters">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
+      <Issue>
+       <Item>Tadmap.ActionFIlters</Item>
+      </Issue>
+     </Message>
+     <Message Id="FIlters" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2009-02-06 19:22:31Z">
+      <Issue Name="NamespaceShouldBeDiscreteTerm">
+       <Item>FIlters</Item>
+       <Item>Tadmap.ActionFIlters</Item>
+       <Item>Filters</Item>
+      </Issue>
+     </Message>
+     <Message Id="Ilters" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-02-06 19:22:31Z">
+      <Issue Name="Namespace">
+       <Item>Ilters</Item>
+       <Item>Tadmap.ActionFIlters</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Tadmap.ActionInvokers">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
+      <Issue>
+       <Item>Tadmap.ActionInvokers</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Tadmap.DataAccess">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
+      <Issue>
+       <Item>Tadmap.DataAccess</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Tadmap.DataAccess.HttpPostedFile">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
+      <Issue>
+       <Item>Tadmap.DataAccess.HttpPostedFile</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Tadmap.DataAccess.S3">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
+      <Issue>
+       <Item>Tadmap.DataAccess.S3</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Tadmap.DataAccess.SQL">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
+      <Issue>
+       <Item>Tadmap.DataAccess.SQL</Item>
+      </Issue>
+     </Message>
+     <Message Id="SQL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-06 19:22:31Z">
+      <Issue Name="Namespace">
+       <Item>SQL</Item>
+       <Item>Tadmap.DataAccess.SQL</Item>
+       <Item>Sql</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Tadmap.Helpers">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
+      <Issue>
+       <Item>Tadmap.Helpers</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Tadmap.Models.Images">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
+      <Issue>
+       <Item>Tadmap.Models.Images</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Tadmap.Models.ImageSets">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
+      <Issue>
+       <Item>Tadmap.Models.ImageSets</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
    <Namespace Name="Tadmap.Security">
     <Messages>
      <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 22:03:46Z">
@@ -54,436 +155,66 @@
      </Message>
     </Messages>
    </Namespace>
-   <Namespace Name="Tadmap_MVC">
+   <Namespace Name="Tadmap.Tadmap.Security">
     <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
       <Issue>
-       <Item>Tadmap_MVC</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC</Item>
+       <Item>Tadmap.Tadmap.Security</Item>
       </Issue>
      </Message>
     </Messages>
    </Namespace>
-   <Namespace Name="Tadmap_MVC.ActionFIlters">
+   <Namespace Name="Tadmap.Views.Account">
     <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
       <Issue>
-       <Item>Tadmap_MVC.ActionFIlters</Item>
-      </Issue>
-     </Message>
-     <Message Id="FIlters" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2009-02-05 21:54:44Z">
-      <Issue Name="NamespaceShouldBeDiscreteTerm">
-       <Item>FIlters</Item>
-       <Item>Tadmap_MVC.ActionFIlters</Item>
-       <Item>Filters</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.ActionFIlters</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message Id="Ilters" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Ilters</Item>
-       <Item>Tadmap_MVC.ActionFIlters</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.ActionFIlters</Item>
+       <Item>Tadmap.Views.Account</Item>
       </Issue>
      </Message>
     </Messages>
    </Namespace>
-   <Namespace Name="Tadmap_MVC.ActionInvokers">
+   <Namespace Name="Tadmap.Views.Admin">
     <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
       <Issue>
-       <Item>Tadmap_MVC.ActionInvokers</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.ActionInvokers</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.ActionInvokers</Item>
+       <Item>Tadmap.Views.Admin</Item>
       </Issue>
      </Message>
     </Messages>
    </Namespace>
-   <Namespace Name="Tadmap_MVC.Controllers">
+   <Namespace Name="Tadmap.Views.Home">
     <Messages>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.Controllers</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.Controllers</Item>
-      </Issue>
-     </Message>
-    </Messages>
-   </Namespace>
-   <Namespace Name="Tadmap_MVC.DataAccess">
-    <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
       <Issue>
-       <Item>Tadmap_MVC.DataAccess</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.DataAccess</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.DataAccess</Item>
+       <Item>Tadmap.Views.Home</Item>
       </Issue>
      </Message>
     </Messages>
    </Namespace>
-   <Namespace Name="Tadmap_MVC.DataAccess.HttpPostedFile">
+   <Namespace Name="Tadmap.Views.Shared">
     <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
-      <Issue>
-       <Item>Tadmap_MVC.DataAccess.HttpPostedFile</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
+     <Message Id="Shared" TypeName="IdentifiersShouldNotMatchKeywords" Category="Microsoft.Naming" CheckId="CA1716" Created="2009-02-06 19:22:31Z">
       <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.DataAccess.HttpPostedFile</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.DataAccess.HttpPostedFile</Item>
-      </Issue>
-     </Message>
-    </Messages>
-   </Namespace>
-   <Namespace Name="Tadmap_MVC.DataAccess.S3">
-    <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
-      <Issue>
-       <Item>Tadmap_MVC.DataAccess.S3</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.DataAccess.S3</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.DataAccess.S3</Item>
-      </Issue>
-     </Message>
-    </Messages>
-   </Namespace>
-   <Namespace Name="Tadmap_MVC.DataAccess.SQL">
-    <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
-      <Issue>
-       <Item>Tadmap_MVC.DataAccess.SQL</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.DataAccess.SQL</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message Id="SQL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>SQL</Item>
-       <Item>Tadmap_MVC.DataAccess.SQL</Item>
-       <Item>Sql</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.DataAccess.SQL</Item>
-      </Issue>
-     </Message>
-    </Messages>
-   </Namespace>
-   <Namespace Name="Tadmap_MVC.Helpers">
-    <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
-      <Issue>
-       <Item>Tadmap_MVC.Helpers</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.Helpers</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.Helpers</Item>
-      </Issue>
-     </Message>
-    </Messages>
-   </Namespace>
-   <Namespace Name="Tadmap_MVC.Models.Images">
-    <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
-      <Issue>
-       <Item>Tadmap_MVC.Models.Images</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.Models.Images</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.Models.Images</Item>
-      </Issue>
-     </Message>
-    </Messages>
-   </Namespace>
-   <Namespace Name="Tadmap_MVC.Models.ImageSets">
-    <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
-      <Issue>
-       <Item>Tadmap_MVC.Models.ImageSets</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.Models.ImageSets</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.Models.ImageSets</Item>
-      </Issue>
-     </Message>
-    </Messages>
-   </Namespace>
-   <Namespace Name="Tadmap_MVC.Tadmap.Security">
-    <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
-      <Issue>
-       <Item>Tadmap_MVC.Tadmap.Security</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.Tadmap.Security</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.Tadmap.Security</Item>
-      </Issue>
-     </Message>
-    </Messages>
-   </Namespace>
-   <Namespace Name="Tadmap_MVC.Views.Account">
-    <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
-      <Issue>
-       <Item>Tadmap_MVC.Views.Account</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.Views.Account</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.Views.Account</Item>
-      </Issue>
-     </Message>
-    </Messages>
-   </Namespace>
-   <Namespace Name="Tadmap_MVC.Views.Admin">
-    <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
-      <Issue>
-       <Item>Tadmap_MVC.Views.Admin</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.Views.Admin</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.Views.Admin</Item>
-      </Issue>
-     </Message>
-    </Messages>
-   </Namespace>
-   <Namespace Name="Tadmap_MVC.Views.Home">
-    <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
-      <Issue>
-       <Item>Tadmap_MVC.Views.Home</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.Views.Home</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldDifferByMoreThanCase" Category="Microsoft.Naming" CheckId="CA1708" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>'TadMap_MVC.Views.Home'</Item>
-       <Item>Tadmap_MVC.Views.Home</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.Views.Home</Item>
-      </Issue>
-     </Message>
-    </Messages>
-   </Namespace>
-   <Namespace Name="TadMap_MVC.Views.Home">
-    <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
-      <Issue>
-       <Item>TadMap_MVC.Views.Home</Item>
-      </Issue>
-     </Message>
-     <Message Id="TadMap" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2009-02-05 21:54:44Z">
-      <Issue Name="NamespaceShouldBeDiscreteTerm">
-       <Item>TadMap</Item>
-       <Item>TadMap_MVC.Views.Home</Item>
-       <Item>Tadmap</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>TadMap_MVC.Views.Home</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldDifferByMoreThanCase" Category="Microsoft.Naming" CheckId="CA1708" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>'TadMap_MVC.Views.Home'</Item>
-       <Item>Tadmap_MVC.Views.Home</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>TadMap_MVC.Views.Home</Item>
-      </Issue>
-     </Message>
-    </Messages>
-   </Namespace>
-   <Namespace Name="Tadmap_MVC.Views.Shared">
-    <Messages>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.Views.Shared</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.Views.Shared</Item>
-      </Issue>
-     </Message>
-     <Message Id="Shared" TypeName="IdentifiersShouldNotMatchKeywords" Category="Microsoft.Naming" CheckId="CA1716" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.Views.Shared</Item>
+       <Item>Tadmap.Views.Shared</Item>
        <Item>Shared</Item>
       </Issue>
      </Message>
     </Messages>
    </Namespace>
-   <Namespace Name="Tadmap_MVC.Views.Upload">
+   <Namespace Name="Tadmap.Views.Upload">
     <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
       <Issue>
-       <Item>Tadmap_MVC.Views.Upload</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.Views.Upload</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.Views.Upload</Item>
+       <Item>Tadmap.Views.Upload</Item>
       </Issue>
      </Message>
     </Messages>
    </Namespace>
-   <Namespace Name="Tadmap_MVC.Views.UserImages">
+   <Namespace Name="Tadmap.Views.UserImages">
     <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-05 21:54:44Z">
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2009-02-06 19:22:31Z">
       <Issue>
-       <Item>Tadmap_MVC.Views.UserImages</Item>
-      </Issue>
-     </Message>
-     <Message Id="MVC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>MVC</Item>
-       <Item>Tadmap_MVC.Views.UserImages</Item>
-       <Item>Mvc</Item>
-      </Issue>
-     </Message>
-     <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-      <Issue Name="Namespace">
-       <Item>Tadmap_MVC.Views.UserImages</Item>
+       <Item>Tadmap.Views.UserImages</Item>
       </Issue>
      </Message>
     </Messages>
@@ -506,36 +237,6 @@
             </Issue>
            </Message>
           </Messages>
-          <Members>
-           <Member Name="#AttachId(System.Guid,System.String)">
-            <Messages>
-             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2009-02-05 21:54:44Z">
-              <Issue>
-               <Item>'Login.AttachId(Guid, string)'</Item>
-              </Issue>
-             </Message>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2009-02-05 21:54:44Z" FixCategory="NonBreaking">
-              <Issue>
-               <Item>'Login.AttachId(Guid, string)'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#GetRoles(System.String)">
-            <Messages>
-             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2009-02-05 21:54:44Z">
-              <Issue>
-               <Item>'Login.GetRoles(string)'</Item>
-              </Issue>
-             </Message>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2009-02-05 21:54:44Z" FixCategory="NonBreaking">
-              <Issue>
-               <Item>'Login.GetRoles(string)'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-          </Members>
          </Type>
          <Type Name="OpenId">
           <Messages>
@@ -568,22 +269,6 @@
             </Messages>
            </Member>
           </Members>
-         </Type>
-         <Type Name="TadmapDb">
-          <Messages>
-           <Message TypeName="DeclareTypesInNamespaces" Category="Microsoft.Design" CheckId="CA1050" Created="2009-02-05 21:54:44Z">
-            <Issue>
-             <Item>'TadmapDb'</Item>
-            </Issue>
-           </Message>
-           <Message Id="Db" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
-            <Issue Name="Type">
-             <Item>Db</Item>
-             <Item>'TadmapDb'</Item>
-             <Item>DB</Item>
-            </Issue>
-           </Message>
-          </Messages>
          </Type>
          <Type Name="TadMapRoleProvider">
           <Messages>
@@ -625,86 +310,49 @@
            </Member>
           </Members>
          </Type>
-         <Type Name="User">
-          <Messages>
-           <Message TypeName="DeclareTypesInNamespaces" Category="Microsoft.Design" CheckId="CA1050" Created="2009-02-05 21:54:44Z">
-            <Issue>
-             <Item>'User'</Item>
-            </Issue>
-           </Message>
-          </Messages>
-          <Members>
-           <Member Name="#UserImages">
-            <Messages>
-             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2009-02-05 21:54:44Z">
-              <Issue>
-               <Item>'User.UserImages'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#UserOpenIds">
-            <Messages>
-             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2009-02-05 21:54:44Z">
-              <Issue>
-               <Item>'User.UserOpenIds'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#UserRoles">
-            <Messages>
-             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2009-02-05 21:54:44Z">
-              <Issue>
-               <Item>'User.UserRoles'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-          </Members>
-         </Type>
-         <Type Name="UserImage">
-          <Messages>
-           <Message TypeName="DeclareTypesInNamespaces" Category="Microsoft.Design" CheckId="CA1050" Created="2009-02-05 21:54:44Z">
-            <Issue>
-             <Item>'UserImage'</Item>
-            </Issue>
-           </Message>
-          </Messages>
-         </Type>
-         <Type Name="UserOpenId">
-          <Messages>
-           <Message TypeName="DeclareTypesInNamespaces" Category="Microsoft.Design" CheckId="CA1050" Created="2009-02-05 21:54:44Z">
-            <Issue>
-             <Item>'UserOpenId'</Item>
-            </Issue>
-           </Message>
-          </Messages>
-          <Members>
-           <Member Name="#OpenIdUrl">
-            <Messages>
-             <Message TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056" Created="2009-02-05 21:54:44Z">
-              <Issue>
-               <Item>'UserOpenId.OpenIdUrl'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-          </Members>
-         </Type>
-         <Type Name="UserRole">
-          <Messages>
-           <Message TypeName="DeclareTypesInNamespaces" Category="Microsoft.Design" CheckId="CA1050" Created="2009-02-05 21:54:44Z">
-            <Issue>
-             <Item>'UserRole'</Item>
-            </Issue>
-           </Message>
-          </Messages>
-         </Type>
         </Types>
        </Namespace>
        <Namespace Name="Tadmap">
         <Types>
+         <Type Name="_Default">
+          <Messages>
+           <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-06 19:22:31Z">
+            <Issue Name="Type">
+             <Item>'_Default'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="MvcApplication">
+          <Messages>
+           <Message Id="Mvc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-02-06 19:22:31Z">
+            <Issue Name="Type">
+             <Item>Mvc</Item>
+             <Item>'MvcApplication'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#Application_AuthenticateRequest(System.Object,System.EventArgs)">
+            <Messages>
+             <Message TypeName="ReviewVisibleEventHandlers" Category="Microsoft.Security" CheckId="CA2109" Created="2009-02-06 19:22:31Z">
+              <Issue>
+               <Item>'MvcApplication.Application_AuthenticateRequest(object, EventArgs)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Application_Start()">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2009-02-06 19:22:31Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'MvcApplication.Application_Start()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
          <Type Name="TadImage">
           <Members>
            <Member Name="#CreateTileset()">
@@ -1017,126 +665,16 @@
          </Type>
         </Types>
        </Namespace>
-       <Namespace Name="Tadmap.Configuration">
-        <Types>
-         <Type Name="S3Storage">
-          <Messages>
-           <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Created="2009-02-05 22:03:46Z">
-            <Issue>
-             <Item>'S3Storage'</Item>
-            </Issue>
-           </Message>
-          </Messages>
-          <Members>
-           <Member Name="#LargeFileTimeout">
-            <Accessors>
-             <Accessor Name="#get_LargeFileTimeout()">
-              <Messages>
-               <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2009-02-05 22:03:46Z">
-                <Issue>
-                 <Item>'int.Parse(string)'</Item>
-                 <Item>'S3Storage.LargeFileTimeout.get()'</Item>
-                 <Item>'int.Parse(string, IFormatProvider)'</Item>
-                </Issue>
-               </Message>
-              </Messages>
-             </Accessor>
-            </Accessors>
-           </Member>
-           <Member Name="#SmallFileTimeout">
-            <Accessors>
-             <Accessor Name="#get_SmallFileTimeout()">
-              <Messages>
-               <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2009-02-05 22:03:46Z">
-                <Issue>
-                 <Item>'int.Parse(string)'</Item>
-                 <Item>'S3Storage.SmallFileTimeout.get()'</Item>
-                 <Item>'int.Parse(string, IFormatProvider)'</Item>
-                </Issue>
-               </Message>
-              </Messages>
-             </Accessor>
-            </Accessors>
-           </Member>
-          </Members>
-         </Type>
-        </Types>
-       </Namespace>
-       <Namespace Name="Tadmap.Security">
-        <Types>
-         <Type Name="TadmapAuthentication">
-          <Messages>
-           <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Created="2009-02-05 22:11:52Z">
-            <Issue>
-             <Item>'TadmapAuthentication'</Item>
-            </Issue>
-           </Message>
-          </Messages>
-         </Type>
-         <Type Name="TadmapRoles">
-          <Messages>
-           <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Created="2009-02-05 22:03:46Z">
-            <Issue>
-             <Item>'TadmapRoles'</Item>
-            </Issue>
-           </Message>
-          </Messages>
-         </Type>
-        </Types>
-       </Namespace>
-       <Namespace Name="Tadmap_MVC">
-        <Types>
-         <Type Name="_Default">
-          <Messages>
-           <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
-            <Issue Name="Type">
-             <Item>'_Default'</Item>
-            </Issue>
-           </Message>
-          </Messages>
-         </Type>
-         <Type Name="MvcApplication">
-          <Messages>
-           <Message Id="Mvc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-02-05 21:54:44Z">
-            <Issue Name="Type">
-             <Item>Mvc</Item>
-             <Item>'MvcApplication'</Item>
-            </Issue>
-           </Message>
-          </Messages>
-          <Members>
-           <Member Name="#Application_AuthenticateRequest(System.Object,System.EventArgs)">
-            <Messages>
-             <Message TypeName="ReviewVisibleEventHandlers" Category="Microsoft.Security" CheckId="CA2109" Created="2009-02-05 21:54:44Z">
-              <Issue>
-               <Item>'MvcApplication.Application_AuthenticateRequest(object, EventArgs)'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#Application_Start()">
-            <Messages>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2009-02-05 21:54:44Z" FixCategory="DependsOnFix">
-              <Issue>
-               <Item>'MvcApplication.Application_Start()'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-          </Members>
-         </Type>
-        </Types>
-       </Namespace>
-       <Namespace Name="Tadmap_MVC.ActionFIlters">
+       <Namespace Name="Tadmap.ActionFIlters">
         <Types>
          <Type Name="PrincipalActionFilterAttribute">
           <Messages>
-           <Message TypeName="AvoidUnsealedAttributes" Category="Microsoft.Performance" CheckId="CA1813" Created="2009-02-05 21:54:44Z">
+           <Message TypeName="AvoidUnsealedAttributes" Category="Microsoft.Performance" CheckId="CA1813" Created="2009-02-06 19:22:31Z">
             <Issue>
              <Item>'PrincipalActionFilterAttribute'</Item>
             </Issue>
            </Message>
-           <Message TypeName="MarkAttributesWithAttributeUsage" Category="Microsoft.Design" CheckId="CA1018" Created="2009-02-05 21:54:44Z">
+           <Message TypeName="MarkAttributesWithAttributeUsage" Category="Microsoft.Design" CheckId="CA1018" Created="2009-02-06 19:22:31Z">
             <Issue Name="Inherited" Certainty="75" Level="Warning">
              <Item>'PrincipalActionFilterAttribute'</Item>
             </Issue>
@@ -1145,23 +683,13 @@
          </Type>
         </Types>
        </Namespace>
-       <Namespace Name="Tadmap_MVC.Controllers">
+       <Namespace Name="Tadmap.Controllers">
         <Types>
          <Type Name="AccountController">
           <Members>
-           <Member Name="#ChangePassword(System.String,System.String,System.String)">
-            <Messages>
-             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2009-02-05 21:54:44Z">
-              <Issue>
-               <Item>'AccountController.ChangePassword(string, string, string)'</Item>
-               <Item>'object'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
            <Member Name="#CreateNewUser(System.String)">
             <Messages>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2009-02-05 21:54:44Z" FixCategory="NonBreaking">
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2009-02-06 19:22:31Z" FixCategory="NonBreaking">
               <Issue>
                <Item>'AccountController.CreateNewUser(string)'</Item>
               </Issue>
@@ -1170,7 +698,7 @@
            </Member>
            <Member Name="#Login()">
             <Messages>
-             <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 21:54:44Z">
+             <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-06 19:22:31Z">
               <Issue Name="Member">
                <Item>Login</Item>
                <Item>'AccountController.Login()'</Item>
@@ -1181,13 +709,7 @@
            </Member>
            <Member Name="#Login(System.String)">
             <Messages>
-             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2009-02-05 21:54:44Z">
-              <Issue>
-               <Item>'AccountController.Login(string)'</Item>
-               <Item>'Exception'</Item>
-              </Issue>
-             </Message>
-             <Message Id="url" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
+             <Message Id="url" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-06 19:22:31Z">
               <Issue Name="MemberParameter">
                <Item>'AccountController.Login(string)'</Item>
                <Item>url</Item>
@@ -1195,33 +717,33 @@
                <Item>Url</Item>
               </Issue>
              </Message>
-             <Message Id="openid" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-02-05 21:54:44Z">
+             <Message Id="openid" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2009-02-06 19:22:31Z">
               <Issue Name="MemberParameter">
                <Item>'AccountController.Login(string)'</Item>
                <Item>openid</Item>
                <Item>'openid_url'</Item>
               </Issue>
              </Message>
-             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-05 21:54:44Z">
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2009-02-06 19:22:31Z">
               <Issue Name="MemberParameter">
                <Item>'AccountController.Login(string)'</Item>
                <Item>'openid_url'</Item>
               </Issue>
              </Message>
-             <Message TypeName="PassSystemUriObjectsInsteadOfStrings" Category="Microsoft.Usage" CheckId="CA2234" Created="2009-02-05 21:54:44Z">
+             <Message TypeName="PassSystemUriObjectsInsteadOfStrings" Category="Microsoft.Usage" CheckId="CA2234" Created="2009-02-06 19:22:31Z">
               <Issue>
                <Item>'AccountController.Login(string)'</Item>
                <Item>'Realm.Realm(Uri)'</Item>
                <Item>'Realm.Realm(string)'</Item>
               </Issue>
              </Message>
-             <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2009-02-05 21:54:44Z">
+             <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2009-02-06 19:22:31Z">
               <Issue>
                <Item>'openid_url'</Item>
                <Item>'AccountController.Login(string)'</Item>
               </Issue>
              </Message>
-             <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 21:54:44Z">
+             <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-06 19:22:31Z">
               <Issue Name="Member">
                <Item>Login</Item>
                <Item>'AccountController.Login(string)'</Item>
@@ -1232,7 +754,7 @@
            </Member>
            <Member Name="#Logout()">
             <Messages>
-             <Message Id="Logout" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 21:54:44Z">
+             <Message Id="Logout" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-06 19:22:31Z">
               <Issue Name="Member">
                <Item>Logout</Item>
                <Item>'AccountController.Logout()'</Item>
@@ -1243,7 +765,7 @@
            </Member>
            <Member Name="#Register(System.String,System.String,System.String,System.String)">
             <Messages>
-             <Message Id="username" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2009-02-05 21:54:44Z">
+             <Message Id="username" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2009-02-06 19:22:31Z">
               <Issue Name="MemberParameterShouldBeCompoundWord">
                <Item>'AccountController.Register(string, string, string, string)'</Item>
                <Item>username</Item>
@@ -1259,7 +781,7 @@
           <Members>
            <Member Name="#Index(System.Security.Principal.IPrincipal)">
             <Messages>
-             <Message Id="principal" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2009-02-05 21:54:44Z" FixCategory="DependsOnFix">
+             <Message Id="principal" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2009-02-06 19:22:31Z" FixCategory="DependsOnFix">
               <Issue>
                <Item>'principal'</Item>
                <Item>'AdminController.Index(IPrincipal)'</Item>
@@ -1273,7 +795,7 @@
           <Members>
            <Member Name="#MakePrivate(System.Guid,System.Security.Principal.IPrincipal)">
             <Messages>
-             <Message Id="principal" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2009-02-05 21:54:44Z" FixCategory="DependsOnFix">
+             <Message Id="principal" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2009-02-06 19:22:31Z" FixCategory="DependsOnFix">
               <Issue>
                <Item>'principal'</Item>
                <Item>'ImageController.MakePrivate(Guid, IPrincipal)'</Item>
@@ -1283,14 +805,14 @@
            </Member>
            <Member Name="#UnMark(System.Guid,System.Security.Principal.IPrincipal)">
             <Messages>
-             <Message Id="UnMark" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2009-02-05 21:54:44Z">
+             <Message Id="UnMark" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2009-02-06 19:22:31Z">
               <Issue Name="MemberShouldBeDiscreteTerm">
                <Item>UnMark</Item>
                <Item>'ImageController.UnMark(Guid, IPrincipal)'</Item>
                <Item>Unmark</Item>
               </Issue>
              </Message>
-             <Message Id="Un" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-05 21:54:44Z">
+             <Message Id="Un" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2009-02-06 19:22:31Z">
               <Issue Name="Member">
                <Item>Un</Item>
                <Item>'ImageController.UnMark(Guid, IPrincipal)'</Item>
@@ -1303,26 +825,13 @@
          </Type>
         </Types>
        </Namespace>
-       <Namespace Name="Tadmap_MVC.DataAccess">
+       <Namespace Name="Tadmap.DataAccess">
         <Types>
-         <Type Name="IBinaryRepository">
-          <Members>
-           <Member Name="#GetUrl(System.String)">
-            <Messages>
-             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2009-02-05 21:54:44Z">
-              <Issue>
-               <Item>'IBinaryRepository.GetUrl(string)'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-          </Members>
-         </Type>
          <Type Name="IImageRepository">
           <Members>
            <Member Name="#GetAllImages()">
             <Messages>
-             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2009-02-05 21:54:44Z">
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2009-02-06 19:22:31Z">
               <Issue Certainty="50">
                <Item>'IImageRepository.GetAllImages()'</Item>
               </Issue>
@@ -1333,11 +842,11 @@
          </Type>
         </Types>
        </Namespace>
-       <Namespace Name="Tadmap_MVC.Models.Images">
+       <Namespace Name="Tadmap.Models.Images">
         <Types>
          <Type Name="ImageNotFoundException">
           <Messages>
-           <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Created="2009-02-05 21:54:44Z">
+           <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Created="2009-02-06 19:22:31Z">
             <Issue Name="MissingConstructor">
              <Item>'ImageNotFoundException'</Item>
              <Item>protected ImageNotFoundException(SerializationInfo, StreamingContext)</Item>
@@ -1351,18 +860,13 @@
              <Item>public ImageNotFoundException(String, Exception)</Item>
             </Issue>
            </Message>
-           <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Created="2009-02-05 21:54:44Z">
-            <Issue Certainty="95" Level="Error">
-             <Item>'ImageNotFoundException'</Item>
-            </Issue>
-           </Message>
           </Messages>
          </Type>
          <Type Name="TadmapImage">
           <Members>
            <Member Name="#_binaryRepository">
             <Messages>
-             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-02-05 21:54:44Z">
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-02-06 19:22:31Z">
               <Issue>
                <Item>'TadmapImage._binaryRepository'</Item>
               </Issue>
@@ -1371,7 +875,7 @@
            </Member>
            <Member Name="#_imageRepository">
             <Messages>
-             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-02-05 21:54:44Z">
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-02-06 19:22:31Z">
               <Issue>
                <Item>'TadmapImage._imageRepository'</Item>
               </Issue>
@@ -1380,7 +884,7 @@
            </Member>
            <Member Name="#CanUserMarkAsOffensive(System.Security.Principal.IPrincipal)">
             <Messages>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2009-02-05 21:54:44Z" FixCategory="DependsOnFix">
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2009-02-06 19:22:31Z" FixCategory="DependsOnFix">
               <Issue>
                <Item>'TadmapImage.CanUserMarkAsOffensive(IPrincipal)'</Item>
               </Issue>
@@ -1391,45 +895,13 @@
          </Type>
         </Types>
        </Namespace>
-       <Namespace Name="Tadmap_MVC.Models.ImageSets">
-        <Types>
-         <Type Name="ImageSet1">
-          <Members>
-           <Member Name="#Create(System.IO.Stream,Tadmap_MVC.DataAccess.IBinaryRepository)">
-            <Messages>
-             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2009-02-05 21:54:44Z">
-              <Issue Name="Local">
-               <Item>'oImage'</Item>
-               <Item>'Bitmap'</Item>
-               <Item>'ImageSet1.Create(Stream, IBinaryRepository)'</Item>
-               <Item>isint</Item>
-              </Issue>
-              <Issue Name="Local">
-               <Item>'oImage'</Item>
-               <Item>'Bitmap'</Item>
-               <Item>'ImageSet1.Create(Stream, IBinaryRepository)'</Item>
-               <Item>isint</Item>
-              </Issue>
-              <Issue Name="Local">
-               <Item>'oImage'</Item>
-               <Item>'Bitmap'</Item>
-               <Item>'ImageSet1.Create(Stream, IBinaryRepository)'</Item>
-               <Item>isint</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-          </Members>
-         </Type>
-        </Types>
-       </Namespace>
-       <Namespace Name="Tadmap_MVC.Tadmap.Security">
+       <Namespace Name="Tadmap.Tadmap.Security">
         <Types>
          <Type Name="CookieUserData">
           <Members>
            <Member Name="#NameSpace">
             <Messages>
-             <Message TypeName="UseLiteralsWhereAppropriate" Category="Microsoft.Performance" CheckId="CA1802" Created="2009-02-05 21:54:44Z">
+             <Message TypeName="UseLiteralsWhereAppropriate" Category="Microsoft.Performance" CheckId="CA1802" Created="2009-02-06 19:22:31Z">
               <Issue>
                <Item>'CookieUserData.NameSpace'</Item>
                <Item>http://tadmap.com/schemas/cookiedata</Item>
@@ -1439,7 +911,7 @@
            </Member>
            <Member Name="#Roles">
             <Messages>
-             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2009-02-05 21:54:44Z">
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2009-02-06 19:22:31Z">
               <Issue>
                <Item>'CookieUserData.Roles'</Item>
               </Issue>
@@ -1452,7 +924,7 @@
           <Members>
            <Member Name="#.ctor(System.Security.Principal.IIdentity)">
             <Messages>
-             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2009-02-05 21:54:44Z">
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2009-02-06 19:22:31Z">
               <Issue>
                <Item>'TadmapPrincipal.TadmapPrincipal(IIdentity)'</Item>
               </Issue>
@@ -1463,7 +935,7 @@
             <Accessors>
              <Accessor Name="#set_Identity(System.Security.Principal.IIdentity)">
               <Messages>
-               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2009-02-05 21:54:44Z">
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2009-02-06 19:22:31Z">
                 <Issue>
                  <Item>'TadmapPrincipal.Identity.set(IIdentity)'</Item>
                 </Issue>
@@ -1476,47 +948,11 @@
          </Type>
         </Types>
        </Namespace>
-       <Namespace Name="Tadmap_MVC.Views.Image">
-        <Types>
-         <Type Name="ImageView">
-          <Members>
-           <Member Name="#.ctor(System.Guid,System.String,System.String,System.String)">
-            <Messages>
-             <Message Id="3#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2009-02-05 21:54:44Z">
-              <Issue>
-               <Item>'originalUrl'</Item>
-               <Item>'ImageView.ImageView(Guid, string, string, string)'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#OriginalUrl">
-            <Messages>
-             <Message TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056" Created="2009-02-05 21:54:44Z">
-              <Issue>
-               <Item>'ImageView.OriginalUrl'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#PreviewUrl">
-            <Messages>
-             <Message TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056" Created="2009-02-05 21:54:44Z">
-              <Issue>
-               <Item>'ImageView.PreviewUrl'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-          </Members>
-         </Type>
-        </Types>
-       </Namespace>
-       <Namespace Name="Tadmap_MVC.Views.Shared">
+       <Namespace Name="Tadmap.Views.Shared">
         <Types>
          <Type Name="LoginUserControl">
           <Messages>
-           <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 21:54:44Z">
+           <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-06 19:22:31Z">
             <Issue Name="Type">
              <Item>Login</Item>
              <Item>'LoginUserControl'</Item>
@@ -1529,7 +965,7 @@
           <Members>
            <Member Name="#LoginStatus1_LoggingOut(System.Object,System.Web.UI.WebControls.LoginCancelEventArgs)">
             <Messages>
-             <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-05 21:54:44Z">
+             <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Created="2009-02-06 19:22:31Z">
               <Issue Name="Member">
                <Item>Login</Item>
                <Item>'Main.LoginStatus1_LoggingOut(object, LoginCancelEventArgs)'</Item>
@@ -1578,9 +1014,6 @@
    <Rule TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800">
     <Resolution Name="Local">{0}, a variable, is cast to type {1} multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
    </Rule>
-   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
-    <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
-   </Rule>
    <Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002">
     <Resolution Name="Default">Change {0} in {1} to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Resolution>
    </Rule>
@@ -1599,15 +1032,11 @@
     <Resolution Name="Namespace">Correct the spelling of '{0}' in namespace name '{1}'.</Resolution>
     <Resolution Name="Type">Correct the spelling of '{0}' in type name {1}.</Resolution>
    </Rule>
-   <Rule TypeName="IdentifiersShouldDifferByMoreThanCase" Category="Microsoft.Naming" CheckId="CA1708">
-    <Resolution Name="Namespace">Change namespace names {0} and '{1}' so that they differ by more than case.</Resolution>
-   </Rule>
    <Rule TypeName="IdentifiersShouldHaveCorrectSuffix" Category="Microsoft.Naming" CheckId="CA1710">
     <Resolution Name="Default">Rename {0} to end in '{1}'.</Resolution>
    </Rule>
    <Rule TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707">
     <Resolution Name="MemberParameter">In member {0}, remove the underscores from parameter name {1}.</Resolution>
-    <Resolution Name="Namespace">Remove the underscores from namespace name '{0}'.</Resolution>
     <Resolution Name="Type">Remove the underscores from type name {0}.</Resolution>
    </Rule>
    <Rule TypeName="IdentifiersShouldNotMatchKeywords" Category="Microsoft.Naming" CheckId="CA1716">
@@ -1618,9 +1047,6 @@
    </Rule>
    <Rule TypeName="MarkAttributesWithAttributeUsage" Category="Microsoft.Design" CheckId="CA1018">
     <Resolution Name="Inherited">Even though attribute {0} inherits AttributeUsage from its base type, you should consider explicitly specifying AttributeUsage on the type to improve code readability and documentation.</Resolution>
-   </Rule>
-   <Rule TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237">
-    <Resolution Name="Default">Add [Serializable] to {0} as this type implements ISerializable.</Resolution>
    </Rule>
    <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
     <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>

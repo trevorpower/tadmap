@@ -3,7 +3,7 @@ using Tadmap.Security;
 
 namespace Tadmap.Security
 {
-   public class TadmapAuthentication
+   public static class TadmapAuthentication
    {
       static public IIdentity UnauthenticatedIdentity
       {

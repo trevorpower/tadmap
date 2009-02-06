@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TadMap_MVC.Views.Home {
+namespace Tadmap.Views.Home {
     
     
     public partial class Index {

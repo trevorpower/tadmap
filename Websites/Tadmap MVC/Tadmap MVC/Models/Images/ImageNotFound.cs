@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 
 namespace Tadmap.Models.Images
 {
+   [Serializable]
    public class ImageNotFoundException : Exception
    {
       public ImageNotFoundException()

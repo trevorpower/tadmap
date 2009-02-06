@@ -1,6 +1,6 @@
 ﻿namespace Tadmap.Security
 {
-   public class TadmapRoles
+   public static class TadmapRoles
    {
       public const string Guest = "Guest";
       public const string Collector = "Collector";

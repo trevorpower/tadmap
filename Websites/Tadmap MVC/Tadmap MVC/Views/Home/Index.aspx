@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Main.Master" CodeBehind="Index.aspx.cs"
-   Theme="Tad" Inherits="TadMap_MVC.Views.Home.Index" Title="Tadmap - Image hosting for map collectors" %>
+   Theme="Tad" Inherits="Tadmap.Views.Home.Index" Title="Tadmap - Image hosting for map collectors" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
    <div id="divMapList" style="padding: 10px 30px 10px 30px;">

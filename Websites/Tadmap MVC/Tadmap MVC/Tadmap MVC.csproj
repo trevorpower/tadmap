@@ -147,7 +147,6 @@
     <Compile Include="Tadmap\Security\OpenId.cs" />
     <Compile Include="Tadmap\Security\TadMapRoleProvider.cs" />
     <Compile Include="Tadmap\Security\TadMapRoles.cs" />
-    <Compile Include="Tadmap\Tadmap.designer.cs" />
     <Compile Include="Tadmap\Tadmap1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

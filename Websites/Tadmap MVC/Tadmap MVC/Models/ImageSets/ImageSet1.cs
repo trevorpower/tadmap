@@ -48,9 +48,9 @@ namespace Tadmap.Models.ImageSets
 
       public void Create(System.IO.Stream stream, IBinaryRepository binaryRepository)
       {
-         using (System.Drawing.Image oImage = Bitmap.FromStream(stream, true, true))
+         using (System.Drawing.Bitmap oImage = Bitmap.FromStream(stream, true, true) as Bitmap)
          {
-            using (System.Drawing.Image oSquare = ImageManipulator.ResizeAndCrop(oImage as Bitmap, 80, 80))
+            using (System.Drawing.Image oSquare = ImageManipulator.ResizeAndCrop(oImage, 80, 80))
             {
                using (MemoryStream oMemoryStream = new MemoryStream())
                {
@@ -60,7 +60,7 @@ namespace Tadmap.Models.ImageSets
                }
             }
 
-            using (System.Drawing.Image oThumb = ImageManipulator.FitToRectangle(oImage as Bitmap, 100, 100))
+            using (System.Drawing.Image oThumb = ImageManipulator.FitToRectangle(oImage, 100, 100))
             {
                using (MemoryStream oMemoryStream = new MemoryStream())
                {
@@ -70,7 +70,7 @@ namespace Tadmap.Models.ImageSets
                }
             }
 
-            using (System.Drawing.Image oLargeThumb = ImageManipulator.FitToRectangle(oImage as Bitmap, 200, 200))
+            using (System.Drawing.Image oLargeThumb = ImageManipulator.FitToRectangle(oImage, 200, 200))
             {
                using (MemoryStream oMemoryStream = new MemoryStream())
                {
@@ -80,7 +80,7 @@ namespace Tadmap.Models.ImageSets
                }
             }
 
-            using (System.Drawing.Image oLargeThumb = ImageManipulator.FitToRectangle(oImage as Bitmap, 560, 560))
+            using (System.Drawing.Image oLargeThumb = ImageManipulator.FitToRectangle(oImage, 560, 560))
             {
                using (MemoryStream oMemoryStream = new MemoryStream())
                {

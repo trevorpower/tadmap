@@ -54,77 +54,6 @@ namespace Tadmap.Controllers
          private set;
       }
 
-      [Authorize]
-      public ActionResult ChangePassword()
-      {
-
-         ViewData["Title"] = "Change Password";
-         ViewData["PasswordLength"] = Provider.MinRequiredPasswordLength;
-
-         return View();
-      }
-
-      [Authorize]
-      [AcceptVerbs(HttpVerbs.Post)]
-      public ActionResult ChangePassword(string currentPassword, string newPassword, string confirmPassword)
-      {
-
-         ViewData["Title"] = "Change Password";
-         ViewData["PasswordLength"] = Provider.MinRequiredPasswordLength;
-
-         // Basic parameter validation
-         if (String.IsNullOrEmpty(currentPassword))
-         {
-            ModelState.AddModelError("currentPassword", "You must specify a current password.");
-         }
-         if (newPassword == null || newPassword.Length < Provider.MinRequiredPasswordLength)
-         {
-            ModelState.AddModelError("newPassword",
-                String.Format(CultureInfo.CurrentCulture,
-                     "You must specify a new password of {0} or more characters.",
-                     Provider.MinRequiredPasswordLength));
-         }
-         if (!String.Equals(newPassword, confirmPassword, StringComparison.Ordinal))
-         {
-            ModelState.AddModelError("_FORM", "The new password and confirmation password do not match.");
-         }
-
-         if (ModelState.IsValid)
-         {
-            // Attempt to change password
-            MembershipUser currentUser = Provider.GetUser(User.Identity.Name, true /* userIsOnline */);
-            bool changeSuccessful = false;
-            try
-            {
-               changeSuccessful = currentUser.ChangePassword(currentPassword, newPassword);
-            }
-            catch
-            {
-               // An exception is thrown if the new password does not meet the provider's requirements
-            }
-
-            if (changeSuccessful)
-            {
-               return RedirectToAction("ChangePasswordSuccess");
-            }
-            else
-            {
-               ModelState.AddModelError("_FORM", "The current password is incorrect or the new password is invalid.");
-            }
-         }
-
-         // If we got this far, something failed, redisplay form
-         return View();
-      }
-
-      public ActionResult ChangePasswordSuccess()
-      {
-
-         ViewData["Title"] = "Change Password";
-
-         return View();
-      }
-
       public ActionResult Login()
       {
          return View();
@@ -191,10 +120,6 @@ namespace Tadmap.Controllers
             catch (DotNetOpenId.OpenIdException exception)
             {
                ModelState.AddModelError("OpenIdException", exception);
-            }
-            catch (Exception exception)
-            {
-               ModelState.AddModelError("Authentication", exception);
             }
          }
          else

@@ -83,10 +83,10 @@ namespace Tadmap.DataAccess.S3
          }
       }
 
-      public string GetUrl(string key)
+      public Uri GetUrl(string key)
       {
          ThreeSharpWrapper s3 = new ThreeSharpWrapper(S3Storage.AccessKey, S3Storage.SecretAccessKey);
-         return s3.GetUrl(S3Storage.BucketName, key);
+         return new Uri(s3.GetUrl(S3Storage.BucketName, key));
       }
 
       #endregion
