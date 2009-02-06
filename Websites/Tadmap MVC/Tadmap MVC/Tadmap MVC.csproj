@@ -304,11 +304,6 @@
     <None Include="App_Themes\Tad\.htaccess" />
     <None Include="App_Themes\Tad\Master\.htaccess" />
     <None Include="App_Themes\Tad\Master\login-bg.pdn" />
-    <Content Include="bin\DotNetOpenId.dll" />
-    <Content Include="bin\DotNetOpenId.pdb" />
-    <Content Include="bin\DotNetOpenId.xml" />
-    <Content Include="bin\Tadmap MVC.dll" />
-    <Content Include="bin\Tadmap MVC.pdb" />
     <Content Include="Configuration\appSettings.DEV.config" />
     <Content Include="Configuration\appSettings.LIVE.config" />
     <Content Include="Configuration\connectionStrings.DEV.config" />
@@ -354,6 +349,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
