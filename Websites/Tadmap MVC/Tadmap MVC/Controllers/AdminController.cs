@@ -9,7 +9,6 @@ using Tadmap.DataAccess;
 using Tadmap.DataAccess.SQL;
 using Tadmap.Security;
 using System.Security;
-using Tadmap.Security;
 
 namespace Tadmap.Controllers
 {

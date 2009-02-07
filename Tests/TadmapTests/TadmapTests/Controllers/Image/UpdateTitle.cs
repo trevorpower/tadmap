@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using Tadmap_MVC.Controllers;
+using Tadmap.Controllers;
 using System.Web.Mvc;
 using System.Security.Principal;
 using TadmapTests.Mocks.Security;

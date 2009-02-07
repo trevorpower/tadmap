@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using Tadmap_MVC.Models.Images;
-using Tadmap_MVC.DataAccess;
+using Tadmap.Models.Images;
+using Tadmap.DataAccess;
 using TadmapTests.DataAccess;
 
 namespace TadmapTests.Models

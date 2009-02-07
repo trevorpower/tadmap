@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using Tadmap_MVC.Controllers;
+using Tadmap.Controllers;
 using System.Web.Mvc;
 using TadmapTests.Mocks.Security;
 using System.Security.Principal;
-using Tadmap_MVC.Models.Images;
+using Tadmap.Models.Images;
 using TadmapTests.DataAccess;
 
 namespace TadmapTests.Controllers.Image

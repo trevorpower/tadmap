@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using Tadmap_MVC.Tadmap.Security;
+using Tadmap.Tadmap.Security;
 
 namespace TadmapTests.Tadmap.Security
 {

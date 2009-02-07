@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using Tadmap_MVC.Views.Image;
+using Tadmap.Views.Image;
+using TadmapTests.Mocks;
 
 namespace TadmapTests.Models
 {
@@ -15,7 +16,7 @@ namespace TadmapTests.Models
       {
          Guid id = Guid.NewGuid();
 
-         ImageView view = new ImageView(id, "Title", "Description", "OriginalUrl");
+         ImageView view = new ImageView(id, "Title", "Description", MockUrls.Original);
 
          Assert.AreEqual(id, view.Id);
          Assert.AreEqual("Title", view.Title);
@@ -23,7 +24,7 @@ namespace TadmapTests.Models
          Assert.IsNotNull(view.IsPublic);
          Assert.IsNotNull(view.IsEditable);
          Assert.IsNull(view.PreviewUrl);
-         Assert.AreEqual("OriginalUrl", view.OriginalUrl);
+         Assert.AreEqual(MockUrls.Original, view.OriginalUrl);
       }
 
       [Test]
@@ -31,7 +32,7 @@ namespace TadmapTests.Models
       {
          Guid id = Guid.NewGuid();
 
-         ImageView view = new ImageView(id, "TitleF", "DescriptionF", "OriginalUrlF");
+         ImageView view = new ImageView(id, "TitleF", "DescriptionF", MockUrls.Original);
 
          Assert.AreEqual(id, view.Id);
          Assert.AreEqual("TitleF", view.Title);
@@ -39,7 +40,7 @@ namespace TadmapTests.Models
          Assert.IsNotNull(view.IsEditable);
          Assert.IsNotNull(view.IsPublic);
          Assert.IsNull(view.PreviewUrl);
-         Assert.AreEqual("OriginalUrlF", view.OriginalUrl);
+         Assert.AreEqual(MockUrls.Original, view.OriginalUrl);
       }
 
       [Test]

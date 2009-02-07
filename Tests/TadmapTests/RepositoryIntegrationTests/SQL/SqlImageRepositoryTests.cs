@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using Tadmap_MVC.DataAccess.SQL;
-using Tadmap_MVC.DataAccess;
-using Tadmap_MVC.Models.Images;
+using Tadmap.DataAccess.SQL;
+using Tadmap.DataAccess;
+using Tadmap.Models.Images;
 using System.Transactions;
 
 namespace RepositoryIntegrationTests.SQL

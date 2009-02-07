@@ -56,9 +56,9 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tadmap MVC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Tadmap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=44b67b3aaf6f127f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Websites\Tadmap MVC\Tadmap MVC\bin\Tadmap MVC.dll</HintPath>
+      <HintPath>..\..\..\Websites\Tadmap MVC\Tadmap MVC\bin\Tadmap.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

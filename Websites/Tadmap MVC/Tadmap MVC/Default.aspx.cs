@@ -4,7 +4,7 @@ using System.Web.UI;
 
 namespace Tadmap
 {
-   public partial class _Default : Page
+   public partial class DefaultRoute : Page
    {
       public void Page_Load(object sender, System.EventArgs e)
       {

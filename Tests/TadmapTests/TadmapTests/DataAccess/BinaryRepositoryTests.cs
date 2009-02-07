@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using Tadmap_MVC.DataAccess;
+using Tadmap.DataAccess;
 using System.IO;
 
 namespace TadmapTests.DataAccess
@@ -24,7 +24,7 @@ namespace TadmapTests.DataAccess
       {
          IBinaryRepository repository = new TestBinaryRepository();
 
-         string url = repository.GetUrl("key1");
+         Uri url = repository.GetUrl("key1");
       }
 
       [Test]
@@ -32,9 +32,9 @@ namespace TadmapTests.DataAccess
       {
          IBinaryRepository repository = new TestBinaryRepository();
 
-         string url = repository.GetUrl("key1");
+         Uri url = repository.GetUrl("key1");
 
-         Assert.AreEqual("key1url", url);
+         Assert.AreEqual(new Uri("http://key1.url"), url);
       }
 
    }

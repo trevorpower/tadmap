@@ -6,8 +6,8 @@ using NUnit.Framework;
 using TadmapTests.DataAccess;
 using TadmapTests.Mocks.Security;
 using System.Web.Mvc;
-using Tadmap_MVC.Controllers;
-using Tadmap_MVC.Models.Images;
+using Tadmap.Controllers;
+using Tadmap.Models.Images;
 using System.Reflection;
 
 namespace TadmapTests.Controllers.Account

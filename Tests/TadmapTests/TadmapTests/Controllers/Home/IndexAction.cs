@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Tadmap.Models.Images;
+using Tadmap.Controllers;
 
 namespace TadmapTests.Controllers.Home
 {
    using NUnit.Framework;
    using System.Web.Mvc;
-   using Tadmap_MVC.Models.Images;
-   using Tadmap_MVC.Controllers;
    using TadmapTests.DataAccess;
 
    [TestFixture]

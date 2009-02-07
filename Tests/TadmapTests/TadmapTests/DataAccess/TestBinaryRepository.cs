@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Tadmap_MVC.DataAccess;
+using Tadmap.DataAccess;
 using System.IO;
 
 namespace TadmapTests.DataAccess
@@ -26,9 +26,9 @@ namespace TadmapTests.DataAccess
          }
       }
 
-      public string GetUrl(string key)
+      public Uri GetUrl(string key)
       {
-         return key + "url";
+         return new Uri("http://" + key + ".url");
       }
 
       #endregion

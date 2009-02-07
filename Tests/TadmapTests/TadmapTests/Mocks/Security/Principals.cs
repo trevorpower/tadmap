@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Security.Principal;
-using TadMap.Security;
-using Tadmap_MVC.Tadmap.Security;
+using Tadmap.Security;
+using Tadmap.Tadmap.Security;
 
 namespace TadmapTests.Mocks.Security
 {
    public class Principals
    {
       private static readonly string[] NoRoles = { };
-      private static readonly string[] CollectorRole = {TadMapRoles.Collector};
-      private static readonly string[] GuestRole = { TadMapRoles.Guest };
-      private static readonly string[] AdminRole = { TadMapRoles.Administrator };
+      private static readonly string[] CollectorRole = {TadmapRoles.Collector};
+      private static readonly string[] GuestRole = { TadmapRoles.Guest };
+      private static readonly string[] AdminRole = { TadmapRoles.Administrator };
 
       static public IPrincipal Guest
       {

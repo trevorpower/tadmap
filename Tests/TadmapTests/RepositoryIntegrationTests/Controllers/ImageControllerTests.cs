@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using Tadmap_MVC.Controllers;
+using Tadmap.Controllers;
 using TadmapTests.Mocks.Security;
 using System.Web.Mvc;
-using Tadmap_MVC.Views.Image;
+using Tadmap.Views.Image;
 
 namespace RepositoryIntegrationTests.Controllers
 {

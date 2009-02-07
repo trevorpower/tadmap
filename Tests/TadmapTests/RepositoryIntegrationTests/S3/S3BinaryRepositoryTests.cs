@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using Tadmap_MVC.DataAccess;
-using Tadmap_MVC.DataAccess.S3;
+using Tadmap.DataAccess;
+using Tadmap.DataAccess.S3;
 
 namespace RepositoryIntegrationTests.S3
 {

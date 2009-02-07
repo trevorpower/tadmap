@@ -22,7 +22,6 @@
  </ProjectOptions>
  <Targets>
   <AssemblyReferenceDirectories>
-   <Directory>$(ProjectDir)/../../../../../../Program Files (x86)/Microsoft ASP.NET/ASP.NET MVC RC/Assemblies/</Directory>
    <Directory>$(ProjectDir)/../../../../../Program Files (x86)/Microsoft ASP.NET/ASP.NET MVC RC/Assemblies/</Directory>
    <Directory>$(ProjectDir)/Websites/Tadmap MVC/Tadmap MVC/bin/</Directory>
   </AssemblyReferenceDirectories>

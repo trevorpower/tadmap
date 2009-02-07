@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Tadmap_MVC.DataAccess;
-using Tadmap_MVC.Models.Images;
-using Tadmap_MVC.Models.ImageSets;
+using Tadmap.DataAccess;
+using Tadmap.Models;
+using Tadmap.Models.Images;
+using Tadmap.Models.ImageSets;
 
 namespace TadmapTests.DataAccess
 {
@@ -36,7 +37,7 @@ namespace TadmapTests.DataAccess
       
       #region IImageRepository Members
 
-      public IQueryable<Tadmap_MVC.Models.Images.TadmapImage> GetAllImages()
+      public IQueryable<TadmapImage> GetAllImages()
       {
          return _images.AsQueryable();
       }

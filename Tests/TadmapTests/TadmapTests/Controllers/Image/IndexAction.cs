@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Tadmap.Controllers;
+using Tadmap.Models.Images;
+using Tadmap.Views.Image;
 
 namespace TadmapTests.Controllers.Image
 {
    using NUnit.Framework;
    using System.Web.Mvc;
-   using Tadmap_MVC.Controllers;
    using TadmapTests.Mocks.Security;
    using System.Security.Principal;
-   using Tadmap_MVC.Models.Images;
    using TadmapTests.DataAccess;
    using System.Security;
-   using Tadmap_MVC.Views.Image;
 
    [TestFixture]
    public class IndexAction
@@ -255,7 +255,7 @@ namespace TadmapTests.Controllers.Image
          ViewResult viewResult = result as ViewResult;
          ImageView model = viewResult.ViewData.Model as ImageView;
 
-         Assert.AreEqual("Keyurl", model.OriginalUrl);
+         Assert.AreEqual("http://key.url/", model.OriginalUrl.ToString());
       }
 
       [Test]
@@ -265,7 +265,7 @@ namespace TadmapTests.Controllers.Image
          ViewResult viewResult = result as ViewResult;
          ImageView model = viewResult.ViewData.Model as ImageView;
 
-         Assert.AreEqual("Preview_Keyurl", model.PreviewUrl);
+         Assert.AreEqual("http://preview_key.url/", model.PreviewUrl.ToString());
       }
 
       [Test]
