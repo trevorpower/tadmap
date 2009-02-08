@@ -18,20 +18,9 @@ namespace TadmapTests.Controllers.Upload
       [Test]
       public void Returns_Redirect_For_Collector()
       {
-         UploadController upload = new UploadController();
+         UploadController upload = new UploadController(new TestImageRepository(), new TestBinaryRepository());
 
          ActionResult result = upload.Upload("title", "description", Principals.Collector, new TestEmptyFile());
-
-         Assert.IsInstanceOfType(typeof(RedirectToRouteResult), result);
-      }
-
-      [Test]
-      [Category("Slow")]
-      public void Can_Upload_Large_File()
-      {
-         UploadController upload = new UploadController(new TestImageRepository(), new TestBinaryRepository());
-         
-         ActionResult result = upload.Upload("title", "description", Principals.Collector, new TestFileFromDisk("../../TestFiles/Large.tif"));
 
          Assert.IsInstanceOfType(typeof(RedirectToRouteResult), result);
       }

@@ -15,16 +15,13 @@ namespace Tadmap.Controllers
    public class AdminController : Controller
    {
       private IImageRepository _imageRepository;
+      private IBinaryRepository _binaryRepository;
 
-      public AdminController()
+      public AdminController(IImageRepository imageRepository, IBinaryRepository binaryRepository)
       {
          ActionInvoker = new ActionInvokers.ActionInvoker();
-         _imageRepository = new SqlImageRepository();
-      }
-
-      public AdminController(IImageRepository imageRepository)
-      {
          _imageRepository = imageRepository;
+         _binaryRepository = binaryRepository;
       }
 
       [Authorize(Roles=TadmapRoles.Administrator)]
@@ -32,7 +29,7 @@ namespace Tadmap.Controllers
       {
          //if (principal.Identity.IsAuthenticated && principal.IsInRole(TadmapRoles.Administrator))
          {
-            ViewData.Model = _imageRepository.GetAllImages().ToList();
+            ViewData.Model = _imageRepository.GetAllImages(_binaryRepository).ToList();
 
             return View();
          }

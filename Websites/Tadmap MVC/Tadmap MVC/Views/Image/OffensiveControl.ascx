@@ -12,11 +12,11 @@
       }
       function MarkAsOffensive(imageId) {
          $("#markOffensive").hide("slow");
-         $.getJSON("/Image/" + imageId + "/Mark", MadeOffensive);
+         $.getJSON('<%= Url.RouteUrl("Image", new { action = "Mark", id = ViewData.Model.Id }) %>', MadeOffensive);
       }
       function UnmarkAsOffensive(imageId) {
          $("#unmarkOffensive").hide("slow");
-         $.getJSON("/Image/" + imageId + "/UnMark", MadeUnoffensive);
+         $.getJSON('<%= Url.RouteUrl("Image", new { action = "UnMark", id = ViewData.Model.Id }) %>', MadeUnoffensive);
       } 
 </script>
 

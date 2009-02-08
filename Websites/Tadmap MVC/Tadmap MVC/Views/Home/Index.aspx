@@ -13,6 +13,6 @@
                to view your own <i>private</i> images or <i>upoload</i> new images.</span>
          </p>
       </div>
-      <% Html.RenderPartial("ImageListControl", ViewData.Model ); %>
+      <% Html.RenderPartial("ImageListControl", ViewData.Model.Images ); %>
    </div>
 </asp:Content>

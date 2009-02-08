@@ -7,14 +7,22 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Security.Principal;
 using Tadmap.Tadmap.Security;
+using Microsoft.Practices.Unity;
+using Tadmap.Infrastructure;
 
 namespace Tadmap
 {
    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
    // visit http://go.microsoft.com/?LinkId=9394801
-
-   public class MvcApplication : System.Web.HttpApplication
+   public class TadmapApplication : System.Web.HttpApplication
    {
+      private static IUnityContainer _container;
+
+      public static IUnityContainer Container
+      {
+         get { return _container; }
+      }
+
       public static void RegisterRoutes(RouteCollection routes)
       {
          routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
@@ -23,6 +31,12 @@ namespace Tadmap
              "image",                                                // Route name
              "Image.mvc/{id}/{action}",                                  // URL with parameters
              new { controller = "Image", action = "Index", id = "" } // Parameter defaults
+         );
+
+         routes.MapRoute(
+             "file",                                                 // Route name
+             "File.mvc/{key}",                                       // URL with parameters
+             new { controller = "File", action = "Index", key = "" } // Parameter defaults
          );
 
          routes.MapRoute(
@@ -40,6 +54,8 @@ namespace Tadmap
 
       protected void Application_Start()
       {
+         InitializeContainer();
+         ControllerBuilder.Current.SetControllerFactory(typeof(ControllerFactory));
          RegisterRoutes(RouteTable.Routes);
       }
 
@@ -59,6 +75,15 @@ namespace Tadmap
 
             Context.User = new GenericPrincipal(identity, userData.Roles);
          }
+      }
+
+      private void InitializeContainer()
+      {
+         if (_container == null)
+            _container = new UnityContainer();
+
+         _container.RegisterType<DataAccess.IBinaryRepository, DataAccess.FileSystemBinaryRepository>();
+         _container.RegisterType<DataAccess.IImageRepository, DataAccess.SQL.SqlImageRepository>();
       }
    }
 }

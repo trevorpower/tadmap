@@ -7,6 +7,7 @@ using Tadmap.Controllers;
 using System.Web.Mvc;
 using System.Security.Principal;
 using TadmapTests.Mocks.Security;
+using TadmapTests.DataAccess;
 
 namespace TadmapTests.Controllers.Image
 {
@@ -33,7 +34,7 @@ namespace TadmapTests.Controllers.Image
 
       private static void AssertArgumentException(Guid id, string description, IPrincipal principal)
       {
-         ImageController imageController = new ImageController();
+         ImageController imageController = new ImageController(new TestImageRepository(), new TestBinaryRepository());
 
          try
          {

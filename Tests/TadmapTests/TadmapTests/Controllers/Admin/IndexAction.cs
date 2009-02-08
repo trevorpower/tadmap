@@ -18,7 +18,7 @@ namespace TadmapTests.Controllers.Admin
       [Test]
       public void Returns_View_Result_With_No_Name_For_Administrator()
       {
-         AdminController admin = new AdminController(new TestImageRepository());
+         AdminController admin = new AdminController(new TestImageRepository(), new TestBinaryRepository());
 
          ViewResult result = (ViewResult)admin.Index(Principals.Administrator);
 
@@ -28,7 +28,7 @@ namespace TadmapTests.Controllers.Admin
       [Test]
       public void Model_Contains_10_Images()
       {
-         AdminController admin = new AdminController(new TestImageRepository());
+         AdminController admin = new AdminController(new TestImageRepository(), new TestBinaryRepository());
 
          ViewResult result = (ViewResult)admin.Index(Principals.Administrator);
 

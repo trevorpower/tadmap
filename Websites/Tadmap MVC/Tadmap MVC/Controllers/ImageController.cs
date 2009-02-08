@@ -22,15 +22,9 @@ namespace Tadmap.Controllers
       private IImageRepository _imageRepository;
       private IBinaryRepository _binaryRepository;
 
-      public ImageController()
-      {
-         ActionInvoker = new ActionInvokers.ActionInvoker();
-         _imageRepository = new SqlImageRepository();
-         _binaryRepository = new S3BinaryRepository();
-      }
-
       public ImageController(IImageRepository imageRepository, IBinaryRepository binaryRepository)
       {
+         ActionInvoker = new ActionInvokers.ActionInvoker();
          _imageRepository = imageRepository;
          _binaryRepository = binaryRepository;
       }
@@ -42,7 +36,7 @@ namespace Tadmap.Controllers
 
          try
          {
-            TadmapImage image = _imageRepository.GetAllImages().WithId(id).Single();
+            TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).Single();
 
             ImageView model = new ImageView(image.Id, image.Title, image.Description, null);
 
@@ -118,7 +112,7 @@ namespace Tadmap.Controllers
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
 
-         TadmapImage image = _imageRepository.GetAllImages().WithId(id).SingleOrDefault();
+         TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).SingleOrDefault();
 
          if (image == null)
             throw new ImageNotFoundException();
@@ -136,7 +130,7 @@ namespace Tadmap.Controllers
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
 
-         TadmapImage image = _imageRepository.GetAllImages().WithId(id).SingleOrDefault();
+         TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).SingleOrDefault();
          
          if (image == null)
             throw new ImageNotFoundException();
@@ -181,7 +175,7 @@ namespace Tadmap.Controllers
          if (!principal.IsInRole(TadmapRoles.Administrator))
             throw new SecurityException("Only administrators can mark images as offensive.");
 
-         TadmapImage image = _imageRepository.GetAllImages().WithId(id).SingleOrDefault();
+         TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).SingleOrDefault();
 
 
          if (image == null)
@@ -203,7 +197,7 @@ namespace Tadmap.Controllers
          if (!principal.IsInRole(TadmapRoles.Administrator))
             throw new SecurityException("Only administrators can mark images as un-offensive.");
 
-         TadmapImage image = _imageRepository.GetAllImages().WithId(id).SingleOrDefault();
+         TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).SingleOrDefault();
          if (image == null)
             throw new ImageNotFoundException();
 

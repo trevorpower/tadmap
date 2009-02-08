@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using Tadmap.DataAccess;
 using System.IO;
+using System.Web.Mvc;
+using System.Web;
 
-namespace TadmapTests.DataAccess
+
+namespace Tadmap.DataAccess
 {
-   public class TestBinaryRepository : IBinaryRepository
+   public class FileSystemBinaryRepository : IBinaryRepository
    {
       #region IBinaryRepository Members
 
@@ -16,7 +19,7 @@ namespace TadmapTests.DataAccess
          if (data.Length == 0)
             return;
 
-         FileStream file = new FileStream("../../TestBinaryRepository/" + key, FileMode.Create);
+         FileStream file = new FileStream("Tadmap MVC/LocalBinaryRepository/" + key, FileMode.Create);
          
          int theByte = data.ReadByte();
          while (theByte != -1)
@@ -28,7 +31,7 @@ namespace TadmapTests.DataAccess
 
       public Uri GetUrl(string key)
       {
-         return new Uri("http://" + key + ".url");
+         return new Uri("http://localhost:51277/File.mvc/" + HttpUtility.UrlEncode(key));
       }
 
       #endregion

@@ -7,6 +7,7 @@ using Tadmap.DataAccess.SQL;
 using Tadmap.DataAccess;
 using Tadmap.Models.Images;
 using System.Transactions;
+using TadmapTests.DataAccess;
 
 namespace RepositoryIntegrationTests.SQL
 {
@@ -24,7 +25,7 @@ namespace RepositoryIntegrationTests.SQL
       {
          IImageRepository repository = new SqlImageRepository();
 
-         Assert.AreEqual(3, repository.GetAllImages().Count());
+         Assert.AreEqual(3, repository.GetAllImages(new TestBinaryRepository()).Count());
       }
 
       [Test]
@@ -32,7 +33,7 @@ namespace RepositoryIntegrationTests.SQL
       {
          IImageRepository repository = new SqlImageRepository();
 
-         Assert.AreEqual(2, repository.GetAllImages().IsPublic().Count());
+         Assert.AreEqual(2, repository.GetAllImages(new TestBinaryRepository()).IsPublic().Count());
       }
 
       [Test]
@@ -40,7 +41,7 @@ namespace RepositoryIntegrationTests.SQL
       {
          IImageRepository repository = new SqlImageRepository();
 
-         Assert.AreEqual(1, repository.GetAllImages().IsNotOffensive().Count());
+         Assert.AreEqual(1, repository.GetAllImages(new TestBinaryRepository()).IsNotOffensive().Count());
       }
 
       [Test]
@@ -50,7 +51,7 @@ namespace RepositoryIntegrationTests.SQL
          {
             IImageRepository repository = new SqlImageRepository();
 
-            TadmapImage image = repository.GetAllImages().First();
+            TadmapImage image = repository.GetAllImages(new TestBinaryRepository()).First();
 
             repository.Save(image);
          }
@@ -63,7 +64,16 @@ namespace RepositoryIntegrationTests.SQL
          {
             IImageRepository repository = new SqlImageRepository();
 
-            TadmapImage newImage = new TadmapImage(Guid.NewGuid(), "", "", "", true, false, new Guid("d23a1f2a-0db5-4efe-b084-b5529e9a2756"), repository, null);
+            TadmapImage newImage = new TadmapImage(repository, null)
+            {
+               Id = Guid.NewGuid(),
+               Title = "",
+               Description = "",
+               Key = "",
+               IsPublic = true,
+               IsOffensive = false,
+               UserId = new Guid("d23a1f2a-0db5-4efe-b084-b5529e9a2756")
+            };
 
             repository.Save(newImage);
          }
@@ -76,11 +86,20 @@ namespace RepositoryIntegrationTests.SQL
          {
             IImageRepository repository = new SqlImageRepository();
 
-            TadmapImage newImage = new TadmapImage(Guid.NewGuid(), "", "", "", true, false, new Guid("d23a1f2a-0db5-4efe-b084-b5529e9a2756"), repository, null);
-            
+            TadmapImage newImage = new TadmapImage(repository, null)
+            {
+               Id = Guid.NewGuid(),
+               Title = "",
+               Description = "",
+               Key = "",
+               IsPublic = true,
+               IsOffensive = false,
+               UserId = new Guid("d23a1f2a-0db5-4efe-b084-b5529e9a2756")
+            };
+
             repository.Save(newImage);
 
-            Assert.AreEqual(4, repository.GetAllImages().Count());
+            Assert.AreEqual(4, repository.GetAllImages(new TestBinaryRepository()).Count());
          }
       }
 
@@ -91,13 +110,13 @@ namespace RepositoryIntegrationTests.SQL
          {
             IImageRepository repository = new SqlImageRepository();
 
-            TadmapImage image = repository.GetAllImages().FirstOrDefault(i => i.IsOffensive);
+            TadmapImage image = repository.GetAllImages(new TestBinaryRepository()).FirstOrDefault(i => i.IsOffensive);
 
             image.IsOffensive = false;
 
             repository.Save(image);
 
-            Assert.AreEqual(2, repository.GetAllImages().IsNotOffensive().Count());
+            Assert.AreEqual(2, repository.GetAllImages(new TestBinaryRepository()).IsNotOffensive().Count());
          }
       }
 
@@ -110,13 +129,13 @@ namespace RepositoryIntegrationTests.SQL
          {
             IImageRepository repository = new SqlImageRepository();
 
-            TadmapImage image = repository.GetAllImages().FirstOrDefault(i => !i.IsPublic);
+            TadmapImage image = repository.GetAllImages(new TestBinaryRepository()).FirstOrDefault(i => !i.IsPublic);
 
             image.IsPublic = true;
 
             repository.Save(image);
 
-            Assert.AreEqual(3, repository.GetAllImages().IsPublic().Count());
+            Assert.AreEqual(3, repository.GetAllImages(new TestBinaryRepository()).IsPublic().Count());
          }
       }
 
@@ -127,7 +146,7 @@ namespace RepositoryIntegrationTests.SQL
          {
             IImageRepository repository = new SqlImageRepository();
 
-            TadmapImage image = repository.GetAllImages().FirstOrDefault();
+            TadmapImage image = repository.GetAllImages(new TestBinaryRepository()).FirstOrDefault();
 
             image.Title = "First Image Title - Changed";
             
@@ -135,8 +154,8 @@ namespace RepositoryIntegrationTests.SQL
 
             repository.Save(image);
 
-            Assert.AreEqual(oldDescription, repository.GetAllImages().FirstOrDefault().Description);
-            Assert.AreEqual("First Image Title - Changed", repository.GetAllImages().FirstOrDefault().Title);
+            Assert.AreEqual(oldDescription, repository.GetAllImages(new TestBinaryRepository()).FirstOrDefault().Description);
+            Assert.AreEqual("First Image Title - Changed", repository.GetAllImages(new TestBinaryRepository()).FirstOrDefault().Title);
          }
       }
 
@@ -147,7 +166,7 @@ namespace RepositoryIntegrationTests.SQL
          {
             IImageRepository repository = new SqlImageRepository();
 
-            TadmapImage image = repository.GetAllImages().FirstOrDefault();
+            TadmapImage image = repository.GetAllImages(new TestBinaryRepository()).FirstOrDefault();
 
             image.Description = "First Image Title - Changed";
 
@@ -155,8 +174,8 @@ namespace RepositoryIntegrationTests.SQL
 
             repository.Save(image);
 
-            Assert.AreEqual(oldTitle, repository.GetAllImages().FirstOrDefault().Title);
-            Assert.AreEqual("First Image Title - Changed", repository.GetAllImages().FirstOrDefault().Description);
+            Assert.AreEqual(oldTitle, repository.GetAllImages(new TestBinaryRepository()).FirstOrDefault().Title);
+            Assert.AreEqual("First Image Title - Changed", repository.GetAllImages(new TestBinaryRepository()).FirstOrDefault().Description);
          }
       }
 
@@ -167,7 +186,7 @@ namespace RepositoryIntegrationTests.SQL
          {
             IImageRepository repository = new SqlImageRepository();
 
-            TadmapImage image = repository.GetAllImages().WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
+            TadmapImage image = repository.GetAllImages(new TestBinaryRepository()).WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
 
             Assert.IsNotNull(image);
             Assert.IsFalse(image.IsPublic);
@@ -176,7 +195,7 @@ namespace RepositoryIntegrationTests.SQL
 
             repository.Save(image);
 
-            TadmapImage latestImage = repository.GetAllImages().WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
+            TadmapImage latestImage = repository.GetAllImages(new TestBinaryRepository()).WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
 
             Assert.IsTrue(latestImage.IsPublic);
          }
@@ -189,7 +208,7 @@ namespace RepositoryIntegrationTests.SQL
          {
             IImageRepository repository = new SqlImageRepository();
 
-            TadmapImage image = repository.GetAllImages().WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
+            TadmapImage image = repository.GetAllImages(new TestBinaryRepository()).WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
 
             Assert.AreEqual("http://taduser.myopenid.com/", image.OwnerName);
          }
@@ -202,7 +221,7 @@ namespace RepositoryIntegrationTests.SQL
          {
             IImageRepository repository = new SqlImageRepository();
 
-            TadmapImage image = repository.GetAllImages().WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
+            TadmapImage image = repository.GetAllImages(new TestBinaryRepository()).WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
 
             Assert.IsNotNull(image.ImageSet);
          }
@@ -216,7 +235,7 @@ namespace RepositoryIntegrationTests.SQL
          {
             IImageRepository repository = new SqlImageRepository();
 
-            TadmapImage image = repository.GetAllImages().WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
+            TadmapImage image = repository.GetAllImages(new TestBinaryRepository()).WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
 
             Assert.AreEqual("f0b999ba-36b1-4cc2-beb1-455367b5897a.gif", image.ImageSet.Original);
          }
@@ -229,7 +248,7 @@ namespace RepositoryIntegrationTests.SQL
          {
             IImageRepository repository = new SqlImageRepository();
 
-            TadmapImage image = repository.GetAllImages().WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
+            TadmapImage image = repository.GetAllImages(new TestBinaryRepository()).WithId(new Guid("ede4567f-32be-4aba-97ea-a0c6be3fcbfd")).SingleOrDefault();
 
             Assert.AreEqual("Preview_f0b999ba-36b1-4cc2-beb1-455367b5897a.gif", image.ImageSet.Preview);
          }
@@ -242,7 +261,7 @@ namespace RepositoryIntegrationTests.SQL
          {
             IImageRepository repository = new SqlImageRepository();
 
-            TadmapImage image = repository.GetAllImages().WithId(new Guid("57c95cb2-dea3-486b-a951-d650e346ab59")).SingleOrDefault();
+            TadmapImage image = repository.GetAllImages(new TestBinaryRepository()).WithId(new Guid("57c95cb2-dea3-486b-a951-d650e346ab59")).SingleOrDefault();
 
             Assert.IsNotNull(image);
             Assert.IsTrue(image.IsPublic);
@@ -251,7 +270,7 @@ namespace RepositoryIntegrationTests.SQL
 
             repository.Save(image);
 
-            TadmapImage latestImage = repository.GetAllImages().WithId(new Guid("57c95cb2-dea3-486b-a951-d650e346ab59")).SingleOrDefault();
+            TadmapImage latestImage = repository.GetAllImages(new TestBinaryRepository()).WithId(new Guid("57c95cb2-dea3-486b-a951-d650e346ab59")).SingleOrDefault();
 
             Assert.IsFalse(latestImage.IsPublic);
          }

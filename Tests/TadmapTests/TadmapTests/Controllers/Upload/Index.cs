@@ -7,6 +7,7 @@ using Tadmap.Controllers;
 using TadmapTests.Mocks.Security;
 using System.Web.Mvc;
 using System.Security;
+using TadmapTests.DataAccess;
 
 namespace TadmapTests.Controllers.Upload
 {
@@ -16,7 +17,7 @@ namespace TadmapTests.Controllers.Upload
       [Test]
       public void Returns_ViewResult_For_Collector()
       {
-         UploadController upload = new UploadController();
+         UploadController upload = new UploadController(new TestImageRepository(), new TestBinaryRepository());
 
          ActionResult result = upload.Index();
 
@@ -26,7 +27,7 @@ namespace TadmapTests.Controllers.Upload
       [Test]
       public void Returns_ViewResult_With_Empty_Name_And_Null_Model_With_No_Errors()
       {
-         UploadController upload = new UploadController();
+         UploadController upload = new UploadController(new TestImageRepository(), new TestBinaryRepository());
 
          ViewResult result = upload.Index() as ViewResult;
 

@@ -49,6 +49,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Libraries\ImageManipulation\ClassLibrary1\bin\Release\ImageManipulation.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core">
@@ -86,10 +87,10 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionFIlters\PrincipalActionFilter.cs" />
     <Compile Include="ActionInvokers\ActionInvoker.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs">
     </Compile>
@@ -97,6 +98,7 @@
     </Compile>
     <Compile Include="Controllers\UserImagesController.cs">
     </Compile>
+    <Compile Include="DataAccess\FileSystem\FileSystemBinaryRepository.cs" />
     <Compile Include="DataAccess\HttpPostedFile\HttpPostedFileUploadedFile.cs" />
     <Compile Include="DataAccess\IBinaryRepository.cs" />
     <Compile Include="DataAccess\IImageRepository.cs" />
@@ -111,6 +113,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AppHelper.cs" />
+    <Compile Include="Infrastructure\ControllerFactory.cs" />
+    <Compile Include="Models\HomeView.cs" />
     <Compile Include="Models\ImageSets\IImageSet.cs" />
     <Compile Include="Models\ImageSets\ImageSet1.cs" />
     <Compile Include="Tadmap\Security\Authentication.cs" />

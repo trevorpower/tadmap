@@ -11,12 +11,12 @@ namespace Tadmap.DataAccess.SQL
    {
       #region IImageRepository Members
 
-      public IQueryable<TadmapImage> GetAllImages()
+      public IQueryable<TadmapImage> GetAllImages(IBinaryRepository iBinaryRepository)
       {
          TadmapDb db = new TadmapDb();
 
          return from i in db.UserImages
-                select new TadmapImage
+                select new TadmapImage(this, iBinaryRepository)
                 {
                    Id = i.Id,
                    Title = i.Title,

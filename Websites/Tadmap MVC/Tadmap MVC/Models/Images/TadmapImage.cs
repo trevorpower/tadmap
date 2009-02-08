@@ -16,34 +16,10 @@ namespace Tadmap.Models.Images
       IImageRepository _imageRepository;
       IBinaryRepository _binaryRepository;
 
-      public TadmapImage()
-      {
-         _imageRepository = new SqlImageRepository();
-         _binaryRepository = new S3BinaryRepository();
-      }
-
-      public TadmapImage(
-         Guid id,
-         string title,
-         string description,
-         string key,
-         bool isPublic,
-         bool isOffensive,
-         Guid userId,
-         IImageRepository imageRepository,
-         IBinaryRepository binaryRepository
-      )
+      public TadmapImage(IImageRepository imageRepository, IBinaryRepository binaryRepository)
       {
          _imageRepository = imageRepository;
          _binaryRepository = binaryRepository;
-
-         Id = id;
-         Title = title;
-         Description = description;
-         Key = key;
-         IsPublic = isPublic;
-         IsOffensive = isOffensive;
-         UserId = userId;
       }
 
       public Guid Id { get; set; }
@@ -54,6 +30,8 @@ namespace Tadmap.Models.Images
       public bool IsOffensive { get; set; }
       public Guid UserId { get; set; }
       public string OwnerName { get; set; }
+
+      public Uri SquareUrl { get { return _binaryRepository.GetUrl(ImageSet.Square); } }
 
       public IImageSet ImageSet { get; set; }
 

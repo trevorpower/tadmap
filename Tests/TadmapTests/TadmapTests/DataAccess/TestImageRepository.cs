@@ -19,7 +19,7 @@ namespace TadmapTests.DataAccess
 
          for (int i = 0; i < 10; i++)
             _images.Add(
-               new TadmapImage
+               new TadmapImage(this, new TestBinaryRepository() )
                {
                   Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf" + i),
                   Description = "description",
@@ -37,7 +37,7 @@ namespace TadmapTests.DataAccess
       
       #region IImageRepository Members
 
-      public IQueryable<TadmapImage> GetAllImages()
+      public IQueryable<TadmapImage> GetAllImages(IBinaryRepository binaryRepository)
       {
          return _images.AsQueryable();
       }

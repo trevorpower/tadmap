@@ -19,15 +19,9 @@ namespace Tadmap.Controllers
       IImageRepository _imageRepository;
       IBinaryRepository _binaryRepository;
 
-      public UploadController()
-      {
-         ActionInvoker = new ActionInvokers.ActionInvoker();
-         _imageRepository = new SqlImageRepository();
-         _binaryRepository = new S3BinaryRepository();
-      }
-
       public UploadController(IImageRepository imageRepository, IBinaryRepository binaryRepository)
       {
+         ActionInvoker = new ActionInvokers.ActionInvoker();
          _imageRepository = imageRepository;
          _binaryRepository = binaryRepository;
       }
@@ -44,7 +38,7 @@ namespace Tadmap.Controllers
       {
          if (file.ContentLength > 0)
          {
-            TadmapImage image = new TadmapImage();
+            TadmapImage image = new TadmapImage(_imageRepository, _binaryRepository);
             image.Id = Guid.NewGuid();
             image.Title = title ?? Path.GetFileNameWithoutExtension(file.FileName);
             image.Description = description ?? "";

@@ -17,7 +17,7 @@ namespace TadmapTests.Models
       {
          IImageRepository repository = new TestImageRepository();
 
-         Assert.IsNotNull(repository.GetAllImages());
+         Assert.IsNotNull(repository.GetAllImages(new TestBinaryRepository()));
       }
 
       [Test]
@@ -25,7 +25,7 @@ namespace TadmapTests.Models
       {
          IImageRepository repository = new TestImageRepository();
 
-         Assert.AreEqual(10, repository.GetAllImages().Count());
+         Assert.AreEqual(10, repository.GetAllImages(new TestBinaryRepository()).Count());
       }
 
       [Test]
@@ -34,7 +34,7 @@ namespace TadmapTests.Models
          IImageRepository repository = new TestImageRepository();
 
          int count = 0;
-         foreach (TadmapImage image in repository.GetAllImages())
+         foreach (TadmapImage image in repository.GetAllImages(new TestBinaryRepository()))
             if (image.IsPublic)
                count++;
 
@@ -46,7 +46,7 @@ namespace TadmapTests.Models
       {
          IImageRepository repository = new TestImageRepository();
 
-         Assert.AreEqual(5, repository.GetAllImages().IsPublic().Count());
+         Assert.AreEqual(5, repository.GetAllImages(new TestBinaryRepository()).IsPublic().Count());
       }
 
       [Test]
@@ -54,7 +54,7 @@ namespace TadmapTests.Models
       {
          IImageRepository repository = new TestImageRepository();
 
-         Assert.AreEqual(8, repository.GetAllImages().IsNotOffensive().Count());
+         Assert.AreEqual(8, repository.GetAllImages(new TestBinaryRepository()).IsNotOffensive().Count());
       }
 
       [Test]
@@ -62,14 +62,14 @@ namespace TadmapTests.Models
       {
          IImageRepository repository = new TestImageRepository();
 
-         Assert.AreEqual(1, repository.GetAllImages().WithId(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1")).Count());
+         Assert.AreEqual(1, repository.GetAllImages(new TestBinaryRepository()).WithId(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1")).Count());
       }
 
       [Test]
       public void With_Known_Id_Returns_1_Image_With_Correct_OwnerName()
       {
          IImageRepository repository = new TestImageRepository();
-         TadmapImage image = repository.GetAllImages().WithId(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1")).SingleOrDefault();
+         TadmapImage image = repository.GetAllImages(new TestBinaryRepository()).WithId(new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf1")).SingleOrDefault();
          Assert.AreEqual("the owner", image.OwnerName);
       }
 
@@ -78,7 +78,7 @@ namespace TadmapTests.Models
       {
          IImageRepository repository = new TestImageRepository();
 
-         Assert.AreEqual(0, repository.GetAllImages().WithId(Guid.NewGuid()).Count());
+         Assert.AreEqual(0, repository.GetAllImages(new TestBinaryRepository()).WithId(Guid.NewGuid()).Count());
       }
 
       [Test]
@@ -86,7 +86,7 @@ namespace TadmapTests.Models
       {
          IImageRepository repository = new TestImageRepository();
 
-         TadmapImage image = new TadmapImage();
+         TadmapImage image = new TadmapImage(new TestImageRepository(), new TestBinaryRepository());
 
          repository.Save(image);
       }

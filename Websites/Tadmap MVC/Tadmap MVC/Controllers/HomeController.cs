@@ -7,29 +7,32 @@ using System.Web.Mvc.Ajax;
 using Tadmap.DataAccess;
 using Tadmap.DataAccess.SQL;
 using Tadmap.Models.Images;
+using Tadmap.Models;
 
 namespace Tadmap.Controllers
 {
    [HandleError]
    public class HomeController : Controller
    {
-      private IImageRepository _imageRepository;
+      private IImageRepository ImageRepository { get; set; }
+      private IBinaryRepository BinaryRepository { get; set; }
 
-      public HomeController()
+      public HomeController(IImageRepository imageRepository, IBinaryRepository binaryRepository)
       {
-         _imageRepository = new SqlImageRepository();
-      }
-
-      public HomeController(IImageRepository imageRepository)
-      {
-         _imageRepository = imageRepository;
+         ImageRepository = imageRepository;
+         BinaryRepository = binaryRepository;
       }
 
       public ActionResult Index()
       {
-         ViewData.Model =_imageRepository.GetAllImages()
+         List<TadmapImage> images = ImageRepository.GetAllImages(BinaryRepository)
             .IsPublic()
             .IsNotOffensive().ToList();
+
+         ViewData.Model = new HomeView
+         {
+            Images = images
+         };
 
          return View();
       }
