@@ -112,6 +112,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppresion.cs" />
     <Compile Include="Helpers\AppHelper.cs" />
     <Compile Include="Infrastructure\ControllerFactory.cs" />
     <Compile Include="Models\HomeView.cs" />

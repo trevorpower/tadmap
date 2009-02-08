@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
-
+[module: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1716", Target="Tadmap.Views.Shared", Scope="Namespace", MessageId="Shared", Justification = "Shared namespace is MVC convention.")]
 namespace Tadmap.Views.Shared
 {
    public partial class Main : ViewMasterPage
