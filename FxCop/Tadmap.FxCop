@@ -25,7 +25,8 @@
    <Directory>$(ProjectDir)/../../../../../Program Files (x86)/Microsoft ASP.NET/ASP.NET MVC RC/Assemblies/</Directory>
    <Directory>$(ProjectDir)/Websites/Tadmap MVC/Tadmap MVC/bin/</Directory>
   </AssemblyReferenceDirectories>
-  <Target Name="$(ProjectDir)/../Websites/Tadmap MVC/Tadmap MVC/bin/Tadmap.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Libraries/Infrastructure/Infrastructure/bin/Release/Infrastructure.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Websites/Tadmap MVC/Tadmap MVC/bin/Tadmap.dll" Analyze="False" AnalyzeAllChildren="False" />
  </Targets>
  <Rules>
   <RuleFiles>
