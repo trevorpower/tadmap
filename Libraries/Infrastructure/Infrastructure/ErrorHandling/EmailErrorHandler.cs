@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Tadmap.Infrastructure.ErrorHandling;
 
-namespace Infrastructure.ErrorHandling
+namespace Tests.Infrastructure.ErrorHandling
 {
    public class EmailErrorHandler : IErrorHandler
    {
@@ -23,7 +24,7 @@ namespace Infrastructure.ErrorHandling
          message.AppendLine(exception.Source);
 
          // Mail the message to the developer
-         System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("mail.tadmap.com");
+         System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient();
 
          client.Send("error@tadmap.com", "trevor_power@yahoo.com", "Tadmap Error", message.ToString());
       }
