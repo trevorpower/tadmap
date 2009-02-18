@@ -316,6 +316,8 @@
     <None Include="App_Themes\Tad\.htaccess" />
     <None Include="App_Themes\Tad\Master\.htaccess" />
     <None Include="App_Themes\Tad\Master\login-bg.pdn" />
+    <Content Include="App_Themes\Tad\Error\Error.css" />
+    <Content Include="App_Themes\Tad\Error\Ships.jpg" />
     <Content Include="Configuration\appSettings.DEV.config" />
     <Content Include="Configuration\appSettings.LIVE.config" />
     <Content Include="Configuration\connectionStrings.DEV.config" />
