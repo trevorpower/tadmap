@@ -19,7 +19,7 @@ namespace Tadmap.DataAccess
          if (data.Length == 0)
             return;
 
-         FileStream file = new FileStream("Tadmap MVC/LocalBinaryRepository/" + key, FileMode.Create);
+         FileStream file = new FileStream("LocalBinaryRepository/" + key, FileMode.Create);
          
          int theByte = data.ReadByte();
          while (theByte != -1)

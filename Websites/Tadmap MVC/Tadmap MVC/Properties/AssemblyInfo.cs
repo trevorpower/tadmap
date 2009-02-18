@@ -12,7 +12,7 @@ using System;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tadmap")]
 [assembly: AssemblyProduct("Tadmap")]
-[assembly: AssemblyCopyright("Copyright © Tadmap 2008")]
+[assembly: AssemblyCopyright("Copyright © Tadmap 2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

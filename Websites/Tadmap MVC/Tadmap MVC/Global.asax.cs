@@ -9,6 +9,8 @@ using System.Security.Principal;
 using Tadmap.Tadmap.Security;
 using Microsoft.Practices.Unity;
 using Tadmap.Infrastructure;
+using Tadmap.Infrastructure.ErrorHandling;
+using Tests.Infrastructure.ErrorHandling;
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1716:DontUseKeywordShared", MessageId = "Shared", Target = "Tadmap.Views.Shared")]
 [module: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1716:DontUseKeywordShared", MessageId = "Shareed", Target = "Tadmap.Views.Shared")]
@@ -19,6 +21,7 @@ namespace Tadmap
    public class TadmapApplication : System.Web.HttpApplication
    {
       private static IUnityContainer _container;
+      private static IErrorHandler _errorHandler = new EmailErrorHandler();
 
       public static IUnityContainer Container
       {
@@ -31,7 +34,7 @@ namespace Tadmap
 
          routes.MapRoute(
              "image",                                                // Route name
-             "Image.mvc/{id}/{action}",                                  // URL with parameters
+             "Image.mvc/{id}/{action}",                              // URL with parameters
              new { controller = "Image", action = "Index", id = "" } // Parameter defaults
          );
 
@@ -43,7 +46,7 @@ namespace Tadmap
 
          routes.MapRoute(
              "Default",                                              // Route name
-             "{controller}.mvc/{action}/{id}",                           // URL with parameters
+             "{controller}.mvc/{action}/{id}",                       // URL with parameters
              new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
          );
 
@@ -59,6 +62,11 @@ namespace Tadmap
          InitializeContainer();
          ControllerBuilder.Current.SetControllerFactory(typeof(ControllerFactory));
          RegisterRoutes(RouteTable.Routes);
+      }
+
+      protected void Application_Error(object sender, EventArgs e)
+      {
+         _errorHandler.HandleException(Server.GetLastError()); 
       }
 
       protected void Application_AuthenticateRequest(Object sender, EventArgs e)
@@ -84,7 +92,7 @@ namespace Tadmap
          if (_container == null)
             _container = new UnityContainer();
 
-         _container.RegisterType<DataAccess.IBinaryRepository, DataAccess.FileSystemBinaryRepository>();
+         _container.RegisterType<DataAccess.IBinaryRepository, DataAccess.S3.S3BinaryRepository>();
          _container.RegisterType<DataAccess.IImageRepository, DataAccess.SQL.SqlImageRepository>();
       }
    }
