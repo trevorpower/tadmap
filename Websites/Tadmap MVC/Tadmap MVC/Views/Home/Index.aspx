@@ -10,7 +10,7 @@
          <p id="LoginText">
             <span id="SignInText">
                <%= Html.ActionLink("Sign in", "Login", "Account") %>
-               to view your own <i>private</i> images or <i>upoload</i> new images.</span>
+               to view your own <i>private</i> images or <i>upload</i> new images.</span>
          </p>
       </div>
       <% Html.RenderPartial("ImageListControl", ViewData.Model.Images ); %>
