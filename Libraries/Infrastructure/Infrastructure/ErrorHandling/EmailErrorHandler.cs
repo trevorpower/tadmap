@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Tadmap.Infrastructure.ErrorHandling;
 
-namespace Tests.Infrastructure.ErrorHandling
+namespace Tadmap.Infrastructure.ErrorHandling
 {
    public class EmailErrorHandler : IErrorHandler
    {
