@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Main.master" AutoEventWireup="true" CodeBehind="Login.aspx.cs"
-   Inherits="Login" Title="Tadmap - Sign In" Theme="Tad" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Main.master" AutoEventWireup="true" 
+   Inherits="System.Web.Mvc.ViewPage" Title="Tadmap - Sign In" Theme="Tad" %>
 
 <%@ Register Assembly="DotNetOpenId" Namespace="DotNetOpenId.RelyingParty" TagPrefix="RP" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -15,7 +15,7 @@
       padding-bottom: 40px;">
       <div style="text-align: center;">
          <div class="Instructions">
-            You can sign into <i>tadmap.com</i> by using any <a href="http://openid.net/what/">
+            You can sign into Tadmap by using any <a href="http://openid.net/what/">
                OpenID</a>.<br />
          </div>
          <div class="Instructions">

@@ -36,5 +36,22 @@ namespace Tadmap.Controllers
 
          //return RedirectToRoute("Default", new { Controller = "Home", Action = "Index" });
       }
+
+      public ActionResult Works()
+      {
+         return Json(string.Empty);
+      }
+
+      public ActionResult ThrowsException()
+      {
+         throw new NotSupportedException("Exception thrown, as requested!");
+      }
+
+      [Authorize(Roles="NeverAuthorized")]
+      public ActionResult NotAuthorized()
+      {
+         return View();
+      }
+
    }
 }

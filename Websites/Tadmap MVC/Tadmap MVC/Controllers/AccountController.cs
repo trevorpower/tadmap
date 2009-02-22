@@ -80,9 +80,6 @@ namespace Tadmap.Controllers
       [AcceptVerbs(HttpVerbs.Post)]
       public ActionResult Login(string openid_url)
       {
-         //FormsAuth.SetAuthCookie(openid_url, false /* createPersistentCookie */);
-         //return RedirectToAction("Index", "Home");
-
          if (Identifier.IsValid(openid_url))
          {
             try
