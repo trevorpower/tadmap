@@ -14,6 +14,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>TadmapAssemblyKey.snk</AssemblyOriginatorKeyFile>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppresion.cs</CodeAnalysisModuleSuppressionsFile>
+    <MvcBuildViews>true</MvcBuildViews>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -172,37 +173,9 @@
     <Compile Include="Tadmap\TadPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Account\ChangePassword.aspx.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Account\ChangePassword.aspx.designer.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Account\ChangePasswordSuccess.aspx.cs">
-      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Account\ChangePasswordSuccess.aspx.designer.cs">
-      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Account\Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Account\Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Admin\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Admin\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -277,7 +250,6 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
-    <None Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery-1.2.6.js" />
     <Content Include="Scripts\jquery-1.2.6.min.js" />
@@ -285,10 +257,7 @@
     <Content Include="Scripts\MicrosoftAjax.debug.js" />
     <Content Include="Scripts\MicrosoftMvcAjax.js" />
     <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
-    <Content Include="Views\Account\ChangePassword.aspx" />
-    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
     <Content Include="Views\Account\Login.aspx" />
-    <Content Include="Views\Account\Register.aspx" />
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LoginUserControl.ascx" />
@@ -330,6 +299,7 @@
     <Content Include="Configuration\httpRuntime.config" />
     <Content Include="Configuration\System.web\roleManager.config" />
     <Content Include="Configuration\System.web\pages.config" />
+    <Content Include="favicon.ico" />
     <Content Include="Scripts\jquery.jeditable.mini.js" />
     <Content Include="Scripts\swfupload.js" />
     <Content Include="Scripts\swfuploadhandlers.js" />
@@ -345,7 +315,6 @@
     <Content Include="Views\Shared\ImageListControl.ascx" />
     <Content Include="Views\Upload\Index.aspx" />
     <Content Include="Views\UserImages\Index.aspx" />
-    <Content Include="Web.LIVE.config" />
     <None Include="TadmapAssemblyKey.snk" />
     <None Include="Tadmap\Tadmap.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -355,6 +324,9 @@
     <None Include="Tadmap\Tadmap.dbml.layout">
       <DependentUpon>Tadmap.dbml</DependentUpon>
     </None>
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config" />
+    <Content Include="Web.Release.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -374,11 +346,17 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
   -->
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <ConfigSourceFiles Include="Web.$(Configuration).config" />
+      <ConfigDestinationFiles Include="Web.config" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ConfigSourceFiles)" DestinationFiles="@(ConfigDestinationFiles)" />
+  </Target>
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)..\$(ProjectName)" />
+  </Target>
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
