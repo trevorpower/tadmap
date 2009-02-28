@@ -9,6 +9,8 @@ using Tadmap.DataAccess;
 using Tadmap.DataAccess.SQL;
 using Tadmap.Security;
 using System.Security;
+using Infrastructure.Security;
+using System.Security.Permissions;
 
 namespace Tadmap.Controllers
 {
@@ -47,7 +49,7 @@ namespace Tadmap.Controllers
          throw new NotSupportedException("Exception thrown, as requested!");
       }
 
-      [Authorize(Roles="NeverAuthorized")]
+      [PrincipalPermission(SecurityAction.Demand, Role = "nada")]
       public ActionResult NotAuthorized()
       {
          return View();

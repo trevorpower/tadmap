@@ -12,6 +12,8 @@ using Tadmap.DataAccess.S3;
 using Tadmap.Models.ImageSets;
 using Tadmap.Tadmap.Security;
 using Tadmap.Infrastructure;
+using Infrastructure.Security;
+using System.Security.Permissions;
 
 namespace Tadmap.Controllers
 {
@@ -34,8 +36,7 @@ namespace Tadmap.Controllers
       }
 
       [AcceptVerbs(HttpVerbs.Post)]
-      [Authorize(Roles = TadmapRoles.Collector)]
-      [LogException]
+      [PrincipalPermission(SecurityAction.Demand, Role = TadmapRoles.Collector)]
       public ActionResult Upload(string title, string description, IPrincipal principal, IUploadedFile file)
       {
          if (file.ContentLength > 0)
