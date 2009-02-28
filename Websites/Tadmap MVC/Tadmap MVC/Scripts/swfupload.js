@@ -81,7 +81,7 @@ SWFUpload.prototype.initSettings = function(init_settings) {
    this.addSetting("begin_upload_on_queue", init_settings.begin_upload_on_queue, true);
    this.addSetting("file_types", init_settings.file_types, "*.gif;*.jpg;*.png");
    this.addSetting("file_types_description", init_settings.file_types_description, "Common Web Image Formats (gif, jpg, png)");
-   this.addSetting("file_size_limit", init_settings.file_size_limit, "1024");
+   this.addSetting("file_size_limit", init_settings.file_size_limit, "0");
    this.addSetting("file_upload_limit", init_settings.file_upload_limit, "0");
    this.addSetting("file_queue_limit", init_settings.file_queue_limit, "0");
 
