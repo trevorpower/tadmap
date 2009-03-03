@@ -8,23 +8,46 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TadmapWorker.Properties
-{
-
-
-   [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-   [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "9.0.0.0")]
-   internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-   {
-
-      private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-      public static Settings Default
-      {
-         get
-         {
-            return defaultInstance;
-         }
-      }
-   }
+namespace TadmapWorker.Properties {
+    
+    
+    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "9.0.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1RYDPTK2VKP6739SPGR2")]
+        public string S3AccessKey {
+            get {
+                return ((string)(this["S3AccessKey"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7")]
+        public string S3SecretAccessKey {
+            get {
+                return ((string)(this["S3SecretAccessKey"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("tadtestus")]
+        public string S3BucketName {
+            get {
+                return ((string)(this["S3BucketName"]));
+            }
+        }
+    }
 }

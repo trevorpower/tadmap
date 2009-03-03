@@ -1,7 +1,15 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TadmapWorker.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="S3AccessKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1RYDPTK2VKP6739SPGR2</Value>
+    </Setting>
+    <Setting Name="S3SecretAccessKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7</Value>
+    </Setting>
+    <Setting Name="S3BucketName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">tadtestus</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
