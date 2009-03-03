@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Web Developer Express 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tadmap MVC", "Tadmap MVC\Tadmap MVC.csproj", "{14821E38-DFA5-45F1-A752-CDC184EA9B0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tadmap.Model", "..\..\Libraries\Tadmap.Model\Tadmap.Model.csproj", "{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tadmap.Model.Test", "..\..\Libraries\Tadmap.Model.Test\Tadmap.Model.Test.csproj", "{14CC06D9-9D90-4278-BD48-AC64D8C51625}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{14821E38-DFA5-45F1-A752-CDC184EA9B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14821E38-DFA5-45F1-A752-CDC184EA9B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14821E38-DFA5-45F1-A752-CDC184EA9B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14CC06D9-9D90-4278-BD48-AC64D8C51625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14CC06D9-9D90-4278-BD48-AC64D8C51625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14CC06D9-9D90-4278-BD48-AC64D8C51625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14CC06D9-9D90-4278-BD48-AC64D8C51625}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -79,6 +79,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Websites\Tadmap MVC\Tadmap MVC\bin\Tadmap.dll</HintPath>
     </Reference>
+    <Reference Include="Tadmap.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0f5374c769ad70b2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\Tadmap.Model\bin\Debug\Tadmap.Model.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Account\IndexAction.cs" />
