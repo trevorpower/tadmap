@@ -35,5 +35,15 @@ namespace Tadmap.DataAccess
       }
 
       #endregion
+
+      #region IBinaryRepository Members
+
+
+      public Stream Get(string key)
+      {
+         throw new NotImplementedException();
+      }
+
+      #endregion
    }
 }

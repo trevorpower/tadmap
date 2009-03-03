@@ -43,6 +43,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.Wrapper.dll</HintPath>
     </Reference>
+    <Reference Include="Amazon.SQS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\3rdParty\amazon-queue-2008-01-01-cs-library\src\Amazon.SQS\bin\Release\Amazon.SQS.dll</HintPath>
+    </Reference>
+    <Reference Include="com.flajaxian.DirectAmazonUploader, Version=1.0.3400.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\3rdParty\com.flajaxian.DirectAmazonUploader\Binary\com.flajaxian.DirectAmazonUploader.dll</HintPath>
+    </Reference>
+    <Reference Include="com.flajaxian.FileUploader, Version=2.0.3400.0, Culture=neutral, PublicKeyToken=98ef6b70d9d62bae, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\3rdParty\com.flajaxian.DirectAmazonUploader\Binary\com.flajaxian.FileUploader.dll</HintPath>
+    </Reference>
     <Reference Include="DotNetOpenId, Version=2.4.3.8264, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\TadMap\Bin\DotNetOpenId.dll</HintPath>
@@ -175,7 +187,6 @@
     </Compile>
     <Compile Include="Views\Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>

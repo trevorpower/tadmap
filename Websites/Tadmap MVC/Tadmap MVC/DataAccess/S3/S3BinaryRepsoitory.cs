@@ -18,7 +18,7 @@ namespace Tadmap.DataAccess.S3
       public S3BinaryRepository()
       {
          ThreeSharpConfig config;
-         
+
          config = new ThreeSharpConfig();
          config.AwsAccessKeyID = S3Storage.AccessKey;
          config.AwsSecretAccessKey = S3Storage.SecretAccessKey;
@@ -89,6 +89,37 @@ namespace Tadmap.DataAccess.S3
          return new Uri(s3.GetUrl(S3Storage.BucketName, key));
       }
 
+      public Stream Get(string key)
+      {
+         MemoryStream stream = new MemoryStream();
+ 
+         using (ObjectGetRequest objectGetRequest = new ObjectGetRequest("tadtestus", key))
+         using (ObjectGetResponse objectGetResponse = _service.ObjectGet(objectGetRequest))
+         {
+            TransferStream(objectGetResponse.DataStream, stream);
+         }
+
+         return stream;
+      }
+
+      private void TransferStream(Stream responseStream, Stream outputStream)
+      {
+         //long bytesTransferred = 0;
+         byte[] buffer = new byte[1024];
+         int bytesRead = 0;
+         while (true)
+         {
+            bytesRead = responseStream.Read(buffer, 0, buffer.Length);
+            if (bytesRead == 0)
+               break;
+
+            outputStream.Write(buffer, 0, bytesRead);
+            //bytesTransferred += bytesRead;
+         }
+         //this.BytesTotal = bytesTransferred
+      }
+
+      
       #endregion
    }
 }

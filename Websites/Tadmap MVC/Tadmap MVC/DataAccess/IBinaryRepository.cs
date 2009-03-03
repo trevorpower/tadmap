@@ -11,5 +11,7 @@ namespace Tadmap.DataAccess
       void Add(Stream data, string key, string contentType);
 
       Uri GetUrl(string key);
+
+      Stream Get(string key);
    }
 }
