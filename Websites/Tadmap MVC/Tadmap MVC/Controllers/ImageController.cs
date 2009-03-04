@@ -14,7 +14,7 @@ using Tadmap.Views.Image;
 using Tadmap.DataAccess.S3;
 using Tadmap.Security;
 using Tadmap.Model.Image;
-using Tadmap.Models.Images;
+using Tadmap.Models.Image;
 
 namespace Tadmap.Controllers
 {

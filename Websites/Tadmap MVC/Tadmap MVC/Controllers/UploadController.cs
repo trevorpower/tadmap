@@ -6,7 +6,6 @@ using System.IO;
 using Tadmap.Security;
 using System.Security.Principal;
 using Tadmap.DataAccess;
-using Tadmap.Models.Images;
 using Tadmap.DataAccess.SQL;
 using Tadmap.DataAccess.S3;
 using Tadmap.Tadmap.Security;

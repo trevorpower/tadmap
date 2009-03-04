@@ -37,11 +37,11 @@
   <ItemGroup>
     <Reference Include="Affirma.ThreeSharp, Version=1.4.0.0, Culture=neutral, PublicKeyToken=6ece7f1c56fee447, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp\bin\Release\Affirma.ThreeSharp.dll</HintPath>
+      <HintPath>..\..\..\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp\bin\Debug\Affirma.ThreeSharp.dll</HintPath>
     </Reference>
     <Reference Include="Affirma.ThreeSharp.Wrapper, Version=1.4.0.0, Culture=neutral, PublicKeyToken=e7a43f14caa11592, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.Wrapper.dll</HintPath>
+      <HintPath>..\..\..\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp.Wrapper\obj\Debug\Affirma.ThreeSharp.Wrapper.dll</HintPath>
     </Reference>
     <Reference Include="DotNetOpenId, Version=2.4.3.8264, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -57,7 +57,7 @@
     </Reference>
     <Reference Include="Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4040592e3ab94c11, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Infrastructure\Infrastructure\bin\Release\Infrastructure.dll</HintPath>
+      <HintPath>..\..\..\Libraries\Tadmap.Infrastructure\Infrastructure\bin\Debug\Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -167,7 +167,6 @@
     </Compile>
     <Compile Include="Views\Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -283,6 +282,8 @@
     <None Include="App_Themes\Tad\Master\login-bg.pdn" />
     <Content Include="App_Themes\Tad\Error\Error.css" />
     <Content Include="App_Themes\Tad\Error\Ships.jpg" />
+    <Content Include="bin\ImageManipulation.dll" />
+    <Content Include="bin\ImageManipulation.pdb" />
     <Content Include="bin\Tadmap.Model.dll" />
     <Content Include="bin\Tadmap.Model.pdb" />
     <Content Include="Configuration\appSettings.DEV.config" />
@@ -332,6 +333,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\Tadmap.ImageManipulation\ClassLibrary1\Tadmap.ImageManipulation.csproj">
+      <Project>{8553EFEE-85B6-4F5E-9DDF-92E3E73C3B64}</Project>
+      <Name>Tadmap.ImageManipulation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Libraries\Tadmap.Model\Tadmap.Model.csproj">
       <Project>{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}</Project>
       <Name>Tadmap.Model</Name>
