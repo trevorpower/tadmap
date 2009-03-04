@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Tadmap.DataAccess;
-using Tadmap.Models;
-using Tadmap.Models.Images;
-using Tadmap.Models.ImageSets;
+using Tadmap.Model.Image;
+using Tadmap.Model.Test.Mock;
+using Tadmap.Models.Image;
 
 namespace TadmapTests.DataAccess
 {
@@ -27,7 +26,7 @@ namespace TadmapTests.DataAccess
                   Title = "Title " + i,
                   IsPublic = i < 5,
                   OwnerName = "the owner",
-                  ImageSet = new ImageSet1("Key")
+                  ImageSet = new TestImageSet("Key")
                }
             );
 

@@ -8,6 +8,7 @@ using Tadmap.Configuration;
 using Affirma.ThreeSharp;
 using Affirma.ThreeSharp.Query;
 using Affirma.ThreeSharp.Wrapper;
+using Tadmap.Model.Image;
 
 namespace Tadmap.DataAccess.S3
 {

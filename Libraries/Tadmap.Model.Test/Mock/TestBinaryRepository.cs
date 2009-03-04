@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Tadmap.DataAccess;
 using System.IO;
+using Tadmap.Model.Image;
 
-namespace TadmapTests.DataAccess
+namespace Tadmap.Model.Test.Mock
 {
    public class TestBinaryRepository : IBinaryRepository
    {

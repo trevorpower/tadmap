@@ -6,6 +6,7 @@ using Tadmap.DataAccess;
 using System.IO;
 using System.Web.Mvc;
 using System.Web;
+using Tadmap.Model.Image;
 
 
 namespace Tadmap.DataAccess

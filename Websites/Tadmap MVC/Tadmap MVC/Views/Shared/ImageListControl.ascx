@@ -2,7 +2,7 @@
    Inherits="Tadmap.Views.Shared.ImageListControl" %>
 <% 
    Affirma.ThreeSharp.Wrapper.ThreeSharpWrapper s3 = new Affirma.ThreeSharp.Wrapper.ThreeSharpWrapper(Tadmap.Configuration.S3Storage.AccessKey, Tadmap.Configuration.S3Storage.SecretAccessKey);
-   foreach (Tadmap.Models.Images.TadmapImage image in ViewData.Model)
+   foreach (Tadmap.Model.Image.TadmapImage image in ViewData.Model)
    {
 %>
 <div class="ImageListItem" onclick="window.location = '<%= Url.Action("Index", "Image", new { id = image.Id }) %>'"

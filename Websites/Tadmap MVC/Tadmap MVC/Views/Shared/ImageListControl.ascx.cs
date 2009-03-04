@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
-using Tadmap.Models.Images;
+using Tadmap.Model.Image;
 
 namespace Tadmap.Views.Shared
 {

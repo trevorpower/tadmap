@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Security.Principal;
 using TadmapTests.Mocks.Security;
 using TadmapTests.DataAccess;
+using Tadmap.Model.Test.Mock;
 
 namespace TadmapTests.Controllers.Image
 {

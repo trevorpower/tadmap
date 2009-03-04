@@ -45,7 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mock\TestBinaryRepository.cs" />
+    <Compile Include="Mock\TestImageRepository.cs" />
+    <Compile Include="Mock\TestImageSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tadmap.Model\Tadmap.Model.csproj">
+      <Project>{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}</Project>
+      <Name>Tadmap.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

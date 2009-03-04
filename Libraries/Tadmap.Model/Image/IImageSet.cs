@@ -5,7 +5,7 @@ using System.Text;
 using Tadmap.DataAccess;
 using System.IO;
 
-namespace Tadmap.Models.ImageSets
+namespace Tadmap.Model.Image
 {
    public interface IImageSet
    {

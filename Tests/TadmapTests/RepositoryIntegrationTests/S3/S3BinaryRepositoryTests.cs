@@ -5,6 +5,7 @@ using System.Text;
 using NUnit.Framework;
 using Tadmap.DataAccess;
 using Tadmap.DataAccess.S3;
+using Tadmap.Model.Image;
 
 namespace RepositoryIntegrationTests.S3
 {

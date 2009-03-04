@@ -5,6 +5,8 @@ using System.Text;
 using NUnit.Framework;
 using Tadmap.DataAccess;
 using System.IO;
+using Tadmap.Model.Image;
+using Tadmap.Model.Test.Mock;
 
 namespace TadmapTests.DataAccess
 {

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Security.Principal;
 using Tadmap.DataAccess;
-using Tadmap.Models.ImageSets;
 using Tadmap.Security;
 
-namespace Tadmap.Models.Images
+namespace Tadmap.Model.Image
 {
    public class TadmapImage
    {
