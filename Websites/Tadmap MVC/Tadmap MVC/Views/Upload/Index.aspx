@@ -67,11 +67,11 @@
       <div class="ItemDetailListEdit">
          <div class="ItemDetailEdit">
             <span class="ItemDetailControlLabel">Title</span>
-            <%= Html.TextBox("title", null, new { Class = "ItemDetailControl" })%>
+            <%= Html.TextBox("title", null, new { @class = "ItemDetailControl" })%>
          </div>
          <div class="ItemDetailEdit">
             <span class="ItemDetailControlLabel">Description</span>
-            <%= Html.TextBox("description", null, new { Class = "ItemDetailControl", MaxLength = "1024" })%>
+            <%= Html.TextBox("description", null, new { @class = "ItemDetailControl", MaxLength = "1024" })%>
          </div>
          <div class="ItemDetailEdit">
             <span class="ItemDetailControlLabel">File</span>

@@ -8,7 +8,7 @@
          <p>
             You are browsing all <b>your</b> images.</p>
          <p>
-            <%= Html.ActionLink("Upload Image", "Index", "Upload", null, new { Class = "" }) %></p>
+            <%= Html.ActionLink("Upload Image", "Index", "Upload", null, new { @class = "" }) %></p>
       </div>
       <% 
          Affirma.ThreeSharp.Wrapper.ThreeSharpWrapper s3 = new Affirma.ThreeSharp.Wrapper.ThreeSharpWrapper(Tadmap.Configuration.S3Storage.AccessKey, Tadmap.Configuration.S3Storage.SecretAccessKey);
