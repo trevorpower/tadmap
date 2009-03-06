@@ -79,6 +79,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Websites\Tadmap MVC\Tadmap MVC\bin\Tadmap.dll</HintPath>
     </Reference>
+    <Reference Include="Tadmap.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0f5374c769ad70b2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\Tadmap.Model\bin\Debug\Tadmap.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Tadmap.Model.Test, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\Tadmap.Model.Test\bin\Release\Tadmap.Model.Test.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Account\IndexAction.cs" />
@@ -96,7 +104,6 @@
     <Compile Include="DataAccess\BinaryRepositoryTests.cs" />
     <Compile Include="DataAccess\TestFileFromDisk.cs" />
     <Compile Include="DataAccess\IUploadedFileTests.cs" />
-    <Compile Include="DataAccess\TestBinaryRepository.cs" />
     <Compile Include="DataAccess\TestImageRepository.cs" />
     <Compile Include="DataAccess\ImageRepositoryTests.cs" />
     <Compile Include="DataAccess\TestUploadedFile.cs" />

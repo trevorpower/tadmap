@@ -11,6 +11,7 @@ using Tadmap.Security;
 using System.Security;
 using Infrastructure.Security;
 using System.Security.Permissions;
+using Tadmap.Model.Image;
 
 namespace Tadmap.Controllers
 {

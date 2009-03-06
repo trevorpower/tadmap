@@ -55,10 +55,6 @@
   <ItemGroup>
     <Compile Include="ErrorHandling\EmailErrorHandler.cs" />
     <Compile Include="ErrorHandling\IErrorHandler.cs" />
-    <Compile Include="Messages\IMessage.cs" />
-    <Compile Include="Messages\IConsumerMessageQueue.cs" />
-    <Compile Include="Messages\IProviderMessageQueue.cs" />
-    <Compile Include="Messages\ProcessImageMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\ThrowSecurityExceptionAttribute.cs" />
   </ItemGroup>

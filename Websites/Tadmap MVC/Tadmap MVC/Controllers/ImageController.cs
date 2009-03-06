@@ -8,12 +8,13 @@ using Tadmap.Configuration;
 using System.Security;
 using Tadmap;
 using System.Security.Principal;
-using Tadmap.Models.Images;
 using Tadmap.DataAccess;
 using Tadmap.DataAccess.SQL;
 using Tadmap.Views.Image;
 using Tadmap.DataAccess.S3;
 using Tadmap.Security;
+using Tadmap.Model.Image;
+using Tadmap.Models.Image;
 
 namespace Tadmap.Controllers
 {

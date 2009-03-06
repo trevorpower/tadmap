@@ -5,9 +5,10 @@ using System.Text;
 using NUnit.Framework;
 using Tadmap.DataAccess.SQL;
 using Tadmap.DataAccess;
-using Tadmap.Models.Images;
+using Tadmap.Model.Image;
 using System.Transactions;
 using TadmapTests.DataAccess;
+using Tadmap.Model.Test.Mock;
 
 namespace RepositoryIntegrationTests.SQL
 {

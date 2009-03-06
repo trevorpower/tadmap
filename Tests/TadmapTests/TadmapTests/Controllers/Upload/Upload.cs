@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using System.Security;
 using System.Web;
 using TadmapTests.DataAccess;
+using Tadmap.Model.Test.Mock;
 
 namespace TadmapTests.Controllers.Upload
 {

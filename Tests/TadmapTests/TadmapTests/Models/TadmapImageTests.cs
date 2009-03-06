@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using Tadmap.Models.Images;
+using Tadmap.Model.Image;
 using TadmapTests.Mocks.Security;
 using TadmapTests.DataAccess;
 using Tadmap.DataAccess;
 using NUnit.Framework.SyntaxHelpers;
 using Tadmap.Models.ImageSets;
+using Tadmap.Model.Test.Mock;
 
 namespace TadmapTests.Models
 {

@@ -10,6 +10,7 @@ using Tadmap.Tadmap.Security;
 using Microsoft.Practices.Unity;
 using Tadmap.Infrastructure;
 using Tadmap.Infrastructure.ErrorHandling;
+using Tadmap.Model.Image;
 
 namespace Tadmap
 {
@@ -83,8 +84,8 @@ namespace Tadmap
          if (_container == null)
             _container = new UnityContainer();
 
-         _container.RegisterType<DataAccess.IBinaryRepository, DataAccess.S3.S3BinaryRepository>();
-         _container.RegisterType<DataAccess.IImageRepository, DataAccess.SQL.SqlImageRepository>();
+         _container.RegisterType<IBinaryRepository, DataAccess.S3.S3BinaryRepository>();
+         _container.RegisterType<IImageRepository, DataAccess.SQL.SqlImageRepository>();
       }
    }
 }

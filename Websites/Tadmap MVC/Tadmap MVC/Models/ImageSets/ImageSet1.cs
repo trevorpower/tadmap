@@ -7,6 +7,7 @@ using ImageManipulation;
 using System.IO;
 using Affirma.ThreeSharp;
 using Tadmap.DataAccess;
+using Tadmap.Model.Image;
 
 namespace Tadmap.Models.ImageSets
 {

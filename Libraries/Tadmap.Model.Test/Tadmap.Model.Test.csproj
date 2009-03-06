@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{60837EAE-77F3-4EB3-9DD2-BCC3190C77C4}</ProjectGuid>
+    <ProjectGuid>{14CC06D9-9D90-4278-BD48-AC64D8C51625}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RepositoryIntegrationTests</RootNamespace>
-    <AssemblyName>RepositoryIntegrationTests</AssemblyName>
+    <RootNamespace>Tadmap.Model.Test</RootNamespace>
+    <AssemblyName>Tadmap.Model.Test</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,21 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Transactions" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Websites\Tadmap MVC\Tadmap MVC\bin\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Routing">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Xml.Linq">
@@ -56,33 +43,18 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tadmap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=44b67b3aaf6f127f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Websites\Tadmap MVC\Tadmap MVC\bin\Tadmap.dll</HintPath>
-    </Reference>
-    <Reference Include="Tadmap.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0f5374c769ad70b2, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Tadmap.Model.Test\bin\Release\Tadmap.Model.dll</HintPath>
-    </Reference>
-    <Reference Include="Tadmap.Model.Test, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Tadmap.Model.Test\bin\Release\Tadmap.Model.Test.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\ImageControllerTests.cs" />
+    <Compile Include="Mock\TestBinaryRepository.cs" />
+    <Compile Include="Mock\TestImageRepository.cs" />
+    <Compile Include="Mock\TestImageSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="S3\S3BinaryRepositoryTests.cs" />
-    <Compile Include="SQL\SqlImageRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TadmapTests\TadmapTests.csproj">
-      <Project>{5FF8CB38-1BE5-4371-9441-FF369298198B}</Project>
-      <Name>TadmapTests</Name>
+    <ProjectReference Include="..\Tadmap.Model\Tadmap.Model.csproj">
+      <Project>{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}</Project>
+      <Name>Tadmap.Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

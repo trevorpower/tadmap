@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Tadmap.Controllers;
-using Tadmap.Models.Images;
+using Tadmap.Model.Image;
 using Tadmap.Views.Image;
+using NUnit.Framework;
+using System.Web.Mvc;
+using TadmapTests.Mocks.Security;
+using System.Security.Principal;
+using TadmapTests.DataAccess;
+using System.Security;
+using Tadmap.Model.Test.Mock;
+using Tadmap.Models.Image;
 
 namespace TadmapTests.Controllers.Image
 {
-   using NUnit.Framework;
-   using System.Web.Mvc;
-   using TadmapTests.Mocks.Security;
-   using System.Security.Principal;
-   using TadmapTests.DataAccess;
-   using System.Security;
 
    [TestFixture]
    public class IndexAction
