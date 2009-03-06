@@ -294,6 +294,7 @@
     <Content Include="Configuration\System.web\roleManager.config" />
     <Content Include="Configuration\System.web\pages.config" />
     <Content Include="favicon.ico" />
+    <Content Include="googlec43fec4355048374.html" />
     <Content Include="Scripts\jquery.jeditable.mini.js" />
     <Content Include="Scripts\swfupload.js" />
     <Content Include="Scripts\swfuploadhandlers.js" />
