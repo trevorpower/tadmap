@@ -4,18 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Security.Principal;
 using Tadmap.DataAccess;
-using Tadmap.Security;
+using Tadmap.Model;
 
 namespace Tadmap.Model.Image
 {
    public class TadmapImage
    {
-      IImageRepository _imageRepository;
       IBinaryRepository _binaryRepository;
 
-      public TadmapImage(IImageRepository imageRepository, IBinaryRepository binaryRepository)
+      public TadmapImage(IBinaryRepository binaryRepository)
       {
-         _imageRepository = imageRepository;
          _binaryRepository = binaryRepository;
       }
 
@@ -32,7 +30,7 @@ namespace Tadmap.Model.Image
 
       public IImageSet ImageSet { get; set; }
 
-      public bool CanUserMarkAsOffensive(IPrincipal principal)
+      public static bool CanUserMarkAsOffensive(IPrincipal principal)
       {
          return principal.Identity.IsAuthenticated && principal.IsInRole(TadmapRoles.Administrator);
       }

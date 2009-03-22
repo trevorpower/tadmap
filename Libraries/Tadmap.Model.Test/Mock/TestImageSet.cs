@@ -35,6 +35,11 @@ namespace Tadmap.Model.Test.Mock
          throw new NotImplementedException();
       }
 
+      public string LargeThumb
+      {
+         get { throw new NotImplementedException(); }
+      }
+
       #endregion
    }
 }

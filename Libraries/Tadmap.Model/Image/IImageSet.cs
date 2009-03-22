@@ -11,6 +11,7 @@ namespace Tadmap.Model.Image
    {
       string Original { get; }
       string Preview { get; }
+      string LargeThumb { get; }
       string Square { get; }
 
       void Create(Stream stream, IBinaryRepository binaryRepository);

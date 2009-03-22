@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Tadmap.Views.Image
+namespace Tadmap.Model.Image
 {
    public class ImageView
    {

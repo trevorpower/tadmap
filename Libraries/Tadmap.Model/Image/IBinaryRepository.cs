@@ -11,5 +11,7 @@ namespace Tadmap.Model.Image
       void Add(Stream data, string key, string contentType);
 
       Uri GetUrl(string key);
+
+      Stream GetBinary(string key);
    }
 }
