@@ -3,17 +3,14 @@ using System.Web.Security;
 using System.Web;
 using System;
 using System.IO;
-using Tadmap.Security;
 using System.Security.Principal;
 using Tadmap.DataAccess;
-using Tadmap.DataAccess.SQL;
-using Tadmap.DataAccess.S3;
 using Tadmap.Tadmap.Security;
 using Tadmap.Infrastructure;
 using Infrastructure.Security;
 using System.Security.Permissions;
 using Tadmap.Model.Image;
-using Tadmap.Models.ImageSets;
+using Tadmap.Model;
 
 namespace Tadmap.Controllers
 {
@@ -41,7 +38,7 @@ namespace Tadmap.Controllers
       {
          if (file.ContentLength > 0)
          {
-            TadmapImage image = new TadmapImage(_imageRepository, _binaryRepository);
+            TadmapImage image = new TadmapImage(_binaryRepository);
             image.Id = Guid.NewGuid();
             image.Title = title ?? Path.GetFileNameWithoutExtension(file.FileName);
             image.Description = description ?? "";

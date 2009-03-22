@@ -39,7 +39,7 @@ namespace Tadmap.Views.Image {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Tadmap.Views.Image.ViewResources", typeof(ViewResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Tadmap.Website.Views.Image.ViewResources", typeof(ViewResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

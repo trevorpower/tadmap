@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tadmap.Views.Shared {
+namespace Tadmap.Model.Shared {
     
     
     public partial class Error {

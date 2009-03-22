@@ -1,5 +1,5 @@
 ﻿using System;
-using Tadmap.Views.Image;
+using Tadmap.Model.Image;
 using System.Web.Mvc;
 
 namespace Tadmap.Views.Image

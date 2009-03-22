@@ -11,6 +11,7 @@ using Microsoft.Practices.Unity;
 using Tadmap.Infrastructure;
 using Tadmap.Infrastructure.ErrorHandling;
 using Tadmap.Model.Image;
+using System.Configuration;
 
 namespace Tadmap
 {
@@ -62,7 +63,7 @@ namespace Tadmap
 
       protected void Application_Error(object sender, EventArgs e)
       {
-         _errorHandler.HandleException(Server.GetLastError()); 
+         _errorHandler.HandleException(Server.GetLastError());
       }
 
       protected void Application_AuthenticateRequest(Object sender, EventArgs e)
@@ -79,13 +80,29 @@ namespace Tadmap
          }
       }
 
-      private void InitializeContainer()
+      private static void InitializeContainer()
       {
          if (_container == null)
             _container = new UnityContainer();
 
-         _container.RegisterType<IBinaryRepository, DataAccess.S3.S3BinaryRepository>();
-         _container.RegisterType<IImageRepository, DataAccess.SQL.SqlImageRepository>();
+         if (bool.Parse(ConfigurationManager.AppSettings["RunLocal"]))
+         {
+            _container.RegisterType<IBinaryRepository, Local.BinaryRepository>(
+               new InjectionConstructor("../TempFolder")
+            );
+         }
+         else
+         {
+            _container.RegisterType<IBinaryRepository, Amazon.BinaryRepository>(
+               new InjectionConstructor(
+                  ConfigurationManager.AppSettings["S3AccessKey"],
+                  ConfigurationManager.AppSettings["S3SecretAccessKey"],
+                  ConfigurationManager.AppSettings["S3BucketName"]
+               )
+            );
+         }
+
+         _container.RegisterType<IImageRepository, Sql.SqlImageRepository>();
       }
    }
 }

@@ -5,9 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
 using Tadmap.DataAccess;
-using Tadmap.DataAccess.SQL;
 using Tadmap.Model.Image;
-using Tadmap.Models;
+using Tadmap.Model;
 
 namespace Tadmap.Controllers
 {

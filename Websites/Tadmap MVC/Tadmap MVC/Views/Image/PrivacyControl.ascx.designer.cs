@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tadmap.Views.Image {
+namespace Tadmap.Model.Image {
     
     
     public partial class PrivacyControl {

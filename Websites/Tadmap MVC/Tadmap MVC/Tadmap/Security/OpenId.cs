@@ -1,20 +1,23 @@
 ﻿using System.Configuration;
 
-public class OpenId
+namespace Tadmap.Website
 {
-   public static string Realm
+   public class OpenId
    {
-      get
+      public static string Realm
       {
-         return ConfigurationSettings.AppSettings["OpenIdRealm"];
+         get
+         {
+            return ConfigurationSettings.AppSettings["OpenIdRealm"];
+         }
       }
-   }
 
-   public static string LoginUrl
-   {
-      get
+      public static string LoginUrl
       {
-         return ConfigurationSettings.AppSettings["OpenIdLoginUrl"];
+         get
+         {
+            return ConfigurationSettings.AppSettings["OpenIdLoginUrl"];
+         }
       }
    }
 }

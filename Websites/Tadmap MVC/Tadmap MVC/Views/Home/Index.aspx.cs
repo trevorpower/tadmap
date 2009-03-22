@@ -3,7 +3,7 @@ using Tadmap.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Tadmap.Models;
+using Tadmap.Model;
 
 namespace Tadmap.Views.Home
 {

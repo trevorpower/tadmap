@@ -8,7 +8,7 @@ using System;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Tadmap")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("The Tadmap website. Contains controllers views and other website specific code.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tadmap")]
 [assembly: AssemblyProduct("Tadmap")]
