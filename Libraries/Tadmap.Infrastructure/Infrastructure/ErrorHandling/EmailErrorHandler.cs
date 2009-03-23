@@ -12,6 +12,9 @@ namespace Tadmap.Infrastructure.ErrorHandling
 
       public void HandleException(Exception exception)
       {
+         if (exception is System.IO.FileNotFoundException)
+            return;
+
          StringBuilder message = new StringBuilder("An error occurred in the application:");
          message.AppendLine(exception.Message);
          message.AppendLine("Stack trace:");

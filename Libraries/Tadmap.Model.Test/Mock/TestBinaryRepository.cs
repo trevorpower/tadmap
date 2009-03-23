@@ -7,23 +7,30 @@ using Tadmap.Model.Image;
 
 namespace Tadmap.Model.Test.Mock
 {
-   public class TestBinaryRepository : IBinaryRepository
+   public class BinaryRepository : IBinaryRepository
    {
+      private List<Data> _storage;
+
+      private BinaryRepository()
+      {
+         throw new NotSupportedException("Must provide a storage list.");
+      }
+
+      public BinaryRepository(List<Data> storage)
+      {
+         _storage = storage;
+      }
+
       #region IBinaryRepository Members
 
       public void Add(System.IO.Stream data, string key, string contentType)
       {
-         if (data.Length == 0)
-            return;
+         Data newData = new Data { Key = key, ContenType = contentType };
+         newData.Binary = new byte[data.Length];
 
-         FileStream file = new FileStream("../../TestBinaryRepository/" + key, FileMode.Create);
-         
-         int theByte = data.ReadByte();
-         while (theByte != -1)
-         {
-            file.WriteByte((byte)theByte);
-            theByte = data.ReadByte();
-         }
+         data.Read(newData.Binary, 0, newData.Binary.Length);
+
+         _storage.Add(newData);
       }
 
       public Uri GetUrl(string key)
@@ -31,6 +38,19 @@ namespace Tadmap.Model.Test.Mock
          return new Uri("http://" + key + ".url");
       }
 
+      public Stream GetBinary(string key)
+      {
+         return new MemoryStream(_storage.Find(d => d.Key == key).Binary);
+      }
+
       #endregion
+
+      public class Data
+      {
+         public byte[] Binary { get; set; }
+         public string Key { get; set; }
+         public string ContenType { get; set; }
+      }
    }
+
 }

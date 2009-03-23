@@ -27,7 +27,7 @@
       </div>
       <br />
       <div style="border: solid 0px red; vertical-align: top;">
-         <%= Html.TextBox("openid_url", null, new { Class = "OpenIdUrlBox", Size = "40" })%>
+         <%= Html.TextBox("openid_url", null, new { @class = "OpenIdUrlBox", Size = "40" })%>
          <input type="submit" value="Sign In" class="LoginInButton" />
       </div>
       <span class="ErrorMessage">

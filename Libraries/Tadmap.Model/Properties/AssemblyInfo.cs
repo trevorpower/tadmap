@@ -8,7 +8,7 @@ using System.Resources;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Tadmap.Model")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Model classes for Tadmap applications.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tadmap")]
 [assembly: AssemblyProduct("Tadmap.Model")]

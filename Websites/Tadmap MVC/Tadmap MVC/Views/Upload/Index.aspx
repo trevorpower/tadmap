@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Main.master" AutoEventWireup="true"
-   CodeBehind="Index.aspx.cs" Inherits="Tadmap.Views.Upload.Index" Title="Tadmap - Upload Image"
+   Inherits="System.Web.Mvc.ViewPage" Title="Tadmap - Upload Image"
    Theme="Tad" %>
 
 <%@ Register TagPrefix="fjx" Namespace="com.flajaxian" Assembly="com.flajaxian.FileUploader" %>

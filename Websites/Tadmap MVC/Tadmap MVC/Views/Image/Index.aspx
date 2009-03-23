@@ -29,7 +29,7 @@
                submit: "Save"
             }
          );
-         $("#EditDescription").editable(function(value, settings) {
+         $("#EditDescription").editable(function(value, settings) { 
             $.getJSON('<%= Url.RouteUrl("Image", new { action = "UpdateDescription", id = ViewData.Model.Id }) %>' + '?description=' + value, function(json) {
             }); return value;
          }, {
@@ -47,7 +47,7 @@
    <span id="EditTitle" class="ItemTitle">
       <%= ViewData.Model.Title %></span>
    <div class="ImagePanel">
-      <img class="ItemDetailImage" src="<%= ViewData.Model.PreviewUrl %>" alt="<%= ViewData.Model.Title %>" />
+      <img class="ItemDetailImage" src="<%= System.Web.HttpUtility.HtmlAttributeEncode(ViewData.Model.PreviewUrl.OriginalString) %>" alt="<%= ViewData.Model.Title %>" />
       <div class="ImageButtons">
          <% if (ViewData.Model.OriginalUrl != null)
             { %>

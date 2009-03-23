@@ -10,7 +10,7 @@ namespace Tadmap.Tadmap.Security
 {
    public class CookieUserData
    {
-      static readonly string NameSpace = "http://tadmap.com/schemas/cookiedata";
+      private const string NameSpace = "http://tadmap.com/schemas/cookiedata";
 
       public CookieUserData(Guid id, string name, string[] roles)
       {

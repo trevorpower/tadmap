@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Tadmap.Model.Image;
 
-namespace Tadmap.Models
+namespace Tadmap.Model
 {
    public class HomeView
    {

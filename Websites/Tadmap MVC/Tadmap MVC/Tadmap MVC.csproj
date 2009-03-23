@@ -8,8 +8,8 @@
     <ProjectTypeGuids>{603c0e0b-db56-11dc-be95-000d561079b0};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tadmap</RootNamespace>
-    <AssemblyName>Tadmap</AssemblyName>
+    <RootNamespace>Tadmap.Website</RootNamespace>
+    <AssemblyName>Tadmap.Website</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>TadmapAssemblyKey.snk</AssemblyOriginatorKeyFile>
@@ -34,15 +34,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppresion.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Affirma.ThreeSharp, Version=1.4.0.0, Culture=neutral, PublicKeyToken=6ece7f1c56fee447, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp\bin\Debug\Affirma.ThreeSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Affirma.ThreeSharp.Wrapper, Version=1.4.0.0, Culture=neutral, PublicKeyToken=e7a43f14caa11592, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp.Wrapper\obj\Debug\Affirma.ThreeSharp.Wrapper.dll</HintPath>
-    </Reference>
     <Reference Include="Amazon.SQS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Libraries\3rdParty\amazon-queue-2008-01-01-cs-library\src\Amazon.SQS\bin\Release\Amazon.SQS.dll</HintPath>
@@ -71,6 +73,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Libraries\Tadmap.Infrastructure\Infrastructure\bin\Debug\Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -121,10 +124,7 @@
     </Compile>
     <Compile Include="Controllers\UserImagesController.cs">
     </Compile>
-    <Compile Include="DataAccess\FileSystem\FileSystemBinaryRepository.cs" />
     <Compile Include="DataAccess\HttpPostedFile\HttpPostedFileUploadedFile.cs" />
-    <Compile Include="DataAccess\S3\S3BinaryRepsoitory.cs" />
-    <Compile Include="DataAccess\SQL\SqlImageRepository.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -137,11 +137,9 @@
     <Compile Include="Infrastructure\ControllerFactory.cs" />
     <Compile Include="Infrastructure\LogExceptionAttribute.cs" />
     <Compile Include="Models\HomeView.cs" />
-    <Compile Include="Models\ImageSets\ImageSet1.cs" />
     <Compile Include="Tadmap\Security\Authentication.cs" />
     <Compile Include="Tadmap\Security\CookieUserData.cs" />
     <Compile Include="Tadmap\Security\TadmapIdentity.cs" />
-    <Compile Include="Tadmap\Security\TadmapPrincipal.cs" />
     <Compile Include="Views\Image\OffensiveControl.ascx.cs">
       <DependentUpon>OffensiveControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -165,28 +163,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tadmap\Configuration\Database.cs" />
     <Compile Include="Tadmap\Configuration\S3Storage.cs" />
-    <Compile Include="Tadmap\Images\TadImage.cs" />
-    <Compile Include="Tadmap\Images\TadImageList.cs" />
     <Compile Include="Tadmap\Security\OpenId.cs" />
     <Compile Include="Tadmap\Security\TadMapRoleProvider.cs" />
-    <Compile Include="Tadmap\Tadmap1.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Tadmap.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Tadmap\TadPage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Account\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Home\About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Home\About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Home\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -237,17 +215,6 @@
     <Compile Include="Views\Shared\ImageListControl.ascx.designer.cs">
       <DependentUpon>ImageListControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Upload\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\UserImages\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\UserImages\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
@@ -294,10 +261,22 @@
     <None Include="App_Themes\Tad\Master\login-bg.pdn" />
     <Content Include="App_Themes\Tad\Error\Error.css" />
     <Content Include="App_Themes\Tad\Error\Ships.jpg" />
+    <Content Include="bin\Affirma.ThreeSharp.dll" />
+    <Content Include="bin\Affirma.ThreeSharp.pdb" />
+    <Content Include="bin\Affirma.ThreeSharp.Wrapper.dll" />
+    <Content Include="bin\Affirma.ThreeSharp.Wrapper.pdb" />
+    <Content Include="bin\Affirma.ThreeSharp.Wrapper.xml" />
+    <Content Include="bin\Affirma.ThreeSharp.xml" />
     <Content Include="bin\ImageManipulation.dll" />
     <Content Include="bin\ImageManipulation.pdb" />
+    <Content Include="bin\Tadmap.Amazon.dll" />
+    <Content Include="bin\Tadmap.Amazon.pdb" />
+    <Content Include="bin\Tadmap.Local.dll" />
+    <Content Include="bin\Tadmap.Local.pdb" />
     <Content Include="bin\Tadmap.Model.dll" />
     <Content Include="bin\Tadmap.Model.pdb" />
+    <Content Include="bin\Tadmap.Sql.dll" />
+    <Content Include="bin\Tadmap.Sql.pdb" />
     <Content Include="Configuration\appSettings.DEV.config" />
     <Content Include="Configuration\appSettings.LIVE.config" />
     <Content Include="Configuration\connectionStrings.DEV.config" />
@@ -306,6 +285,7 @@
     <Content Include="Configuration\System.web\roleManager.config" />
     <Content Include="Configuration\System.web\pages.config" />
     <Content Include="favicon.ico" />
+    <Content Include="googlec43fec4355048374.html" />
     <Content Include="Scripts\jquery.jeditable.mini.js" />
     <Content Include="Scripts\swfupload.js" />
     <Content Include="Scripts\swfuploadhandlers.js" />
@@ -321,15 +301,10 @@
     <Content Include="Views\Shared\ImageListControl.ascx" />
     <Content Include="Views\Upload\Index.aspx" />
     <Content Include="Views\UserImages\Index.aspx" />
+    <Content Include="Web.Local.config" />
+    <Content Include="Configuration\appSettings.LOCAL.config" />
+    <Content Include="Configuration\connectionStrings.LOCAL.config" />
     <None Include="TadmapAssemblyKey.snk" />
-    <None Include="Tadmap\Tadmap.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Tadmap1.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Tadmap\Tadmap.dbml.layout">
-      <DependentUpon>Tadmap.dbml</DependentUpon>
-    </None>
     <Content Include="Web.config" />
     <None Include="Web.Debug.config" />
     <None Include="Web.Release.config" />
@@ -345,17 +320,36 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp\Affirma.ThreeSharp.csproj">
+      <Project>{1A12C68D-7C3B-46A6-8406-10ADCFA51B7A}</Project>
+      <Name>Affirma.ThreeSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tadmap.Amazon\Tadmap.Amazon.csproj">
+      <Project>{E96B7A99-B122-4C75-9C58-AA88E70051B6}</Project>
+      <Name>Tadmap.Amazon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Libraries\Tadmap.ImageManipulation\ClassLibrary1\Tadmap.ImageManipulation.csproj">
       <Project>{8553EFEE-85B6-4F5E-9DDF-92E3E73C3B64}</Project>
       <Name>Tadmap.ImageManipulation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tadmap.Local\Tadmap.Local.csproj">
+      <Project>{DE1E14D2-F0CD-4FFD-B8D7-6B94C57F4930}</Project>
+      <Name>Tadmap.Local</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Libraries\Tadmap.Model\Tadmap.Model.csproj">
       <Project>{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}</Project>
       <Name>Tadmap.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tadmap.Sql\Tadmap.Sql.csproj">
+      <Project>{650FCD71-996D-44F1-9080-F8009D6AA9B7}</Project>
+      <Name>Tadmap.Sql</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DataAccess\SQL\" />
+    <Folder Include="Models\ImageSets\" />
+    <Folder Include="Tadmap\Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

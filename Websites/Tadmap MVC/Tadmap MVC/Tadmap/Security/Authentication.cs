@@ -1,5 +1,5 @@
 ﻿using System.Security.Principal;
-using Tadmap.Security;
+using Tadmap.Model;
 
 namespace Tadmap.Security
 {

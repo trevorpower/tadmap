@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using Tadmap.Model.Image;
 using Tadmap.Model.Test.Mock;
-using Tadmap.Models.Image;
+using Tadmap.Model.Image;
 
-namespace TadmapTests.DataAccess
+namespace Tadmap.Mode.Test.Mock
 {
-   internal class TestImageRepository : IImageRepository
+   public class ImageRepository : IImageRepository
    {
       List<TadmapImage> _images;
 
-      public TestImageRepository()
+      public   ImageRepository(IBinaryRepository binaryRepository)
       {
          _images = new List<TadmapImage>();
 
          for (int i = 0; i < 10; i++)
             _images.Add(
-               new TadmapImage(this, new TestBinaryRepository() )
+               new TadmapImage(binaryRepository)
                {
                   Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf" + i),
                   Description = "description",
@@ -26,7 +26,7 @@ namespace TadmapTests.DataAccess
                   Title = "Title " + i,
                   IsPublic = i < 5,
                   OwnerName = "the owner",
-                  ImageSet = new TestImageSet("Key")
+                  ImageSet = new ImageSet1("Key")
                }
             );
 

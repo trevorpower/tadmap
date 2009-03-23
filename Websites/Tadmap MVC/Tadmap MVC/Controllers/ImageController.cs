@@ -9,12 +9,10 @@ using System.Security;
 using Tadmap;
 using System.Security.Principal;
 using Tadmap.DataAccess;
-using Tadmap.DataAccess.SQL;
-using Tadmap.Views.Image;
-using Tadmap.DataAccess.S3;
-using Tadmap.Security;
 using Tadmap.Model.Image;
-using Tadmap.Models.Image;
+using Tadmap.Security;
+using Tadmap.Model;
+using Tadmap.Tadmap.Security;
 
 namespace Tadmap.Controllers
 {
@@ -126,7 +124,7 @@ namespace Tadmap.Controllers
       }
 
       [Authorize(Roles = TadmapRoles.Collector)]
-      public ActionResult MakePrivate(Guid id, IPrincipal principal)
+      public ActionResult MakePrivate(Guid id)
       {
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
@@ -144,7 +142,7 @@ namespace Tadmap.Controllers
       }
 
       [Authorize(Roles = TadmapRoles.Collector)]
-      public ActionResult UpdateTitle(Guid id, string title)
+      public ActionResult UpdateTitle(Guid id, string title, IPrincipal principal)
       {
          if (id == Guid.Empty)
             throw new ArgumentException("Cannot be empty(zeros)", "id");
@@ -152,11 +150,22 @@ namespace Tadmap.Controllers
          if (title == null)
             throw new ArgumentNullException("title");
 
-         return Json(TadImage.UpdateTitle(id, title, HttpContext.User) > 0);
+         TadmapImage image = _imageRepository.GetAllImages(_binaryRepository)
+            .IsOwnedBy((principal.Identity as TadmapIdentity).Id)
+            .WithId(id).SingleOrDefault();
+
+         if (image == null)
+            throw new ImageNotFoundException();
+
+         image.Title = title;
+
+         _imageRepository.Save(image);
+
+         return Json(true);
       }
 
       [Authorize(Roles = TadmapRoles.Collector)]
-      public ActionResult UpdateDescription(Guid id, string description)
+      public ActionResult UpdateDescription(Guid id, string description, IPrincipal principal)
       {
          if (id == Guid.Empty)
             throw new ArgumentNullException("id");
@@ -164,7 +173,18 @@ namespace Tadmap.Controllers
          if (description == null)
             throw new ArgumentNullException("description");
 
-         return Json(TadImage.UpdateDescription(id, description, HttpContext.User) > 0);
+         TadmapImage image = _imageRepository.GetAllImages(_binaryRepository)
+            .IsOwnedBy((principal.Identity as TadmapIdentity).Id)
+            .WithId(id).SingleOrDefault();
+
+         if (image == null)
+            throw new ImageNotFoundException();
+
+         image.Description = description;
+
+         _imageRepository.Save(image);
+
+         return Json(true);
       }
 
       [Authorize(Roles = TadmapRoles.Administrator)]
@@ -177,7 +197,6 @@ namespace Tadmap.Controllers
             throw new SecurityException("Only administrators can mark images as offensive.");
 
          TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).SingleOrDefault();
-
 
          if (image == null)
             throw new ImageNotFoundException();

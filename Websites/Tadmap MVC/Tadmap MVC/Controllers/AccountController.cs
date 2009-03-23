@@ -14,6 +14,8 @@ using System.Data;
 using Tadmap.Tadmap.Security;
 using Tadmap.Configuration;
 using Tadmap.Security;
+using Tadmap.Model;
+using Tadmap.Website;
 
 namespace Tadmap.Controllers
 {
@@ -22,11 +24,6 @@ namespace Tadmap.Controllers
    [OutputCache(Location = OutputCacheLocation.None)]
    public class AccountController : Controller
    {
-
-
-      // This constructor is used by the MVC framework to instantiate the controller using
-      // the default forms authentication and membership providers.
-
       public AccountController()
       {
       }
@@ -92,12 +89,14 @@ namespace Tadmap.Controllers
             }
             catch (DotNetOpenId.OpenIdException exception)
             {
-               ModelState.AddModelError("OpenIdException", exception);
+               ViewData["LoginErrorMessage"] = exception.Message;
+               ModelState.AddModelError("LoginError", exception);
             }
          }
          else
          {
-            ModelState.AddModelError("openid_url", "The OpenID you provided is not in the correct format.");
+            ViewData["LoginErrorMessage"] = "The OpenID you provided is not in the correct format.";
+            ModelState.AddModelError("LoginError", "The OpenID you provided is not in the correct format.");
          }
 
          // if we got here then something went wrong so we go back to the login view.

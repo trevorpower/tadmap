@@ -4,7 +4,7 @@
    if (Request.IsAuthenticated)
    {
 %>
-   <%= Html.ActionLink("My Maps", "Index", "UserImages", null, new { Class = "MasterPageNavigationLink" }) %>
+   <%= Html.ActionLink("My Maps", "Index", "UserImages", null, new { @class = "MasterPageNavigationLink" }) %>
 <%
    }
     else

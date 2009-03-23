@@ -6,12 +6,11 @@ using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
 using System.Security.Principal;
 using Tadmap.DataAccess;
-using Tadmap.DataAccess.SQL;
-using Tadmap.Security;
 using System.Security;
 using Infrastructure.Security;
 using System.Security.Permissions;
 using Tadmap.Model.Image;
+using Tadmap.Model;
 
 namespace Tadmap.Controllers
 {
@@ -27,17 +26,12 @@ namespace Tadmap.Controllers
          _binaryRepository = binaryRepository;
       }
 
-      [Authorize(Roles=TadmapRoles.Administrator)]
-      public ActionResult Index(IPrincipal principal)
+      [Authorize(Roles = TadmapRoles.Administrator)]
+      public ActionResult Index()
       {
-         //if (principal.Identity.IsAuthenticated && principal.IsInRole(TadmapRoles.Administrator))
-         {
-            ViewData.Model = _imageRepository.GetAllImages(_binaryRepository).ToList();
+         ViewData.Model = _imageRepository.GetAllImages(_binaryRepository).ToList();
 
-            return View();
-         }
-
-         //return RedirectToRoute("Default", new { Controller = "Home", Action = "Index" });
+         return View();
       }
 
       public ActionResult Works()

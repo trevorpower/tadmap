@@ -13,7 +13,7 @@
   <SourceLookup>True</SourceLookup>
   <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
   <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
-  <Spelling Locale="en-US" />
+  <Spelling Locale="en-IE" />
   <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
   <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
   <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
@@ -23,10 +23,14 @@
  <Targets>
   <AssemblyReferenceDirectories>
    <Directory>$(ProjectDir)/../../../../../Program Files (x86)/Microsoft ASP.NET/ASP.NET MVC RC/Assemblies/</Directory>
+   <Directory>$(ProjectDir)/../Libraries/Infrastructure/Infrastructure/bin/Release/</Directory>
    <Directory>$(ProjectDir)/Websites/Tadmap MVC/Tadmap MVC/bin/</Directory>
   </AssemblyReferenceDirectories>
-  <Target Name="$(ProjectDir)/../Libraries/Infrastructure/Infrastructure/bin/Release/Infrastructure.dll" Analyze="True" AnalyzeAllChildren="True" />
-  <Target Name="$(ProjectDir)/../Websites/Tadmap MVC/Tadmap MVC/bin/Tadmap.dll" Analyze="False" AnalyzeAllChildren="False" />
+  <Target Name="$(ProjectDir)/../Libraries/Tadmap.Amazon/bin/Debug/Tadmap.Amazon.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Libraries/Tadmap.Local/bin/Debug/Tadmap.Local.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Libraries/Tadmap.Model/bin/Debug/Tadmap.Model.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Libraries/Tadmap.Sql/bin/Debug/Tadmap.Sql.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Websites/Tadmap MVC/Tadmap MVC/bin/Tadmap.Website.dll" Analyze="True" AnalyzeAllChildren="True" />
  </Targets>
  <Rules>
   <RuleFiles>

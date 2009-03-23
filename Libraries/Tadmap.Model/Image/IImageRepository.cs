@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Tadmap.Models.Image;
+using Tadmap.Model.Image;
 
 namespace Tadmap.Model.Image
 {

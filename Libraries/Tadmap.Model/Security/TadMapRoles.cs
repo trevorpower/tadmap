@@ -1,4 +1,4 @@
-﻿namespace Tadmap.Security
+﻿namespace Tadmap.Model
 {
    public static class TadmapRoles
    {
