@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{57946B95-8CB8-40E8-8596-B2E7FB5AAAD0}</ProjectGuid>
+    <ProjectGuid>{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tadmap.Local.Test</RootNamespace>
-    <AssemblyName>Tadmap.Local.Test</AssemblyName>
+    <RootNamespace>Tadmap.MessageQueue</RootNamespace>
+    <AssemblyName>Tadmap.MessageQueue</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -46,31 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinaryRepositoryTests.cs" />
-    <Compile Include="MessageQueueTests.cs" />
+    <Compile Include="IMessageQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Tadmap.Local\Tadmap.Local.csproj">
-      <Project>{DE1E14D2-F0CD-4FFD-B8D7-6B94C57F4930}</Project>
-      <Name>Tadmap.Local</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tadmap.MessageQueue.Test\Tadmap.MessageQueue.Test\Tadmap.MessageQueue.Test.csproj">
-      <Project>{38EB6E01-C71C-4FAA-B6E2-56B0F903A5D3}</Project>
-      <Name>Tadmap.MessageQueue.Test</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tadmap.MessageQueue\Tadmap.MessageQueue\Tadmap.MessageQueue.csproj">
-      <Project>{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}</Project>
-      <Name>Tadmap.MessageQueue</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tadmap.Model.Test\Tadmap.Model.Test.csproj">
-      <Project>{14CC06D9-9D90-4278-BD48-AC64D8C51625}</Project>
-      <Name>Tadmap.Model.Test</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tadmap.Model\Tadmap.Model.csproj">
-      <Project>{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}</Project>
-      <Name>Tadmap.Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
