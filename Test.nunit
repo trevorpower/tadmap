@@ -5,6 +5,7 @@
     <assembly path="Libraries\Tadmap.Model.Test\bin\Debug\Tadmap.Model.Test.dll" />
     <assembly path="Libraries\Tadmap.Amazon.Test\bin\Debug\Tadmap.Amazon.Test.dll" />
     <assembly path="Websites\Tadmap.Website.Test\bin\Debug\Tadmap.Website.Test.exe" />
+    <assembly path="Libraries\Tadmap.MessageQueue.Test\Tadmap.MessageQueue.Test\bin\Debug\Tadmap.MessageQueue.Test.dll" />
   </Config>
   <Config name="Release" binpathtype="Auto">
     <assembly path="Libraries\Tadmap.Model.Test\bin\Release\Tadmap.Model.Test.dll" />

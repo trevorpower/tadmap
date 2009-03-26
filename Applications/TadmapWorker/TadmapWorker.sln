@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual C# Express 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TadmapWorker", "TadmapWorker\TadmapWorker.csproj", "{8CDC08DE-01F4-492F-B1EC-CD4017F69AD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tadmap.MessageQueue", "..\..\Libraries\Tadmap.MessageQueue\Tadmap.MessageQueue\Tadmap.MessageQueue.csproj", "{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tadmap.MessageQueue.Test", "..\..\Libraries\Tadmap.MessageQueue.Test\Tadmap.MessageQueue.Test\Tadmap.MessageQueue.Test.csproj", "{38EB6E01-C71C-4FAA-B6E2-56B0F903A5D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{8CDC08DE-01F4-492F-B1EC-CD4017F69AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CDC08DE-01F4-492F-B1EC-CD4017F69AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CDC08DE-01F4-492F-B1EC-CD4017F69AD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38EB6E01-C71C-4FAA-B6E2-56B0F903A5D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38EB6E01-C71C-4FAA-B6E2-56B0F903A5D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38EB6E01-C71C-4FAA-B6E2-56B0F903A5D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38EB6E01-C71C-4FAA-B6E2-56B0F903A5D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
