@@ -12,6 +12,8 @@ using Tadmap.Infrastructure;
 using Tadmap.Infrastructure.ErrorHandling;
 using Tadmap.Model.Image;
 using System.Configuration;
+using Tadmap.Messaging;
+using System.IO;
 
 namespace Tadmap
 {
@@ -88,7 +90,7 @@ namespace Tadmap
          if (bool.Parse(ConfigurationManager.AppSettings["RunLocal"]))
          {
             _container.RegisterType<IBinaryRepository, Local.BinaryRepository>(
-               new InjectionConstructor("../TempFolder")
+               new InjectionConstructor("F:/TadmapLocalData/LocalBinaryFolder")
             );
          }
          else
@@ -101,6 +103,10 @@ namespace Tadmap
                )
             );
          }
+
+         _container.RegisterType<IMessageQueue, Local.MessageQueue>(
+            new InjectionConstructor("F:/TadmapLocalData/LocalMessageFolder")
+         );
 
          _container.RegisterType<IImageRepository, Sql.SqlImageRepository>();
       }

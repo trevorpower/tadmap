@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Tadmap.Messaging.Test.Mock
 {
-   class MessageQueue : IMessageQueue
+   public class MessageQueue : IMessageQueue
    {
       #region IMessageQueue Members
 

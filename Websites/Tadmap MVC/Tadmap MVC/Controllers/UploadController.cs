@@ -11,6 +11,7 @@ using Infrastructure.Security;
 using System.Security.Permissions;
 using Tadmap.Model.Image;
 using Tadmap.Model;
+using Tadmap.Messaging;
 
 namespace Tadmap.Controllers
 {
@@ -18,12 +19,18 @@ namespace Tadmap.Controllers
    {
       IImageRepository _imageRepository;
       IBinaryRepository _binaryRepository;
+      IMessageQueue _messageQueue;
 
-      public UploadController(IImageRepository imageRepository, IBinaryRepository binaryRepository)
+      public UploadController(
+         IImageRepository imageRepository,
+         IBinaryRepository binaryRepository,
+         IMessageQueue messageQueue
+      )
       {
          ActionInvoker = new ActionInvokers.ActionInvoker();
          _imageRepository = imageRepository;
          _binaryRepository = binaryRepository;
+         _messageQueue = messageQueue;
       }
 
       [Authorize(Roles = TadmapRoles.Collector)]
@@ -51,6 +58,11 @@ namespace Tadmap.Controllers
          }
 
          return RedirectToAction("Index", "Home");
+      }
+
+      public void ConfirmUpload(string name)
+      {
+         _messageQueue.Add(name);
       }
    }
 }

@@ -16,15 +16,16 @@
       }
       private void FileUploader1_ConfirmUpload(object sender, ConfirmUploadEventArgs e)
       {
-         Amazon.SQS.AmazonSQSClient client = new Amazon.SQS.AmazonSQSClient("1RYDPTK2VKP6739SPGR2", "FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7");
+         (ViewContext.Controller as Tadmap.Controllers.UploadController).ConfirmUpload(e.ChangedName);
+         //Amazon.SQS.AmazonSQSClient client = new Amazon.SQS.AmazonSQSClient("1RYDPTK2VKP6739SPGR2", "FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7");
 
-         Amazon.SQS.Model.SendMessageRequest request = new Amazon.SQS.Model.SendMessageRequest()
-         {
-            MessageBody = e.ChangedName,
-            QueueName = "TadmapDev"
-         };
+         //Amazon.SQS.Model.SendMessageRequest request = new Amazon.SQS.Model.SendMessageRequest()
+         //{
+         //   MessageBody = e.ChangedName,
+         //   QueueName = "TadmapDev"
+         //};
 
-         Amazon.SQS.Model.SendMessageResponse response = client.SendMessage(request);
+         //Amazon.SQS.Model.SendMessageResponse response = client.SendMessage(request);
       }
    </script>
 

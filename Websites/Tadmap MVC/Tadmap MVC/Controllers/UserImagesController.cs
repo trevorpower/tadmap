@@ -20,6 +20,8 @@ namespace Tadmap.Controllers
 
       public UserImagesController(IImageRepository imageRepository, IBinaryRepository binaryRepository)
       {
+         ActionInvoker = new ActionInvokers.ActionInvoker();
+
          ImageRepository = imageRepository;
          BinaryRepository = binaryRepository;
       }
