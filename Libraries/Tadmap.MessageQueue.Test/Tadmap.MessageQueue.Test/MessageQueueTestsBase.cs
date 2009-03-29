@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using Tadmap.Messaging.Test.Mock;
+using System.Threading;
 
 namespace Tadmap.Messaging.Test
 {
@@ -24,7 +25,7 @@ namespace Tadmap.Messaging.Test
       {
          string message = "My Message";
          _queue.Add(message);
-         Assert.AreEqual(message, _queue.Next());
+         Assert.AreEqual(message, _queue.Next(int.MaxValue).Content);
       }
 
       [Test]
@@ -37,16 +38,17 @@ namespace Tadmap.Messaging.Test
 
          messages.ForEach(m => _queue.Add(m));
 
-         string message = _queue.Next();
+         var message = _queue.Next(int.MaxValue);
 
          while (message != null)  
          {
-            Assert.That(messages.Contains(message));
-            messages.Remove(message);
-            message = _queue.Next();
+            Assert.IsNotEmpty(messages, "We weren't expecting any more massages");
+            Assert.That(messages.Contains(message.Content), "We got a message we were not expecting.");
+            messages.Remove(message.Content);
+            message = _queue.Next(int.MaxValue);
          }
 
-         Assert.IsEmpty(messages);
+         Assert.IsEmpty(messages, "We didn't get all the messages.");
       }
 
       [Test]
@@ -54,13 +56,21 @@ namespace Tadmap.Messaging.Test
       {
          _queue.Add("A Message");
 
-         string message = _queue.Next();
+         var message = _queue.Next(0);
 
-         Assert.IsNull(_queue.Next());
-
-         _queue.ReviveMessages();
-
-         Assert.AreEqual("A Message", _queue.Next());
+         Assert.AreEqual("A Message", _queue.Next(int.MaxValue).Content);
       }
+
+      [Test]
+      public void MessageDoesntReappearsAfterRemove()
+      {
+         _queue.Add("A Message");
+
+         var message = _queue.Next(0);
+         _queue.Remove(message);
+
+         Assert.IsNull(_queue.Next(int.MaxValue));
+      }
+
    }
 }

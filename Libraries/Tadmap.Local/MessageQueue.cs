@@ -11,6 +11,12 @@ namespace Tadmap.Local
    {
       string _path;
 
+      private class Message : IMessage
+      {
+         public string Content { get; set; }
+         public string Path { get; set; }
+      }
+
       private MessageQueue()
       {
          throw new NotSupportedException("You must use constructor that gives a folder name.");
@@ -25,7 +31,7 @@ namespace Tadmap.Local
     
       public void Add(string message)
       {
-         string messageName = _path + "/" + Guid.NewGuid() + ".new";
+         string messageName = _path + "/" + Guid.NewGuid() + "." + DateTime.Now.Ticks;
 
          using (FileStream messageFile = File.Open(messageName, FileMode.CreateNew, FileAccess.Write))
          {
@@ -34,30 +40,47 @@ namespace Tadmap.Local
          }
       }
 
-      public string Next()
+      private long TicksFromPath(string path)
       {
-         string messageName = Directory.GetFiles(_path, "*.new").FirstOrDefault();
-         string message = null;
-
-         if (messageName != null)
-         {
-            using (FileStream messageFile = File.OpenRead(messageName))
-            {
-               StreamReader reader = new StreamReader(messageFile);
-               message = reader.ReadLine();
-            }
-
-            File.Move(messageName, Path.ChangeExtension(messageName, "old"));
-         }
-
-         return message;
+         return long.Parse(Path.GetExtension(Path.GetFileName(path)).Substring(1));
       }
 
-      public void ReviveMessages()
+      public IMessage Next(int timeout)
       {
-         foreach (string messageName in Directory.GetFiles(_path, "*.old"))
+         var available = from file in Directory.GetFiles(_path)
+                         where TicksFromPath(file) <= DateTime.Now.Ticks
+                         select file;
+
+         if (available.Count() == 0)
+            return null;
+
+         string message = null;
+
+         string name = available.First();
+
+         using (FileStream messageFile = File.OpenRead(name))
          {
-            File.Move(messageName, Path.ChangeExtension(messageName, "new"));
+            StreamReader reader = new StreamReader(messageFile);
+            message = reader.ReadLine();
+         }
+
+         string newName = Path.ChangeExtension(name, DateTime.Now.AddMilliseconds(timeout).Ticks.ToString());
+
+         File.Move(name, newName);
+
+         return new Message { Content = message, Path = newName };
+      }
+
+      public void Remove(IMessage message)
+      {
+         if (message is Message)
+         {
+            Message fileMessage = message as Message;
+            File.Delete(fileMessage.Path);
+         }
+         else
+         {
+            throw new NotSupportedException("Cannot remove messages of type '" + message.GetType() + "'");
          }
       }
 

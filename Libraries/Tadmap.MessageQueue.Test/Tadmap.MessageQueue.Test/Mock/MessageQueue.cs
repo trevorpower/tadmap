@@ -9,32 +9,42 @@ namespace Tadmap.Messaging.Test.Mock
    {
       #region IMessageQueue Members
 
-      private List<string> _messages = new List<string>();
-      private List<string> _pending = new List<string>();
-
-      public string Next()
+      private class Message : IMessage
       {
-         string message = null;
+         public string Content { get; set; }
+         public DateTime Expires { get; set; }
+      }
 
-         if (_messages.Count > 0)
-         {
-            message = _messages[0];
-            _pending.Add(message);
-            _messages.RemoveAt(0);
-         }
+      private List<Message> _messages = new List<Message>();
+
+      public IMessage Next(int timeout)
+      {
+         var available = from m in _messages
+                         where m.Expires <= DateTime.Now
+                         orderby m.Expires descending
+                         select m;
+
+         if (available.Count() == 0)
+            return null;
+
+         var message = available.First();
+          
+         message.Expires = message.Expires.AddMilliseconds(timeout);
 
          return message;
       }
 
       public void Add(string message)
       {
-         _messages.Add(message);
+         _messages.Add(new Message { Content = message, Expires = DateTime.Now });
       }
 
-      public void ReviveMessages()
+      public void Remove(IMessage message)
       {
-         _messages.AddRange(_pending);
-         _pending.Clear();
+         if (message is Message)
+            _messages.Remove(message as Message);
+         else
+            throw new NotSupportedException("Cannot remove message of type '" + message.GetType() + "'");
       }
 
       #endregion

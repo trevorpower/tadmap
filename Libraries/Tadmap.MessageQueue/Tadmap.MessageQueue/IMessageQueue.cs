@@ -9,8 +9,8 @@ namespace Tadmap.Messaging
    {
       void Add(string message);
 
-      string Next();
+      IMessage Next(int timeout);
 
-      void ReviveMessages();
+      void Remove(IMessage message);
    }
 }
