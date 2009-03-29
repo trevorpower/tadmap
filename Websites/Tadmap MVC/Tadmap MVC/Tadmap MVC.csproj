@@ -273,6 +273,8 @@
     <Content Include="bin\Tadmap.Amazon.pdb" />
     <Content Include="bin\Tadmap.Local.dll" />
     <Content Include="bin\Tadmap.Local.pdb" />
+    <Content Include="bin\Tadmap.MessageQueue.dll" />
+    <Content Include="bin\Tadmap.MessageQueue.pdb" />
     <Content Include="bin\Tadmap.Model.dll" />
     <Content Include="bin\Tadmap.Model.pdb" />
     <Content Include="bin\Tadmap.Sql.dll" />

@@ -14,7 +14,7 @@ namespace Tadmap.Messaging.Test
       protected abstract IMessageQueue CreateQueue();
 
       [SetUp]
-      public void SetUp()
+      public virtual void SetUp()
       {
          _queue = CreateQueue();
       }
