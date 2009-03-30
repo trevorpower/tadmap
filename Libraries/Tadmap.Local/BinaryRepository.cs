@@ -24,7 +24,7 @@ namespace Tadmap.Local
          if (data.Length == 0)
             return;
 
-         using (FileStream file = new FileStream(_path + key, FileMode.CreateNew, FileAccess.Write))
+         using (FileStream file = new FileStream(Path.Combine(_path, key), FileMode.CreateNew, FileAccess.Write))
          {
             int theByte = data.ReadByte();
             while (theByte != -1)
@@ -44,7 +44,7 @@ namespace Tadmap.Local
 
       public Stream GetBinary(string key)
       {
-         return new FileStream(_path + key, FileMode.Open, FileAccess.Read);
+         return new FileStream(Path.Combine(_path, key), FileMode.Open, FileAccess.Read);
       }
 
       #endregion

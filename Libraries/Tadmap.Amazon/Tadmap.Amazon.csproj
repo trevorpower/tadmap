@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Amazon.SQS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdParty\amazon-queue-2008-01-01-cs-library\src\Amazon.SQS\bin\Release\Amazon.SQS.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -40,14 +44,12 @@
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryRepsoitory.cs" />
+    <Compile Include="MessageQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +60,10 @@
     <ProjectReference Include="..\3rdParty\AffirmaS3\Affirma.ThreeSharp\Affirma.ThreeSharp.csproj">
       <Project>{1A12C68D-7C3B-46A6-8406-10ADCFA51B7A}</Project>
       <Name>Affirma.ThreeSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tadmap.MessageQueue\Tadmap.MessageQueue\Tadmap.MessageQueue.csproj">
+      <Project>{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}</Project>
+      <Name>Tadmap.MessageQueue</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tadmap.Model\Tadmap.Model.csproj">
       <Project>{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}</Project>

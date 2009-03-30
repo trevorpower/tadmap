@@ -6,15 +6,16 @@ using Amazon.SQS.Model;
 using System.Threading;
 using System.Windows.Forms;
 using Tadmap.DataAccess;
-using Tadmap.DataAccess.S3;
-using Tadmap.Models.ImageSets;
 using System.IO;
+using Tadmap.Messaging;
+using Tadmap.Model.Image;
 
 namespace TadmapWorker
 {
    static class Program
    {
-      static IBinaryRepository _binaryRepository = new S3BinaryRepository();
+      static IBinaryRepository _binaryRepository = new Tadmap.Local.BinaryRepository("F:/TadmapLocalData/LocalBinaryFolder");
+      static IMessageQueue _messageQueue = new Tadmap.Local.MessageQueue("F:/TadmapLocalData/LocalMessageFolder");
 
       /// <summary>
       /// The main entry point for the application.
@@ -27,34 +28,19 @@ namespace TadmapWorker
          //Application.Run(new MainWindow());
 
 
-         AmazonSQSClient client = new AmazonSQSClient("1RYDPTK2VKP6739SPGR2", "FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7");
-
          while (true)
          {
-            ReceiveMessageRequest request = new ReceiveMessageRequest()
-            {
-               MaxNumberOfMessages = 1,
-               QueueName = "TadmapDev"
-            };
-
-            ReceiveMessageResponse response = client.ReceiveMessage(request);
-
-            Amazon.SQS.Model.Message message = response.ReceiveMessageResult.Message.SingleOrDefault();
+            IMessage message = _messageQueue.Next(50000);
 
             if (message != null)
             {
-               ProcessImage(message.Body);
+               ProcessImage(message.Content);
 
-               DeleteMessageRequest deleteRequest = new DeleteMessageRequest(){
-                  QueueName = "TadmapDev",
-                  ReceiptHandle = message.ReceiptHandle
-               };
-
-               client.DeleteMessage(deleteRequest);
+               _messageQueue.Remove(message);
             }
             else
             {
-               Thread.Sleep(TimeSpan.FromSeconds(25));
+               Thread.Sleep(TimeSpan.FromSeconds(5));
             }
          }
       }
@@ -63,7 +49,7 @@ namespace TadmapWorker
       {
          IImageSet imageSet = new ImageSet1(imageName);
 
-         Stream binary = _binaryRepository.Get(imageName);
+         Stream binary = _binaryRepository.GetBinary(imageName);
 
          imageSet.Create(binary, _binaryRepository);
       }

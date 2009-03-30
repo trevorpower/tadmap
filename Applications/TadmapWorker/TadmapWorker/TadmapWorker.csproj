@@ -50,10 +50,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tadmap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=44b67b3aaf6f127f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Websites\Tadmap MVC\Tadmap MVC\bin\Tadmap.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindow.cs">
@@ -90,6 +86,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TadmapWorker.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\Tadmap.Local\Tadmap.Local.csproj">
+      <Project>{DE1E14D2-F0CD-4FFD-B8D7-6B94C57F4930}</Project>
+      <Name>Tadmap.Local</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tadmap.MessageQueue\Tadmap.MessageQueue\Tadmap.MessageQueue.csproj">
+      <Project>{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}</Project>
+      <Name>Tadmap.MessageQueue</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tadmap.Model\Tadmap.Model.csproj">
+      <Project>{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}</Project>
+      <Name>Tadmap.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

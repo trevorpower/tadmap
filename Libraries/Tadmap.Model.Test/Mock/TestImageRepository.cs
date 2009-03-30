@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Tadmap.Model.Image;
-using Tadmap.Model.Test.Mock;
 using Tadmap.Model.Image;
 
 namespace Tadmap.Mode.Test.Mock
