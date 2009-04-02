@@ -24,7 +24,7 @@ namespace Tadmap.Local
          if (data.Length == 0)
             return;
 
-         using (FileStream file = new FileStream(Path.Combine(_path, key), FileMode.CreateNew, FileAccess.Write))
+         using (FileStream file = new FileStream(Path.Combine(_path, key), FileMode.Create, FileAccess.Write))
          {
             int theByte = data.ReadByte();
             while (theByte != -1)

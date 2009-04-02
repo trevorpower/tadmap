@@ -36,4 +36,4 @@ using System;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: NeutralResourcesLanguageAttribute("en-IE")]
-[assembly: CLSCompliant(true)]
+//[assembly: CLSCompliant(true)]

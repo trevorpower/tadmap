@@ -15,7 +15,8 @@ namespace TadmapWorker
    static class Program
    {
       static IBinaryRepository _binaryRepository = new Tadmap.Local.BinaryRepository("F:/TadmapLocalData/LocalBinaryFolder");
-      static IMessageQueue _messageQueue = new Tadmap.Local.MessageQueue("F:/TadmapLocalData/LocalMessageFolder");
+      static IMessageQueue _imageQueue = new Tadmap.Local.MessageQueue("F:/TadmapLocalData/LocalImageMessageFolder");
+      static IMessageQueue _completeQueue = new Tadmap.Local.MessageQueue("F:/TadmapLocalData/LocalCompleteMessageFolder");
 
       /// <summary>
       /// The main entry point for the application.
@@ -30,13 +31,14 @@ namespace TadmapWorker
 
          while (true)
          {
-            IMessage message = _messageQueue.Next(50000);
+            IMessage message = _imageQueue.Next(50000);
 
             if (message != null)
             {
                ProcessImage(message.Content);
 
-               _messageQueue.Remove(message);
+               _completeQueue.Add(message.Content);
+               _imageQueue.Remove(message);
             }
             else
             {

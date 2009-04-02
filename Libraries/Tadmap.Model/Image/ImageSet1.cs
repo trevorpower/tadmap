@@ -93,7 +93,7 @@ namespace Tadmap.Model.Image
          }
 
          stream.Position = 0;
-         binaryRepository.Add(stream, Original, ThreeSharpUtils.ConvertExtensionToMimeType(Path.GetExtension(Key)));
+         //binaryRepository.Add(stream, Original, ThreeSharpUtils.ConvertExtensionToMimeType(Path.GetExtension(Key)));
 
       }
 

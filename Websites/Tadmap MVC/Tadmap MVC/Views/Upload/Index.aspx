@@ -4,6 +4,7 @@
 
 <%@ Register TagPrefix="fjx" Namespace="com.flajaxian" Assembly="com.flajaxian.FileUploader" %>
 <%@ Register TagPrefix="fjx" Namespace="com.flajaxian" Assembly="com.flajaxian.DirectAmazonUploader" %>
+<%@ Register TagPrefix="tad" Namespace="Tadmap" Assembly="Tadmap.Website" %>
 <asp:Content ID="HeadContent" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -16,25 +17,19 @@
       }
       private void FileUploader1_ConfirmUpload(object sender, ConfirmUploadEventArgs e)
       {
-         (ViewContext.Controller as Tadmap.Controllers.UploadController).ConfirmUpload(e.ChangedName);
-         //Amazon.SQS.AmazonSQSClient client = new Amazon.SQS.AmazonSQSClient("1RYDPTK2VKP6739SPGR2", "FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7");
-
-         //Amazon.SQS.Model.SendMessageRequest request = new Amazon.SQS.Model.SendMessageRequest()
-         //{
-         //   MessageBody = e.ChangedName,
-         //   QueueName = "TadmapDev"
-         //};
-
-         //Amazon.SQS.Model.SendMessageResponse response = client.SendMessage(request);
+         (ViewContext.Controller as Tadmap.Controllers.UploadController).ConfirmUpload(HttpContext.Current.User, e.Name, e.ChangedName);
       }
+      
+      
    </script>
 
    <form runat="server">
    <fjx:FileUploader ID="FileUploader1" runat="server">
       <Adapters>
-         <fjx:DirectAmazonUploader AccessKey="1RYDPTK2VKP6739SPGR2" SecretKey="FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7"
+         <%--<fjx:DirectAmazonUploader AccessKey="1RYDPTK2VKP6739SPGR2" SecretKey="FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7"
             BucketName="tadtestus" FileAccess="Private" OnFileNameDetermining="FileNameDetermining"
-            OnConfirmUpload="FileUploader1_ConfirmUpload" />
+            OnConfirmUpload="FileUploader1_ConfirmUpload" />--%>
+         <tad:LocalUploadAdapter OnFileNameDetermining="FileNameDetermining" OnConfirmUpload="FileUploader1_ConfirmUpload"  />
       </Adapters>
    </fjx:FileUploader>
    </form>

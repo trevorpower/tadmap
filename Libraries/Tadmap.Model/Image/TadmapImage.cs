@@ -25,6 +25,7 @@ namespace Tadmap.Model.Image
       public bool IsOffensive { get; set; }
       public Guid UserId { get; set; }
       public string OwnerName { get; set; }
+      public int ImageSetVersion { get; set; }
 
       public Uri SquareUrl { get { return _binaryRepository.GetUrl(ImageSet.Square); } }
 

@@ -60,9 +60,20 @@ namespace Tadmap.Controllers
          return RedirectToAction("Index", "Home");
       }
 
-      public void ConfirmUpload(string name)
+      public void ConfirmUpload(IPrincipal principal, string name, string key)
       {
-         _messageQueue.Add(name);
+         TadmapImage image = new TadmapImage(_binaryRepository);
+         image.Id = Guid.NewGuid();
+         image.Title = Path.GetFileNameWithoutExtension(name);
+         image.Description = "";
+         image.Key = key;
+         image.ImageSet = new ImageSet1(image.Key);
+         image.UserId = (principal.Identity as TadmapIdentity).Id;
+         image.ImageSetVersion = 0;
+
+         _imageRepository.Save(image);
+
+         _messageQueue.Add(key);
       }
    }
 }

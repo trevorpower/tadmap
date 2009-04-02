@@ -14,13 +14,18 @@ using Tadmap.Model.Image;
 using System.Configuration;
 using Tadmap.Messaging;
 using System.IO;
+using System.Threading;
 
-namespace Tadmap
+namespace Tadmap.Website
 {
    public class TadmapApplication : System.Web.HttpApplication
    {
       private static IUnityContainer _container;
       private static IErrorHandler _errorHandler = new EmailErrorHandler();
+
+      private static IMessageQueue _completeQueue;
+
+      private static Thread _pollingThread;
 
       public static IUnityContainer Container
       {
@@ -92,6 +97,8 @@ namespace Tadmap
             _container.RegisterType<IBinaryRepository, Local.BinaryRepository>(
                new InjectionConstructor("F:/TadmapLocalData/LocalBinaryFolder")
             );
+
+            _completeQueue = new Local.MessageQueue("F:/TadmapLocalData/LocalCompleteMessageFolder");
          }
          else
          {
@@ -105,10 +112,25 @@ namespace Tadmap
          }
 
          _container.RegisterType<IMessageQueue, Local.MessageQueue>(
-            new InjectionConstructor("F:/TadmapLocalData/LocalMessageFolder")
+            new InjectionConstructor("F:/TadmapLocalData/LocalImageMessageFolder")
          );
 
          _container.RegisterType<IImageRepository, Sql.SqlImageRepository>();
+
+
+
+         _pollingThread = new Thread(CompletePolling);
+      }
+
+      private static void CompletePolling()
+      {
+         IMessage message = _completeQueue.Next(50000);
+
+         while (message != null)
+         {
+
+
+         }
       }
    }
 }

@@ -11,7 +11,7 @@
     <RootNamespace>Tadmap.Website</RootNamespace>
     <AssemblyName>Tadmap.Website</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>TadmapAssemblyKey.snk</AssemblyOriginatorKeyFile>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppresion.cs</CodeAnalysisModuleSuppressionsFile>
     <MvcBuildViews>true</MvcBuildViews>
@@ -137,6 +137,7 @@
     <Compile Include="Infrastructure\ControllerFactory.cs" />
     <Compile Include="Infrastructure\LogExceptionAttribute.cs" />
     <Compile Include="Models\HomeView.cs" />
+    <Compile Include="Tadmap\LocalUploadAdapter.cs" />
     <Compile Include="Tadmap\Security\Authentication.cs" />
     <Compile Include="Tadmap\Security\CookieUserData.cs" />
     <Compile Include="Tadmap\Security\TadmapIdentity.cs" />
