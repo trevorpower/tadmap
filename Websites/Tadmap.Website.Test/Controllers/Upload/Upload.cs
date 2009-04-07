@@ -57,8 +57,8 @@ namespace TadmapTests.Controllers.Upload
 
          TadmapImage newImage = _imageRepository.GetAllImages(_binaryRepository).Where(i => i.Key == "The key").Single();
 
-         //Assert.AreEqual(0, newImage.ImageSetVersion);
-         //Assert.AreEqual("The name", newImage.Title);
+         Assert.AreEqual(0, newImage.ImageSetVersion);
+         Assert.AreEqual("The name", newImage.Title);
       }
    }
 }

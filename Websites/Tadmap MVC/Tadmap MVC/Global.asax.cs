@@ -66,6 +66,16 @@ namespace Tadmap.Website
          InitializeContainer();
          ControllerBuilder.Current.SetControllerFactory(typeof(ControllerFactory));
          RegisterRoutes(RouteTable.Routes);
+
+         _pollingThread = new Thread(CompletePolling);
+
+         var repositories = new Repositories
+         {
+            BinaryRepository = _container.Resolve<IBinaryRepository>(),
+            ImageRepository = _container.Resolve<IImageRepository>()
+         };
+
+         _pollingThread.Start(repositories);
       }
 
       protected void Application_Error(object sender, EventArgs e)
@@ -116,21 +126,41 @@ namespace Tadmap.Website
          );
 
          _container.RegisterType<IImageRepository, Sql.SqlImageRepository>();
-
-
-
-         _pollingThread = new Thread(CompletePolling);
       }
 
-      private static void CompletePolling()
+      /// <summary>
+      /// Poll the completed message queue for image tasks that have been completed and
+      /// update the images image set number.
+      /// </summary>
+      private static void CompletePolling(object param)
       {
-         IMessage message = _completeQueue.Next(50000);
+         Repositories repositories = (Repositories)param;
 
-         while (message != null)
+         while (true)
          {
+            IMessage message = _completeQueue.Next(50000);
 
+            if (message != null)
+            {
+               var image = repositories.ImageRepository.GetAllImages(repositories.BinaryRepository).Single(i => i.Key == message.Content);
 
+               image.ImageSetVersion = 1;
+
+               repositories.ImageRepository.Save(image);
+
+               _completeQueue.Remove(message);
+            }
+            else
+            {
+               Thread.Sleep(TimeSpan.FromSeconds(45));
+            }
          }
+      }
+
+      class Repositories
+      {
+         public IImageRepository ImageRepository { get; set; }
+         public IBinaryRepository BinaryRepository { get; set; }
       }
    }
 }

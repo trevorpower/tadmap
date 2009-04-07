@@ -14,7 +14,7 @@ namespace Tadmap.Controllers
         public ActionResult Index(string key)
         {
            return File(
-              Url.Content("F:/TadmapLocalData/LocalBinaryFolder" + key),
+              Url.Content("F:/TadmapLocalData/LocalBinaryFolder/" + key),
               ThreeSharpUtils.ConvertExtensionToMimeType(Path.GetExtension(key))
            );
         }

@@ -84,7 +84,7 @@ namespace Tadmap.Mode.Test.Mock
 
       public void Save(TadmapImage image)
       {
-         
+         _images.Add(image);
       }
 
       #endregion
