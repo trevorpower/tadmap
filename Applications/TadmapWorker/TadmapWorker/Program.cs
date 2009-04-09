@@ -33,7 +33,7 @@ namespace TadmapWorker
 
          while (true)
          {
-            IMessage message = _imageQueue.Next(600);
+            IMessage message = _imageQueue.Next(300);
 
             if (message != null)
             {
@@ -51,11 +51,14 @@ namespace TadmapWorker
 
       static private void ProcessImage(string imageName)
       {
-         ImageIndexConverter might NotFiniteNumberException be available form S3 yet
+         Stream binary = _binaryRepository.GetBinary(imageName);
+
+         if (binary == null)
+            return; // Image not available in the queue yet.
+
+         // If I have an image I should renew the message.
 
          IImageSet imageSet = new ImageSet1(imageName);
-
-         Stream binary = _binaryRepository.GetBinary(imageName);
 
          imageSet.Create(binary, _binaryRepository);
       }

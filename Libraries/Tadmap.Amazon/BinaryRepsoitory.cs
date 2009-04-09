@@ -113,7 +113,21 @@ namespace Tadmap.Amazon
 
       public Stream GetBinary(string key)
       {
-         return new MemoryStream();
+         try
+         {
+            using (ObjectGetRequest objectGetRequest = new ObjectGetRequest(BucketName, key))
+            using (ObjectGetResponse objectGetResponse = _service.ObjectGet(objectGetRequest))
+            {
+               return objectGetResponse.DataStream;
+            }
+         }
+         catch (ThreeSharpException e)
+         {
+            if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
+               return null;
+
+            throw;
+         }
       }
 
       #endregion
