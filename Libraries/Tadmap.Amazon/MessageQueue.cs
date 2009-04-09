@@ -18,10 +18,12 @@ namespace Tadmap.Amazon
 
       AmazonSQSClient _client;
 
-      public MessageQueue()
+      public MessageQueue(string name)
       {
+         Name = name;
          _client = new AmazonSQSClient("1RYDPTK2VKP6739SPGR2", "FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7");
       }
+
       #region IMessageQueue Members
 
       public void Add(string message)
@@ -29,7 +31,7 @@ namespace Tadmap.Amazon
          SendMessageRequest request = new SendMessageRequest
          {
             MessageBody = message,
-            QueueName = "TadmapDev"
+            QueueName = Name
          };
 
          SendMessageResponse response = _client.SendMessage(request);
@@ -37,15 +39,16 @@ namespace Tadmap.Amazon
 
       public IMessage Next(int timeout)
       {
-         ReceiveMessageRequest request = new ReceiveMessageRequest()
+         var request = new ReceiveMessageRequest()
          {
             MaxNumberOfMessages = 1,
-            QueueName = "TadmapDev"
+            QueueName = Name,
+            VisibilityTimeout = timeout
          };
 
-         ReceiveMessageResponse response = _client.ReceiveMessage(request);
+         var response = _client.ReceiveMessage(request);
 
-         Message message = response.ReceiveMessageResult.Message.SingleOrDefault();
+         var message = response.ReceiveMessageResult.Message.SingleOrDefault();
 
          if (message == null)
             return null;
@@ -59,7 +62,7 @@ namespace Tadmap.Amazon
          {
             DeleteMessageRequest deleteRequest = new DeleteMessageRequest()
             {
-               QueueName = "TadmapDev",
+               QueueName = Name,
                ReceiptHandle = (message as AmazonMessage).Message.ReceiptHandle
             };
 
@@ -68,5 +71,7 @@ namespace Tadmap.Amazon
       }
 
       #endregion
+
+      private string Name { get; set; }
    }
 }

@@ -13,7 +13,7 @@ namespace Tadmap.Amazon.Test
    {
       protected override IMessageQueue CreateQueue()
       {
-         return new MessageQueue();
+         return new MessageQueue("TadmapDev");
       }
    }
 }

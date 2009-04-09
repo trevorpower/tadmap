@@ -67,6 +67,8 @@ namespace Tadmap.Website
          ControllerBuilder.Current.SetControllerFactory(typeof(ControllerFactory));
          RegisterRoutes(RouteTable.Routes);
 
+         _completeQueue = _container.Resolve<IMessageQueue>("Complete");
+
          _pollingThread = new Thread(CompletePolling);
 
          var repositories = new Repositories
@@ -108,7 +110,7 @@ namespace Tadmap.Website
                new InjectionConstructor("F:/TadmapLocalData/LocalBinaryFolder")
             );
 
-            _completeQueue = new Local.MessageQueue("F:/TadmapLocalData/LocalCompleteMessageFolder");
+            _container.RegisterType<IMessageQueue, Local.MessageQueue>("Complete", new InjectionConstructor("F:/TadmapLocalData/LocalCompleteMessageFolder"));
          }
          else
          {
@@ -119,11 +121,11 @@ namespace Tadmap.Website
                   ConfigurationManager.AppSettings["S3BucketName"]
                )
             );
+
+            _container.RegisterType<IMessageQueue, Amazon.MessageQueue>("Complete", new InjectionConstructor("debug-tadmap-complete"));
+            _container.RegisterType<IMessageQueue, Amazon.MessageQueue>("Image", new InjectionConstructor("debug-tadmap-image"));
          }
 
-         _container.RegisterType<IMessageQueue, Local.MessageQueue>(
-            new InjectionConstructor("F:/TadmapLocalData/LocalImageMessageFolder")
-         );
 
          _container.RegisterType<IImageRepository, Sql.SqlImageRepository>();
       }
@@ -138,7 +140,7 @@ namespace Tadmap.Website
 
          while (true)
          {
-            IMessage message = _completeQueue.Next(50000);
+            IMessage message = _completeQueue.Next(15);
 
             if (message != null)
             {

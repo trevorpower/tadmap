@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Amazon.SQS;
-using Amazon.SQS.Model;
 using System.Threading;
 using System.Windows.Forms;
 using Tadmap.DataAccess;
@@ -14,9 +12,13 @@ namespace TadmapWorker
 {
    static class Program
    {
-      static IBinaryRepository _binaryRepository = new Tadmap.Local.BinaryRepository("F:/TadmapLocalData/LocalBinaryFolder");
-      static IMessageQueue _imageQueue = new Tadmap.Local.MessageQueue("F:/TadmapLocalData/LocalImageMessageFolder");
-      static IMessageQueue _completeQueue = new Tadmap.Local.MessageQueue("F:/TadmapLocalData/LocalCompleteMessageFolder");
+      //static IBinaryRepository _binaryRepository = new Tadmap.Local.BinaryRepository("F:/TadmapLocalData/LocalBinaryFolder");
+      //static IMessageQueue _imageQueue = new Tadmap.Local.MessageQueue("F:/TadmapLocalData/LocalImageMessageFolder");
+      //static IMessageQueue _completeQueue = new Tadmap.Local.MessageQueue("F:/TadmapLocalData/LocalCompleteMessageFolder");
+
+      static IBinaryRepository _binaryRepository = new Tadmap.Amazon.BinaryRepository("1RYDPTK2VKP6739SPGR2", "FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7", "tadmap-dev");
+      static IMessageQueue _imageQueue = new Tadmap.Amazon.MessageQueue("debug-tadmap-image");
+      static IMessageQueue _completeQueue = new Tadmap.Amazon.MessageQueue("debug-tadmap-complete");
 
       /// <summary>
       /// The main entry point for the application.
@@ -31,7 +33,7 @@ namespace TadmapWorker
 
          while (true)
          {
-            IMessage message = _imageQueue.Next(50000);
+            IMessage message = _imageQueue.Next(600);
 
             if (message != null)
             {
@@ -42,13 +44,15 @@ namespace TadmapWorker
             }
             else
             {
-               Thread.Sleep(TimeSpan.FromSeconds(5));
+               Thread.Sleep(TimeSpan.FromSeconds(15));
             }
          }
       }
 
       static private void ProcessImage(string imageName)
       {
+         ImageIndexConverter might NotFiniteNumberException be available form S3 yet
+
          IImageSet imageSet = new ImageSet1(imageName);
 
          Stream binary = _binaryRepository.GetBinary(imageName);

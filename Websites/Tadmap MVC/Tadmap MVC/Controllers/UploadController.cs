@@ -24,7 +24,7 @@ namespace Tadmap.Controllers
       public UploadController(
          IImageRepository imageRepository,
          IBinaryRepository binaryRepository,
-         IMessageQueue messageQueue
+         [Microsoft.Practices.Unity.Dependency("Image")] IMessageQueue messageQueue
       )
       {
          ActionInvoker = new ActionInvokers.ActionInvoker();

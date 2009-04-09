@@ -40,6 +40,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tadmap.MessageQueue", "..\.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tadmap.MessageQueue.Test", "..\..\Libraries\Tadmap.MessageQueue.Test\Tadmap.MessageQueue.Test\Tadmap.MessageQueue.Test.csproj", "{38EB6E01-C71C-4FAA-B6E2-56B0F903A5D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.SQS", "..\..\Libraries\3rdParty\amazon-queue-2008-01-01-cs-library\src\Amazon.SQS\Amazon.SQS.csproj", "{9DC82215-E48A-4670-8D81-B50F9A4E57E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +151,12 @@ Global
 		{38EB6E01-C71C-4FAA-B6E2-56B0F903A5D3}.Local|Any CPU.Build.0 = Release|Any CPU
 		{38EB6E01-C71C-4FAA-B6E2-56B0F903A5D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38EB6E01-C71C-4FAA-B6E2-56B0F903A5D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DC82215-E48A-4670-8D81-B50F9A4E57E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DC82215-E48A-4670-8D81-B50F9A4E57E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DC82215-E48A-4670-8D81-B50F9A4E57E7}.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{9DC82215-E48A-4670-8D81-B50F9A4E57E7}.Local|Any CPU.Build.0 = Release|Any CPU
+		{9DC82215-E48A-4670-8D81-B50F9A4E57E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DC82215-E48A-4670-8D81-B50F9A4E57E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

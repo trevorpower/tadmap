@@ -29,12 +29,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Amazon.SQS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\3rdParty\amazon-queue-2008-01-01-cs-library\src\Amazon.SQS\bin\Release\Amazon.SQS.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -88,6 +85,10 @@
     <Content Include="TadmapWorker.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\Tadmap.Amazon\Tadmap.Amazon.csproj">
+      <Project>{E96B7A99-B122-4C75-9C58-AA88E70051B6}</Project>
+      <Name>Tadmap.Amazon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Libraries\Tadmap.Local\Tadmap.Local.csproj">
       <Project>{DE1E14D2-F0CD-4FFD-B8D7-6B94C57F4930}</Project>
       <Name>Tadmap.Local</Name>
