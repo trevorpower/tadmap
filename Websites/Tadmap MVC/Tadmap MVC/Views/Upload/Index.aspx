@@ -27,7 +27,7 @@
    <fjx:FileUploader ID="FileUploader1" runat="server">
       <Adapters>
          <fjx:DirectAmazonUploader AccessKey="1RYDPTK2VKP6739SPGR2" SecretKey="FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7"
-            BucketName="tadmap-dev-us"  FileAccess="Private" OnFileNameDetermining="FileNameDetermining"
+            BucketName="tadtestus"  FileAccess="Private" OnFileNameDetermining="FileNameDetermining"
             OnConfirmUpload="FileUploader1_ConfirmUpload" />
          <%--<tad:LocalUploadAdapter OnFileNameDetermining="FileNameDetermining" OnConfirmUpload="FileUploader1_ConfirmUpload"  />--%>
       </Adapters>

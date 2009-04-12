@@ -61,10 +61,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\TadMap\Bin\DotNetOpenId.dll</HintPath>
     </Reference>
-    <Reference Include="Elmah, Version=1.0.10617.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\3rdParty\ELMAH\bin\net-3.5\Release\Elmah.dll</HintPath>
-    </Reference>
     <Reference Include="ImageManipulation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59f47d59501e07f9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Libraries\ImageManipulation\ClassLibrary1\bin\Release\ImageManipulation.dll</HintPath>

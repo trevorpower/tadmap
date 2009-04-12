@@ -16,7 +16,7 @@ namespace TadmapWorker
       //static IMessageQueue _imageQueue = new Tadmap.Local.MessageQueue("F:/TadmapLocalData/LocalImageMessageFolder");
       //static IMessageQueue _completeQueue = new Tadmap.Local.MessageQueue("F:/TadmapLocalData/LocalCompleteMessageFolder");
 
-      static IBinaryRepository _binaryRepository = new Tadmap.Amazon.BinaryRepository("1RYDPTK2VKP6739SPGR2", "FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7", "tadmap-dev");
+      static IBinaryRepository _binaryRepository = new Tadmap.Amazon.BinaryRepository("1RYDPTK2VKP6739SPGR2", "FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7", "tadtestus");
       static IMessageQueue _imageQueue = new Tadmap.Amazon.MessageQueue("debug-tadmap-image");
       static IMessageQueue _completeQueue = new Tadmap.Amazon.MessageQueue("debug-tadmap-complete");
 
@@ -33,7 +33,7 @@ namespace TadmapWorker
 
          while (true)
          {
-            IMessage message = _imageQueue.Next(300);
+            IMessage message = _imageQueue.Next(200);
 
             if (message != null)
             {
