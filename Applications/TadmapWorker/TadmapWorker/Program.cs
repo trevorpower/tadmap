@@ -7,60 +7,93 @@ using Tadmap.DataAccess;
 using System.IO;
 using Tadmap.Messaging;
 using Tadmap.Model.Image;
+using System.ServiceProcess;
+using Microsoft.Practices.Unity;
+using System.Diagnostics;
+using TadmapWorker.Properties;
 
 namespace TadmapWorker
 {
    static class Program
    {
-      //static IBinaryRepository _binaryRepository = new Tadmap.Local.BinaryRepository("F:/TadmapLocalData/LocalBinaryFolder");
-      //static IMessageQueue _imageQueue = new Tadmap.Local.MessageQueue("F:/TadmapLocalData/LocalImageMessageFolder");
-      //static IMessageQueue _completeQueue = new Tadmap.Local.MessageQueue("F:/TadmapLocalData/LocalCompleteMessageFolder");
-
-      static IBinaryRepository _binaryRepository = new Tadmap.Amazon.BinaryRepository("1RYDPTK2VKP6739SPGR2", "FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7", "tadtestus");
-      static IMessageQueue _imageQueue = new Tadmap.Amazon.MessageQueue("debug-tadmap-image");
-      static IMessageQueue _completeQueue = new Tadmap.Amazon.MessageQueue("debug-tadmap-complete");
-
       /// <summary>
       /// The main entry point for the application.
       /// </summary>
       [STAThread]
       static void Main()
       {
-         Application.EnableVisualStyles();
-         Application.SetCompatibleTextRenderingDefault(false);
-         //Application.Run(new MainWindow());
+         IUnityContainer container = SetupContainer(new UnityContainer());
 
+         ServiceBase[] ServicesToRun;
+         ServicesToRun = new ServiceBase[] 
+			{ 
+            container.Resolve<ImageService>() 
+			};
 
-         while (true)
-         {
-            IMessage message = _imageQueue.Next(200);
-
-            if (message != null)
-            {
-               ProcessImage(message.Content);
-
-               _completeQueue.Add(message.Content);
-               _imageQueue.Remove(message);
-            }
-            else
-            {
-               Thread.Sleep(TimeSpan.FromSeconds(15));
-            }
-         }
+         ServiceBase.Run(ServicesToRun);
       }
 
-      static private void ProcessImage(string imageName)
+      private static IUnityContainer SetupContainer(IUnityContainer container)
       {
-         Stream binary = _binaryRepository.GetBinary(imageName);
+         if (Settings.Default.RunLocal)
+         {
+            container.RegisterType<IBinaryRepository, Tadmap.Local.BinaryRepository>(
+               new InjectionConstructor(
+                  Settings.Default.LocalBinaryRepository
+               )
+            );
 
-         if (binary == null)
-            return; // Image not available in the queue yet.
+            container.RegisterType<IMessageQueue, Tadmap.Local.MessageQueue>(
+               "images",
+               new InjectionConstructor(
+                  Settings.Default.LocalImageQueue
+               )
+            );
 
-         // If I have an image I should renew the message.
+            container.RegisterType<IMessageQueue, Tadmap.Local.MessageQueue>(
+               "complete",
+               new InjectionConstructor(
+                  Settings.Default.LocalCompleteQueue
+               )
+            );
+         }
+         else if (Settings.Default.Live)
+         {
+            container.RegisterType<IBinaryRepository, Tadmap.Amazon.BinaryRepository>(
+               new InjectionConstructor(
+                  Settings.Default.S3AccessKey,
+                  Settings.Default.S3SecretAccessKey,
+                  Settings.Default.S3BucketName
+               )
+            );
+         }
+         else
+         {
+            container.RegisterType<IBinaryRepository, Tadmap.Amazon.BinaryRepository>(
+               new InjectionConstructor(
+                  Settings.Default.S3AccessKey,
+                  Settings.Default.S3SecretAccessKey,
+                  Settings.Default.DevS3BucketName
+               )
+            );
 
-         IImageSet imageSet = new ImageSet1(imageName);
+            container.RegisterType<IMessageQueue, Tadmap.Amazon.MessageQueue>(
+               "images",
+               new InjectionConstructor(
+                  Settings.Default.DevImageQueue
+               )
+            );
 
-         imageSet.Create(binary, _binaryRepository);
+            container.RegisterType<IMessageQueue, Tadmap.Amazon.MessageQueue>(
+               "complete",
+               new InjectionConstructor(
+                  Settings.Default.DevCompleteQueue
+               )
+            );
+
+         }
+
+         return container;
       }
    }
 }

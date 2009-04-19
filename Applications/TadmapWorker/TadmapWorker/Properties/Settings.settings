@@ -9,7 +9,31 @@
       <Value Profile="(Default)">FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7</Value>
     </Setting>
     <Setting Name="S3BucketName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">tadmap</Value>
+    </Setting>
+    <Setting Name="RunLocal" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Live" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LocalBinaryRepository" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F:/TadmapLocalData/LocalBinaryFolder</Value>
+    </Setting>
+    <Setting Name="DevS3BucketName" Type="System.String" Scope="User">
       <Value Profile="(Default)">tadtestus</Value>
+    </Setting>
+    <Setting Name="LocalImageQueue" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F:/TadmapLocalData/LocalImageMessageFolder</Value>
+    </Setting>
+    <Setting Name="LocalCompleteQueue" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F:/TadmapLocalData/LocalCompleteMessageFolder</Value>
+    </Setting>
+    <Setting Name="DevImageQueue" Type="System.String" Scope="User">
+      <Value Profile="(Default)">debug-tadmap-image</Value>
+    </Setting>
+    <Setting Name="DevCompleteQueue" Type="System.String" Scope="User">
+      <Value Profile="(Default)">debug-tadmap-complete</Value>
     </Setting>
   </Settings>
 </SettingsFile>
