@@ -110,6 +110,7 @@ namespace Tadmap.Website
                new InjectionConstructor("F:/TadmapLocalData/LocalBinaryFolder")
             );
 
+            _container.RegisterType<IMessageQueue, Local.MessageQueue>("Image", new InjectionConstructor("F:/TadmapLocalData/LocalImageMessageFolder"));
             _container.RegisterType<IMessageQueue, Local.MessageQueue>("Complete", new InjectionConstructor("F:/TadmapLocalData/LocalCompleteMessageFolder"));
          }
          else
