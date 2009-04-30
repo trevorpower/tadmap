@@ -16,9 +16,9 @@ namespace TadmapWorker
 {
    public partial class ImageService : ServiceBase
    {
-      static IBinaryRepository _binaryRepository;// = new Tadmap.Amazon.BinaryRepository("1RYDPTK2VKP6739SPGR2", "FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7", "tadtestus");
-      static IMessageQueue _imageQueue;// = new Tadmap.Amazon.MessageQueue("debug-tadmap-image");
-      static IMessageQueue _completeQueue;// = new Tadmap.Amazon.MessageQueue("debug-tadmap-complete");
+      static IBinaryRepository _binaryRepository;
+      static IMessageQueue _imageQueue;
+      static IMessageQueue _completeQueue;
 
       static Thread _thread = new Thread(new ThreadStart(Loop));
 
@@ -46,21 +46,49 @@ namespace TadmapWorker
 
       private static void Loop()
       {
-         while (true)
+         try
          {
-            IMessage message = _imageQueue.Next(200);
-
-            if (message != null)
+            while (true)
             {
-               ProcessImage(message.Content);
+               IMessage message = _imageQueue.Next(200);
 
-               _completeQueue.Add(message.Content);
-               _imageQueue.Remove(message);
+               if (message != null)
+               {
+                  ProcessImage(message.Content);
+
+                  _completeQueue.Add(message.Content);
+                  _imageQueue.Remove(message);
+               }
+               else
+               {
+                  Thread.Sleep(TimeSpan.FromSeconds(15));
+               }
             }
-            else
+         }
+         catch (Exception e)
+         {
+            if (!EventLog.SourceExists("Tadmap"))
+               EventLog.CreateEventSource("Tadmap", "Application");
+
+            var log = new EventLog("Application")
             {
-               Thread.Sleep(TimeSpan.FromSeconds(15));
+               Source = "Tadmap"
+            };
+            var builder = new StringBuilder();
+
+            var currentException = e;
+            string prefix = "";
+
+            while (e != null)
+            {
+               builder.AppendLine(prefix + e.Message);
+               e = e.InnerException;
+               prefix += ">";
             }
+
+            log.WriteEntry(builder.ToString(), EventLogEntryType.Error);
+
+            throw;
          }
       }
 
