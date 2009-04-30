@@ -28,45 +28,66 @@ namespace Tadmap.Amazon
 
       public void Add(string message)
       {
-         SendMessageRequest request = new SendMessageRequest
+         try
          {
-            MessageBody = message,
-            QueueName = Name
-         };
+            SendMessageRequest request = new SendMessageRequest
+            {
+               MessageBody = message,
+               QueueName = Name
+            };
 
-         SendMessageResponse response = _client.SendMessage(request);
+            SendMessageResponse response = _client.SendMessage(request);
+         }
+         catch (AmazonSQSException e)
+         {
+            throw new MessageQueueException(string.Format("Failed to add message to '{0}'.", Name), e);
+         }
       }
 
       public IMessage Next(int timeout)
       {
-         var request = new ReceiveMessageRequest()
+         try
          {
-            MaxNumberOfMessages = 1,
-            QueueName = Name,
-            VisibilityTimeout = timeout
-         };
+            var request = new ReceiveMessageRequest()
+            {
+               MaxNumberOfMessages = 1,
+               QueueName = Name,
+               VisibilityTimeout = timeout
+            };
 
-         var response = _client.ReceiveMessage(request);
+            var response = _client.ReceiveMessage(request);
 
-         var message = response.ReceiveMessageResult.Message.SingleOrDefault();
+            var message = response.ReceiveMessageResult.Message.SingleOrDefault();
 
-         if (message == null)
-            return null;
+            if (message == null)
+               return null;
 
-         return new AmazonMessage { Content = message.Body, Message = message };
+            return new AmazonMessage { Content = message.Body, Message = message };
+         }
+         catch (AmazonSQSException e)
+         {
+            throw new MessageQueueException(string.Format("Failed to get next message for '{0}'.", Name), e);
+         }
       }
 
       public void Remove(IMessage message)
       {
-         if (message is AmazonMessage)
+         try
          {
-            DeleteMessageRequest deleteRequest = new DeleteMessageRequest()
+            if (message is AmazonMessage)
             {
-               QueueName = Name,
-               ReceiptHandle = (message as AmazonMessage).Message.ReceiptHandle
-            };
+               DeleteMessageRequest deleteRequest = new DeleteMessageRequest()
+               {
+                  QueueName = Name,
+                  ReceiptHandle = (message as AmazonMessage).Message.ReceiptHandle
+               };
 
-            _client.DeleteMessage(deleteRequest);
+               _client.DeleteMessage(deleteRequest);
+            }
+         }
+         catch (AmazonSQSException e)
+         {
+            throw new MessageQueueException(string.Format("Failed to remove message from '{0}'.", Name), e);
          }
       }
 
