@@ -12,6 +12,7 @@ using System.Security.Permissions;
 using Tadmap.Model.Image;
 using Tadmap.Model;
 using Tadmap.Messaging;
+using Microsoft.Practices.Unity;
 
 namespace Tadmap.Controllers
 {
@@ -24,7 +25,7 @@ namespace Tadmap.Controllers
       public UploadController(
          IImageRepository imageRepository,
          IBinaryRepository binaryRepository,
-         [Microsoft.Practices.Unity.Dependency("Image")] IMessageQueue messageQueue
+         [Dependency("Image")] IMessageQueue messageQueue
       )
       {
          ActionInvoker = new ActionInvokers.ActionInvoker();
