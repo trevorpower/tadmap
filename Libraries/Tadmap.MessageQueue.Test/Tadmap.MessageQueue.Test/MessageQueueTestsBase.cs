@@ -71,6 +71,5 @@ namespace Tadmap.Messaging.Test
 
          Assert.IsNull(_queue.Next(int.MaxValue));
       }
-
    }
 }
