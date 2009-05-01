@@ -94,16 +94,27 @@ namespace TadmapWorker
 
       static private void ProcessImage(string imageName)
       {
+         var log = new EventLog("Application")
+         {
+            Source = "Tadmap"
+         };
+
+         log.WriteEntry("Processing image:" + imageName, EventLogEntryType.Information);
+
          Stream binary = _binaryRepository.GetBinary(imageName);
 
          if (binary == null)
+         {
+            log.WriteEntry("No binary found:" + imageName, EventLogEntryType.Warning);
             return; // Image not available in the queue yet.
+         }
 
          // If I have an image I should renew the message.
 
          IImageSet imageSet = new ImageSet1(imageName);
 
          imageSet.Create(binary, _binaryRepository);
+         log.WriteEntry("Processing finished.", EventLogEntryType.Information);
       }
 
    }
