@@ -68,75 +68,75 @@ namespace TadmapWorker.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("F:/TadmapLocalData/LocalBinaryFolder")]
         public string LocalBinaryRepository {
             get {
                 return ((string)(this["LocalBinaryRepository"]));
             }
-            set {
-                this["LocalBinaryRepository"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("tadtestus")]
         public string DevS3BucketName {
             get {
                 return ((string)(this["DevS3BucketName"]));
             }
-            set {
-                this["DevS3BucketName"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("F:/TadmapLocalData/LocalImageMessageFolder")]
         public string LocalImageQueue {
             get {
                 return ((string)(this["LocalImageQueue"]));
             }
-            set {
-                this["LocalImageQueue"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("F:/TadmapLocalData/LocalCompleteMessageFolder")]
         public string LocalCompleteQueue {
             get {
                 return ((string)(this["LocalCompleteQueue"]));
             }
-            set {
-                this["LocalCompleteQueue"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("debug-tadmap-image")]
         public string DevImageQueue {
             get {
                 return ((string)(this["DevImageQueue"]));
             }
-            set {
-                this["DevImageQueue"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("debug-tadmap-complete")]
         public string DevCompleteQueue {
             get {
                 return ((string)(this["DevCompleteQueue"]));
             }
-            set {
-                this["DevCompleteQueue"] = value;
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("tadmap-image")]
+        public string LiveImageQueue {
+            get {
+                return ((string)(this["LiveImageQueue"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("tadmap-complete")]
+        public string LiveCompleteQueue {
+            get {
+                return ((string)(this["LiveCompleteQueue"]));
             }
         }
     }

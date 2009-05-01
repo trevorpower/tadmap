@@ -66,6 +66,21 @@ namespace TadmapWorker
                   Settings.Default.S3BucketName
                )
             );
+
+            container.RegisterType<IMessageQueue, Tadmap.Amazon.MessageQueue>(
+               "images",
+               new InjectionConstructor(
+                  Settings.Default.LiveImageQueue
+               )
+            );
+
+            container.RegisterType<IMessageQueue, Tadmap.Amazon.MessageQueue>(
+               "complete",
+               new InjectionConstructor(
+                  Settings.Default.LiveCompleteQueue
+               )
+            );
+
          }
          else
          {
@@ -90,7 +105,6 @@ namespace TadmapWorker
                   Settings.Default.DevCompleteQueue
                )
             );
-
          }
 
          return container;
