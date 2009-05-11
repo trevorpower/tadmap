@@ -12,6 +12,8 @@
     <AssemblyName>com.flajaxian.DirectAmazonUploader</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="com.flajaxian.FileUploader, Version=2.0.3400.0, Culture=neutral, PublicKeyToken=98ef6b70d9d62bae, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binary\com.flajaxian.FileUploader.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -50,12 +56,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\com.flajaxian.FileUploader\com.flajaxian.FileUploader.csproj">
-      <Project>{5F5502C7-7492-4AF4-84E9-CCFF180AD743}</Project>
-      <Name>com.flajaxian.FileUploader</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="js\DirectAmazonUploader.js" />
     <EmbeddedResource Include="SR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,6 +65,9 @@
   <ItemGroup>
     <Content Include="DirectAmazonUploader1.0Help.html" />
     <Content Include="FileUploader2.0Help.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
