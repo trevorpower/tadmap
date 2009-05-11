@@ -12,7 +12,7 @@
     <AssemblyName>Tadmap.Amazon</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -34,6 +34,10 @@
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="com.flajaxian.FileUploader, Version=2.0.3400.0, Culture=neutral, PublicKeyToken=98ef6b70d9d62bae, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdParty\com.flajaxian.DirectAmazonUploader\Binary\com.flajaxian.FileUploader.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -46,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryRepsoitory.cs" />
+    <Compile Include="FileUploadAdapter.cs" />
     <Compile Include="MessageQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +66,10 @@
     <ProjectReference Include="..\3rdParty\amazon-queue-2008-01-01-cs-library\src\Amazon.SQS\Amazon.SQS.csproj">
       <Project>{9DC82215-E48A-4670-8D81-B50F9A4E57E7}</Project>
       <Name>Amazon.SQS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rdParty\com.flajaxian.DirectAmazonUploader\Source\com.flajaxian.DirectAmazonUploader.csproj">
+      <Project>{19803906-A886-42DF-8F5F-C1E5ACF47E50}</Project>
+      <Name>com.flajaxian.DirectAmazonUploader</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tadmap.MessageQueue\Tadmap.MessageQueue\Tadmap.MessageQueue.csproj">
       <Project>{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}</Project>
