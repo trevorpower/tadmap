@@ -41,6 +41,10 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="com.flajaxian.FileUploader, Version=2.0.3400.0, Culture=neutral, PublicKeyToken=98ef6b70d9d62bae, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdParty\com.flajaxian.DirectAmazonUploader\Binary\com.flajaxian.FileUploader.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
@@ -69,6 +73,7 @@
     <Compile Include="Image\TadImage.cs" />
     <Compile Include="Image\TadmapImage.cs" />
     <Compile Include="Image\TadmapImageFilters.cs" />
+    <Compile Include="IUploadAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\TadMapRoles.cs" />
   </ItemGroup>
@@ -79,6 +84,10 @@
     <ProjectReference Include="..\3rdParty\AffirmaS3\Affirma.ThreeSharp\Affirma.ThreeSharp.csproj">
       <Project>{1A12C68D-7C3B-46A6-8406-10ADCFA51B7A}</Project>
       <Name>Affirma.ThreeSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3rdParty\com.flajaxian.DirectAmazonUploader\Source\com.flajaxian.DirectAmazonUploader.csproj">
+      <Project>{19803906-A886-42DF-8F5F-C1E5ACF47E50}</Project>
+      <Name>com.flajaxian.DirectAmazonUploader</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tadmap.ImageManipulation\ClassLibrary1\Tadmap.ImageManipulation.csproj">
       <Project>{8553EFEE-85B6-4F5E-9DDF-92E3E73C3B64}</Project>
