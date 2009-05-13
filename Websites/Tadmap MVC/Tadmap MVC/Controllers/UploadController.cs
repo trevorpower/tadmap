@@ -13,6 +13,7 @@ using Tadmap.Model.Image;
 using Tadmap.Model;
 using Tadmap.Messaging;
 using Microsoft.Practices.Unity;
+using com.flajaxian;
 
 namespace Tadmap.Controllers
 {
@@ -21,22 +22,26 @@ namespace Tadmap.Controllers
       IImageRepository _imageRepository;
       IBinaryRepository _binaryRepository;
       IMessageQueue _messageQueue;
+      FileUploaderAdapter _adapter;
 
       public UploadController(
          IImageRepository imageRepository,
          IBinaryRepository binaryRepository,
-         [Dependency("Image")] IMessageQueue messageQueue
+         [Dependency("Image")] IMessageQueue messageQueue,
+         FileUploaderAdapter adapter
       )
       {
          ActionInvoker = new ActionInvokers.ActionInvoker();
          _imageRepository = imageRepository;
          _binaryRepository = binaryRepository;
          _messageQueue = messageQueue;
+         _adapter = adapter;
       }
 
       [Authorize(Roles = TadmapRoles.Collector)]
       public ActionResult Index()
       {
+         ViewData.Model = _adapter;
          return View();
       }
 
@@ -59,6 +64,12 @@ namespace Tadmap.Controllers
          }
 
          return RedirectToAction("Index", "Home");
+      }
+
+      [PrincipalPermission(SecurityAction.Demand, Role = TadmapRoles.Collector)]
+      public ActionResult KeepAlive()
+      {
+         return Json(true);
       }
 
       public void ConfirmUpload(IPrincipal principal, string name, string key)

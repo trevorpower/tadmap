@@ -15,6 +15,7 @@ using System.Configuration;
 using Tadmap.Messaging;
 using System.IO;
 using System.Threading;
+using com.flajaxian;
 
 namespace Tadmap.Website
 {
@@ -112,6 +113,8 @@ namespace Tadmap.Website
 
             _container.RegisterType<IMessageQueue, Local.MessageQueue>("Image", new InjectionConstructor("F:/TadmapLocalData/LocalImageMessageFolder"));
             _container.RegisterType<IMessageQueue, Local.MessageQueue>("Complete", new InjectionConstructor("F:/TadmapLocalData/LocalCompleteMessageFolder"));
+
+            _container.RegisterType<FileUploaderAdapter, LocalUploadAdapter>();
          }
          else
          {
@@ -123,8 +126,21 @@ namespace Tadmap.Website
                )
             );
 
-            _container.RegisterType<IMessageQueue, Amazon.MessageQueue>("Complete", new InjectionConstructor("debug-tadmap-complete"));
-            _container.RegisterType<IMessageQueue, Amazon.MessageQueue>("Image", new InjectionConstructor("debug-tadmap-image"));
+            _container.RegisterType<IMessageQueue, Amazon.MessageQueue>(
+               "Complete",
+               new InjectionConstructor(ConfigurationManager.AppSettings["CompleteMessageQueue"])
+             );
+            _container.RegisterType<IMessageQueue, Amazon.MessageQueue>(
+               "Image",
+               new InjectionConstructor(ConfigurationManager.AppSettings["ImageMessageQueue"])
+            );
+
+            _container.RegisterType<FileUploaderAdapter, DirectAmazonUploader>(
+               new InjectionProperty("BucketName", ConfigurationManager.AppSettings["S3BucketName"]),
+               new InjectionProperty("AccessKey", ConfigurationManager.AppSettings["S3AccessKey"]),
+               new InjectionProperty("SecretKey", ConfigurationManager.AppSettings["S3SecretAccessKey"]),
+               new InjectionProperty("FileAccess", com.flajaxian.FileAccess.Private)
+           );
          }
 
 

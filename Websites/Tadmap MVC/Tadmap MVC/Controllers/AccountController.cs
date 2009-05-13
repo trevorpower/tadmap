@@ -154,7 +154,7 @@ namespace Tadmap.Controllers
            1,
            response.ClaimedIdentifier.ToString(),
            DateTime.Now,
-           DateTime.Now.AddMinutes(30),
+           DateTime.Now.AddHours(5),
            false,
            userData.ToString()
          );

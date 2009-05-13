@@ -6,10 +6,11 @@ using Tadmap.Local;
 using Affirma.ThreeSharp;
 using System.IO;
 using com.flajaxian;
+using Tadmap.Model;
 
 namespace Tadmap
 {
-   public class LocalUploadAdapter : FileUploaderAdapter
+   public class LocalUploadAdapter : FileUploaderAdapter, IUploadAdapter
    {
       public override void ProcessFile(HttpPostedFile file)
       {

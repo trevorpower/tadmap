@@ -266,6 +266,8 @@
     <Content Include="bin\Affirma.ThreeSharp.xml" />
     <Content Include="bin\Amazon.SQS.dll" />
     <Content Include="bin\Amazon.SQS.pdb" />
+    <Content Include="bin\com.flajaxian.DirectAmazonUploader.dll" />
+    <Content Include="bin\com.flajaxian.DirectAmazonUploader.pdb" />
     <Content Include="bin\ImageManipulation.dll" />
     <Content Include="bin\ImageManipulation.pdb" />
     <Content Include="bin\Tadmap.Amazon.dll" />
