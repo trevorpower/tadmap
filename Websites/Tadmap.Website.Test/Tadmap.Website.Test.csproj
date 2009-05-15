@@ -88,7 +88,7 @@
       <Project>{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}</Project>
       <Name>Tadmap.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Tadmap MVC\Tadmap MVC\Tadmap MVC.csproj">
+    <ProjectReference Include="..\Tadmap.Website\Tadmap MVC\Tadmap MVC.csproj">
       <Project>{14821E38-DFA5-45F1-A752-CDC184EA9B0C}</Project>
       <Name>Tadmap MVC</Name>
     </ProjectReference>
