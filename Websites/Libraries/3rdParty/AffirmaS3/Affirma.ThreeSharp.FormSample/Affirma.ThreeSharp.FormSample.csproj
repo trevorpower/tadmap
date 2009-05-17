@@ -1,0 +1,117 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D6FAAB2E-9E90-4E70-A913-2E5F5188364E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Affirma.ThreeSharp.FormSample</RootNamespace>
+    <AssemblyName>Affirma.ThreeSharp.FormSample</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TheeSharpFormSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TheeSharpFormSample.Designer.cs">
+      <DependentUpon>TheeSharpFormSample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmDeleteForm.Designer.cs">
+      <DependentUpon>ConfirmDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="TheeSharpFormSample.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TheeSharpFormSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmDeleteForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConfirmDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\StatisticsDataTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Affirma.ThreeSharp\Affirma.ThreeSharp.csproj">
+      <Project>{1A12C68D-7C3B-46A6-8406-10ADCFA51B7A}</Project>
+      <Name>Affirma.ThreeSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

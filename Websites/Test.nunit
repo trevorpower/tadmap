@@ -1,0 +1,14 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="Libraries\Tadmap.Local.Test\bin\Debug\Tadmap.Local.Test.dll" />
+    <assembly path="Libraries\Tadmap.Model.Test\bin\Debug\Tadmap.Model.Test.dll" />
+    <assembly path="Libraries\Tadmap.Amazon.Test\bin\Debug\Tadmap.Amazon.Test.dll" />
+    <assembly path="Websites\Tadmap.Website.Test\bin\Debug\Tadmap.Website.Test.exe" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="Libraries\Tadmap.Model.Test\bin\Release\Tadmap.Model.Test.dll" />
+    <assembly path="Libraries\Tadmap.Local.Test\bin\Release\Tadmap.Local.Test.dll" />
+    <assembly path="Libraries\Tadmap.Amazon.Test\bin\Release\Tadmap.Amazon.Test.dll" />
+  </Config>
+</NUnitProject>
