@@ -29,9 +29,9 @@ namespace Tadmap.Amazon
          AccessKey = accessKey;
          SecretKey = secretKey;
          BucketName = bucketName;
-         
+
          ThreeSharpConfig config;
-         
+
          config = new ThreeSharpConfig();
          config.AwsAccessKeyID = accessKey;
          config.AwsSecretAccessKey = secretKey;
@@ -113,7 +113,34 @@ namespace Tadmap.Amazon
 
       public Stream GetBinary(string key)
       {
-         return new MemoryStream();
+         try
+         {
+            MemoryStream stream = new MemoryStream();
+            using (ObjectGetRequest objectGetRequest = new ObjectGetRequest(BucketName, key))
+            using (ObjectGetResponse objectGetResponse = _service.ObjectGet(objectGetRequest))
+            {
+
+               byte[] buffer = new byte[1024];
+               int bytesRead = 0;
+               while (true)
+               {
+                  bytesRead = objectGetResponse.DataStream.Read(buffer, 0, buffer.Length);
+                  if (bytesRead == 0)
+                     break;
+
+                  stream.Write(buffer, 0, bytesRead);
+               }
+            }
+
+            return stream;
+         }
+         catch (ThreeSharpException e)
+         {
+            if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
+               return null;
+
+            throw;
+         }
       }
 
       #endregion

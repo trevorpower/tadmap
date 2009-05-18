@@ -11,6 +11,11 @@ using System.Web;
 using Tadmap.Model.Test.Mock;
 using Tadmap.Mode.Test.Mock;
 using Tadmap.Website.Test.Mock;
+using Tadmap.Messaging;
+using Tadmap.Messaging.Test.Mock;
+using Tadmap.Model.Image;
+using Rhino.Mocks;
+using com.flajaxian;
 
 namespace TadmapTests.Controllers.Upload
 {
@@ -18,15 +23,23 @@ namespace TadmapTests.Controllers.Upload
    public class Upload
    {
       UploadController _controller;
+      MessageQueue _queue;
 
+      List<BinaryRepository.Data> _binaryStorage;
+      ImageRepository _imageRepository;
+      IBinaryRepository _binaryRepository;
+      MockRepository _mocks;
       [SetUp]
       public void ConstructController()
       {
-         var storage = new List<BinaryRepository.Data>();
-         var binaries = new BinaryRepository(storage);
-         var images = new ImageRepository(binaries);
+         _binaryStorage = new List<BinaryRepository.Data>();
+         _binaryRepository = new BinaryRepository(_binaryStorage);
+         _imageRepository = new ImageRepository(_binaryRepository);
+         _queue = new MessageQueue();
 
-         _controller = new UploadController(images, binaries);
+
+
+         _controller = new UploadController(_imageRepository, _binaryRepository, _queue, _mocks.CreateMock<FileUploaderAdapter>());
       }
 
       [TearDown]
@@ -40,11 +53,16 @@ namespace TadmapTests.Controllers.Upload
       }
 
       [Test]
-      public void Returns_Redirect_For_Collector()
+      public void ConfirmUploadCreatesMessageAndImage()
       {
-         ActionResult result = _controller.Upload("title", "description", Principals.Collector, new TestEmptyFile());
+         _controller.ConfirmUpload(Principals.Collector, "The name", "The key");
 
-         Assert.IsInstanceOfType(typeof(RedirectToRouteResult), result);
+         Assert.AreEqual(_queue.Next(int.MaxValue).Content, "The key");
+
+         TadmapImage newImage = _imageRepository.GetAllImages(_binaryRepository).Where(i => i.Key == "The key").Single();
+
+         Assert.AreEqual(0, newImage.ImageSetVersion);
+         Assert.AreEqual("The name", newImage.Title);
       }
    }
 }

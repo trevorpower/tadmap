@@ -1,0 +1,3 @@
+C:\Users\Trevor\Development\tadmap\Libraries\tadmap\TadMap.Library\TadMap.Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Trevor\Development\tadmap\Libraries\tadmap\TadMap.Library\TadMap.Library\obj\Debug\TadMap.Library.Elements.ElementNames.resources
+C:\Users\Trevor\Development\tadmap\Libraries\tadmap\TadMap.Library\TadMap.Library\obj\Debug\TadMap.Library.csproj.GenerateResource.Cache

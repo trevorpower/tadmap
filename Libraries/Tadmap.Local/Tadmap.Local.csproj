@@ -49,9 +49,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryRepository.cs" />
+    <Compile Include="MessageQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\3rdParty\com.flajaxian.DirectAmazonUploader\Source\com.flajaxian.DirectAmazonUploader.csproj">
+      <Project>{19803906-A886-42DF-8F5F-C1E5ACF47E50}</Project>
+      <Name>com.flajaxian.DirectAmazonUploader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tadmap.MessageQueue\Tadmap.MessageQueue\Tadmap.MessageQueue.csproj">
+      <Project>{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}</Project>
+      <Name>Tadmap.MessageQueue</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tadmap.Model\Tadmap.Model.csproj">
       <Project>{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}</Project>
       <Name>Tadmap.Model</Name>

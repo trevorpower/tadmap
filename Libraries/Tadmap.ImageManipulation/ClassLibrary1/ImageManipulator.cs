@@ -27,6 +27,7 @@ namespace ImageManipulation
          using (Graphics g = Graphics.FromImage((Image)oResult))
          {
             g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
             g.DrawImage(oSource, fXOffset, fYOffset, oSource.Width * fScale, oSource.Height * fScale);
          }
 
@@ -57,6 +58,7 @@ namespace ImageManipulation
          using (Graphics g = Graphics.FromImage((Image)oResult))
          {
             g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
             g.DrawImage(oSource, 0, 0, oSource.Width * fScale, oSource.Height * fScale);
          }
 
@@ -76,6 +78,7 @@ namespace ImageManipulation
          using (Graphics g = Graphics.FromImage((Image)oResult))
          {
             g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
             g.DrawImage(oSource, 0, 0, oSource.Width * fXScale, oSource.Height * fYScale);
          }
 
@@ -99,6 +102,7 @@ namespace ImageManipulation
                using (Graphics g = Graphics.FromImage((Image)oResult))
                {
                   g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                  g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
                   g.DrawImage(oSource, -iStartX, -iStartY, oSource.Width, oSource.Height);
                }
                oRow.Add(oResult);
@@ -123,6 +127,7 @@ namespace ImageManipulation
          using (Graphics g = Graphics.FromImage((Image)oResult))
          {
             g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
             g.FillRectangle(Brushes.Transparent, new Rectangle(0, 0, iWidth, iHeight));
             g.DrawImage(
                 oSource,

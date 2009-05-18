@@ -47,8 +47,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="com.flajaxian.FileUploader, Version=2.0.3400.0, Culture=neutral, PublicKeyToken=98ef6b70d9d62bae, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\3rdParty\com.flajaxian.DirectAmazonUploader\Binary\com.flajaxian.FileUploader.dll</HintPath>
+    </Reference>
     <Reference Include="nunit-console-runner, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\3rdParty\Rhino.Mocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -80,6 +88,14 @@
     <Compile Include="Runner.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Tadmap.MessageQueue.Test\Tadmap.MessageQueue.Test\Tadmap.MessageQueue.Test.csproj">
+      <Project>{38EB6E01-C71C-4FAA-B6E2-56B0F903A5D3}</Project>
+      <Name>Tadmap.MessageQueue.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Tadmap.MessageQueue\Tadmap.MessageQueue\Tadmap.MessageQueue.csproj">
+      <Project>{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}</Project>
+      <Name>Tadmap.MessageQueue</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Libraries\Tadmap.Model.Test\Tadmap.Model.Test.csproj">
       <Project>{14CC06D9-9D90-4278-BD48-AC64D8C51625}</Project>
       <Name>Tadmap.Model.Test</Name>
@@ -88,9 +104,9 @@
       <Project>{8304B393-EEEC-4C6A-A3D6-9F3EFAB4B430}</Project>
       <Name>Tadmap.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Tadmap.Website\Tadmap MVC\Tadmap MVC.csproj">
+    <ProjectReference Include="..\Tadmap.Website\Tadmap.Website\Tadmap.Website.csproj">
       <Project>{14821E38-DFA5-45F1-A752-CDC184EA9B0C}</Project>
-      <Name>Tadmap MVC</Name>
+      <Name>Tadmap.Website</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

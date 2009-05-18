@@ -47,12 +47,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryRepositoryTests.cs" />
+    <Compile Include="MessageQueueTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tadmap.Amazon\Tadmap.Amazon.csproj">
       <Project>{E96B7A99-B122-4C75-9C58-AA88E70051B6}</Project>
       <Name>Tadmap.Amazon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tadmap.MessageQueue.Test\Tadmap.MessageQueue.Test\Tadmap.MessageQueue.Test.csproj">
+      <Project>{38EB6E01-C71C-4FAA-B6E2-56B0F903A5D3}</Project>
+      <Name>Tadmap.MessageQueue.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tadmap.MessageQueue\Tadmap.MessageQueue\Tadmap.MessageQueue.csproj">
+      <Project>{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}</Project>
+      <Name>Tadmap.MessageQueue</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tadmap.Model.Test\Tadmap.Model.Test.csproj">
       <Project>{14CC06D9-9D90-4278-BD48-AC64D8C51625}</Project>

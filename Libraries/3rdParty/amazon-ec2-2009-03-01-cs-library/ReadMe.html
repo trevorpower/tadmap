@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>AmazonEC2 C# Library</title>
+    <style type="text/css">
+        body, div, p, td, th {
+            font-family : helvetica,sans-serif, arial;
+            font-size : 12px;
+            color : #000000;
+        }
+
+        .aws-h1, h1{
+            font-family: verdana, arial, helvetica, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000000;
+        }
+        .aws-h2, h2{
+            font-family: verdana, arial, helvetica, sans-serif;
+            font-size: 14px;
+            color: #c60;
+        }
+        .aws-h3, h3{
+            font-family: verdana, arial, helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        /*table ID selector styles*/
+        #aws-table {
+            border-top: 1px solid #cccccc;
+            border-left: 1px solid #cccccc;
+            width:95%;
+        }
+
+        #aws-table td{
+            font-size: 12px;
+            padding: 5px 5px 5px 5px;
+            border-bottom: 1px solid #cccccc;
+            border-right: 1px solid #cccccc;
+            vertical-align:top;
+        }
+
+        #aws-table th {
+            font-size: 12px;
+            padding: 5px 5px 5px 5px;
+            border-bottom: 1px solid #cccccc;
+            border-right: 1px solid #cccccc;
+            vertical-align:top;
+            background-color: #eeeeee;
+            color: #333333;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        /*code, note, and example styles*/
+        pre {
+            font-family: "Courier New", Courier, mono;
+            font-size: 12px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: #000066;
+            padding: 5px;
+            background-color: #eff7ff;
+            border: 1px dashed #333;
+            width:75%;
+            display:block;
+        }
+
+    </style>
+</head>
+<body>
+<h2>About this Library</h2>
+<ul><li>Based on the 2009-03-01 API version.</li></ul>
+<h2>What&#39;s New?</h2>
+<ul>
+    <li><b>2009-04-09</b>:
+        <ul>
+            <li>Support for reserved instances API</li>
+        </ul>
+    </li>
+    <li><b>2008-12-26</b>:
+        <ul>
+            <li>Support empty parameter values</li>
+        </ul>
+    </li>
+
+    <li><b>2008-12-23</b>:
+        <ul>
+            <li>Fix for UTF8 url encoding for signature version 2</li>
+        </ul>
+    </li>
+
+    <li><b>2008-12-17</b>:
+        <ul>
+            <li>Support for regions, signature version 2, https endpoint.</li>
+        </ul>
+    </li>
+
+    <li><b>2008-10-21</b>:
+        <ul>
+            <li>Support for Windows Bundling, new API version - 2008-08-08</li>
+        </ul>
+    </li>
+    <li><b>2008-08-20</b>:
+        <ul>
+            <li>Initial release, support for Amazon Elastic Block Store</li>
+        </ul>
+    </li>
+</ul>
+<h2>Prerequisites</h2>
+
+<ul>
+<li>Amazon EC2 Account</b> (<a href="http://aws.amazon.com/ec2">http://aws.amazon.com/ec2/</a>).</li>
+<li>Visual Studio 2005, .NET 2.0</li>
+</ul>
+
+<h2>Package Content</h2>
+
+<table id="aws-table">
+
+    <tbody>
+        <tr>
+            <th>Directory</th>
+            <th>Overview</th>
+        </tr>
+        <tr>
+            <td>
+                src
+            </td>
+            <td>
+                Source distribution of the library. All sources including code samples that demonstrate the use of the library located under this directory.
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+
+<h2>Quick Start</h2>
+
+Library comes with C# solution and two pre-configured C# projects. 
+<ul>
+    <li><strong>Amazon.EC2.csproj</strong> - main library project</li>
+    <li><strong>Amazon.EC2.Samples.csproj</strong> - library samples project</li>
+</ul>
+To get started with the library, follow these steps:
+<ol>
+    <li>Extract the <strong>amazon-ec2-2009-03-01-cs-library.zip</strong> file into a working directory.</li>
+    <li>Open Amazon.EC2.sln solution file in Visual Studio 2005</li>
+    <li>Hit F5 key and follow on screen instruction</li>
+</ol>
+
+<h2>Running Samples</h2>
+Steps to run particular sample   
+<ul>
+    <li><strong>Open AmazonEC2Samples.cs</strong> file under Amazon.EC2.Samples project</li>
+    <li>Set AWS Access Key ID and AWS Secret Access Key</li>
+    <pre>
+String accessKeyId = "&lt;Your Access Key ID&gt;";
+String secretAccessKey = "&lt;Your Secret Access Key&gt;";
+    </pre>
+</ul>
+<br/>
+<br/>
+<ul>
+    <li>Set request parameters. For example, find following pre-generated snippet:</li>
+    <pre>
+// DescribeImagesRequest request = new DescribeImagesRequest();
+// @TODO: set request parameters here
+// DescribeImagesSample.InvokeDescribeImages(service, request);
+    </pre>
+</ul>
+<br/>
+<br/>
+<ul>
+    <li>Uncomment first and third line and set ImageId of the image to describe</li>
+
+    <pre>
+DescribeImagesRequest request = new DescribeImagesRequest();
+request.ImageId.Add("ami-be3adfd7");
+DescribeImagesSample.InvokeDescribeImages(service, request);
+
+    </pre>
+    <br/>
+    <li>Hit F5 to run sample. You should see the output
+    similar to the following:</li>
+    <br/>
+    <br/>
+    <pre>
+    DescribeImagesResponse
+        DescribeImagesResult
+            Image
+                ImageId
+                    ami-be3adfd7
+                ImageLocation
+                    ec2-public-images/fedora-8-i386-base-v1.04.manifest.xml
+                ImageState
+                    available
+                KernelId
+                    aki-4438dd2d
+                RamdiskId
+                    ari-4538dd2c
+                ...
+    </pre>
+    <br/>
+    <br/>
+    Note, to return all images, simply omit specifying ImageId parameter.
+    <br/>
+    <br/>
+    <li>Experiment with other samples, examine samples sources. When ready, add library project to your solution, and use it. <p/></li>
+
+</ul>
+<strong>Happy coding!</strong>
+
+
+<h2>Comments, Questions or Feedback</h2>
+
+If you have any comments, questions or feedback on the library, please start discussion here.
+</body>
+</html>

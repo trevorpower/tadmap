@@ -25,7 +25,8 @@ namespace Tadmap.Sql
                    IsPublic = i.Privacy == 1,
                    IsOffensive = i.OffensiveCount > 0,
                    OwnerName = i.User.UserOpenIds.Single().OpenIdUrl,
-                   ImageSet = new ImageSet1(i.Key)
+                   ImageSet = new ImageSet1(i.Key),
+                   UserId = i.User.Id
                 };
       }
 

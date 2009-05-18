@@ -9,6 +9,9 @@ using System.Web.Mvc;
 using System.Security;
 using Tadmap.Model.Test.Mock;
 using Tadmap.Mode.Test.Mock;
+using Tadmap.Messaging.Test.Mock;
+using Rhino.Mocks;
+using com.flajaxian;
 
 namespace TadmapTests.Controllers.Upload
 {
@@ -16,6 +19,8 @@ namespace TadmapTests.Controllers.Upload
    public class Index
    {
       UploadController _controller;
+      MessageQueue _messageQueue;
+      MockRepository _mocks;
 
       [SetUp]
       public void ConstructController()
@@ -23,8 +28,11 @@ namespace TadmapTests.Controllers.Upload
          var storage = new List<BinaryRepository.Data>();
          var binaries = new BinaryRepository(storage);
          var images = new ImageRepository(binaries);
+         _messageQueue = new MessageQueue();
 
-         _controller = new UploadController(images, binaries);
+         _mocks = new MockRepository();
+
+         _controller = new UploadController(images, binaries, _messageQueue, _mocks.CreateMock<FileUploaderAdapter>());
       }
 
       [TearDown]
