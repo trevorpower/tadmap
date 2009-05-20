@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual C# Express 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TadmapWorker", "TadmapWorker\TadmapWorker.csproj", "{8CDC08DE-01F4-492F-B1EC-CD4017F69AD1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tadmap.Server", "Tadmap.Server\Tadmap.Server.csproj", "{8CDC08DE-01F4-492F-B1EC-CD4017F69AD1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tadmap.MessageQueue", "..\..\Libraries\Tadmap.MessageQueue\Tadmap.MessageQueue\Tadmap.MessageQueue.csproj", "{3C51DBF4-7CD1-4466-BB4C-3299E40C11C5}"
 EndProject
