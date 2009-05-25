@@ -65,10 +65,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Libraries\ImageManipulation\ClassLibrary1\bin\Release\ImageManipulation.dll</HintPath>
     </Reference>
-    <Reference Include="Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4040592e3ab94c11, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Tadmap.Infrastructure\Infrastructure\bin\Debug\Infrastructure.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -271,6 +267,8 @@
     <Content Include="bin\com.flajaxian.FileUploader.dll" />
     <Content Include="bin\ImageManipulation.dll" />
     <Content Include="bin\ImageManipulation.pdb" />
+    <Content Include="bin\Infrastructure.dll" />
+    <Content Include="bin\Infrastructure.pdb" />
     <Content Include="bin\Tadmap.Amazon.dll" />
     <Content Include="bin\Tadmap.Amazon.pdb" />
     <Content Include="bin\Tadmap.Local.dll" />
@@ -331,6 +329,10 @@
     <ProjectReference Include="..\..\..\Libraries\Tadmap.Amazon\Tadmap.Amazon.csproj">
       <Project>{E96B7A99-B122-4C75-9C58-AA88E70051B6}</Project>
       <Name>Tadmap.Amazon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tadmap.Infrastructure\Infrastructure\Infrastructure.csproj">
+      <Project>{F36F0F95-5A46-4D27-8A41-3E9ABEF64BE9}</Project>
+      <Name>Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Libraries\Tadmap.Local\Tadmap.Local.csproj">
       <Project>{DE1E14D2-F0CD-4FFD-B8D7-6B94C57F4930}</Project>

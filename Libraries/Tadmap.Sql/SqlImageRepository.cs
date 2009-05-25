@@ -9,13 +9,20 @@ namespace Tadmap.Sql
 {
    public class SqlImageRepository : IImageRepository
    {
+      private string ConnectionString {get; set;}
+
+      public SqlImageRepository(string connectionString)
+      {
+         ConnectionString = connectionString;
+      }
+
       #region IImageRepository Members
 
       public IQueryable<TadmapImage> GetAllImages(IBinaryRepository binaryRepository)
       {
-         TadmapDb db = new TadmapDb();
+         TadmapDb db = new TadmapDb(ConnectionString);
 
-         return from i in db.UserImages
+         return from i in db.Images
                 select new TadmapImage(binaryRepository)
                 {
                    Id = i.Id,
@@ -24,7 +31,7 @@ namespace Tadmap.Sql
                    Key = i.Key,
                    IsPublic = i.Privacy == 1,
                    IsOffensive = i.OffensiveCount > 0,
-                   OwnerName = i.User.UserOpenIds.Single().OpenIdUrl,
+                   OwnerName = i.User.OpenIds.Single().OpenIdUrl,
                    ImageSet = new ImageSet1(i.Key),
                    UserId = i.User.Id
                 };
@@ -34,17 +41,16 @@ namespace Tadmap.Sql
       {
          bool isNew = false;
 
-         TadmapDb db = new TadmapDb();
-         UserImage dbImage = db.UserImages.SingleOrDefault(i => i.Id == image.Id);
+         TadmapDb db = new TadmapDb(ConnectionString);
+         Image dbImage = db.Images.SingleOrDefault(i => i.Id == image.Id);
 
          if (dbImage == null)
          {
-            dbImage = new UserImage();
+            dbImage = new Image();
 
             // can't change date added, id or owner
             dbImage.DateAdded = DateTime.Now;
             dbImage.UserId = image.UserId;
-            dbImage.Id = image.Id;
 
             isNew = true;
          }
@@ -60,7 +66,7 @@ namespace Tadmap.Sql
          dbImage.Privacy = image.IsPublic ? (byte)1 : (byte)0;
 
          if (isNew)
-            db.UserImages.InsertOnSubmit(dbImage);
+            db.Images.InsertOnSubmit(dbImage);
 
          db.SubmitChanges();
       }

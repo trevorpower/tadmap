@@ -16,6 +16,7 @@ using Tadmap.Messaging;
 using System.IO;
 using System.Threading;
 using com.flajaxian;
+using Tadmap.Model.User;
 
 namespace Tadmap.Website
 {
@@ -143,8 +144,15 @@ namespace Tadmap.Website
            );
          }
 
+         var connectionString = ConfigurationManager.ConnectionStrings["TadmapConnectionString"].ConnectionString;
 
-         _container.RegisterType<IImageRepository, Sql.SqlImageRepository>();
+         _container.RegisterType<IUserRepository, Sql.UserRepository>(
+              new InjectionConstructor(connectionString)
+          );
+
+         _container.RegisterType<IImageRepository, Sql.SqlImageRepository>(
+              new InjectionConstructor(connectionString)
+          );
       }
 
       /// <summary>

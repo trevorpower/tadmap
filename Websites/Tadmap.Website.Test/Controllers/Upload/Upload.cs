@@ -39,7 +39,7 @@ namespace TadmapTests.Controllers.Upload
 
 
 
-         _controller = new UploadController(_imageRepository, _binaryRepository, _queue, _mocks.CreateMock<FileUploaderAdapter>());
+         _controller = new UploadController(_imageRepository, _binaryRepository, _queue, MockRepository.GenerateMock<FileUploaderAdapter>());
       }
 
       [TearDown]
@@ -57,12 +57,12 @@ namespace TadmapTests.Controllers.Upload
       {
          _controller.ConfirmUpload(Principals.Collector, "The name", "The key");
 
-         Assert.AreEqual(_queue.Next(int.MaxValue).Content, "The key");
+         Assert.AreEqual(_queue.Next(int.MaxValue).Content, "The key", "Next message didn't have the correct key");
 
          TadmapImage newImage = _imageRepository.GetAllImages(_binaryRepository).Where(i => i.Key == "The key").Single();
 
-         Assert.AreEqual(0, newImage.ImageSetVersion);
-         Assert.AreEqual("The name", newImage.Title);
+         Assert.AreEqual(0, newImage.ImageSetVersion, "The new image had the wrong version.");
+         Assert.AreEqual("The name", newImage.Title, "The name of the image was wrong.");
       }
    }
 }

@@ -10,7 +10,7 @@ namespace Tadmap.Tadmap.Security
    [Serializable]
    public class TadmapIdentity : MarshalByRefObject, IIdentity
    {
-      public TadmapIdentity(string name, string displayName, Guid id, string authenticationType)
+      public TadmapIdentity(string name, string displayName, int id, string authenticationType)
       {
          Name = name;
          DisplayName = displayName;
@@ -45,7 +45,7 @@ namespace Tadmap.Tadmap.Security
 
       #endregion
 
-      public Guid Id
+      public int Id
       {
          get;
          private set;

@@ -28,11 +28,8 @@ namespace Tadmap.Controllers
          _binaryRepository = binaryRepository;
       }
 
-      public ActionResult Index(Guid id, IPrincipal principal)
+      public ActionResult Index(int id, IPrincipal principal)
       {
-         if (id == Guid.Empty)
-            throw new ArgumentException("Cannot be empty(zeros)", "id");
-
          try
          {
             TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).Single();
@@ -106,11 +103,8 @@ namespace Tadmap.Controllers
       }
 
       [Authorize(Roles = TadmapRoles.Collector)]
-      public ActionResult MakePublic(Guid id)
+      public ActionResult MakePublic(int id)
       {
-         if (id == Guid.Empty)
-            throw new ArgumentException("Cannot be empty(zeros)", "id");
-
          TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).SingleOrDefault();
 
          if (image == null)
@@ -124,11 +118,8 @@ namespace Tadmap.Controllers
       }
 
       [Authorize(Roles = TadmapRoles.Collector)]
-      public ActionResult MakePrivate(Guid id)
+      public ActionResult MakePrivate(int id)
       {
-         if (id == Guid.Empty)
-            throw new ArgumentException("Cannot be empty(zeros)", "id");
-
          TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).SingleOrDefault();
          
          if (image == null)
@@ -142,11 +133,8 @@ namespace Tadmap.Controllers
       }
 
       [Authorize(Roles = TadmapRoles.Collector)]
-      public ActionResult UpdateTitle(Guid id, string title, IPrincipal principal)
+      public ActionResult UpdateTitle(int id, string title, IPrincipal principal)
       {
-         if (id == Guid.Empty)
-            throw new ArgumentException("Cannot be empty(zeros)", "id");
-
          if (title == null)
             throw new ArgumentNullException("title");
 
@@ -165,11 +153,8 @@ namespace Tadmap.Controllers
       }
 
       [Authorize(Roles = TadmapRoles.Collector)]
-      public ActionResult UpdateDescription(Guid id, string description, IPrincipal principal)
+      public ActionResult UpdateDescription(int id, string description, IPrincipal principal)
       {
-         if (id == Guid.Empty)
-            throw new ArgumentNullException("id");
-
          if (description == null)
             throw new ArgumentNullException("description");
 
@@ -188,14 +173,8 @@ namespace Tadmap.Controllers
       }
 
       [Authorize(Roles = TadmapRoles.Administrator)]
-      public ActionResult Mark(Guid id, IPrincipal principal)
+      public ActionResult Mark(int id, IPrincipal principal)
       {
-         if (id == Guid.Empty)
-            throw new ArgumentException("Cannot be empty(zeros)", "id");
-
-         if (!principal.IsInRole(TadmapRoles.Administrator))
-            throw new SecurityException("Only administrators can mark images as offensive.");
-
          TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).SingleOrDefault();
 
          if (image == null)
@@ -209,14 +188,8 @@ namespace Tadmap.Controllers
       }
 
       [Authorize(Roles = TadmapRoles.Administrator)]
-      public ActionResult UnMark(Guid id, IPrincipal principal)
+      public ActionResult UnMark(int id, IPrincipal principal)
       {
-         if (id == Guid.Empty)
-            throw new ArgumentException("Cannot be empty(zeros)", "id");
-
-         if (!principal.IsInRole(TadmapRoles.Administrator))
-            throw new SecurityException("Only administrators can mark images as un-offensive.");
-
          TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).SingleOrDefault();
          if (image == null)
             throw new ImageNotFoundException();

@@ -52,7 +52,6 @@ namespace Tadmap.Controllers
          if (file.ContentLength > 0)
          {
             TadmapImage image = new TadmapImage(_binaryRepository);
-            image.Id = Guid.NewGuid();
             image.Title = title ?? Path.GetFileNameWithoutExtension(file.FileName);
             image.Description = description ?? "";
             image.Key = Guid.NewGuid() + Path.GetExtension(file.FileName);
@@ -75,7 +74,6 @@ namespace Tadmap.Controllers
       public void ConfirmUpload(IPrincipal principal, string name, string key)
       {
          TadmapImage image = new TadmapImage(_binaryRepository);
-         image.Id = Guid.NewGuid();
          image.Title = Path.GetFileNameWithoutExtension(name);
          image.Description = "";
          image.Key = key;

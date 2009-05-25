@@ -11,6 +11,7 @@ namespace Tadmap.Website.Test
       static void Main(string[] args)
       {
          NUnit.ConsoleRunner.Runner.Main(args);
+         Console.ReadKey();
       }
    }
 }

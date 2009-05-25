@@ -26,7 +26,7 @@ namespace Tadmap.Controllers
          BinaryRepository = binaryRepository;
       }
 
-      [Authorize(Roles=TadmapRoles.Collector)]
+      //[Authorize(Roles=TadmapRoles.Collector)]
       public ActionResult Index(IPrincipal principal)
       {
          if (Request.IsAuthenticated)

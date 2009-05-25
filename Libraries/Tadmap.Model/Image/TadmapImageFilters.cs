@@ -21,14 +21,14 @@ namespace Tadmap.Model.Image
                 select i;
       }
 
-      public static IQueryable<TadmapImage> IsOwnedBy(this IQueryable<TadmapImage> query, Guid id)
+      public static IQueryable<TadmapImage> IsOwnedBy(this IQueryable<TadmapImage> query, int id)
       {
          return from i in query
                 where i.UserId == id
                 select i;
       }
 
-      public static IQueryable<TadmapImage> WithId(this IQueryable<TadmapImage> query, Guid id)
+      public static IQueryable<TadmapImage> WithId(this IQueryable<TadmapImage> query, int id)
       {
          return from i in query
                 where i.Id == id

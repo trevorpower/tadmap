@@ -2,49 +2,49 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses">
   <DataContextMoniker Name="/TadmapDb" />
   <nestedChildShapes>
-    <classShape Id="4d52f9f9-2b2e-4312-9f71-445f5eeebb4a" absoluteBounds="5.375, 2.5, 2, 1.1939925130208333">
+    <classShape Id="702e5f21-10d0-4d07-987e-79c68e5ea8bc" isExpanded="false" absoluteBounds="4, 3.125, 2, 0.45">
       <DataClassMoniker Name="/TadmapDb/User" />
       <nestedChildShapes>
-        <elementListCompartment Id="956b117d-b1dd-4e1c-bc37-68047e0974c7" absoluteBounds="5.39, 2.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="454269ff-fef1-4005-a62d-86379db6c8f8" absoluteBounds="4.0150000000000006, 3.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4815022e-d44f-4e70-af5e-64d3d6ed8cc0" absoluteBounds="5.375, 0.75, 2, 1.1939925130208333">
+    <classShape Id="d8acd056-0651-412f-9adb-c7c5d1049344" isExpanded="false" absoluteBounds="0.625, 3.125, 2, 0.45">
+      <DataClassMoniker Name="/TadmapDb/Image" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8f68ba5-b986-4898-9597-c1a6093ffc84" absoluteBounds="0.64, 3.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4 : 3.35); (2.625 : 3.35)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TadmapDb/User/User_Image" />
+      <nodes>
+        <classShapeMoniker Id="702e5f21-10d0-4d07-987e-79c68e5ea8bc" />
+        <classShapeMoniker Id="d8acd056-0651-412f-9adb-c7c5d1049344" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1d72e679-8401-4413-885e-27a75f2cad32" isExpanded="false" absoluteBounds="4, 4.625, 2, 0.45">
+      <DataClassMoniker Name="/TadmapDb/OpenId" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22fc97d7-a092-45e8-bd6c-1cdaae89445a" absoluteBounds="4.015, 5.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5 : 3.575); (5 : 4.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TadmapDb/User/User_OpenId" />
+      <nodes>
+        <classShapeMoniker Id="702e5f21-10d0-4d07-987e-79c68e5ea8bc" />
+        <classShapeMoniker Id="1d72e679-8401-4413-885e-27a75f2cad32" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fb1d142d-320c-4556-bbc5-17b0d51c46b9" isExpanded="false" absoluteBounds="4, 1.625, 2, 0.45">
       <DataClassMoniker Name="/TadmapDb/UserRole" />
       <nestedChildShapes>
-        <elementListCompartment Id="5e7ce1b8-eec6-4a91-9972-7ba8242358af" absoluteBounds="5.39, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="57ef17c9-1cd5-4cfc-b929-ec3b3822d2c4" absoluteBounds="4.015, 2.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="55bea39f-f85c-46d3-a1d6-94aef12e4874" absoluteBounds="5.375, 4.25, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/TadmapDb/UserOpenId" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e936ddde-83ce-4fa4-9c05-6342a15df998" absoluteBounds="5.3900000000000006, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(6.375 : 2.5); (6.375 : 1.94399251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5 : 3.125); (5 : 2.075)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TadmapDb/User/User_UserRole" />
       <nodes>
-        <classShapeMoniker Id="4d52f9f9-2b2e-4312-9f71-445f5eeebb4a" />
-        <classShapeMoniker Id="4815022e-d44f-4e70-af5e-64d3d6ed8cc0" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(6.375 : 3.69399251302083); (6.375 : 4.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TadmapDb/User/User_UserOpenId" />
-      <nodes>
-        <classShapeMoniker Id="4d52f9f9-2b2e-4312-9f71-445f5eeebb4a" />
-        <classShapeMoniker Id="55bea39f-f85c-46d3-a1d6-94aef12e4874" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="ae3faa56-2747-4c9c-9d40-2d0bd2605fdf" absoluteBounds="1.25, 1.875, 2, 2.9247054036458331">
-      <DataClassMoniker Name="/TadmapDb/UserImage" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c023d79b-c5e1-4311-aad6-3dece6c442ef" absoluteBounds="1.2650000000000006, 2.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(5.375 : 3.09699625651042); (3.25 : 3.09699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TadmapDb/User/User_UserImage" />
-      <nodes>
-        <classShapeMoniker Id="4d52f9f9-2b2e-4312-9f71-445f5eeebb4a" />
-        <classShapeMoniker Id="ae3faa56-2747-4c9c-9d40-2d0bd2605fdf" />
+        <classShapeMoniker Id="702e5f21-10d0-4d07-987e-79c68e5ea8bc" />
+        <classShapeMoniker Id="fb1d142d-320c-4556-bbc5-17b0d51c46b9" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

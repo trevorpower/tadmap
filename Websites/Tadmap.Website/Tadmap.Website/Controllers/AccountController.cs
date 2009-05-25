@@ -16,16 +16,19 @@ using Tadmap.Configuration;
 using Tadmap.Security;
 using Tadmap.Model;
 using Tadmap.Website;
+using Tadmap.Model.User;
 
 namespace Tadmap.Controllers
 {
-
    [HandleError]
    [OutputCache(Location = OutputCacheLocation.None)]
    public class AccountController : Controller
    {
-      public AccountController()
+      IUserRepository UserRepository { get; set; }
+
+      public AccountController(IUserRepository userRepository)
       {
+         UserRepository = userRepository;
       }
 
       public ActionResult Login()
@@ -126,28 +129,24 @@ namespace Tadmap.Controllers
          if (response.Status != AuthenticationStatus.Authenticated)
             throw new ArgumentException("The response status must be 'Authenticated'. (" + response.Status.ToString() + ")", "response");
 
-         TadmapDb db = new TadmapDb();
+         var user = UserRepository.GetAllUsers().Where(u => u.OpenIds.Contains(response.ClaimedIdentifier.ToString())).SingleOrDefault();
 
-         var user = db.UserOpenIds.Where(u => u.OpenIdUrl == response.ClaimedIdentifier.ToString()).SingleOrDefault();
-         Guid userId;
-
-         if (user != null)
+         if (user == null)
          {
-            userId = user.UserId;
-         }
-         else
-         {
-            userId = CreateNewUser(response.ClaimedIdentifier.ToString());
-         }
+            user = new Model.User.User
+            {
+               Name = response.ClaimedIdentifier.ToString(),
+               OpenIds = new List<string>{ response.ClaimedIdentifier.ToString() },
+               Roles = new List<string>{ TadmapRoles.Collector }
+            };
 
-         var roles = from role in db.UserRoles
-                     where role.UserId == userId
-                     select role.Role;
+            UserRepository.Save(user);
+         }
 
          CookieUserData userData = new CookieUserData(
-            userId,
+            user.Id,
             response.FriendlyIdentifierForDisplay.ToString(),
-            roles.ToArray()
+            user.Roles.ToArray()
          );
          
          FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
@@ -168,29 +167,28 @@ namespace Tadmap.Controllers
          return RedirectToAction("Index", new { controller = "Home" });
       }
 
-      private Guid CreateNewUser(string openIdUrl)
-      {
-         TadmapDb db = new TadmapDb(Database.TadmapConnection);
+      //private int CreateNewUser(string openIdUrl)
+      //{
+      //   //TadmapDb db = new TadmapDb(Database.TadmapConnection);
 
-         User newUser = new User();
-         newUser.Id = Guid.NewGuid();
-         newUser.Name = string.Empty;
+      //   //User newUser = new User();
+      //   //newUser.Name = string.Empty;
 
-         UserRole newUserRole = new UserRole();
-         newUserRole.UserId = newUser.Id;
-         newUserRole.Role = TadmapRoles.Collector;
+      //   //UserRole newUserRole = new UserRole();
+      //   //newUserRole.UserId = newUser.Id;
+      //   //newUserRole.Role = TadmapRoles.Collector;
 
-         UserOpenId newOpenId = new UserOpenId();
-         newOpenId.UserId = newUser.Id;
-         newOpenId.OpenIdUrl = openIdUrl;
+      //   //UserOpenId newOpenId = new UserOpenId();
+      //   //newOpenId.UserId = newUser.Id;
+      //   //newOpenId.OpenIdUrl = openIdUrl;
 
-         db.Users.InsertOnSubmit(newUser);
-         db.UserRoles.InsertOnSubmit(newUserRole);
-         db.UserOpenIds.InsertOnSubmit(newOpenId);
+      //   //db.Users.InsertOnSubmit(newUser);
+      //   //db.UserRoles.InsertOnSubmit(newUserRole);
+      //   //db.UserOpenIds.InsertOnSubmit(newOpenId);
 
-         db.SubmitChanges();
+      //   //db.SubmitChanges();
 
-         return newUser.Id;
-      }
+      //   //return newUser.Id;
+      //}
    }
 }

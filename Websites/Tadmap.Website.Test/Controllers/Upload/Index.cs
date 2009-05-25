@@ -59,7 +59,7 @@ namespace TadmapTests.Controllers.Upload
          ViewResult result = _controller.Index() as ViewResult;
 
          Assert.IsEmpty(result.ViewName);
-         Assert.IsNull(result.ViewData.Model);
+         Assert.IsInstanceOfType(typeof(FileUploaderAdapter), result.ViewData.Model);
          Assert.AreEqual(0, result.ViewData.ModelState.Count);
       }
    }

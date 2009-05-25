@@ -17,13 +17,13 @@ namespace Tadmap.Model.Image
          _binaryRepository = binaryRepository;
       }
 
-      public Guid Id { get; set; }
+      public int Id { get; set; }
       public string Title { get; set; }
       public string Description { get; set; }
       public string Key { get; set; }
       public bool IsPublic { get; set; }
       public bool IsOffensive { get; set; }
-      public Guid UserId { get; set; }
+      public int UserId { get; set; }
       public string OwnerName { get; set; }
       public int ImageSetVersion { get; set; }
 

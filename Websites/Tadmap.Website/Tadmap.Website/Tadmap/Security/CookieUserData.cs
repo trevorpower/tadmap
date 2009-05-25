@@ -12,7 +12,7 @@ namespace Tadmap.Tadmap.Security
    {
       private const string NameSpace = "http://tadmap.com/schemas/cookiedata";
 
-      public CookieUserData(Guid id, string name, string[] roles)
+      public CookieUserData(int id, string name, string[] roles)
       {
          Id = id;
          DisplayName = name;
@@ -27,7 +27,7 @@ namespace Tadmap.Tadmap.Security
          var roles = from r in document.Descendants(ns + "roles").Descendants(ns + "role")
                      select r.Value;
 
-         Guid id = new Guid(document.Descendants(ns + "id").Single().Value);
+         int id = int.Parse(document.Descendants(ns + "id").Single().Value);
          string name = document.Descendants(ns + "display").Single().Value;
 
          return new CookieUserData(id, name, roles.ToArray());
@@ -51,7 +51,7 @@ namespace Tadmap.Tadmap.Security
          return document.ToString();
       }
 
-      public Guid Id { get; private set; }
+      public int Id { get; private set; }
 
       public string DisplayName { get; private set; }
 

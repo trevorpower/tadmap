@@ -9,7 +9,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-   <% using (MvcForm form = Html.BeginForm())
+   <% using (MvcForm form = Html.BeginForm("Login", "Account"))
       { %>
    <div style="margin-left: auto; margin-right: auto; width: 540px; padding-top: 40px;
       padding-bottom: 40px;">

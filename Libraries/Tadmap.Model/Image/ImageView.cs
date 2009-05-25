@@ -12,7 +12,7 @@ namespace Tadmap.Model.Image
       }
 
       public ImageView(
-         Guid id,
+         int id,
          string title,
          string description,
          Uri originalUrl
@@ -24,7 +24,7 @@ namespace Tadmap.Model.Image
          OriginalUrl = originalUrl;
       }
 
-      public Guid Id { get; set; }
+      public int Id { get; set; }
       public string Title { get; set; }
       public string Description { get; set; }
       public bool IsEditable { get; set; }

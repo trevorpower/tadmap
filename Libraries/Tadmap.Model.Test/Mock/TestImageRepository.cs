@@ -17,7 +17,7 @@ namespace Tadmap.Mode.Test.Mock
             _images.Add(
                new TadmapImage(binaryRepository)
                {
-                  Id = new Guid("16b4d816-2e1e-4d54-9b66-78ef0fb7cbf" + i),
+                  Id = i,
                   Description = "description",
                   Key = "Key",
                   Title = "Title " + i,
@@ -38,7 +38,7 @@ namespace Tadmap.Mode.Test.Mock
          return _images.AsQueryable();
       }
 
-      public void MarkAsOffensive(Guid id)
+      public void MarkAsOffensive(int id)
       {
          TadmapImage image = _images.Find(i => i.Id == id);
          
@@ -48,7 +48,7 @@ namespace Tadmap.Mode.Test.Mock
          image.IsOffensive = true;
       }
 
-      public void MarkAsUnOffensive(Guid id)
+      public void MarkAsUnOffensive(int id)
       {
          TadmapImage image = _images.Find(i => i.Id == id);
 
@@ -58,7 +58,7 @@ namespace Tadmap.Mode.Test.Mock
          image.IsOffensive = false;
       }
 
-      public void MarkAsPublic(Guid id)
+      public void MarkAsPublic(int id)
       {
          TadmapImage image = _images.Find(i => i.Id == id);
 
@@ -68,7 +68,7 @@ namespace Tadmap.Mode.Test.Mock
          image.IsPublic = true;
       }
 
-      public void MarkAsPrivate(Guid id)
+      public void MarkAsPrivate(int id)
       {
          TadmapImage image = _images.Find(i => i.Id == id);
 
