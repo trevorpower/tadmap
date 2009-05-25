@@ -12,7 +12,7 @@ using Tadmap.Model.Image;
 using System.IO;
 using Microsoft.Practices.Unity;
 
-namespace TadmapWorker
+namespace Tadmap.Server
 {
    public partial class ImageService : ServiceBase
    {

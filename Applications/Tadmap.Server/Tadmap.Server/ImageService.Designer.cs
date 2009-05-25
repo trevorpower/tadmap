@@ -1,4 +1,4 @@
-﻿namespace TadmapWorker
+﻿namespace Tadmap.Server
 {
    partial class ImageService
     {

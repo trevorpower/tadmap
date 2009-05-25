@@ -10,9 +10,9 @@ using Tadmap.Model.Image;
 using System.ServiceProcess;
 using Microsoft.Practices.Unity;
 using System.Diagnostics;
-using TadmapWorker.Properties;
+using Tadmap.Server.Properties;
 
-namespace TadmapWorker
+namespace Tadmap.Server
 {
    static class Program
    {
