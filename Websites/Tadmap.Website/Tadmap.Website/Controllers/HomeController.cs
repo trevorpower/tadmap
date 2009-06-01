@@ -7,6 +7,7 @@ using System.Web.Mvc.Ajax;
 using Tadmap.DataAccess;
 using Tadmap.Model.Image;
 using Tadmap.Model;
+using Tadmap.Website.Models;
 
 namespace Tadmap.Controllers
 {
@@ -24,9 +25,18 @@ namespace Tadmap.Controllers
 
       public ActionResult Index()
       {
-         List<TadmapImage> images = ImageRepository.GetAllImages(BinaryRepository)
+         List<ImageItem> images = ImageRepository.GetAllImages()
             .IsPublic()
-            .IsNotOffensive().ToList();
+            .IsNotOffensive()
+            .Select(i =>
+               new ImageItem
+               {
+                  Id = i.Id,
+                  Title = i.Title,
+                  Description = i.Description,
+                  SquareUrl = BinaryRepository.GetUrl(i.ImageSet.Square)
+               }
+            ).ToList();
 
          ViewData.Model = new HomeView
          {

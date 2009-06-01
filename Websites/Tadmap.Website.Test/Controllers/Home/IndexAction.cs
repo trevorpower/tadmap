@@ -36,7 +36,7 @@ namespace TadmapTests.Controllers.Home
       public void ConstructController()
       {
          List<BinaryRepository.Data> storage = new List<BinaryRepository.Data>();
-         _controller = new HomeController(new ImageRepository(new BinaryRepository(storage)), new BinaryRepository(storage));
+         _controller = new HomeController(new ImageRepository(), new BinaryRepository(storage));
       }
 
       [TearDown]

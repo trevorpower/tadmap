@@ -33,15 +33,15 @@ namespace Tadmap.Sql
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
-    partial void InsertImage(Image instance);
-    partial void UpdateImage(Image instance);
-    partial void DeleteImage(Image instance);
     partial void InsertOpenId(OpenId instance);
     partial void UpdateOpenId(OpenId instance);
     partial void DeleteOpenId(OpenId instance);
     partial void InsertUserRole(UserRole instance);
     partial void UpdateUserRole(UserRole instance);
     partial void DeleteUserRole(UserRole instance);
+    partial void InsertImage(Image instance);
+    partial void UpdateImage(Image instance);
+    partial void DeleteImage(Image instance);
     #endregion
 		
 		public TadmapDb(string connection) : 
@@ -76,14 +76,6 @@ namespace Tadmap.Sql
 			}
 		}
 		
-		public System.Data.Linq.Table<Image> Images
-		{
-			get
-			{
-				return this.GetTable<Image>();
-			}
-		}
-		
 		public System.Data.Linq.Table<OpenId> OpenIds
 		{
 			get
@@ -99,6 +91,14 @@ namespace Tadmap.Sql
 				return this.GetTable<UserRole>();
 			}
 		}
+		
+		public System.Data.Linq.Table<Image> Images
+		{
+			get
+			{
+				return this.GetTable<Image>();
+			}
+		}
 	}
 	
 	[Table(Name="dbo.Users")]
@@ -111,11 +111,11 @@ namespace Tadmap.Sql
 		
 		private string _Name;
 		
-		private EntitySet<Image> _Images;
-		
 		private EntitySet<OpenId> _OpenIds;
 		
 		private EntitySet<UserRole> _UserRoles;
+		
+		private EntitySet<Image> _Images;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -129,9 +129,9 @@ namespace Tadmap.Sql
 		
 		public User()
 		{
-			this._Images = new EntitySet<Image>(new Action<Image>(this.attach_Images), new Action<Image>(this.detach_Images));
 			this._OpenIds = new EntitySet<OpenId>(new Action<OpenId>(this.attach_OpenIds), new Action<OpenId>(this.detach_OpenIds));
 			this._UserRoles = new EntitySet<UserRole>(new Action<UserRole>(this.attach_UserRoles), new Action<UserRole>(this.detach_UserRoles));
+			this._Images = new EntitySet<Image>(new Action<Image>(this.attach_Images), new Action<Image>(this.detach_Images));
 			OnCreated();
 		}
 		
@@ -175,19 +175,6 @@ namespace Tadmap.Sql
 			}
 		}
 		
-		[Association(Name="User_Image", Storage="_Images", ThisKey="Id", OtherKey="UserId")]
-		public EntitySet<Image> Images
-		{
-			get
-			{
-				return this._Images;
-			}
-			set
-			{
-				this._Images.Assign(value);
-			}
-		}
-		
 		[Association(Name="User_OpenId", Storage="_OpenIds", ThisKey="Id", OtherKey="UserId")]
 		public EntitySet<OpenId> OpenIds
 		{
@@ -214,6 +201,19 @@ namespace Tadmap.Sql
 			}
 		}
 		
+		[Association(Name="User_Image", Storage="_Images", ThisKey="Id", OtherKey="UserId")]
+		public EntitySet<Image> Images
+		{
+			get
+			{
+				return this._Images;
+			}
+			set
+			{
+				this._Images.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -232,18 +232,6 @@ namespace Tadmap.Sql
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Images(Image entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Images(Image entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
 		}
 		
 		private void attach_OpenIds(OpenId entity)
@@ -269,348 +257,17 @@ namespace Tadmap.Sql
 			this.SendPropertyChanging();
 			entity.User = null;
 		}
-	}
-	
-	[Table(Name="dbo.Images")]
-	public partial class Image : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Title;
-		
-		private string _Description;
-		
-		private int _UserId;
-		
-		private string _Key;
-		
-		private System.Nullable<short> _ZoomLevels;
-		
-		private System.Nullable<short> _TileSize;
-		
-		private System.DateTime _DateAdded;
-		
-		private byte _ImageSet;
-		
-		private byte _OffensiveCount;
-		
-		private byte _Privacy;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnTitleChanging(string value);
-    partial void OnTitleChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnUserIdChanging(int value);
-    partial void OnUserIdChanged();
-    partial void OnKeyChanging(string value);
-    partial void OnKeyChanged();
-    partial void OnZoomLevelsChanging(System.Nullable<short> value);
-    partial void OnZoomLevelsChanged();
-    partial void OnTileSizeChanging(System.Nullable<short> value);
-    partial void OnTileSizeChanged();
-    partial void OnDateAddedChanging(System.DateTime value);
-    partial void OnDateAddedChanged();
-    partial void OnImageSetChanging(byte value);
-    partial void OnImageSetChanged();
-    partial void OnOffensiveCountChanging(byte value);
-    partial void OnOffensiveCountChanged();
-    partial void OnPrivacyChanging(byte value);
-    partial void OnPrivacyChanged();
-    #endregion
-		
-		public Image()
+		private void attach_Images(Image entity)
 		{
-			this._User = default(EntityRef<User>);
-			OnCreated();
+			this.SendPropertyChanging();
+			entity.User = this;
 		}
 		
-		[Column(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
+		private void detach_Images(Image entity)
 		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Title", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
-		public string Title
-		{
-			get
-			{
-				return this._Title;
-			}
-			set
-			{
-				if ((this._Title != value))
-				{
-					this.OnTitleChanging(value);
-					this.SendPropertyChanging();
-					this._Title = value;
-					this.SendPropertyChanged("Title");
-					this.OnTitleChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Description", DbType="NVarChar(1024) NOT NULL", CanBeNull=false)]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_UserId", DbType="Int NOT NULL")]
-		public int UserId
-		{
-			get
-			{
-				return this._UserId;
-			}
-			set
-			{
-				if ((this._UserId != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIdChanging(value);
-					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
-				}
-			}
-		}
-		
-		[Column(Name="[Key]", Storage="_Key", DbType="NVarChar(512) NOT NULL", CanBeNull=false)]
-		public string Key
-		{
-			get
-			{
-				return this._Key;
-			}
-			set
-			{
-				if ((this._Key != value))
-				{
-					this.OnKeyChanging(value);
-					this.SendPropertyChanging();
-					this._Key = value;
-					this.SendPropertyChanged("Key");
-					this.OnKeyChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_ZoomLevels", DbType="SmallInt")]
-		public System.Nullable<short> ZoomLevels
-		{
-			get
-			{
-				return this._ZoomLevels;
-			}
-			set
-			{
-				if ((this._ZoomLevels != value))
-				{
-					this.OnZoomLevelsChanging(value);
-					this.SendPropertyChanging();
-					this._ZoomLevels = value;
-					this.SendPropertyChanged("ZoomLevels");
-					this.OnZoomLevelsChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_TileSize", DbType="SmallInt")]
-		public System.Nullable<short> TileSize
-		{
-			get
-			{
-				return this._TileSize;
-			}
-			set
-			{
-				if ((this._TileSize != value))
-				{
-					this.OnTileSizeChanging(value);
-					this.SendPropertyChanging();
-					this._TileSize = value;
-					this.SendPropertyChanged("TileSize");
-					this.OnTileSizeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_DateAdded", DbType="DateTime NOT NULL")]
-		public System.DateTime DateAdded
-		{
-			get
-			{
-				return this._DateAdded;
-			}
-			set
-			{
-				if ((this._DateAdded != value))
-				{
-					this.OnDateAddedChanging(value);
-					this.SendPropertyChanging();
-					this._DateAdded = value;
-					this.SendPropertyChanged("DateAdded");
-					this.OnDateAddedChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_ImageSet", DbType="TinyInt NOT NULL")]
-		public byte ImageSet
-		{
-			get
-			{
-				return this._ImageSet;
-			}
-			set
-			{
-				if ((this._ImageSet != value))
-				{
-					this.OnImageSetChanging(value);
-					this.SendPropertyChanging();
-					this._ImageSet = value;
-					this.SendPropertyChanged("ImageSet");
-					this.OnImageSetChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_OffensiveCount", DbType="TinyInt NOT NULL")]
-		public byte OffensiveCount
-		{
-			get
-			{
-				return this._OffensiveCount;
-			}
-			set
-			{
-				if ((this._OffensiveCount != value))
-				{
-					this.OnOffensiveCountChanging(value);
-					this.SendPropertyChanging();
-					this._OffensiveCount = value;
-					this.SendPropertyChanged("OffensiveCount");
-					this.OnOffensiveCountChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Privacy", DbType="TinyInt NOT NULL")]
-		public byte Privacy
-		{
-			get
-			{
-				return this._Privacy;
-			}
-			set
-			{
-				if ((this._Privacy != value))
-				{
-					this.OnPrivacyChanging(value);
-					this.SendPropertyChanging();
-					this._Privacy = value;
-					this.SendPropertyChanged("Privacy");
-					this.OnPrivacyChanged();
-				}
-			}
-		}
-		
-		[Association(Name="User_Image", Storage="_User", ThisKey="UserId", OtherKey="Id", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.Images.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.Images.Add(this);
-						this._UserId = value.Id;
-					}
-					else
-					{
-						this._UserId = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
+			this.SendPropertyChanging();
+			entity.User = null;
 		}
 	}
 	
@@ -836,6 +493,373 @@ namespace Tadmap.Sql
 					if ((value != null))
 					{
 						value.UserRoles.Add(this);
+						this._UserId = value.Id;
+					}
+					else
+					{
+						this._UserId = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.Images")]
+	public partial class Image : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Title;
+		
+		private string _Description;
+		
+		private int _UserId;
+		
+		private string _Key;
+		
+		private System.Nullable<int> _ZoomLevels;
+		
+		private System.Nullable<int> _TileSize;
+		
+		private System.DateTime _DateAdded;
+		
+		private byte _ImageSet;
+		
+		private byte _OffensiveCount;
+		
+		private byte _Privacy;
+		
+		private bool _ThumbnailAvailable;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTitleChanging(string value);
+    partial void OnTitleChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    partial void OnKeyChanging(string value);
+    partial void OnKeyChanged();
+    partial void OnZoomLevelsChanging(System.Nullable<int> value);
+    partial void OnZoomLevelsChanged();
+    partial void OnTileSizeChanging(System.Nullable<int> value);
+    partial void OnTileSizeChanged();
+    partial void OnDateAddedChanging(System.DateTime value);
+    partial void OnDateAddedChanged();
+    partial void OnImageSetChanging(byte value);
+    partial void OnImageSetChanged();
+    partial void OnOffensiveCountChanging(byte value);
+    partial void OnOffensiveCountChanged();
+    partial void OnPrivacyChanging(byte value);
+    partial void OnPrivacyChanged();
+    partial void OnThumbnailAvailableChanging(bool value);
+    partial void OnThumbnailAvailableChanged();
+    #endregion
+		
+		public Image()
+		{
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Title", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this.OnTitleChanging(value);
+					this.SendPropertyChanging();
+					this._Title = value;
+					this.SendPropertyChanged("Title");
+					this.OnTitleChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Description", DbType="NVarChar(1024) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[Column(Name="[Key]", Storage="_Key", DbType="NVarChar(512) NOT NULL", CanBeNull=false)]
+		public string Key
+		{
+			get
+			{
+				return this._Key;
+			}
+			set
+			{
+				if ((this._Key != value))
+				{
+					this.OnKeyChanging(value);
+					this.SendPropertyChanging();
+					this._Key = value;
+					this.SendPropertyChanged("Key");
+					this.OnKeyChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_ZoomLevels", DbType="Int")]
+		public System.Nullable<int> ZoomLevels
+		{
+			get
+			{
+				return this._ZoomLevels;
+			}
+			set
+			{
+				if ((this._ZoomLevels != value))
+				{
+					this.OnZoomLevelsChanging(value);
+					this.SendPropertyChanging();
+					this._ZoomLevels = value;
+					this.SendPropertyChanged("ZoomLevels");
+					this.OnZoomLevelsChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_TileSize", DbType="Int")]
+		public System.Nullable<int> TileSize
+		{
+			get
+			{
+				return this._TileSize;
+			}
+			set
+			{
+				if ((this._TileSize != value))
+				{
+					this.OnTileSizeChanging(value);
+					this.SendPropertyChanging();
+					this._TileSize = value;
+					this.SendPropertyChanged("TileSize");
+					this.OnTileSizeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_DateAdded", DbType="DateTime NOT NULL")]
+		public System.DateTime DateAdded
+		{
+			get
+			{
+				return this._DateAdded;
+			}
+			set
+			{
+				if ((this._DateAdded != value))
+				{
+					this.OnDateAddedChanging(value);
+					this.SendPropertyChanging();
+					this._DateAdded = value;
+					this.SendPropertyChanged("DateAdded");
+					this.OnDateAddedChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_ImageSet", DbType="TinyInt NOT NULL")]
+		public byte ImageSet
+		{
+			get
+			{
+				return this._ImageSet;
+			}
+			set
+			{
+				if ((this._ImageSet != value))
+				{
+					this.OnImageSetChanging(value);
+					this.SendPropertyChanging();
+					this._ImageSet = value;
+					this.SendPropertyChanged("ImageSet");
+					this.OnImageSetChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_OffensiveCount", DbType="TinyInt NOT NULL")]
+		public byte OffensiveCount
+		{
+			get
+			{
+				return this._OffensiveCount;
+			}
+			set
+			{
+				if ((this._OffensiveCount != value))
+				{
+					this.OnOffensiveCountChanging(value);
+					this.SendPropertyChanging();
+					this._OffensiveCount = value;
+					this.SendPropertyChanged("OffensiveCount");
+					this.OnOffensiveCountChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Privacy", DbType="TinyInt NOT NULL")]
+		public byte Privacy
+		{
+			get
+			{
+				return this._Privacy;
+			}
+			set
+			{
+				if ((this._Privacy != value))
+				{
+					this.OnPrivacyChanging(value);
+					this.SendPropertyChanging();
+					this._Privacy = value;
+					this.SendPropertyChanged("Privacy");
+					this.OnPrivacyChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_ThumbnailAvailable", DbType="Bit NOT NULL")]
+		public bool ThumbnailAvailable
+		{
+			get
+			{
+				return this._ThumbnailAvailable;
+			}
+			set
+			{
+				if ((this._ThumbnailAvailable != value))
+				{
+					this.OnThumbnailAvailableChanging(value);
+					this.SendPropertyChanging();
+					this._ThumbnailAvailable = value;
+					this.SendPropertyChanged("ThumbnailAvailable");
+					this.OnThumbnailAvailableChanged();
+				}
+			}
+		}
+		
+		[Association(Name="User_Image", Storage="_User", ThisKey="UserId", OtherKey="Id", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Images.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Images.Add(this);
 						this._UserId = value.Id;
 					}
 					else

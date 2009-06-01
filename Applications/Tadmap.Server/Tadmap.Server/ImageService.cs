@@ -11,6 +11,8 @@ using Tadmap.Messaging;
 using Tadmap.Model.Image;
 using System.IO;
 using Microsoft.Practices.Unity;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 namespace Tadmap.Server
 {
@@ -50,18 +52,23 @@ namespace Tadmap.Server
          {
             while (true)
             {
-               IMessage message = _imageQueue.Next(200);
+               IMessage message = _imageQueue.Next(400);
 
                if (message != null)
                {
-                  ProcessImage(message.Content);
+                  var result = ProcessImage(message.Content);
+                  
+                  var serializer = new XmlSerializer(typeof(ImageProcessingResult));
+                  var builder = new StringBuilder();
+                  var writer = new StringWriter(builder);
+                  serializer.Serialize(writer, result);
 
-                  _completeQueue.Add(message.Content);
+                  _completeQueue.Add(builder.ToString());
                   _imageQueue.Remove(message);
                }
                else
                {
-                  Thread.Sleep(TimeSpan.FromSeconds(15));
+                  Thread.Sleep(TimeSpan.FromSeconds(20));
                }
             }
          }
@@ -92,7 +99,7 @@ namespace Tadmap.Server
          }
       }
 
-      static private void ProcessImage(string imageName)
+      static private ImageProcessingResult ProcessImage(string imageName)
       {
          var log = new EventLog("Application")
          {
@@ -106,15 +113,25 @@ namespace Tadmap.Server
          if (binary == null)
          {
             log.WriteEntry("No binary found:" + imageName, EventLogEntryType.Warning);
-            return; // Image not available in the queue yet.
+            return new ImageProcessingResult { Key = imageName, Result = ImageProcessingResult.ResultType.Failed }; // Image not available in the queue yet.
          }
 
          // If I have an image I should renew the message.
 
          IImageSet imageSet = new ImageSet1(imageName);
-
-         imageSet.Create(binary, _binaryRepository);
+        
+         int zoomLevels;
+         int tileSize;
+         imageSet.Create(binary, _binaryRepository, out zoomLevels, out tileSize );
          log.WriteEntry("Processing finished.", EventLogEntryType.Information);
+
+         return new ImageProcessingResult
+         {
+            Key = imageName,
+            Result = ImageProcessingResult.ResultType.Complete,
+            ZoomLevel = zoomLevels,
+            TileSize = tileSize
+         };
       }
 
    }

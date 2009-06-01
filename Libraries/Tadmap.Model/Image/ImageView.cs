@@ -32,10 +32,15 @@ namespace Tadmap.Model.Image
       public Uri PreviewUrl { get; set; }
       public Uri OriginalUrl { get; set; }
 
+      public string StorageKey { get; set; }
+
       public int OffensiveCount { get; set; }
       public bool ShowOffensiveCount { get; set; }
 
       public bool CanMarkOffensive { get; set; }
       public bool CanUnmarkOffensive { get; set; }
+
+      public int TileSize { get; set; }
+      public int ZoomLevels { get; set; }
    }
 }

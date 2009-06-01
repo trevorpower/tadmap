@@ -11,6 +11,7 @@ using Infrastructure.Security;
 using System.Security.Permissions;
 using Tadmap.Model.Image;
 using Tadmap.Model;
+using Tadmap.Website.Models;
 
 namespace Tadmap.Controllers
 {
@@ -29,7 +30,15 @@ namespace Tadmap.Controllers
       [Authorize(Roles = TadmapRoles.Administrator)]
       public ActionResult Index()
       {
-         ViewData.Model = _imageRepository.GetAllImages(_binaryRepository).ToList();
+         ViewData.Model = _imageRepository.GetAllImages().Select(i =>
+            new ImageItem
+            {
+               Id = i.Id,
+               Title = i.Title,
+               Description = i.Description,
+               SquareUrl = _binaryRepository.GetUrl(i.ImageSet.Square)
+            }
+         ).ToList();
 
          return View();
       }

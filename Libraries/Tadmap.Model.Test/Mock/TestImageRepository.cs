@@ -5,17 +5,17 @@ using Tadmap.Model.Image;
 
 namespace Tadmap.Mode.Test.Mock
 {
-   public class ImageRepository : IImageRepository
+   public sealed class ImageRepository : IImageRepository
    {
       List<TadmapImage> _images;
 
-      public   ImageRepository(IBinaryRepository binaryRepository)
+      public ImageRepository()
       {
          _images = new List<TadmapImage>();
 
          for (int i = 0; i < 10; i++)
             _images.Add(
-               new TadmapImage(binaryRepository)
+               new TadmapImage
                {
                   Id = i,
                   Description = "description",
@@ -33,7 +33,7 @@ namespace Tadmap.Mode.Test.Mock
       
       #region IImageRepository Members
 
-      public IQueryable<TadmapImage> GetAllImages(IBinaryRepository binaryRepository)
+      public IQueryable<TadmapImage> GetAllImages()
       {
          return _images.AsQueryable();
       }

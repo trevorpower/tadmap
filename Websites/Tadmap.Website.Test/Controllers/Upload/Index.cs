@@ -27,7 +27,7 @@ namespace TadmapTests.Controllers.Upload
       {
          var storage = new List<BinaryRepository.Data>();
          var binaries = new BinaryRepository(storage);
-         var images = new ImageRepository(binaries);
+         var images = new ImageRepository();
          _messageQueue = new MessageQueue();
 
          _mocks = new MockRepository();

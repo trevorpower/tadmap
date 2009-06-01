@@ -32,7 +32,7 @@ namespace Tadmap.Controllers
       {
          try
          {
-            TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).Single();
+            TadmapImage image = _imageRepository.GetAllImages().WithId(id).Single();
 
             ImageView model = new ImageView(image.Id, image.Title, image.Description, null);
 
@@ -66,9 +66,14 @@ namespace Tadmap.Controllers
                model.OriginalUrl = null;
             }
 
+            model.StorageKey = image.Key;
+
             model.PreviewUrl = _binaryRepository.GetUrl(image.ImageSet.Preview);
 
             model.IsPublic = image.IsPublic;
+
+            model.TileSize = image.TileSize;
+            model.ZoomLevels = image.ZoomLevel;
 
             if (principal.Identity.IsAuthenticated)
             {
@@ -105,7 +110,7 @@ namespace Tadmap.Controllers
       [Authorize(Roles = TadmapRoles.Collector)]
       public ActionResult MakePublic(int id)
       {
-         TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).SingleOrDefault();
+         TadmapImage image = _imageRepository.GetAllImages().WithId(id).SingleOrDefault();
 
          if (image == null)
             throw new ImageNotFoundException();
@@ -120,7 +125,7 @@ namespace Tadmap.Controllers
       [Authorize(Roles = TadmapRoles.Collector)]
       public ActionResult MakePrivate(int id)
       {
-         TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).SingleOrDefault();
+         TadmapImage image = _imageRepository.GetAllImages().WithId(id).SingleOrDefault();
          
          if (image == null)
             throw new ImageNotFoundException();
@@ -138,7 +143,7 @@ namespace Tadmap.Controllers
          if (title == null)
             throw new ArgumentNullException("title");
 
-         TadmapImage image = _imageRepository.GetAllImages(_binaryRepository)
+         TadmapImage image = _imageRepository.GetAllImages()
             .IsOwnedBy((principal.Identity as TadmapIdentity).Id)
             .WithId(id).SingleOrDefault();
 
@@ -158,7 +163,7 @@ namespace Tadmap.Controllers
          if (description == null)
             throw new ArgumentNullException("description");
 
-         TadmapImage image = _imageRepository.GetAllImages(_binaryRepository)
+         TadmapImage image = _imageRepository.GetAllImages()
             .IsOwnedBy((principal.Identity as TadmapIdentity).Id)
             .WithId(id).SingleOrDefault();
 
@@ -175,7 +180,7 @@ namespace Tadmap.Controllers
       [Authorize(Roles = TadmapRoles.Administrator)]
       public ActionResult Mark(int id, IPrincipal principal)
       {
-         TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).SingleOrDefault();
+         TadmapImage image = _imageRepository.GetAllImages().WithId(id).SingleOrDefault();
 
          if (image == null)
             throw new ImageNotFoundException();
@@ -190,7 +195,7 @@ namespace Tadmap.Controllers
       [Authorize(Roles = TadmapRoles.Administrator)]
       public ActionResult UnMark(int id, IPrincipal principal)
       {
-         TadmapImage image = _imageRepository.GetAllImages(_binaryRepository).WithId(id).SingleOrDefault();
+         TadmapImage image = _imageRepository.GetAllImages().WithId(id).SingleOrDefault();
          if (image == null)
             throw new ImageNotFoundException();
 
@@ -199,6 +204,16 @@ namespace Tadmap.Controllers
          _imageRepository.Save(image);
 
          return Json(true);
+      }
+
+      public ActionResult GetTile(IPrincipal principal, int id, int tileX, int tileY, int zoom)
+      {
+         var image = _imageRepository.GetAllImages().WithId(id).Single();
+
+         if (!image.IsPublic && image.UserId != (principal.Identity as TadmapIdentity).Id)
+            throw new ImageNotFoundException();
+
+         return Json(new { url = _binaryRepository.GetUrl(string.Format("Tile_{0}_{1}_{2}_{3}", tileX, tileY, zoom, image.Key)) });
       }
    }
 }

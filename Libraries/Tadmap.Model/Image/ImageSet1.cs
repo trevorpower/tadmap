@@ -48,7 +48,12 @@ namespace Tadmap.Model.Image
          get { return "Preview_" + Key; }
       }
 
-      public void Create(System.IO.Stream stream, IBinaryRepository binaryRepository)
+      public void Create(
+         System.IO.Stream stream,
+         IBinaryRepository binaryRepository,
+         out int zoomLevels,
+         out int tileSize
+      )
       {
          using (System.Drawing.Bitmap oImage = Bitmap.FromStream(stream, true, true) as Bitmap)
          {
@@ -91,9 +96,6 @@ namespace Tadmap.Model.Image
                   binaryRepository.Add(oMemoryStream, Preview, "image/jpeg");
                }
             }
-
-            int zoomLevels;
-            int tileSize;
 
             CreateTileSet(binaryRepository, oImage, Key, out zoomLevels, out tileSize);
          }

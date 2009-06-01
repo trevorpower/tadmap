@@ -67,6 +67,7 @@
     <Compile Include="Image\IImageRepository.cs" />
     <Compile Include="Image\IImageSet.cs" />
     <Compile Include="Image\ImageNotFound.cs" />
+    <Compile Include="Image\ImageProcessingResult.cs" />
     <Compile Include="Image\ImageSet1.cs" />
     <Compile Include="Image\ImageView.cs" />
     <Compile Include="Image\IUploadedFile.cs" />

@@ -17,6 +17,7 @@ using System.IO;
 using System.Threading;
 using com.flajaxian;
 using Tadmap.Model.User;
+using System.Xml.Serialization;
 
 namespace Tadmap.Website
 {
@@ -166,12 +167,34 @@ namespace Tadmap.Website
          while (true)
          {
             IMessage message = _completeQueue.Next(15);
-
+            
             if (message != null)
             {
-               var image = repositories.ImageRepository.GetAllImages(repositories.BinaryRepository).Single(i => i.Key == message.Content);
+               var serializer = new XmlSerializer(typeof(ImageProcessingResult));
+               var result = (ImageProcessingResult)serializer.Deserialize(new StringReader(message.Content));
+               
+               var image = repositories.ImageRepository.GetAllImages().Single(i => i.Key == result.Key);
 
-               image.ImageSetVersion = 1;
+               switch (result.Result)
+               {
+                  case ImageProcessingResult.ResultType.Complete:
+                     {
+                        image.ImageSetVersion = 1;
+                        image.TileSize = result.TileSize;
+                        image.ZoomLevel = result.ZoomLevel;
+                        image.HasIcon = true;
+                        break;
+                     }
+                  case ImageProcessingResult.ResultType.IconReady:
+                     {
+                        image.HasIcon = true;
+                        break;
+                     }
+                  case ImageProcessingResult.ResultType.Failed:
+                     {
+                        break;
+                     }
+               }
 
                repositories.ImageRepository.Save(image);
 

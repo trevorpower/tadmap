@@ -129,6 +129,7 @@
     <Compile Include="Infrastructure\ControllerFactory.cs" />
     <Compile Include="Infrastructure\LogExceptionAttribute.cs" />
     <Compile Include="Models\HomeView.cs" />
+    <Compile Include="Models\ImageItem.cs" />
     <Compile Include="Tadmap\LocalUploadAdapter.cs" />
     <Compile Include="Tadmap\Security\Authentication.cs" />
     <Compile Include="Tadmap\Security\CookieUserData.cs" />
@@ -289,6 +290,7 @@
     <Content Include="favicon.ico" />
     <Content Include="googlec43fec4355048374.html" />
     <Content Include="Scripts\jquery.jeditable.mini.js" />
+    <Content Include="Scripts\MapExplorer.js" />
     <Content Include="Scripts\swfupload.js" />
     <Content Include="Scripts\swfuploadhandlers.js" />
     <Content Include="Scripts\ViewMap.js" />
@@ -354,7 +356,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="DataAccess\SQL\" />
-    <Folder Include="Models\ImageSets\" />
     <Folder Include="Tadmap\Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

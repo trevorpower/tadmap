@@ -10,6 +10,7 @@ using System.Linq;
 using Tadmap.Model;
 using System.Security.Principal;
 using Tadmap.Tadmap.Security;
+using Tadmap.Website.Models;
 
 namespace Tadmap.Controllers
 {
@@ -31,8 +32,17 @@ namespace Tadmap.Controllers
       {
          if (Request.IsAuthenticated)
          {
-            List<TadmapImage> images = ImageRepository.GetAllImages(BinaryRepository)
-             .IsOwnedBy((principal.Identity as TadmapIdentity).Id).ToList();
+            List<ImageItem> images = ImageRepository.GetAllImages()
+             .IsOwnedBy((principal.Identity as TadmapIdentity).Id)
+             .Select(i =>
+               new ImageItem
+               {
+                  Id = i.Id,
+                  Title = i.Title,
+                  Description = i.Description,
+                  SquareUrl = BinaryRepository.GetUrl(i.ImageSet.Square)
+               }
+            ).ToList();
 
             ViewData.Model = images;
 

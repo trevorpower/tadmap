@@ -34,7 +34,7 @@ namespace TadmapTests.Controllers.Upload
       {
          _binaryStorage = new List<BinaryRepository.Data>();
          _binaryRepository = new BinaryRepository(_binaryStorage);
-         _imageRepository = new ImageRepository(_binaryRepository);
+         _imageRepository = new ImageRepository();
          _queue = new MessageQueue();
 
 
@@ -59,7 +59,7 @@ namespace TadmapTests.Controllers.Upload
 
          Assert.AreEqual(_queue.Next(int.MaxValue).Content, "The key", "Next message didn't have the correct key");
 
-         TadmapImage newImage = _imageRepository.GetAllImages(_binaryRepository).Where(i => i.Key == "The key").Single();
+         TadmapImage newImage = _imageRepository.GetAllImages().Where(i => i.Key == "The key").Single();
 
          Assert.AreEqual(0, newImage.ImageSetVersion, "The new image had the wrong version.");
          Assert.AreEqual("The name", newImage.Title, "The name of the image was wrong.");

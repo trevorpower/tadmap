@@ -18,12 +18,12 @@ namespace Tadmap.Sql
 
       #region IImageRepository Members
 
-      public IQueryable<TadmapImage> GetAllImages(IBinaryRepository binaryRepository)
+      public IQueryable<TadmapImage> GetAllImages()
       {
-         TadmapDb db = new TadmapDb(ConnectionString);
+         var db = new TadmapDb(ConnectionString);
 
          return from i in db.Images
-                select new TadmapImage(binaryRepository)
+                select new TadmapImage
                 {
                    Id = i.Id,
                    Title = i.Title,
@@ -33,7 +33,10 @@ namespace Tadmap.Sql
                    IsOffensive = i.OffensiveCount > 0,
                    OwnerName = i.User.OpenIds.Single().OpenIdUrl,
                    ImageSet = new ImageSet1(i.Key),
-                   UserId = i.User.Id
+                   UserId = i.User.Id,
+                   HasIcon = i.ThumbnailAvailable,
+                   ZoomLevel = i.ZoomLevels ?? 0,
+                   TileSize = i.TileSize ?? 0
                 };
       }
 
@@ -64,6 +67,9 @@ namespace Tadmap.Sql
          dbImage.Key = image.Key;
          dbImage.OffensiveCount = image.IsOffensive ? (byte)1 : (byte)0;
          dbImage.Privacy = image.IsPublic ? (byte)1 : (byte)0;
+         dbImage.TileSize = image.TileSize;
+         dbImage.ZoomLevels = image.ZoomLevel > 0 ? new int?(image.ZoomLevel) : null;
+         dbImage.ThumbnailAvailable = image.HasIcon;
 
          if (isNew)
             db.Images.InsertOnSubmit(dbImage);

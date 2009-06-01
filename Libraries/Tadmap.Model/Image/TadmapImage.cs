@@ -10,11 +10,8 @@ namespace Tadmap.Model.Image
 {
    public class TadmapImage
    {
-      IBinaryRepository _binaryRepository;
-
-      public TadmapImage(IBinaryRepository binaryRepository)
+      public TadmapImage()
       {
-         _binaryRepository = binaryRepository;
       }
 
       public int Id { get; set; }
@@ -26,8 +23,9 @@ namespace Tadmap.Model.Image
       public int UserId { get; set; }
       public string OwnerName { get; set; }
       public int ImageSetVersion { get; set; }
-
-      public Uri SquareUrl { get { return _binaryRepository.GetUrl(ImageSet.Square); } }
+      public int ZoomLevel { get; set; }
+      public int TileSize { get; set; }
+      public bool HasIcon { get; set; }
 
       public IImageSet ImageSet { get; set; }
 

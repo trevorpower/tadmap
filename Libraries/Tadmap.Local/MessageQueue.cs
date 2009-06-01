@@ -61,7 +61,7 @@ namespace Tadmap.Local
          using (FileStream messageFile = File.OpenRead(name))
          {
             StreamReader reader = new StreamReader(messageFile);
-            message = reader.ReadLine();
+            message = reader.ReadToEnd();
          }
 
          string newName = Path.ChangeExtension(name, DateTime.Now.AddMilliseconds(timeout).Ticks.ToString());

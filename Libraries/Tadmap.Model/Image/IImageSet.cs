@@ -14,6 +14,11 @@ namespace Tadmap.Model.Image
       string LargeThumb { get; }
       string Square { get; }
 
-      void Create(Stream stream, IBinaryRepository binaryRepository);
+      void Create(
+         Stream stream,
+         IBinaryRepository binaryRepository,
+         out int zoomLevels,
+         out int tileSize
+      );
    }
 }

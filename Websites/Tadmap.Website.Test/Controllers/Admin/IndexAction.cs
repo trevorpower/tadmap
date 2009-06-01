@@ -23,7 +23,7 @@ namespace TadmapTests.Controllers.Admin
       {
          var storage = new List<BinaryRepository.Data>();
          var binaries = new BinaryRepository(storage);
-         var images = new ImageRepository(binaries);
+         var images = new ImageRepository();
 
          _controller = new AdminController(images, binaries);
       }

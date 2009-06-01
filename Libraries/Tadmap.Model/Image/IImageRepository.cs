@@ -8,7 +8,7 @@ namespace Tadmap.Model.Image
 {
    public interface IImageRepository
    {
-      IQueryable<TadmapImage> GetAllImages(IBinaryRepository binaryRepository);
+      IQueryable<TadmapImage> GetAllImages();
 
       void Save(TadmapImage image);
    }
