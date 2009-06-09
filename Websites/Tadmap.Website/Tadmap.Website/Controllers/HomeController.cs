@@ -34,7 +34,8 @@ namespace Tadmap.Controllers
                   Id = i.Id,
                   Title = i.Title,
                   Description = i.Description,
-                  SquareUrl = BinaryRepository.GetUrl(i.ImageSet.Square)
+                  SquareUrl = BinaryRepository.GetUrl(i.ImageSet.Square),
+                  IconAvailable = i.HasIcon
                }
             ).ToList();
 

@@ -14,5 +14,7 @@ namespace Tadmap.Website.Models
       public string Description { get; set; }
 
       public Uri SquareUrl { get; set; }
+
+      public bool IconAvailable { get; set; }
    }
 }

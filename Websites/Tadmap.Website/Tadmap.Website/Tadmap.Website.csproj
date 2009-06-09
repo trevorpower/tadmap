@@ -255,6 +255,7 @@
     <None Include="App_Themes\Tad\Master\login-bg.pdn" />
     <Content Include="App_Themes\Tad\Error\Error.css" />
     <Content Include="App_Themes\Tad\Error\Ships.jpg" />
+    <Content Include="App_Themes\Tad\Unavailable.png" />
     <Content Include="bin\Affirma.ThreeSharp.dll" />
     <Content Include="bin\Affirma.ThreeSharp.pdb" />
     <Content Include="bin\Affirma.ThreeSharp.Wrapper.dll" />

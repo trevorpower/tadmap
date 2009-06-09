@@ -7,7 +7,7 @@
 %>
 <div class="ImageListItem" onclick="window.location = '<%= Url.Action("Index", "Image", new { id = image.Id }) %>'"
    onmouseout="this.style.background = '#FFFFFF';" onmouseover="this.style.background = '#FFFFCC';">
-   <img alt="<%= image.Title %>" src="<%= System.Web.HttpUtility.HtmlAttributeEncode(image.SquareUrl.OriginalString) %>"
+   <img alt="<%= image.Title %>" src="<%= image.IconAvailable ? HttpUtility.HtmlAttributeEncode(image.SquareUrl.OriginalString) : VirtualPathUtility.ToAbsolute("~/App_Themes/Tad/Unavailable.png") %>"
       width="80" height="80" style="float: left; margin-right: 5px;" />
    <div class="TextArea">
       <span>
