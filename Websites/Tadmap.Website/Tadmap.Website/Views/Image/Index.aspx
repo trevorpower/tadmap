@@ -11,6 +11,9 @@
 
    <script src="../../Scripts/MapExplorer.js" type="text/javascript"></script>
 
+   <% if (ViewData.Model.PreviewUrl != null)
+      { %>
+
    <script type="text/javascript">
       //<![CDATA[
 
@@ -34,6 +37,7 @@
       //]]>
    </script>
 
+   <%}%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
    <% if (ViewData.Model.IsEditable)
@@ -77,12 +81,15 @@
    <div class="ImagePanel">
       <% if (ViewData.Model.PreviewUrl != null)
          { %>
-      <img class="ItemDetailImage" src="<%= System.Web.HttpUtility.HtmlAttributeEncode(ViewData.Model.PreviewUrl.OriginalString) %>"
-         alt="<%= ViewData.Model.Title %>" />
+      <div id="map_canvas" style="width: 600px; height: 600px">
+      </div>
+     <%-- <img class="ItemDetailImage" src="<%= System.Web.HttpUtility.HtmlAttributeEncode(ViewData.Model.PreviewUrl.OriginalString) %>"
+         alt="<%= ViewData.Model.Title %>" />--%>
       <%}
          else
          { %>
-         <div>This image is being processed. This may take several minutes.</div>         
+      <div>
+         This image is being processed. This may take several minutes.</div>
       <%} %>
       <div class="ImageButtons">
          <% if (ViewData.Model.OriginalUrl != null)
@@ -105,6 +112,4 @@
          Html.RenderPartial("OffensiveControl", ViewData.Model);
       }
    %>
-   <div id="map_canvas" style="width: 500px; height: 300px">
-   </div>
 </asp:Content>
