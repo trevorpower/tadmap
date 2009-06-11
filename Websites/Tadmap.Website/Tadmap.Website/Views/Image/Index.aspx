@@ -5,7 +5,7 @@
 <asp:Content ContentPlaceHolderID="head" ID="HeadContent" runat="server">
 
    <script src="../../Scripts/jquery-1.2.6.min.js" type="text/javascript"></script>
- 
+
    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAym_kDX-_TVbmiGV7BeBJWxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxR0rL56i59S8zEWNkmCSgA1e7vJKg"
       type="text/javascript"></script>
 
@@ -75,8 +75,15 @@
    <span id="EditTitle" class="ItemTitle">
       <%= ViewData.Model.Title %></span>
    <div class="ImagePanel">
+      <% if (ViewData.Model.PreviewUrl != null)
+         { %>
       <img class="ItemDetailImage" src="<%= System.Web.HttpUtility.HtmlAttributeEncode(ViewData.Model.PreviewUrl.OriginalString) %>"
          alt="<%= ViewData.Model.Title %>" />
+      <%}
+         else
+         { %>
+         <div>This image is being processed. This may take several minutes.</div>         
+      <%} %>
       <div class="ImageButtons">
          <% if (ViewData.Model.OriginalUrl != null)
             { %>

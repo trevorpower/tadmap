@@ -68,7 +68,8 @@ namespace Tadmap.Controllers
 
             model.StorageKey = image.Key;
 
-            model.PreviewUrl = _binaryRepository.GetUrl(image.ImageSet.Preview);
+            if (image.HasIcon)
+               model.PreviewUrl = _binaryRepository.GetUrl(image.ImageSet.Preview);
 
             model.IsPublic = image.IsPublic;
 
