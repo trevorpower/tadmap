@@ -38,6 +38,24 @@ namespace Affirma.ThreeSharp.Model
             set { this.statusCode = value; }
         }
 
+        private bool isDisposed = false;
+        public HttpWebResponse WebResponse { get; set; }
+
+        protected override void Dispose(bool disposing)
+        {
+           base.Dispose(disposing);
+
+           if (!this.isDisposed)
+           {
+              if (disposing)
+              {
+                 if (WebResponse != null)
+                    WebResponse.Close();
+              }
+              this.isDisposed = true;
+           }
+        }
+
         public byte[] StreamResponseToBytes()
         {
             MemoryStream memoryStream = new MemoryStream();

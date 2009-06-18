@@ -26,7 +26,7 @@ namespace Affirma.ThreeSharp.Model
     {
         public ObjectAddRequest(String bucketName, String key)
         {
-            this.timeout = -1;
+            this.timeout = 60000;
 
             this.BucketName = bucketName;
             this.Key = key;
