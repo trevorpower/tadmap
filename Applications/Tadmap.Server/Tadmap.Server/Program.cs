@@ -11,6 +11,7 @@ using System.ServiceProcess;
 using Microsoft.Practices.Unity;
 using System.Diagnostics;
 using Tadmap.Server.Properties;
+using Exceptioneer.WindowsFormsClient;
 
 namespace Tadmap.Server
 {
@@ -30,7 +31,34 @@ namespace Tadmap.Server
             container.Resolve<ImageService>() 
 			};
 
+         AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+         Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
+         Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+
+         Application.EnableVisualStyles();
+         Application.SetCompatibleTextRenderingDefault(false);
+
          ServiceBase.Run(ServicesToRun);
+      }
+
+      static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
+      {
+         HandleException(e.Exception);
+      }
+
+      static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+      {
+         HandleException((Exception)e.ExceptionObject);
+      }
+
+      static void HandleException(Exception e)
+      {
+         Client WC = new Client();
+         WC.ApiKey = "CDE2C8B3-5770-4E32-BD29-A38624B8C5DB";
+         WC.ApplicationName = "Tadmap Server";
+         WC.CurrentException = e;
+         WC.Submit();
+         System.Diagnostics.Process.GetCurrentProcess().Kill();
       }
 
       private static IUnityContainer SetupContainer(IUnityContainer container)
