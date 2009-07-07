@@ -17,22 +17,29 @@
    <script type="text/javascript">
       //<![CDATA[
 
+      var urls;
+
       function getTileUrl(tile, zoom) {
+         return urls[zoom][Math.pow(2, zoom) * tile.x + tile.y];
+      }
+      
+      
+      function getTileUrls() {
+      
          var result = $.ajax({
-            url: '<%= Url.RouteUrl("Image", new { action = "GetTile", id = ViewData.Model.Id }) %>?tileX=' + tile.x + '&tileY=' + tile.y + '&zoom=' + zoom,
+            url: '<%= Url.RouteUrl("Image", new { action = "GetTiles", id = ViewData.Model.Id }) %>',
             dataType: 'json',
             success: function()   { },
             data: {},
             async: false
          });
 
-         var tileObject = eval('(' + result.responseText + ')');
-         
-         return tileObject.url;
+         return eval('(' + result.responseText + ')');
       }
       
       $(document).ready(function() {
-      setupMap("map_canvas", '<%= ViewData.Model.StorageKey %>', <%= ViewData.Model.ZoomLevels %>, <%= ViewData.Model.TileSize %>, getTileUrl);
+         urls = getTileUrls();
+         setupMap("map_canvas", '<%= ViewData.Model.StorageKey %>', <%= ViewData.Model.ZoomLevels %>, <%= ViewData.Model.TileSize %>, getTileUrl);
       })
       //]]>
    </script>
@@ -76,12 +83,11 @@
    </script>
 
    <% } %>
-   <span id="EditTitle" class="ItemTitle">
-      <%= ViewData.Model.Title %></span>
+   <span id="EditTitle" class="ItemTitle"><%= ViewData.Model.Title %></span>
    <div class="ImagePanel">
       <% if (ViewData.Model.PreviewUrl != null)
          { %>
-      <div id="map_canvas" style="width: 600px; height: 600px">
+      <div id="map_canvas" class="ItemDetailImage" style="width: 600px; height: 600px">
       </div>
      <%-- <img class="ItemDetailImage" src="<%= System.Web.HttpUtility.HtmlAttributeEncode(ViewData.Model.PreviewUrl.OriginalString) %>"
          alt="<%= ViewData.Model.Title %>" />--%>
@@ -99,8 +105,7 @@
       </div>
    </div>
    <div class="ItemDetail">
-      <span id="EditDescription" class="MapDescriptionText">
-         <%= ViewData.Model.Description %></span>
+      <span id="EditDescription" class="MapDescriptionText"><%= ViewData.Model.Description %></span>
    </div>
    <%
       if (ViewData.Model.IsEditable)

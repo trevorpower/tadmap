@@ -10,6 +10,7 @@
    padding: 0px;
    display: block;
    margin: 0;
+   margin-bottom: 5px;
 }
 
 .ItemTitleEdit 
@@ -57,9 +58,9 @@
 .MapDescriptionText
 {
    display: block; 
-   min-height:200px;
+   min-height: 90px;
    height:auto !important;
-   height:500px;
+   height:300px;
 }
 
 .MapDescriptionEdit TEXTAREA
@@ -79,9 +80,8 @@
 
 .ImagePanel
 {
-   float: right;
-   margin-bottom: 10px;
-   margin-left: 10px;
+   margin-bottom: 0px;
+   margin-left: 0px;
    display: block;
 }
 

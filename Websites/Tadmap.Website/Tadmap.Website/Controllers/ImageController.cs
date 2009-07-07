@@ -216,5 +216,34 @@ namespace Tadmap.Controllers
 
          return Json(new { url = _binaryRepository.GetUrl(string.Format("Tile_{0}_{1}_{2}_{3}", tileX, tileY, zoom, image.Key)) });
       }
+
+      public ActionResult GetTiles(IPrincipal principal, int id)
+      {
+         var image = _imageRepository.GetAllImages().WithId(id).Single();
+
+         if (!image.IsPublic && image.UserId != (principal.Identity as TadmapIdentity).Id)
+            throw new ImageNotFoundException();
+
+         var tiles = new string[image.ZoomLevel + 1][,];
+
+         int numberOfTiles = 1;
+
+         for (int z = 0; z <= image.ZoomLevel; z++)
+         {
+            tiles[z] = new string[numberOfTiles, numberOfTiles];
+
+            for (int x = 0; x < numberOfTiles; x++)
+            {
+               for (int y = 0; y < numberOfTiles; y++)
+               {
+                  tiles[z][x,y] = _binaryRepository.GetUrl(string.Format("Tile_{0}_{1}_{2}_{3}", x, y, z, image.Key)).OriginalString;
+               }
+            }
+
+            numberOfTiles *= 2;
+         }
+
+         return Json(tiles);
+      }
    }
 }
