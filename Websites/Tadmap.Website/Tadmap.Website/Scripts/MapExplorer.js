@@ -1,96 +1,75 @@
-﻿function TadTileLayer()
-{
-   var oCopyright = new GCopyright(
-      1,
-      new GLatLngBounds(new GLatLng(-90, -180), new GLatLng(90, 180)),
-      0,
-      "©2008 tadmap.com"
-   );
-   
-   var oCopyrightCollection = new GCopyrightCollection('Chart');
-   oCopyrightCollection.addCopyright(oCopyright);
-   
-   GTileLayer.call(this, oCopyrightCollection, 0, 13);
-}
+﻿function setupMap(mapControlId, mapKey, iZoomLevels, iTileSize, getTileUrl) {
+   try {
+      if (GBrowserIsCompatible()) {
+         //alert(iTileSize);
+         var oMap = new GMap2(document.getElementById(mapControlId));
+         oMap.setCenter(new GLatLng(0, 0), 1);
+         oMap.addControl(new GLargeMapControl());
 
-TadTileLayer.prototype = new GTileLayer();
+         var copyCollection = new GCopyrightCollection("Tadmap");
+         var copyright = new GCopyright(1, new GLatLngBounds(new GLatLng(0, 0), new GLatLng(0.4, 0.2)), 0, "");
+         copyCollection.addCopyright(copyright);
+
+         function CustomTileCheckRange(tile, zoom, tileSize) {
+            if (tile.x < 0)
+               return false;
+
+            if (tile.y < 0)
+               return false;
+
+            var size = Math.pow(2, zoom);
+
+            if (tile.x >= size)
+               return false;
+
+            if (tile.y >= size)
+               return false;
+
+            return true;
+         }
+         
+         function CustomIsPng() {
+            return true;
+         }
+
+         var tilelayers = [new GTileLayer(copyCollection, 0, iZoomLevels)];
+         tilelayers[0].getTileUrl = getTileUrl;
+         tilelayers[0].isPng = CustomIsPng;
 
 
-TadTileLayer.prototype.isPng = function()
-{
-   alert('isPng');
-   return false;
-}
+         var oMapOptions = {
+            errorMessage: "Outside the bounds of the map.",
+            tileSize: iTileSize
+         }
 
-TadTileLayer.prototype.getOpacity = function()
-{
-   alert('get opacity');
-   return 1.0;
-}
+         var oProjection = new GMercatorProjection(iZoomLevels + 1);
+         oProjection.tileCheckRange = CustomTileCheckRange;
 
-TadTileLayer.prototype.getCopyright = function(bounds, zoom)
-{
-   alert('get copyright');
-   return "tadmap.com";
-}
+         oProjection.fromLatLngToPixel = function(latlng, z) {
+            return new GPoint(latlng., 0);
+         }
 
-function setupMap(mapControlId, mapKey, iZoomLevels, iTileSize, getTileUrl)
- {
-   if (GBrowserIsCompatible())
-   {
-      var oMap = new GMap2(document.getElementById(mapControlId));
-      oMap.setCenter(new GLatLng(0, 0), 1);
-      oMap.addControl(new GSmallMapControl());
-     
-      var copyCollection = new GCopyrightCollection("tadmap.com");
-      var copyright = new GCopyright(1, new GLatLngBounds(new GLatLng(0, 0), new GLatLng(0.2, 0.1)), 0, "");
-      copyCollection.addCopyright(copyright);
+         oProjection.fromPixelToLatLng = function(latlng, z) {
+            return new GLatLng(0, 0);
+         }
 
-      var tilelayers = [new GTileLayer(copyCollection, 0, iZoomLevels)];
-      tilelayers[0].getTileUrl = getTileUrl;
-      tilelayers[0].isPng = CustomIsPng;
-       
-      function CustomIsPng() {
-         return true;
+         oProjection.getWrapWidth = function(z) {
+            return Math.pow(2, z) * iTileSize;
+         }
+
+        
+
+         var custommap = new GMapType(tilelayers, oProjection, "Tadmap", oMapOptions);
+         oMap.addMapType(custommap);
+         oMap.setMapType(custommap);
+
+         var overviewControl = new GOverviewMapControl(new GSize(180, 160));
+         overviewControl.setMapType(custommap);
+         oMap.addControl(overviewControl);
+         
       }
-      
-      var oMapOptions = {
-         errorMessage:"Outside the bounds of the map.",
-         tileSize: iTileSize
-      }
-      
-      var oProjection =  new GMercatorProjection(iZoomLevels + 1);
-      oProjection.tileCheckRange = CustomTileCheckRange;
-      
-      function CustomTileCheckRange(tile, zoom, tileSize)
-      {
-         if (tile.x < 0)
-            return false;
-            
-         if (tile.y < 0)
-            return false;
-            
-         var size = Math.pow(2, zoom);
-
-         if (tile.x >= size)
-            return false;
-
-         if (tile.y >= size)
-            return false;
-
-         return true;
-      }
-      
-      var custommap = new GMapType(tilelayers, oProjection, "tadmap", oMapOptions);
-      oMap.addMapType(custommap);
-      oMap.setMapType(custommap);
-      
-//     GEvent.addListener(map, "click", function (overlay, latlng) {
-//        if (overlay == null)
-//        {
-//            //AddSyncPoint(oMap, latlng);
-//        }
-//     });        
-
+   }
+   catch (e) {
+      alert(e.message);
    }
  }

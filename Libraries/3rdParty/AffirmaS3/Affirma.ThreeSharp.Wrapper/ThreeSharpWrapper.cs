@@ -156,11 +156,11 @@ namespace Affirma.ThreeSharp.Wrapper
         /// <summary>
         /// Generates a URL to access an S3 object in a bucket
         /// </summary>
-        public String GetUrl(String bucketName, String keyName)
+        public String GetUrl(String bucketName, String keyName, int expireAfterSeconds)
         {
             using (UrlGetRequest urlGetRequest = new UrlGetRequest(bucketName, keyName))
             {
-                urlGetRequest.ExpiresIn = 60 * 1000;
+               urlGetRequest.ExpiresIn = expireAfterSeconds * 1000;
                 using (UrlGetResponse urlGetResponse = this.service.UrlGet(urlGetRequest))
                 {
                     return urlGetResponse.StreamResponseToString();

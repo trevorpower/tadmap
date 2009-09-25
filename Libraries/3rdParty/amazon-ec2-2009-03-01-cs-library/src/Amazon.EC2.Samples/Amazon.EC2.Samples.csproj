@@ -1,4 +1,4 @@
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,6 +8,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.EC2.Samples</RootNamespace>
     <AssemblyName>Amazon.EC2.Samples</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,7 +38,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Amazon.EC2.Samples\*.cs" />
+    <Compile Include="Amazon.EC2.Samples\*.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Amazon.EC2\Amazon.EC2.csproj">
@@ -41,7 +46,6 @@
       <Name>Amazon.EC2</Name>
     </ProjectReference>
   </ItemGroup>
-
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

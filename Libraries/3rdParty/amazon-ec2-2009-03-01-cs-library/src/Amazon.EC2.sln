@@ -1,4 +1,5 @@
-Microsoft Visual Studio Solution File, Format Version 9.00
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.EC2.Samples", "Amazon.EC2.Samples\Amazon.EC2.Samples.csproj", "{1037825A-92F2-3307-9738-6ED3DD1F1E08}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9722AE1B-5142-371B-9F57-519D402C06F3} = {9722AE1B-5142-371B-9F57-519D402C06F3}
@@ -25,9 +26,3 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
-
-
-
-
-
-

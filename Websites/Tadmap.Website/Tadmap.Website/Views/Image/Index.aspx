@@ -87,7 +87,7 @@
    <div class="ImagePanel">
       <% if (ViewData.Model.PreviewUrl != null)
          { %>
-      <div id="map_canvas" class="ItemDetailImage" style="width: 600px; height: 600px">
+      <div id="map_canvas" class="ItemDetailImage" style="width: 700px; height: 600px">
       </div>
      <%-- <img class="ItemDetailImage" src="<%= System.Web.HttpUtility.HtmlAttributeEncode(ViewData.Model.PreviewUrl.OriginalString) %>"
          alt="<%= ViewData.Model.Title %>" />--%>

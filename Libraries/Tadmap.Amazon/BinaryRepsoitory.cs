@@ -107,7 +107,7 @@ namespace Tadmap.Amazon
       public Uri GetUrl(string key)
       {
          ThreeSharpWrapper s3 = new ThreeSharpWrapper(AccessKey, SecretKey);
-         return new Uri(s3.GetUrl(BucketName, key));
+         return new Uri(s3.GetUrl(BucketName, key, 60 * 30));
       }
 
 
