@@ -1,0 +1,23 @@
+C:\Consulting\Amazon\Amazon S3\Affirma.ThreeSharp\Affirma.ThreeSharp.Wrapper\bin\Debug\Affirma.ThreeSharp.Wrapper.dll
+C:\Consulting\Amazon\Amazon S3\Affirma.ThreeSharp\Affirma.ThreeSharp.Wrapper\bin\Debug\Affirma.ThreeSharp.Wrapper.pdb
+C:\Consulting\Amazon\Amazon S3\Affirma.ThreeSharp\Affirma.ThreeSharp.Wrapper\bin\Debug\Affirma.ThreeSharp.dll
+C:\Consulting\Amazon\Amazon S3\Affirma.ThreeSharp\Affirma.ThreeSharp.Wrapper\bin\Debug\Affirma.ThreeSharp.pdb
+C:\Consulting\Amazon\Amazon S3\Affirma.ThreeSharp\Affirma.ThreeSharp.Wrapper\bin\Debug\Affirma.ThreeSharp.xml
+C:\Consulting\Amazon\Amazon S3\Affirma.ThreeSharp\Affirma.ThreeSharp.Wrapper\obj\Debug\ResolveAssemblyReference.cache
+C:\Consulting\Amazon\Amazon S3\Affirma.ThreeSharp\Affirma.ThreeSharp.Wrapper\obj\Debug\Affirma.ThreeSharp.Wrapper.dll
+C:\Consulting\Amazon\Amazon S3\Affirma.ThreeSharp\Affirma.ThreeSharp.Wrapper\obj\Debug\Affirma.ThreeSharp.Wrapper.pdb
+C:\Consulting\Amazon\Amazon S3\Affirma.ThreeSharp\Affirma.ThreeSharp.Wrapper\bin\Debug\Affirma.ThreeSharp.Wrapper.XML
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.Wrapper.dll
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.Wrapper.pdb
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.dll
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.pdb
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\obj\Release\Affirma.ThreeSharp.Wrapper.dll
+C:\Users\Trevor\Development\tadmap\Libraries\AffirmaS3\Affirma.ThreeSharp.Wrapper\obj\Release\Affirma.ThreeSharp.Wrapper.pdb
+C:\Users\Trevor\Development\tadmap\trunk\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.Wrapper.dll
+C:\Users\Trevor\Development\tadmap\trunk\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.Wrapper.pdb
+C:\Users\Trevor\Development\tadmap\trunk\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.dll
+C:\Users\Trevor\Development\tadmap\trunk\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp.Wrapper\bin\Release\Affirma.ThreeSharp.pdb
+C:\Users\Trevor\Development\tadmap\trunk\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp.Wrapper\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Trevor\Development\tadmap\trunk\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp.Wrapper\obj\Release\Affirma.ThreeSharp.Wrapper.dll
+C:\Users\Trevor\Development\tadmap\trunk\Libraries\3rdParty\AffirmaS3\Affirma.ThreeSharp.Wrapper\obj\Release\Affirma.ThreeSharp.Wrapper.pdb

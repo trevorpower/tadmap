@@ -1,0 +1,33 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.SQS.Samples", "Amazon.SQS.Samples\Amazon.SQS.Samples.csproj", "{40F9410E-0750-3EC9-9F6C-6FC270B1C625}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4555C81C-4A9F-3996-91F9-5763E87782F7} = {4555C81C-4A9F-3996-91F9-5763E87782F7}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.SQS", "Amazon.SQS\Amazon.SQS.csproj", "{4555C81C-4A9F-3996-91F9-5763E87782F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40F9410E-0750-3EC9-9F6C-6FC270B1C625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F9410E-0750-3EC9-9F6C-6FC270B1C625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F9410E-0750-3EC9-9F6C-6FC270B1C625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40F9410E-0750-3EC9-9F6C-6FC270B1C625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4555C81C-4A9F-3996-91F9-5763E87782F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4555C81C-4A9F-3996-91F9-5763E87782F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4555C81C-4A9F-3996-91F9-5763E87782F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4555C81C-4A9F-3996-91F9-5763E87782F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+
+
+
+
+
+

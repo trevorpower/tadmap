@@ -1,0 +1,124 @@
+﻿body
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#MasterPageHeader
+{
+    background-image: url( HeaderBack.png );
+    background-position: bottom;
+    background-repeat: repeat-x;    
+    padding: 2px 20px 0px 20px;
+    overflow: visible;
+    height: 20px;
+    border-bottom: solid 1px #99CC99;
+}
+
+#MasterPageLogo
+{
+    font-family: Arial;
+    /*font-variant: small-caps;*/
+    color: #339933;
+    /*font-weight: bold;*/
+    float: left;
+    clear: none;
+    text-decoration: none;
+    border-width: 0px;
+}
+
+.MasterPageSubText
+{
+    font-family: Arial;
+    color: #226622;
+    font-size: small;
+}
+
+#MasterPageFooter
+{
+    background-image: url( FooterBack.png );
+    background-position: top;
+    background-repeat: repeat-x;    
+    padding: 2px 20px 0px 20px;
+    border-top: solid 1px #99CC99;
+    height: 40px;
+    clear: both;
+    text-align: center;
+    font-family: Arial;   
+}
+
+#MasterPageFooterLinks
+{
+    font-family: Arial;
+    color: #6688FF;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#MasterPageFooterLinks A
+{
+    text-decoration: none;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+#MasterPageFooterLinks A:visited
+{
+    color: #6688AA;
+}
+
+#MasterPageFooterLinks A:hover
+{
+   text-decoration: underline;
+}
+
+#MasterPageNavigationBar
+{
+    float: right;
+    clear: none;
+}
+
+.MasterPageAdministrationLink   
+{
+    font-family: Arial;
+    color: #6688FF;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.MasterPageNavigationLink
+{
+    font-family: Arial;
+    color: #6688FF;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+#MasterPageBody
+{
+    font-family: Arial;
+    color: #114411;
+    padding: 20px;
+}
+
+.MasterPageLoginName
+{
+    font-family: Arial;
+    color: #666666;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+   
+    font-style: italic;
+    
+    background: url('login-bg.png') no-repeat scroll 0pt 50%;
+    padding-left: 18px;
+}
+
+#MasterPageLogo IMG
+{
+    border-width: 0px;
+}

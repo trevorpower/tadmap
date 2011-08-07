@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples
+END
+ResetImageAttributeSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/ResetImageAttributeSample.cs
+END
+DisassociateAddressSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DisassociateAddressSample.cs
+END
+DeleteSnapshotSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DeleteSnapshotSample.cs
+END
+ReleaseAddressSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/ReleaseAddressSample.cs
+END
+DescribeReservedInstancesSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DescribeReservedInstancesSample.cs
+END
+DescribeInstancesSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DescribeInstancesSample.cs
+END
+DescribeAvailabilityZonesSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DescribeAvailabilityZonesSample.cs
+END
+AllocateAddressSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/AllocateAddressSample.cs
+END
+DeleteVolumeSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DeleteVolumeSample.cs
+END
+DescribeReservedInstancesOfferingsSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DescribeReservedInstancesOfferingsSample.cs
+END
+AttachVolumeSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/AttachVolumeSample.cs
+END
+RebootInstancesSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/RebootInstancesSample.cs
+END
+DescribeImagesSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DescribeImagesSample.cs
+END
+AuthorizeSecurityGroupIngressSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/AuthorizeSecurityGroupIngressSample.cs
+END
+RunInstancesSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/RunInstancesSample.cs
+END
+DescribeAddressesSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DescribeAddressesSample.cs
+END
+ModifyImageAttributeSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/ModifyImageAttributeSample.cs
+END
+DetachVolumeSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DetachVolumeSample.cs
+END
+DescribeBundleTasksSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DescribeBundleTasksSample.cs
+END
+AssociateAddressSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/AssociateAddressSample.cs
+END
+DescribeSnapshotsSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DescribeSnapshotsSample.cs
+END
+ConfirmProductInstanceSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/ConfirmProductInstanceSample.cs
+END
+CreateSnapshotSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/CreateSnapshotSample.cs
+END
+GetConsoleOutputSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/GetConsoleOutputSample.cs
+END
+DeleteKeyPairSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DeleteKeyPairSample.cs
+END
+RegisterImageSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/RegisterImageSample.cs
+END
+DescribeKeyPairsSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DescribeKeyPairsSample.cs
+END
+CreateKeyPairSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/CreateKeyPairSample.cs
+END
+DescribeVolumesSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DescribeVolumesSample.cs
+END
+CreateVolumeSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/CreateVolumeSample.cs
+END
+RevokeSecurityGroupIngressSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/RevokeSecurityGroupIngressSample.cs
+END
+BundleInstanceSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/BundleInstanceSample.cs
+END
+DeregisterImageSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DeregisterImageSample.cs
+END
+TerminateInstancesSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/TerminateInstancesSample.cs
+END
+AmazonEC2Samples.cs
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/AmazonEC2Samples.cs
+END
+CancelBundleTaskSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/CancelBundleTaskSample.cs
+END
+PurchaseReservedInstancesOfferingSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 181
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/PurchaseReservedInstancesOfferingSample.cs
+END
+DescribeRegionsSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DescribeRegionsSample.cs
+END
+DescribeImageAttributeSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DescribeImageAttributeSample.cs
+END
+DeleteSecurityGroupSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DeleteSecurityGroupSample.cs
+END
+DescribeSecurityGroupsSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/DescribeSecurityGroupsSample.cs
+END
+CreateSecurityGroupSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2.Samples/Amazon.EC2.Samples/CreateSecurityGroupSample.cs
+END

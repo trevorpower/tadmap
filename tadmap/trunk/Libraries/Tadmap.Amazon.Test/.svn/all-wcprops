@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Amazon.Test
+END
+MessageQueueTests.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Amazon.Test/MessageQueueTests.cs
+END
+Tadmap.Amazon.Test.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Amazon.Test/Tadmap.Amazon.Test.csproj
+END
+BinaryRepositoryTests.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Amazon.Test/BinaryRepositoryTests.cs
+END

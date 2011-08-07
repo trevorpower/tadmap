@@ -1,0 +1,6 @@
+﻿<connectionStrings>
+  <add connectionString="Data Source=mssql43int.cp.blacknight.com;Network Library=dbmssocn;Connection Timeout=15;Packet Size=4096;Integrated Security=no;User ID=u1010102_live_application;Password=Unsec1980;Database=db1010102_tadmap;Encrypt=no;" name="Security"/>
+  <add connectionString="Data Source=mssql43int.cp.blacknight.com;Network Library=dbmssocn;Connection Timeout=15;Packet Size=4096;Integrated Security=no;User ID=u1010102_live_application;Password=Unsec1980;Database=db1010102_tadmap;Encrypt=no;" name="TadMap"/>
+  <add name="tadmapConnectionString" connectionString="Data Source=mssql43int.cp.blacknight.com;Network Library=dbmssocn;Connection Timeout=15;Packet Size=4096;Integrated Security=no;User ID=u1010102_live_application;Password=Unsec1980;Database=db1010102_tadmap;Encrypt=no;"
+      providerName="System.Data.SqlClient" />
+</connectionStrings>

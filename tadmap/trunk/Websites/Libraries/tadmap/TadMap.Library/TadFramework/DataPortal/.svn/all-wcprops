@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal
+END
+MethodCaller.cs
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/MethodCaller.cs
+END
+RunLocalAttribute.cs
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/RunLocalAttribute.cs
+END
+TransactionalAttribute.cs
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/TransactionalAttribute.cs
+END
+DataPortalEventArgs.cs
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/DataPortalEventArgs.cs
+END
+DataPortalException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/DataPortalException.cs
+END

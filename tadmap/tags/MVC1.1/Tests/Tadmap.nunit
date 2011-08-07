@@ -1,0 +1,8 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="TadmapTests\TadmapTests\bin\Release\TadmapTests.dll" />
+    <assembly path="TadmapTests\RepositoryIntegrationTests\bin\Release\RepositoryIntegrationTests.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto" />
+</NUnitProject>

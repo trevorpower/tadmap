@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/tadmap_tadmap/!svn/ver/198/branches/ec2/Libraries/Tadmap.MessageQueue/Tadmap.MessageQueue
+END
+IMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/tadmap_tadmap/!svn/ver/177/branches/ec2/Libraries/Tadmap.MessageQueue/Tadmap.MessageQueue/IMessage.cs
+END
+Key.snk
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/tadmap_tadmap/!svn/ver/176/branches/ec2/Libraries/Tadmap.MessageQueue/Tadmap.MessageQueue/Key.snk
+END
+IMessageQueue.cs
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/tadmap_tadmap/!svn/ver/182/branches/ec2/Libraries/Tadmap.MessageQueue/Tadmap.MessageQueue/IMessageQueue.cs
+END
+MessageQueueException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/tadmap_tadmap/!svn/ver/192/branches/ec2/Libraries/Tadmap.MessageQueue/Tadmap.MessageQueue/MessageQueueException.cs
+END
+Tadmap.MessageQueue.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/tadmap_tadmap/!svn/ver/196/branches/ec2/Libraries/Tadmap.MessageQueue/Tadmap.MessageQueue/Tadmap.MessageQueue.csproj
+END

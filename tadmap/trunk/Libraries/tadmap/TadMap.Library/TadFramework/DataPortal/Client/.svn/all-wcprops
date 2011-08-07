@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Client
+END
+DataPortal.cs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Client/DataPortal.cs
+END
+LocalProxy.cs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Client/LocalProxy.cs
+END
+IDataPortal.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Client/IDataPortal.cs
+END

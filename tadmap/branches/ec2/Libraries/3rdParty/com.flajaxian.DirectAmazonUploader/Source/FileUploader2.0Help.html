@@ -1,0 +1,856 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Flajaxian File Uploader 2.0 Help</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+  <style>
+  body{
+    margin:10px;
+    font-family:Tahoma,Arial,sans-serif;
+    font-size:14px;
+  }
+  h2, h3{
+    text-align:center;
+  }
+  ul li{
+    margin:2px 0 2px 0;
+  }
+  ol li{
+    margin:2px 0 10px 0;
+  }
+  .nav_container{
+    margin-top:10px;
+    padding:left:20px;
+  }
+  .csharpcode, .csharpcode pre
+  {
+    font-size: small;
+    color: black;
+    font-family: Consolas, "Courier New", Courier, Monospace;
+    background-color:#DEDEDE;
+    border: solid 1px #CCC;
+    margin: 5px;
+    padding:5px 5px 5px 5px;
+  }
+
+  .csharpcode .rem { color: #008000; }
+
+  .csharpcode .kwrd { color: #0000ff; }
+
+  .csharpcode .str { color: #006080; }
+
+  .csharpcode .op { color: #0000c0; }
+
+  .csharpcode .preproc { color: #cc6633; }
+
+  .csharpcode .asp { background-color: #ffff00; }
+
+  .csharpcode .html { color: #800000; }
+
+  .csharpcode .attr { color: #ff0000; }
+
+  .csharpcode .alt 
+  {
+    background-color: #f4f4f4;
+    width: 100%;
+    margin: 0em;
+  }
+
+  .csharpcode .lnum { color: #606060; }
+  </style>
+</head>
+<body>
+
+<h2>Flajaxian File Uploader 2.0</h2>
+
+<div class="nav_container">
+  <ul>
+    <li>
+      <a href="#HowToUseFileUploader">How to use FileUploader 2.0</a>
+    </li>
+    <li>
+      <a href="#RequestLimitations">Request Limitations</a>
+    </li>
+    <li>
+      <a href="#HowToOvercomeFlashBug">Flash Debug Player Cookies/Session Bug</a>
+    </li>
+    <li>
+      <a href="#HowToUseDifferentButtons">Using Different Buttons</a>
+    </li>
+    <li>
+      <a href="#HowToMakeBgTransparent">Transparent Background</a>
+    </li>
+    <li>
+      <a href="#HowToChangeCss">Styles ( CSS ) of the File List Box</a>
+    </li>
+    <li>
+      <a href="#ServerSideAdapters">Server Side Adapters</a>
+    </li>
+    <li>
+      <a href="#CustomAdapters">Custom Adapters</a>
+    </li>
+    <li>
+      <a href="#HowToLimitFiles">Limit the File Types, Size and Number</a>
+    </li>
+    <li>
+      <a href="#HowToSendVars">Send Variables with the Files</a>
+    </li>
+    <li>
+      <a href="#HowToPostBack">Make Each Request to be a Post Back Request</a>
+    </li>
+    <li>
+      <a href="#HowToUseClientSideEvents">Using Client Side Events  (JavaScript interface)</a>
+    </li>
+    <li>
+      <a href="#HowToNotifyUser">Notify User When the Maximum Storage Quota is Reached</a>
+    </li>
+    <li>
+      <a href="#HowToUseInsideUpdatePanel">Inside an Update Panel</a>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<a name="HowToUseFileUploader"></a>
+<h3>How to use FileUploader</h3>
+
+<p>Flajaxian FileUploader is free and open source .NET web control designed for 
+asynchronous file upload of multiple files at the same time, without a page post 
+back and with a progress bar indicating the current upload progress. This control 
+does not require full trust environment. The control can be extended with the addition 
+of server side and client side functions. Flajaxian FileUploader uses 
+Adobe Flash Player 9 or higher Flash Player for the file upload request.</p>
+
+<p>Version 2.0 can be used inside an update panel and can have the request as post back.</p>
+
+<p>In order to install the control you need to follow these steps:</p>
+<ol>
+  <li>
+    Place <b>com.flajaxian.FileUploader.dll</b> in the <b>/BIN</b> folder of your web server 
+  </li>
+  <li>
+    Add the following tag at the top of your aspx page: <br />
+    
+<pre class="csharpcode">
+  <span class="asp">&lt;%@ Register TagPrefix="fjx" Namespace="com.flajaxian" Assembly="com.flajaxian.FileUploader" %&gt;</span></pre>
+  
+  </li>
+  <li>
+    Add the following tags inside the Form element inside the BODY tag of the ASPX page, 
+    where you would like to see the FileUploader 
+    
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+  
+  <p>As you can see here we use FileSaverAdapter. The files will be uploaded on a folder with name "UploadFolder".</p>
+    
+  </li>
+</ol>
+
+
+
+
+
+
+
+
+<a name="RequestLimitations"></a>
+<h3>Request Limitations</h3>
+
+<p>There are several request limitations applied by the IIS. 
+You may want to redefine the values in <b>web.config</b> file for the request timeout and maximum file size. 
+You can do that in the section <b>configuration/system.web</b> as follow:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">httpRuntime</span> <span class="attr">executionTimeout</span><span class="kwrd">="1800"</span> 
+              <span class="attr">maxRequestLength</span><span class="kwrd">="1048576"</span> 
+              <span class="attr">useFullyQualifiedRedirectUrl</span><span class="kwrd">="false"</span> <span class="kwrd">/&gt;</span></pre>
+
+<p>In this case we set timeout to 1800 seconds or 30 minutes and file size to 1048576KB or 1GB</p>
+
+<p>Even more secure way would be to change that setting only for the page
+that owns FileUploader, for example:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">location</span> <span class="attr">path</span><span class="kwrd">="Page.aspx"</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">system.web</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">httpRuntime</span> <span class="attr">executionTimeout</span><span class="kwrd">="1800"</span> 
+              <span class="attr">maxRequestLength</span><span class="kwrd">="1048576"</span> 
+              <span class="attr">useFullyQualifiedRedirectUrl</span><span class="kwrd">="false"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">system.web</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">location</span><span class="kwrd">&gt;</span> </pre>
+
+<p><b>IIS 7</b> also has a limit request filtering by default 
+set to a little less than 30MB. The description of that can be found  
+<a href="http://msdn2.microsoft.com/en-us/library/ms689462(VS.85).aspx" 
+target="_blank">at the msdn site</a>.</p>
+
+<p>To override it you have to change 
+<b>configuration/system.webServer/security/requestFiltering/requestLimits</b>
+configuration.</p> To set it to 1GB use:
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">system.webServer</span><span class="kwrd">&gt;</span> 
+    <span class="kwrd">&lt;</span><span class="html">security</span><span class="kwrd">&gt;</span> 
+        <span class="kwrd">&lt;</span><span class="html">requestFiltering</span><span class="kwrd">&gt;</span> 
+            <span class="kwrd">&lt;</span><span class="html">requestLimits</span> <span class="attr">maxAllowedContentLength</span><span class="kwrd">="1073741824"</span><span class="kwrd">/&gt;</span> 
+        <span class="kwrd">&lt;/</span><span class="html">requestFiltering</span><span class="kwrd">&gt;</span> 
+    <span class="kwrd">&lt;/</span><span class="html">security</span><span class="kwrd">&gt;</span> 
+<span class="kwrd">&lt;/</span><span class="html">system.webServer</span><span class="kwrd">&gt;</span></pre>
+
+<p>If you have the default settings, after that you will get an error <b>The requested page cannot be 
+accessed because the related configuration data for the page is invalid</b> and this
+is because by default modifications to that config section are not allowed.
+To change that you will need access to the 
+<b>%windir%\System32\inetsrv\config\applicationHost.config</b> 
+file where you would change <b>section name="requestFiltering"</b> 
+to have <b>overrideModeDefault="Allow"</b> as shown here:</p>
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">section</span> <span class="attr">name</span><span class="kwrd">="requestFiltering"</span> <span class="attr">overrideModeDefault</span><span class="kwrd">="Allow"</span> <span class="kwrd">/&gt;</span></pre>
+
+<p>You have to also be aware that as a consequence of that change because the stream is in-memory 
+during the upload the IIS process may recycle because of the <b>memoryLimit</b> attribute 
+in the <b>processModel</b> tag in the Machine.config as described on the 
+<a href="http://support.microsoft.com/default.aspx?scid=kb;EN-US;295626"
+    target="_blank">Microsoft Support Site</a>. So you may have to change that too.</p>
+
+
+
+
+
+
+
+
+
+
+
+<a name="HowToOvercomeFlashBug"></a>
+<h3>Flash Debug Player Cookies/Session Bug</h3>
+
+<p>Flash debug player for Firefox has a bug of not transferring the cookies with the upload request.</p>
+
+<p>In order to overcome the bug you need to add the following code to your <b>Global.asax</b> code behind file:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">public</span> <span class="kwrd">override</span> <span class="kwrd">void</span> Init()
+{
+    <span class="kwrd">base</span>.Init();
+    <span class="kwrd">this</span>.BeginRequest += <span class="kwrd">new</span> EventHandler(BeginRequest);
+}
+<span class="kwrd">void</span> BeginRequest(<span class="kwrd">object</span> sender, EventArgs e)
+{
+    <span class="attr">com.flajaxian.FileUploader.RegisterAspCookies();</span>
+}</pre>
+
+<p>This will register the cookies</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="HowToUseDifferentButtons"></a>
+<h3>Using Different Buttons</h3>
+
+<p>You can specify different than the default buttons. 
+In the source of the project in <b>images</b> folder you can find alternative buttons. 
+Here is a setup with those buttons:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> 
+    <span class="attr">Width</span><span class="kwrd">="205"</span>
+    <span class="attr">Height</span><span class="kwrd">="40"</span>
+    <span class="attr">ImagesPath</span><span class="kwrd">="~/images/UploadButtons/"</span> 
+    <span class="attr">BrowseButtonUrl</span><span class="kwrd">="Browse.gif"</span>
+    <span class="attr">BrowseButtonOverUrl</span><span class="kwrd">="BrowseOver.gif"</span> 
+    <span class="attr">BrowseButtonPressedUrl</span><span class="kwrd">="BrowsePress.gif"</span>
+    <span class="attr">BrowseButtonDisabledUrl</span><span class="kwrd">="BrowseDisabled.gif"</span>
+    <span class="attr">UploadButtonUrl</span><span class="kwrd">="Upload.gif"</span>
+    <span class="attr">UploadButtonOverUrl</span><span class="kwrd">="UploadOver.gif"</span>
+    <span class="attr">UploadButtonPressedUrl</span><span class="kwrd">="UploadPress.gif"</span> 
+    <span class="attr">UploadButtonDisabledUrl</span><span class="kwrd">="UploadDisabled.gif"</span>
+    <span class="attr">CancelButtonUrl</span><span class="kwrd">="Cancel.gif"</span>
+    <span class="attr">CancelButtonOverUrl</span><span class="kwrd">="CancelOver.gif"</span>
+    <span class="attr">CancelButtonPressedUrl</span><span class="kwrd">="CancelPress.gif"</span>
+    <span class="attr">BrowseButtonX</span><span class="kwrd">="24"</span>
+    <span class="attr">BrowseButtonY</span><span class="kwrd">="15"</span>
+    <span class="attr">BrowseButtonWidth</span><span class="kwrd">="70"</span>
+    <span class="attr">BrowseButtonHeight</span><span class="kwrd">="24"</span>
+    <span class="attr">UploadButtonX</span><span class="kwrd">="93"</span>
+    <span class="attr">UploadButtonY</span><span class="kwrd">="15"</span>
+    <span class="attr">UploadButtonWidth</span><span class="kwrd">="70"</span>
+    <span class="attr">UploadButtonHeight</span><span class="kwrd">="24"</span>
+    <span class="attr">CancelButtonX</span><span class="kwrd">="162"</span>
+    <span class="attr">CancelButtonY</span><span class="kwrd">="15"</span>
+    <span class="attr">CancelButtonWidth</span><span class="kwrd">="70"</span>
+    <span class="attr">CancelButtonHeight</span><span class="kwrd">="24"</span>
+    <span class="attr">ProgressBarX</span><span class="kwrd">="24"</span>
+    <span class="attr">ProgressBarY</span><span class="kwrd">="1"</span>
+    <span class="attr">ProgressBarWidth</span><span class="kwrd">="202"</span>
+    <span class="attr">ProgressBarHeight</span><span class="kwrd">="11"</span>
+    <span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+<p>If you want to use different language you would create different buttons and pass their file 
+locations and positions as in the example above.</p>
+
+
+
+
+
+
+
+
+
+<a name="HowToMakeBgTransparent"></a>
+<h3>Transparent Background</h3>
+
+
+<p>To make flash transparent set the <b>TransparentBackground</b> property to <b>true</b>. 
+You should set this property also if you are overlaying the control 
+with other divs.</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">TransparentBackground</span><span class="kwrd">="true"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+
+
+
+
+
+
+
+
+
+
+<a name="HowToChangeCss"></a>
+<h3>Styles ( CSS ) of the File List Box</h3>
+
+<p>To change the styles of the file list box add the <b>CssUrl</b> property and set it with the path of a CSS file. Like this:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">CssUrl</span><span class="kwrd">="~/css/FileUploader.css"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+
+<p>Then create that file and add there the default CSS. Modify the CSS according to what you want. This is the default css:</p>
+
+<pre class="csharpcode">
+.Flajaxian_FileBox
+{
+    font-family:Arial,Verdana,sans-serif;
+    font-size:12px;
+    z-index:900;
+    position:absolute;
+    left:0px;
+    top:0px;
+    background-color:White;
+    display:none;
+}
+.Flajaxian_FileBoxHeader
+{
+    width:250px;
+    height:16px;
+    border:solid 1px #C8C8C8;
+}
+.Flajaxian_FileBoxHeaderText
+{
+    float:right;
+    width:230px;
+    text-align:center
+}
+.Flajaxian_FileBoxHeaderArrowHolder
+{
+    float:left;
+    width:16px;
+    cursor:pointer;
+}
+.Flajaxian_FileBoxFileList
+{
+    width:250px;
+    height:200px;
+    overflow:auto;
+    border-left:solid 1px #C8C8C8;
+    border-right:solid 1px #C8C8C8;
+    border-bottom:solid 1px #C8C8C8;
+}
+.Flajaxian_FileBoxFileListRow
+{
+    float:left;
+    width:230px;
+    padding-left:2px;
+    text-align:left;
+}
+.Flajaxian_FileBoxFileListRow:hover
+{
+    background-color:#FFC;    
+}
+.Flajaxian_FileBoxFileListRowError
+{
+    float:left;
+    width:230px;
+    padding-left:2px;
+    background-color:#F66;
+    text-align:left;
+}
+.Flajaxian_FileBoxFileListRowUploading
+{
+    float:left;
+    width:230px;
+    padding-left:2px;
+    background-color:#FFC;
+    text-align:left;
+}
+.Flajaxian_FileBoxFileListRowUploaded
+{
+    float:left;
+    width:230px;
+    padding-left:2px;
+    color:#999;
+    text-align:left;
+}
+.Flajaxian_FileBoxFileListRowCloseBtn
+{
+    float:left;
+    width:16px;
+    padding-right:2px;
+    cursor:pointer;
+}</pre>
+
+
+
+
+
+
+
+
+<a name="ServerSideAdapters"></a>
+<h3>Server Side Adapters</h3>
+
+<p>Server side adapters are designed to extend the functionality of the Flajaxian 
+FileUploader web control. The control comes with two adapters: </p>
+
+<ol>
+  <li>
+    <b>FileSaverAdapter</b> - used for saving the files in a folder on the server. 
+      Here is an example of how you can use it:
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+  
+  <p>In this example file will be uploaded on the folder <b>UploadFolder</b></p>
+  
+  </li>
+  <li>
+    <b>ThumbGeneratorAdapter</b> - used to generate thumbnails for the image files. 
+      Here is an example of how you can use it:
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:ThumbGeneratorAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> 
+            <span class="attr">Extensions</span><span class="kwrd">="jpg;jpeg"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> 
+            <span class="attr">Suffix</span><span class="kwrd">="_thumb"</span> <span class="attr">MaximumWidth</span><span class="kwrd">="200"</span> <span class="attr">MaximumHeight</span><span class="kwrd">="200"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+  <p>In this example the templates will be generated in a folder 
+  <b>UploadFolder</b> with suffix <b>_thumb</b> for the files with extension jpeg or jpg. 
+  The thumbnails will be within the frame of 200 pixels height and width.</p>
+
+  <p>You can use more than one adapter. They will be executed in the order of their definition. For example:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:ThumbGeneratorAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> 
+            <span class="attr">Extensions</span><span class="kwrd">="jpg;jpeg"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> 
+            <span class="attr">Suffix</span><span class="kwrd">="_thumb"</span> <span class="attr">MaximumWidth</span><span class="kwrd">="200"</span> <span class="attr">MaximumHeight</span><span class="kwrd">="200"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+  </li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+<a name="CustomAdapters"></a>
+<h3>Custom Adapters</h3>
+
+<p>You can create your own adapter. They must extend <b>com.flajaxian.FileUploaderAdapter</b>. 
+This is a simple template you can use to create your own server side adapter:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">using</span> System;
+<span class="kwrd">using</span> System.Web;
+<span class="kwrd">using</span> System.Collections;
+
+<span class="kwrd">namespace</span> CustomNamespace
+{
+
+    <span class="kwrd">public</span> <span class="kwrd">class</span> CustomAdapter : FileUploaderAdapter
+    {
+        <span class="rem">/// &lt;param name="file"&gt;Incoming file&lt;/param&gt;</span>
+        <span class="kwrd">public</span> <span class="kwrd">override</span> <span class="kwrd">void</span> ProcessFile(HttpPostedFile file)
+        {
+            <span class="rem">// process the file here</span>
+        }
+
+    }
+}
+</pre>
+
+<p>Then inside your aspx page (at the top) register your assembly as in this example 
+(assuming your assembly is called <b>CustomAssembly.dll</b> and your namespace is <b>CustomeNamespace</b>):</p>
+
+<pre class="csharpcode">
+<span class="asp">&lt;%@ Register TagPrefix="cust" Namespace="CustomeNamespace" Assembly="CustomAssembly" %&gt;</span></pre>
+
+<p>And inside your uploader defenition use:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">runat</span><span class="kwrd">="server"</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">cust:CustomAdapter</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+
+
+
+
+
+
+
+
+
+
+<a name="HowToLimitFiles"></a>
+<h3>Limit the File Types, Size and Number</h3>
+
+<ol>
+  <li>
+    <b>File size</b> - To limit the size of the file allowed to upload you can 
+  change the property <b>MaxFileSize</b>. You can also change the default warning message. For example
+  
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">MaxFileSize</span><span class="kwrd">="2MB"</span> <span class="attr">MaxFileSizeReachedMessage</span><span class="kwrd">="No files bigger than {0} are allowed"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+  
+  </li>
+  <li>
+    <b>File queue size</b> - the same you can do for all the files in the queue.
+    
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">MaxFileQueueSize</span><span class="kwrd">="10MB"</span> <span class="attr">MaxFileQueueSizeReachedMessage</span><span class="kwrd">="All the files cannot be bigger than than {0}"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+  </li>
+  <li>
+    <b>File number</b> - the number of files allowed for upload at once.
+    
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">MaxNumberFiles</span><span class="kwrd">="10"</span> <span class="attr">MaxFileNumberReachedMessage</span><span class="kwrd">="You can select only up to {0} files in one queue"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+    
+  </li>
+  <li>
+    <b>File types</b> - You can limit the allowed file types by setting the property <b>AllowedFileTypes</b>. 
+    If the property is not specified all the file types are allowed for upload. This is how you use this property:
+    
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">AllowedFileTypes</span><span class="kwrd">="Office Documents:*.rtf;*.doc;*.xls;*.docx|Web Images (Jpeg, Gig, Png):*.jpg;*.jpeg;*.png;*.gif"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+    
+    <p>In this example we have defined two groups <b>Office Documents</b> and <b>Web Images (Jpeg, Gig, Png)</b>. 
+    You could also specify the <b>MAC types</b> after another colon as in this example:</p>
+    
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">AllowedFileTypes</span><span class="kwrd">="Image Files:*.jpg;*.jpeg;*.gif;*.png:JPEG;jp2_;GIFf;PNGf|Flash Movies:*.swf:SWFL"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+    <p>If you want to use colon <b>:</b> or vertical line <b>|</b> in your description you could use them as 
+    doubled. For example:</p>
+    
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">AllowedFileTypes</span><span class="kwrd">="Images:: ||*.jpg;*.jpeg;*.gif;*.png||:*.jpg;*.jpeg;*.gif;*.png"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+    
+    
+  </li>
+</ol>
+
+
+
+
+
+
+
+
+
+<a name="HowToSendVars"></a>
+<h3>Send Variables with the Files</h3>
+
+<p>If you want to transfer some variables together with the files, you have to use State property. For example:</p>
+<pre class="csharpcode">
+FileUploader1.State.Add(<span class="str">"MyKey"</span>, <span class="str">"MyValue"</span>);</pre>
+
+<p>The same can be done on client side with JavaScript:</p>
+<pre class="csharpcode">
+<span class="asp">&lt;%</span>=FileUploader1.ClientID<span class="asp">%&gt;</span>.setStateVariable("MyKey", "MyValue");
+</pre>
+
+<p>Then in your server side event you can access those variables from the Form collection of the Request object. For example:</p>
+
+<pre class="csharpcode">
+  <span class="kwrd">string</span> myValue = HttpContext.Current.Request.Form[<span class="str">"MyKey"</span>];
+</pre>
+
+
+<a name="HowToPostBack"></a>
+<h3>Make Each Request to be a Post Back Request</h3>
+
+<p>You can make each request to be a post back request and to transfer all the variables of the form.
+By default this is turned off because <b>this way you will increase the size of the request</b>. You can turn 
+it on by setting the property <b>RequestAsPostBack</b> as in the following example:
+</p>
+
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">RequestAsPostBack</span><span class="kwrd">="true"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+
+
+
+
+
+
+
+
+<a name="HowToUseClientSideEvents"></a>
+<h3>Using Client Side Events (JavaScript interface)</h3>
+
+<p>You can use <b>JsFunc_FileStateChanged</b> property to set a function that will serve as event listener. 
+For example if you want show information about the uploaded files in a div with id <b>MyDiv</b> you can have:</p>
+
+<pre class="csharpcode">
+ <span class="kwrd">&lt;</span><span class="html">script</span><span class="kwrd">&gt;</span>
+<span class="kwrd">function</span> FileStateChanged(uploader, file, httpStatus, isLast){
+    Flajaxian.fileStateChanged(uploader, file, httpStatus, isLast);
+    <span class="kwrd">var</span> t = Flajaxian.$(<span class="str">"MyDiv"</span>);
+    <span class="kwrd">if</span>(file.state &gt; Flajaxian.File_Uploading){
+        t.innerHTML += <span class="str">"bytes:"</span>+file.bytes+<span class="str">" name:"</span>+file.name+<span class="str">" state:"</span>+file.state+<span class="str">" httpStatus:"</span>+httpStatus+<span class="str">" isLast:"</span>+isLast+<span class="str">"&lt;/br&gt;"</span>;
+    }
+}
+<span class="kwrd">&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">div</span> <span class="attr">id</span><span class="kwrd">="MyDiv"</span><span class="kwrd">&gt;&lt;/</span><span class="html">div</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">JsFunc_FileStateChanged</span><span class="kwrd">="FileStateChanged"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+<p>or to redirect user to another page after all the files are uploaded you can use:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">script</span><span class="kwrd">&gt;</span>
+<span class="kwrd">function</span> FileStateChanged(uploader, file, httpStatus, isLast){
+    Flajaxian.fileStateChanged(uploader, file, httpStatus, isLast);
+    <span class="kwrd">if</span>(file.state &gt; Flajaxian.File_Uploading &amp;&amp; isLast){
+        document.location.href = <span class="str">"http://www.google.com"</span>
+    }
+}
+<span class="kwrd">&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">JsFunc_FileStateChanged</span><span class="kwrd">="FileStateChanged"</span> <span class="attr">runat</span><span class="kwrd">="server"</span> <span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+<p>The properties for the JavaScript file object are:</p>
+<table cellpadding="5" cellspacing="0" border="1" style="border-collapse:collapse">
+    <tr>
+        <td><b>id</b></td><td>Integer ID of the file unique per each uploading session</td>
+    </tr>
+    <tr>
+        <td><b>bytes</b></td><td>The size of the file in bytes</td>
+    </tr>
+    <tr>
+        <td><b>name</b></td><td>The name of the file</td>
+    </tr>
+    <tr>
+        <td><b>state</b></td><td>Selected = 1; Uploading = 2; Uploaded = 3; Error = 5</td>
+    </tr>
+</table>
+
+<p><b>httpStatus</b> is the HTTP integer status code of the request, if successful 200. 
+<b>isLast</b> is flag indicating weather the file is the last in the queue.</p>
+
+
+
+<a name="HowToNotifyUser"></a>
+<h3>Notify User When the Maximum Storage Quota is Reached</h3>
+
+<p>You can notify the client for any server event by using the http status code. 
+For example if you want to notify user of the maximum storage quota you would use:</p>
+
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">script</span> <span class="attr">runat</span><span class="kwrd">="server"</span><span class="kwrd">&gt;</span>
+<span class="kwrd">protected</span> <span class="kwrd">void</span> FileNameDetermining(<span class="kwrd">object</span> sender, FileNameDeterminingEventArgs args)
+{
+    <span class="kwrd">long</span> bytesUsed = GetBytesUserAlreadyHasUsed();
+    <span class="kwrd">if</span>(bytesUsed + args.File.ContentLength &gt; MAX_ALLOWED_STORAGE){
+      args.CancelProcessing = <span class="kwrd">true</span>;
+      HttpContext.Current.Response.StatusCode = 550; 
+    }
+}
+<span class="kwrd">protected</span> <span class="kwrd">void</span> ThumbNameDetermining(<span class="kwrd">object</span> sender, FileNameDeterminingEventArgs args)
+{
+    <span class="kwrd">if</span> (HttpContext.Current.Response.StatusCode &gt; 200){ 
+      args.CancelProcessing = <span class="kwrd">true</span>;
+    }
+}
+<span class="kwrd">&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+&lt;script&gt;
+<span class="kwrd">function</span> FileStateChanged(uploader, file, httpStatus, isLast){
+    Flajaxian.fileStateChanged(uploader, file, httpStatus, isLast);
+    <span class="kwrd">if</span>(httpStatus == 550){
+        uploader.cancel();
+        alert(<span class="str">"You have reached the maximum allowed storage quota"</span>);
+    }
+}
+<span class="kwrd">&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">RequestAsPostBack</span><span class="kwrd">="true"</span> <span class="attr">JsFunc_FileStateChanged</span><span class="kwrd">="FileStateChanged"</span> <span class="attr">IsDebug</span><span class="kwrd">="true"</span> <span class="attr">runat</span><span class="kwrd">="server"</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="attr">OnFileNameDetermining</span><span class="kwrd">="FileNameDetermining"</span> <span class="kwrd">/&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:ThumbGeneratorAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">OnFileNameDetermining</span><span class="kwrd">="ThumbNameDetermining"</span> <span class="attr">MaximumWidth</span><span class="kwrd">="200"</span> <span class="attr">MaximumHeight</span><span class="kwrd">="200"</span> <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+<p>You can use http status value between 510 and 999</p>
+
+
+
+
+
+
+
+
+<a name="HowToUseInsideUpdatePanel"></a>
+<h3>Inside an Update Panel</h3>
+
+<p>If you plan to use the control inside an update panel you have to set 
+the property <b>UseInsideUpdatePanel</b> to <b>true</b>. Here is an example:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">asp:UpdatePanel</span> <span class="attr">runat</span><span class="kwrd">="server"</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">ContentTemplate</span><span class="kwrd">&gt;</span>
+    
+        <span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">UseInsideUpdatePanel</span><span class="kwrd">="true"</span> <span class="attr">runat</span><span class="kwrd">="server"</span><span class="kwrd">&gt;</span>
+            <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+                <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+            <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span>
+    
+    <span class="kwrd">&lt;/</span><span class="html">ContentTemplate</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">asp:UpdatePanel</span><span class="kwrd">&gt;</span></pre>
+
+<p>If on the other hand you have a custom client side logic that makes the parent of the uploader invisible or
+reloads that parent. You can do this:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">script</span> <span class="attr">type</span><span class="kwrd">="text/JavaScript"</span><span class="kwrd">&gt;</span>
+<span class="rem">// initialize on the page load</span>
+InitUploader();
+
+<span class="rem">// function called BEFORE ParentDiv is reloaded</span>
+<span class="kwrd">function</span> BeforeReload(){
+  DisposeUploader();
+}
+
+<span class="rem">// function called AFTER ParentDiv is reloaded</span>
+<span class="kwrd">function</span> AfterReload(){
+  InitUploader();
+}
+<span class="kwrd">&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">div</span> <span class="attr">id</span><span class="kwrd">="ParentDiv"</span><span class="kwrd">&gt;</span>
+  <span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">JsFunc_Init</span><span class="kwrd">="InitUploader"</span> <span class="attr">JsFunc_Dispose</span><span class="kwrd">="DisposeUploader"</span> <span class="attr">runat</span><span class="kwrd">="server"</span><span class="kwrd">&gt;</span>
+      <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+          <span class="kwrd">&lt;</span><span class="html">fjx:FileSaverAdapter</span> <span class="attr">Runat</span><span class="kwrd">="server"</span> <span class="attr">FolderName</span><span class="kwrd">="UploadFolder"</span> <span class="kwrd">/&gt;</span>
+      <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+  <span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">div</span><span class="kwrd">&gt;</span></pre>
+
+
+
+
+
+
+<hr/>
+
+<a href="http://www.Flajaxian.com">www.Flajaxian.com - Flajaxian &#169; 2008</a>
+
+</body>
+</html>

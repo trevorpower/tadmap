@@ -1,0 +1,18 @@
+<Dictionary>
+   <Words>
+      <Unrecognized>
+      </Unrecognized>
+      <Recognized>
+         <Word>Tadmap</Word>
+      </Recognized>
+      <Deprecated>
+         <!--<Term PreferredAlternate="Tadmap">TadMap</Term>-->
+      </Deprecated>
+   </Words>
+   <Acronyms>
+      <CasingExceptions>
+         <!--<Acronym>CJK</Acronym>
+         <Acronym>Pi</Acronym>-->
+      </CasingExceptions>
+   </Acronyms>
+</Dictionary>

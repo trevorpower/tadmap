@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 83
+obj
+bin
+Tadmap MVC.Publish.xml
+Tadmap MVC.csproj.user
+Tadmap MVC.csproj
+Web.config
+
+END

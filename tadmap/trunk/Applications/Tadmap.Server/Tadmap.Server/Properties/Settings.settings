@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Tadmap.Server.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="S3AccessKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1RYDPTK2VKP6739SPGR2</Value>
+    </Setting>
+    <Setting Name="S3SecretAccessKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">FCbtO3UEUp7/5Fql3L57n1cA+d5OEnVP88EsDqJ7</Value>
+    </Setting>
+    <Setting Name="S3BucketName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">tadmap</Value>
+    </Setting>
+    <Setting Name="RunLocal" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Live" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LocalBinaryRepository" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">F:/TadmapLocalData/LocalBinaryFolder</Value>
+    </Setting>
+    <Setting Name="DevS3BucketName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">tadtestus</Value>
+    </Setting>
+    <Setting Name="LocalImageQueue" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">F:/TadmapLocalData/LocalImageMessageFolder</Value>
+    </Setting>
+    <Setting Name="LocalCompleteQueue" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">F:/TadmapLocalData/LocalCompleteMessageFolder</Value>
+    </Setting>
+    <Setting Name="DevImageQueue" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">debug-tadmap-image</Value>
+    </Setting>
+    <Setting Name="DevCompleteQueue" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">debug-tadmap-complete</Value>
+    </Setting>
+    <Setting Name="LiveImageQueue" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">tadmap-image</Value>
+    </Setting>
+    <Setting Name="LiveCompleteQueue" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">tadmap-complete</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

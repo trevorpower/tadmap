@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Tadmap_MVC.Views.Shared.Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" profile="http://www.w3.org/2005/10/profile">
+   <title>Tadmap - Online services for Map Collectors</title>
+   <link rel="icon" type="image/png" href="~/App_Themes/Tad/tadicon.png" />
+   <meta name="description" content="Image hosting and other services for map collectors." />
+   <asp:ContentPlaceHolder ID="head" runat="server">
+   </asp:ContentPlaceHolder>
+</head>
+<body runat="server" id="MainBody">
+   <div id="MasterPageHeader" style="text-align: center;">
+      <a id="MasterPageLogo" href="<%= Url.Action("Index", "Home") %>">         
+         <img id="MasterPageLogoImage" alt="Tadmap" src="<%= Url.Content("~/App_Themes/Tad/Master/TadmapSmall.png") %>" /></a>
+      <span id="MasterPageNavigationBar">
+         <% Html.RenderPartial("LoginUserControl"); %>
+      </span><span style="margin-left: auto; margin-right: auto;">
+         <% Html.RenderPartial("NavigationBar"); %>
+      </span>
+   </div>
+   <div id="MasterPageBody">
+      <asp:ContentPlaceHolder ID="MainContent" runat="server">
+      </asp:ContentPlaceHolder>
+   </div>
+   <div id="MasterPageFooter">
+      <span class="MasterPageSubText">Tadmap - Online services for map collectors.</span><br />
+      <div id="MasterPageFooterLinks">
+         <a href="http://blog.tadmap.com">blog</a>|<a href="http://twitter.com/tadmap">twitter</a>|<a href="http://feedback.tadmap.com">feedback</a>
+      </div>
+   </div>
+</body>
+</html>

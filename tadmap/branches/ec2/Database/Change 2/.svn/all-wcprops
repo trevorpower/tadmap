@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Database/Change%202
+END
+GetAllStoredProcedure.sql
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Database/Change%202/GetAllStoredProcedure.sql
+END
+Fix User Role Keys.sql
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Database/Change%202/Fix%20User%20Role%20Keys.sql
+END
+ImageColumns for offensive count and privacy.sql
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Database/Change%202/ImageColumns%20for%20offensive%20count%20and%20privacy.sql
+END

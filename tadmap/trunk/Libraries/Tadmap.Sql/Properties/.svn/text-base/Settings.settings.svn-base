@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Tadmap.Sql.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TadmapConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=TREVOR-PC\SQLEXPRESS;Initial Catalog=tadmap;Integrated Security=True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

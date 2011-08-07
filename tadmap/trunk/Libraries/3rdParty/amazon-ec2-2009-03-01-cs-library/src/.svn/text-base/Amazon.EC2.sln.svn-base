@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.EC2.Samples", "Amazon.EC2.Samples\Amazon.EC2.Samples.csproj", "{1037825A-92F2-3307-9738-6ED3DD1F1E08}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9722AE1B-5142-371B-9F57-519D402C06F3} = {9722AE1B-5142-371B-9F57-519D402C06F3}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.EC2", "Amazon.EC2\Amazon.EC2.csproj", "{9722AE1B-5142-371B-9F57-519D402C06F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1037825A-92F2-3307-9738-6ED3DD1F1E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1037825A-92F2-3307-9738-6ED3DD1F1E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1037825A-92F2-3307-9738-6ED3DD1F1E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1037825A-92F2-3307-9738-6ED3DD1F1E08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9722AE1B-5142-371B-9F57-519D402C06F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9722AE1B-5142-371B-9F57-519D402C06F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9722AE1B-5142-371B-9F57-519D402C06F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9722AE1B-5142-371B-9F57-519D402C06F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

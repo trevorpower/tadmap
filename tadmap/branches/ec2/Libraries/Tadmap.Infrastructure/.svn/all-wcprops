@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/tadmap_tadmap/!svn/ver/229/branches/ec2/Libraries/Tadmap.Infrastructure
+END
+build.proj
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/tadmap_tadmap/!svn/ver/159/branches/ec2/Libraries/Tadmap.Infrastructure/build.proj
+END
+Infrastructure.sln
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/tadmap_tadmap/!svn/ver/159/branches/ec2/Libraries/Tadmap.Infrastructure/Infrastructure.sln
+END
+Tests.nunit
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/tadmap_tadmap/!svn/ver/159/branches/ec2/Libraries/Tadmap.Infrastructure/Tests.nunit
+END

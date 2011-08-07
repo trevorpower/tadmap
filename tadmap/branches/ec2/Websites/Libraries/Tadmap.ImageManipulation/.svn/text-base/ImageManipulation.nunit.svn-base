@@ -1,0 +1,11 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Release" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="UnitTests\obj\Release\UnitTests.dll" />
+    <assembly path="ImageManipulation\obj\Release\ImageManipulation.exe" />
+    <assembly path="UnitTests\obj\Release\UnitTests.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="UnitTests\bin\Release\UnitTests.dll" />
+  </Config>
+</NUnitProject>

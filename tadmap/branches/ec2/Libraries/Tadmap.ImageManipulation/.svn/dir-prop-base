@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 71
+TestResult.xml
+ImageManipulation.VisualState.xml
+ImageManipulation.suo
+
+K 13
+svn:mergeinfo
+V 152
+/branches/mvc/Libraries/ImageManipulation:38-96
+/branches/mvc/Libraries/Tadmap.ImageManipulation:38-96
+/trunk/Libraries/Tadmap.ImageManipulation:148-228
+END

@@ -1,0 +1,76 @@
+﻿.OpenIdUrlBox
+{
+   background: #FFFFFF url('login-bg.gif') no-repeat scroll 0pt 50%;
+   padding-left: 18px;
+   font-size: 15pt;
+   border: solid 2px #6e91af;
+   height: 24px;
+   width: 377px;
+   padding-top: 1px;
+ 	margin: 0px 0px 0px 0px;
+
+   display: block;
+   float: left;
+}
+
+.OpenIdUrlBox:hover
+{
+	border: 2px solid #ff5700;
+}
+
+#__idselector_button
+{
+	height: 30px;
+	margin: 0px 4px 0px 4px;
+	padding: 0px 0px 0px 0px;
+	padding-bottom:4px;
+	margin-bottom:5px !ie7; 
+	border: 2px solid #6e91af;
+	background-color: #c6d9e8;
+	padding-top: 1px;
+   vertical-align: middle;
+   
+   display: block;
+   float: left;
+}
+
+
+#__idselector_button:hover
+{
+   background-color: #c7c7c7;
+	border: 2px solid #ff5700;
+}
+
+.LoginInButton
+{
+   height:30px;
+   margin: 0px 0px 0px 0px;
+   padding: 0px;
+   padding-bottom:0px;
+   margin-bottom: 5px !ie7; 
+   border: 2px solid #6e91af;
+   background-color: #c6d9e8;
+   padding-top: -2px;
+   text-decoration: none;
+   padding-left: 0px;
+   padding-right: 0px;
+   color: #000000;
+   font-size: 14pt;
+   font-family: Arial;
+   
+   display: block;
+   float: left;
+}
+
+.LoginInButton:hover
+{
+      background-color: #c7c7c7;
+      border: 2px solid #ff5700;
+}
+
+.ErrorMessage
+{
+   color: #993333;
+   font-family: Arial;
+   clear: left;
+}

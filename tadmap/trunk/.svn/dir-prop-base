@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 81
+LocalBinaryRepository
+Test.VisualState.xml
+TestResult.xml
+Tadmap.VisualState.xml
+
+K 13
+svn:mergeinfo
+V 34
+/branches/mvc:38-96
+/trunk:148-228
+END

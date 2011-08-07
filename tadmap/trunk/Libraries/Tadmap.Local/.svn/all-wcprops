@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/tadmap_tadmap/!svn/ver/241/trunk/Libraries/Tadmap.Local
+END
+Key.snk
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Local/Key.snk
+END
+BinaryRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Local/BinaryRepository.cs
+END
+MessageQueue.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/tadmap_tadmap/!svn/ver/241/trunk/Libraries/Tadmap.Local/MessageQueue.cs
+END
+Tadmap.Local.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Local/Tadmap.Local.csproj
+END

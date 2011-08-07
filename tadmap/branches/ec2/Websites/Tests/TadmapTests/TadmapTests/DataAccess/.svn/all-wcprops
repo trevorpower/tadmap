@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/tadmap_tadmap/!svn/ver/216/branches/ec2/Websites/Tests/TadmapTests/TadmapTests/DataAccess
+END
+TestFileFromDisk.cs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/tadmap_tadmap/!svn/ver/216/branches/ec2/Websites/Tests/TadmapTests/TadmapTests/DataAccess/TestFileFromDisk.cs
+END
+ImageRepositoryTests.cs
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/tadmap_tadmap/!svn/ver/216/branches/ec2/Websites/Tests/TadmapTests/TadmapTests/DataAccess/ImageRepositoryTests.cs
+END
+BinaryRepositoryTests.cs
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/tadmap_tadmap/!svn/ver/216/branches/ec2/Websites/Tests/TadmapTests/TadmapTests/DataAccess/BinaryRepositoryTests.cs
+END
+IUploadedFileTests.cs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/tadmap_tadmap/!svn/ver/216/branches/ec2/Websites/Tests/TadmapTests/TadmapTests/DataAccess/IUploadedFileTests.cs
+END

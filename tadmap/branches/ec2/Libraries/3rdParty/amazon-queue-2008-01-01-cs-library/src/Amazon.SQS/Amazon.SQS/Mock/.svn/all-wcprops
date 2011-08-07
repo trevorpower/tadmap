@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/tadmap_tadmap/!svn/ver/149/branches/ec2/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Mock
+END
+ListQueuesResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/149/branches/ec2/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Mock/ListQueuesResponse.xml
+END
+DeleteMessageResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/tadmap_tadmap/!svn/ver/149/branches/ec2/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Mock/DeleteMessageResponse.xml
+END
+DeleteQueueResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/tadmap_tadmap/!svn/ver/149/branches/ec2/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Mock/DeleteQueueResponse.xml
+END
+ReceiveMessageResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/tadmap_tadmap/!svn/ver/149/branches/ec2/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Mock/ReceiveMessageResponse.xml
+END
+SetQueueAttributesResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/tadmap_tadmap/!svn/ver/149/branches/ec2/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Mock/SetQueueAttributesResponse.xml
+END
+CreateQueueResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/tadmap_tadmap/!svn/ver/149/branches/ec2/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Mock/CreateQueueResponse.xml
+END
+ErrorResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/149/branches/ec2/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Mock/ErrorResponse.xml
+END
+GetQueueAttributesResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/tadmap_tadmap/!svn/ver/149/branches/ec2/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Mock/GetQueueAttributesResponse.xml
+END
+AmazonSQSMock.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/149/branches/ec2/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Mock/AmazonSQSMock.cs
+END
+SendMessageResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/tadmap_tadmap/!svn/ver/149/branches/ec2/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Mock/SendMessageResponse.xml
+END

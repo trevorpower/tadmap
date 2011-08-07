@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework
+END
+TadFramework.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/TadFramework.csproj
+END
+BusinessListBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/BusinessListBase.cs
+END
+ReadOnlyListBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/ReadOnlyListBase.cs
+END
+BusinessBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/BusinessBase.cs
+END
+TransactionalTypes.cs
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/TransactionalTypes.cs
+END
+ApplicationContext.cs
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/ApplicationContext.cs
+END
+ReadOnlyBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/ReadOnlyBase.cs
+END
+CommandBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/CommandBase.cs
+END

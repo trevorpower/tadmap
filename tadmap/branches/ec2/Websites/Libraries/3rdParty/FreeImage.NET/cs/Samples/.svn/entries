@@ -1,0 +1,61 @@
+10
+
+dir
+257
+http://tadmap.unfuddle.com/svn/tadmap_tadmap/branches/ec2/Websites/Libraries/3rdParty/FreeImage.NET/cs/Samples
+http://tadmap.unfuddle.com/svn/tadmap_tadmap
+
+
+
+2009-05-17T14:33:17.999137Z
+216
+trevorpower
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4a648790-0dd6-46be-98e2-83199854fd07
+
+Sample 03 - Allocating
+dir
+
+Sample 11 - Using the FreeImageBitmap class
+dir
+
+Sample 10 - Metadata
+dir
+
+Sample 06 - Converting
+dir
+
+Sample 08 - Creating a plugin
+dir
+
+Sample 09 - Working with streams
+dir
+
+Sample 05 - Working with pixels
+dir
+
+Sample 01 - Loading and saving
+dir
+
+Sample 07 - ICC Profiles
+dir
+
+Sample 04 - Getting bitmap informations
+dir
+
+Sample 02 - Multipaged bitmaps
+dir
+

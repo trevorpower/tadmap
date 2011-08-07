@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/tadmap_tadmap/!svn/ver/241/trunk/Libraries/Tadmap.Sql
+END
+Tadmap.dbml.layout
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/tadmap_tadmap/!svn/ver/241/trunk/Libraries/Tadmap.Sql/Tadmap.dbml.layout
+END
+Key.snk
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Sql/Key.snk
+END
+UserRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/tadmap_tadmap/!svn/ver/239/trunk/Libraries/Tadmap.Sql/UserRepository.cs
+END
+Tadmap.Sql.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/tadmap_tadmap/!svn/ver/239/trunk/Libraries/Tadmap.Sql/Tadmap.Sql.csproj
+END
+Tadmap.dbml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/tadmap_tadmap/!svn/ver/241/trunk/Libraries/Tadmap.Sql/Tadmap.dbml
+END
+app.config
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/tadmap_tadmap/!svn/ver/239/trunk/Libraries/Tadmap.Sql/app.config
+END
+SqlImageRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/tadmap_tadmap/!svn/ver/241/trunk/Libraries/Tadmap.Sql/SqlImageRepository.cs
+END
+Tadmap.designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/tadmap_tadmap/!svn/ver/241/trunk/Libraries/Tadmap.Sql/Tadmap.designer.cs
+END
+Tadmap.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/tadmap_tadmap/!svn/ver/239/trunk/Libraries/Tadmap.Sql/Tadmap.cs
+END
+Tadmap1.designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Sql/Tadmap1.designer.cs
+END

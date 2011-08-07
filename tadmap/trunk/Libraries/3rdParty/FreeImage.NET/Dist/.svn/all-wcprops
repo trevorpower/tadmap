@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/FreeImage.NET/Dist
+END
+delete.me
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/FreeImage.NET/Dist/delete.me
+END
+FreeImage.lib
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/FreeImage.NET/Dist/FreeImage.lib
+END
+FreeImage.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/FreeImage.NET/Dist/FreeImage.h
+END
+FreeImage.dll
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/FreeImage.NET/Dist/FreeImage.dll
+END

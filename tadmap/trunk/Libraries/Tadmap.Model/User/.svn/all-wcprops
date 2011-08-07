@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/tadmap_tadmap/!svn/ver/239/trunk/Libraries/Tadmap.Model/User
+END
+User.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/tadmap_tadmap/!svn/ver/239/trunk/Libraries/Tadmap.Model/User/User.cs
+END
+IUserRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/tadmap_tadmap/!svn/ver/239/trunk/Libraries/Tadmap.Model/User/IUserRepository.cs
+END

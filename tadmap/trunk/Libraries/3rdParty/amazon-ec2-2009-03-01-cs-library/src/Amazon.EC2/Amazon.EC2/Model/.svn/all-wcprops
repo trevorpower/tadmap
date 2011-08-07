@@ -1,0 +1,1079 @@
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model
+END
+RunInstancesResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RunInstancesResult.cs
+END
+CreateSecurityGroupResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateSecurityGroupResponse.xslt
+END
+DescribeAddressesResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeAddressesResult.cs
+END
+DetachVolumeResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DetachVolumeResult.cs
+END
+ConfirmProductInstanceResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ConfirmProductInstanceResult.cs
+END
+CreateSnapshotResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateSnapshotResult.cs
+END
+ResetImageAttributeRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ResetImageAttributeRequest.cs
+END
+ConsoleOutput.cs
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ConsoleOutput.cs
+END
+SecurityGroup.cs
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/SecurityGroup.cs
+END
+CreateKeyPairResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateKeyPairResult.cs
+END
+DescribeAddressesRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeAddressesRequest.cs
+END
+DescribeBundleTasksRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeBundleTasksRequest.cs
+END
+AuthorizeSecurityGroupIngressResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AuthorizeSecurityGroupIngressResponse.cs
+END
+DisassociateAddressRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DisassociateAddressRequest.cs
+END
+CreateVolumeResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateVolumeResult.cs
+END
+BundleInstanceResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/BundleInstanceResult.cs
+END
+ModifyImageAttributeResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ModifyImageAttributeResponse.cs
+END
+DescribeBundleTasksResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeBundleTasksResponse.cs
+END
+DescribeKeyPairsRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeKeyPairsRequest.cs
+END
+Reservation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/Reservation.cs
+END
+ConfirmProductInstanceResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ConfirmProductInstanceResponse.cs
+END
+CreateSnapshotResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateSnapshotResponse.cs
+END
+DescribeReservedInstancesOfferingsRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeReservedInstancesOfferingsRequest.cs
+END
+DescribeKeyPairsResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeKeyPairsResponse.cs
+END
+BundleInstanceRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/BundleInstanceRequest.cs
+END
+ErrorResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ErrorResponse.cs
+END
+TerminateInstancesRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/TerminateInstancesRequest.cs
+END
+DescribeImagesResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeImagesResponse.xslt
+END
+CreateVolumeResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateVolumeResponse.cs
+END
+S3Storage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/S3Storage.cs
+END
+TerminateInstancesResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/TerminateInstancesResponse.cs
+END
+DescribeSecurityGroupsRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeSecurityGroupsRequest.cs
+END
+CancelBundleTaskResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CancelBundleTaskResponse.cs
+END
+PurchaseReservedInstancesOfferingResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/PurchaseReservedInstancesOfferingResponse.cs
+END
+DescribeSecurityGroupsResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeSecurityGroupsResponse.cs
+END
+ConfirmProductInstanceResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ConfirmProductInstanceResponse.xslt
+END
+CreateSnapshotResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateSnapshotResponse.xslt
+END
+ResetImageAttributeResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ResetImageAttributeResponse.cs
+END
+AttachVolumeResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AttachVolumeResult.cs
+END
+DeleteSnapshotRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeleteSnapshotRequest.cs
+END
+CreateVolumeResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateVolumeResponse.xslt
+END
+DisassociateAddressResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DisassociateAddressResponse.cs
+END
+AllocateAddressRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AllocateAddressRequest.cs
+END
+DescribeVolumesRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeVolumesRequest.cs
+END
+DeregisterImageResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeregisterImageResponse.xslt
+END
+RevokeSecurityGroupIngressRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RevokeSecurityGroupIngressRequest.cs
+END
+TerminatingInstance.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/TerminatingInstance.cs
+END
+RebootInstancesRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RebootInstancesRequest.cs
+END
+GetConsoleOutputResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/GetConsoleOutputResult.cs
+END
+LaunchPermission.cs
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/LaunchPermission.cs
+END
+Region.cs
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/Region.cs
+END
+DescribeImagesResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeImagesResponse.cs
+END
+BlockDeviceMapping.cs
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/BlockDeviceMapping.cs
+END
+DeleteSnapshotResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeleteSnapshotResponse.xslt
+END
+ModifyImageAttributeRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ModifyImageAttributeRequest.cs
+END
+Error.cs
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/Error.cs
+END
+DetachVolumeRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DetachVolumeRequest.cs
+END
+ReleaseAddressResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ReleaseAddressResponse.xslt
+END
+RunInstancesResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RunInstancesResponse.cs
+END
+DescribeReservedInstancesResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeReservedInstancesResponse.xslt
+END
+DescribeInstancesResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeInstancesResponse.xslt
+END
+BundleTask.cs
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/BundleTask.cs
+END
+AllocateAddressResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AllocateAddressResponse.xslt
+END
+DetachVolumeResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DetachVolumeResponse.cs
+END
+CancelBundleTaskResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CancelBundleTaskResult.cs
+END
+CreateKeyPairRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateKeyPairRequest.cs
+END
+PurchaseReservedInstancesOfferingResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/PurchaseReservedInstancesOfferingResult.cs
+END
+GetConsoleOutputResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/GetConsoleOutputResponse.cs
+END
+DescribeRegionsResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeRegionsResult.cs
+END
+RebootInstancesResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RebootInstancesResponse.xslt
+END
+CreateKeyPairResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateKeyPairResponse.cs
+END
+Placement.cs
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/Placement.cs
+END
+Image.cs
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/Image.cs
+END
+DescribeBundleTasksResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeBundleTasksResponse.xslt
+END
+AssociateAddressResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AssociateAddressResponse.xslt
+END
+DescribeRegionsResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeRegionsResponse.cs
+END
+DeleteSecurityGroupResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeleteSecurityGroupResponse.cs
+END
+GetConsoleOutputResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/GetConsoleOutputResponse.xslt
+END
+Attachment.cs
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/Attachment.cs
+END
+DescribeReservedInstancesOfferingsResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeReservedInstancesOfferingsResult.cs
+END
+DescribeSnapshotsRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeSnapshotsRequest.cs
+END
+DescribeKeyPairsResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeKeyPairsResponse.xslt
+END
+DeleteSnapshotResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeleteSnapshotResponse.cs
+END
+DescribeAvailabilityZonesRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeAvailabilityZonesRequest.cs
+END
+DeleteVolumeRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeleteVolumeRequest.cs
+END
+TerminateInstancesResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/TerminateInstancesResponse.xslt
+END
+DescribeImagesResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeImagesResult.cs
+END
+ReleaseAddressResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ReleaseAddressResponse.cs
+END
+ReservedInstancesOffering.cs
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ReservedInstancesOffering.cs
+END
+AllocateAddressResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AllocateAddressResponse.cs
+END
+DescribeReservedInstancesOfferingsResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeReservedInstancesOfferingsResponse.cs
+END
+DescribeRegionsResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeRegionsResponse.xslt
+END
+AttachVolumeResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AttachVolumeResponse.cs
+END
+DeleteSecurityGroupResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeleteSecurityGroupResponse.xslt
+END
+DescribeSecurityGroupsResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeSecurityGroupsResponse.xslt
+END
+DescribeImagesRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeImagesRequest.cs
+END
+DescribeRegionsRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeRegionsRequest.cs
+END
+DeleteSecurityGroupRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeleteSecurityGroupRequest.cs
+END
+RebootInstancesResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RebootInstancesResponse.cs
+END
+Address.cs
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/Address.cs
+END
+RegisterImageResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RegisterImageResult.cs
+END
+DescribeVolumesResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeVolumesResult.cs
+END
+DescribeAvailabilityZonesResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeAvailabilityZonesResponse.xslt
+END
+DeleteVolumeResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeleteVolumeResponse.xslt
+END
+DescribeReservedInstancesOfferingsResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeReservedInstancesOfferingsResponse.xslt
+END
+ResponseMetadata.cs
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ResponseMetadata.cs
+END
+RunningInstance.cs
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RunningInstance.cs
+END
+DescribeImageAttributeResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeImageAttributeResult.cs
+END
+RegisterImageResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RegisterImageResponse.cs
+END
+DescribeVolumesResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeVolumesResponse.cs
+END
+RevokeSecurityGroupIngressResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RevokeSecurityGroupIngressResponse.cs
+END
+RunInstancesResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RunInstancesResponse.xslt
+END
+CreateSecurityGroupRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateSecurityGroupRequest.cs
+END
+DescribeAddressesResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeAddressesResponse.xslt
+END
+DetachVolumeResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DetachVolumeResponse.xslt
+END
+DescribeImageAttributeResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeImageAttributeResponse.cs
+END
+DescribeReservedInstancesResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeReservedInstancesResult.cs
+END
+DescribeInstancesResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeInstancesResult.cs
+END
+CreateSecurityGroupResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateSecurityGroupResponse.cs
+END
+ReservedInstances.cs
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ReservedInstances.cs
+END
+AllocateAddressResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AllocateAddressResult.cs
+END
+AssociateAddressRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AssociateAddressRequest.cs
+END
+RegisterImageResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RegisterImageResponse.xslt
+END
+ConfirmProductInstanceRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ConfirmProductInstanceRequest.cs
+END
+CreateKeyPairResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateKeyPairResponse.xslt
+END
+CreateSnapshotRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateSnapshotRequest.cs
+END
+DescribeVolumesResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeVolumesResponse.xslt
+END
+ReleaseAddressRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ReleaseAddressRequest.cs
+END
+RevokeSecurityGroupIngressResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RevokeSecurityGroupIngressResponse.xslt
+END
+RegisterImageRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RegisterImageRequest.cs
+END
+BundleInstanceResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/BundleInstanceResponse.xslt
+END
+CreateVolumeRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CreateVolumeRequest.cs
+END
+KeyPair.cs
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/KeyPair.cs
+END
+Storage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/Storage.cs
+END
+InstanceState.cs
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/InstanceState.cs
+END
+ImageAttribute.cs
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ImageAttribute.cs
+END
+DescribeAvailabilityZonesResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeAvailabilityZonesResponse.cs
+END
+DeleteVolumeResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeleteVolumeResponse.cs
+END
+DescribeImageAttributeResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeImageAttributeResponse.xslt
+END
+ResetImageAttributeResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ResetImageAttributeResponse.xslt
+END
+DescribeBundleTasksResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeBundleTasksResult.cs
+END
+DescribeImageAttributeRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeImageAttributeRequest.cs
+END
+IpPermission.cs
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/IpPermission.cs
+END
+DescribeSnapshotsResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeSnapshotsResult.cs
+END
+AuthorizeSecurityGroupIngressRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AuthorizeSecurityGroupIngressRequest.cs
+END
+UserIdGroupPair.cs
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/UserIdGroupPair.cs
+END
+DisassociateAddressResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DisassociateAddressResponse.xslt
+END
+RunInstancesRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/RunInstancesRequest.cs
+END
+DescribeKeyPairsResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeKeyPairsResult.cs
+END
+DescribeAddressesResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeAddressesResponse.cs
+END
+TerminateInstancesResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/TerminateInstancesResult.cs
+END
+AssociateAddressResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AssociateAddressResponse.cs
+END
+AttachVolumeResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AttachVolumeResponse.xslt
+END
+DescribeSnapshotsResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeSnapshotsResponse.cs
+END
+BundleTaskError.cs
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/BundleTaskError.cs
+END
+DeleteKeyPairResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeleteKeyPairResponse.cs
+END
+DescribeSecurityGroupsResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeSecurityGroupsResult.cs
+END
+DeregisterImageRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeregisterImageRequest.cs
+END
+CancelBundleTaskRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CancelBundleTaskRequest.cs
+END
+PurchaseReservedInstancesOfferingRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/PurchaseReservedInstancesOfferingRequest.cs
+END
+BundleInstanceResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/BundleInstanceResponse.cs
+END
+AuthorizeSecurityGroupIngressResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AuthorizeSecurityGroupIngressResponse.xslt
+END
+DeregisterImageResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeregisterImageResponse.cs
+END
+ModifyImageAttributeResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/ModifyImageAttributeResponse.xslt
+END
+DescribeSnapshotsResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeSnapshotsResponse.xslt
+END
+DescribeAvailabilityZonesResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeAvailabilityZonesResult.cs
+END
+DeleteKeyPairResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeleteKeyPairResponse.xslt
+END
+GetConsoleOutputRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/GetConsoleOutputRequest.cs
+END
+Snapshot.cs
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/Snapshot.cs
+END
+DeleteKeyPairRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DeleteKeyPairRequest.cs
+END
+DescribeReservedInstancesRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeReservedInstancesRequest.cs
+END
+DescribeInstancesRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeInstancesRequest.cs
+END
+AttachVolumeRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AttachVolumeRequest.cs
+END
+CancelBundleTaskResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/CancelBundleTaskResponse.xslt
+END
+AvailabilityZone.cs
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/AvailabilityZone.cs
+END
+PurchaseReservedInstancesOfferingResponse.xslt
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/PurchaseReservedInstancesOfferingResponse.xslt
+END
+DescribeReservedInstancesResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeReservedInstancesResponse.cs
+END
+DescribeInstancesResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/DescribeInstancesResponse.cs
+END
+Volume.cs
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Model/Volume.cs
+END

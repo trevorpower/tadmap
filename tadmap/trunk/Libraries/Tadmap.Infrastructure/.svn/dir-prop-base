@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 12
+*.suo
+*.xml
+
+K 13
+svn:mergeinfo
+V 143
+/branches/mvc/Libraries/Infrastructure:38-96
+/branches/mvc/Libraries/Tadmap.Infrastructure:38-96
+/trunk/Libraries/Tadmap.Infrastructure:148-228
+END

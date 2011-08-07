@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Flajaxian Direct Amazon Uploader 1.0 Help</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+  <style>
+  body{
+    margin:10px;
+    font-family:Tahoma,Arial,sans-serif;
+    font-size:14px;
+  }
+  h2, h3{
+    text-align:center;
+  }
+  ul li{
+    margin:2px 0 2px 0;
+  }
+  ol li{
+    margin:2px 0 10px 0;
+  }
+  .nav_container{
+    margin-top:10px;
+    padding:left:20px;
+  }
+  .csharpcode, .csharpcode pre
+  {
+    font-size: small;
+    color: black;
+    font-family: Consolas, "Courier New", Courier, Monospace;
+    background-color:#DEDEDE;
+    border: solid 1px #CCC;
+    margin: 5px;
+    padding:5px 5px 5px 5px;
+  }
+
+  .csharpcode .rem { color: #008000; }
+
+  .csharpcode .kwrd { color: #0000ff; }
+
+  .csharpcode .str { color: #006080; }
+
+  .csharpcode .op { color: #0000c0; }
+
+  .csharpcode .preproc { color: #cc6633; }
+
+  .csharpcode .asp { background-color: #ffff00; }
+
+  .csharpcode .html { color: #800000; }
+
+  .csharpcode .attr { color: #ff0000; }
+
+  .csharpcode .alt 
+  {
+    background-color: #f4f4f4;
+    width: 100%;
+    margin: 0em;
+  }
+
+  .csharpcode .lnum { color: #606060; }
+  </style>
+</head>
+<body>
+
+<h2>Flajaxian Direct Amazon Uploader 1.0</h2>
+
+<div class="nav_container">
+  <ul>
+    <li>
+      <a href="#WhatIsDirectAmazonUploader">What is Flajaxian Direct Amazon Uploader 1.0</a>
+    </li>
+    <li>
+      <a href="#Security">Security</a>
+    </li>
+    <li>
+      <a href="#HowToUseDirectAmazonUploader">How to use Flajaxian Direct Amazon Uploader 1.0</a>
+    </li>
+    <li>
+      <a href="#HowToUploadToFolder">Upload to a folder inside the bucket</a>
+    </li>
+    <li>
+      <a href="#HowToSpecifyPermissions">Specifying file permissions</a>
+    </li>
+    <li>
+      <a href="#HowToChangeFileName">Changing the name of the uploaded file</a>
+    </li>
+    <li>
+      <a href="#HowToSaveFileNameToDatabase">Saving the name of the uploaded file to a local database</a>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+<a name="WhatIsDirectAmazonUploader"></a>
+<h3>What is Flajaxian Direct Amazon Uploader 1.0</h3>
+
+<p><b>Flajaxian Direct Amazon Uploader</b> is adapter to <b>Flajxian FileUploader 2.0</b> .NET server control. 
+It extends the functionality of the <b>Flajaxian FileUploader</b>
+to allow direct uploads to an <b>Amazon S3 Web Service</b>.</p>
+
+<p><b>Flajaxian Direct Amazon Uploader</b> works with Flajaxian FileUploader 2.0 (Change Set 19632+) - a free and open source .NET web control designed for asynchronous 
+file upload of multiple files at the same time, without a page post back and with a progress bar 
+indicating the current upload progress. This control does not require full trust environment. 
+The control can be extended with the addition of server side and client side functions. 
+Flajaxian FileUploader uses Adobe Flash Player 9 or higher Flash Player for the file upload request.</p>
+
+<p>For more information on Flajaxian FileUploader please visit 
+<a href="http://www.codeplex.com/FlajaxianFileUpload" target="_blank">http://www.codeplex.com/FlajaxianFileUpload</a></p>
+
+
+
+
+
+<a name="Security"></a>
+<h3>Security</h3>
+
+<p><b>Flajaxian Direct Amazon Uploader</b> is secure because it transfers only encrypted value of your secret key 
+but NOT the key itself. When the user selects a file or group of files and clicks on the upload button, initial
+<b>ajax</b> request to is performed back to the server with the list of files. The response returns to the flash player
+encoded policy signed by your secret key but the key never leaves your server. Then the files with the signed policy 
+are being send to the amazon server. Additional checks are added to your policy to prevent tampering with your request. 
+As another measure you can use the <b>crossdomain.xml</b> described in point <b>4</b> of 
+<a href="#HowToUseDirectAmazonUploader">How to use Flajaxian Direct Amazon Uploader 1.0</a> topic to limit the list of
+domains allowed to request the amazon server.</p>
+
+
+
+
+
+
+
+
+
+<a name="HowToUseDirectAmazonUploader"></a>
+<h3>How to use Flajaxian Direct Amazon Uploader 1.0</h3>
+
+<p>The only thing you need to have in order to start using the Flajaxian Direct Amazon Uploader are the two DLL files
+<b>com.flajaxian.FileUploader.dll</b> and <b>com.flajaxian.DirectAmazonUploader.dll</b>. You can get the latest version of 
+<b>com.flajaxian.FileUploader.dll</b> file for free from 
+<a href="http://www.codeplex.com/FlajaxianFileUpload" target="_blank">the codeplex site</a>. 
+Just click on the Releases tab and then click on <b>Binary DLL</b> link.</p>
+
+<p>Once you have those DLLs you can follow these steps.</p>
+
+<ol>
+    <li>Place <b>com.flajaxian.FileUploader.dll</b> and <b>com.flajaxian.DirectAmazonUploader.dll</b> 
+    in the BIN folder of your web server.</li>
+    <li>
+        Add the following tags at the top of your aspx page, .master or ascx files:
+    <pre class="csharpcode">
+<span class="asp">&lt;%@ Register TagPrefix="fjx" Namespace="com.flajaxian" Assembly="com.flajaxian.FileUploader" %&gt;</span>
+<span class="asp">&lt;%@ Register TagPrefix="fjx" Namespace="com.flajaxian" Assembly="com.flajaxian.DirectAmazonUploader" %&gt;</span></pre>
+    </li>
+    <li>Add the following tags inside the FORM element of the BODY element of the ASPX page, where you would like to see the uploader 
+    <pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">runat</span><span class="kwrd">="server"</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:DirectAmazonUploader</span> 
+            <span class="attr">AccessKey</span><span class="kwrd">="WebConfig:AmazonAccessKey"</span>
+            <span class="attr">SecretKey</span><span class="kwrd">="WebConfig:AmazonSecretKey"</span>
+            <span class="attr">BucketName</span><span class="kwrd">="media.flajaxian.com"</span>  <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+    </li>
+    <li>Upload a <b>public-readable</b> <b>crossdomain.xml</b> file to the root of the <b>bucket</b> that will accept POST uploads. 
+    Following is a sample <b>crossdomain.xml</b> file.
+    <pre class="csharpcode">
+<span class="kwrd">&lt;?</span><span class="html">xml</span> <span class="attr">version</span><span class="kwrd">="1.0"</span>?<span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;!</span><span class="html">DOCTYPE</span> <span class="attr">cross-domain-policy</span> <span class="attr">SYSTEM</span>
+<span class="kwrd">"http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd"</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">cross-domain-policy</span><span class="kwrd">&gt;</span>
+  <span class="kwrd">&lt;</span><span class="html">allow-access-from</span> <span class="attr">domain</span><span class="kwrd">="*"</span> <span class="attr">secure</span><span class="kwrd">="false"</span> <span class="kwrd">/&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">cross-domain-policy</span><span class="kwrd">&gt;</span></pre>
+
+    <p>This file is needed because by default, the Adobe Flash Player security model prohibits Adobe Flash Players from 
+    making network connections to servers outside the domain that contains the SWF file. The file  <b>crossdomain.xml</b> 
+    helps to override this behaviour. For more information about the Adobe Flash security model, go to the 
+    <a href="http://www.adobe.com/devnet/flashplayer/security.html" target="_blank">
+        http://www.adobe.com/devnet/flashplayer/security.html
+    </a></p>
+    
+    <p>For more information about <b>crossdomain.xml</b> please visit 
+    <a href="http://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html">
+    http://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html
+    </a>
+    </p>
+    
+    <p>You could use <a href="http://www.rjonna.com/ext/s3fox.php">S3Fox Organizer for Amazon</a> free Firefox Browser tool for 
+    uploading that file.</p>
+    <p>Please note that by default <b>Flajaxian Direct Amazon Uploader</b> will NOT allow the users of the site to override this file.
+    This is because the file is needed for the upload of the files. If for some reason you want to allow that, set the property
+    <b>AllowRootCrossDomainXmlUpload="true"</b></p>
+    </li>
+</ol>
+<p>Here you specify that <b>Access Key</b> and <b>Secret Key</b> are defined in the <b>web.config</b> 
+in section <b>configuration/appSettings</b> as follow:</p>
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">appSettings</span><span class="kwrd">&gt;</span>
+  <span class="kwrd">&lt;</span><span class="html">add</span> <span class="attr">key</span><span class="kwrd">="AmazonAccessKey"</span> <span class="attr">value</span><span class="kwrd">="ABCDEFGHKL1234567890"</span> <span class="kwrd">/&gt;</span>
+  <span class="kwrd">&lt;</span><span class="html">add</span> <span class="attr">key</span><span class="kwrd">="AmazonSecretKey"</span> <span class="attr">value</span><span class="kwrd">="ABCD1234ABCD1234ABCD1234ABCD1234ABCD1234"</span> <span class="kwrd">/&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">appSettings</span><span class="kwrd">&gt;</span></pre>
+<p>You can also enter the <b>Access Key</b> and <b>Secret Key</b> directly omitting the <b>WebConfig:</b> prefix.</p>
+<p>The <b>Bucket Name</b> is set to be <b>media.flajaxian.com</b></p>
+
+
+
+
+
+
+<a name="HowToUploadToFolder"></a>
+<h3>Upload to a folder inside the bucket</h3>
+
+<p>If you want to upload to a folder inside your bucket you have to enter the <b>Path</b> property.
+For example if you want to upload to a folder <b>Folder1</b> that is contained inside the folder <b>ParentFolder</b>
+that is inside the <b>MyBucket1</b> you would use:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">runat</span><span class="kwrd">="server"</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:DirectAmazonUploader</span>
+            <span class="attr">Path</span><span class="kwrd">="ParentFolder/Folder1"</span>
+            <span class="attr">AccessKey</span><span class="kwrd">="WebConfig:AmazonAccessKey"</span>
+            <span class="attr">SecretKey</span><span class="kwrd">="WebConfig:AmazonSecretKey"</span>
+            <span class="attr">BucketName</span><span class="kwrd">="MyBucket1"</span>  <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+
+
+
+
+
+
+<a name="HowToSpecifyPermissions"></a>
+<h3>Specifying file permissions</h3>
+
+<p>You can specify the file permissions by setting the <b>FileAccess</b> property. The possible values for 
+that property are <b>Private, PublicRead, PublicReadWrite, AuthenticatedRead</b>. By default the access
+is defined to be <b>PublicRead</b>. If you want to make it <b>Private</b> use:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">runat</span><span class="kwrd">="server"</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:DirectAmazonUploader</span>
+            <span class="attr">FileAccess</span><span class="kwrd">="Private"</span>
+            <span class="attr">AccessKey</span><span class="kwrd">="WebConfig:AmazonAccessKey"</span>
+            <span class="attr">SecretKey</span><span class="kwrd">="WebConfig:AmazonSecretKey"</span>
+            <span class="attr">BucketName</span><span class="kwrd">="media.flajaxian.com"</span>  <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+
+
+
+<a name="HowToChangeFileName"></a>
+<h3>Changing the name of the uploaded file</h3>
+
+<p>You can use <b>FileNameDetermining</b> event to change the name of the uploaded file. You can see that in the following example:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">script</span> <span class="attr">runat</span><span class="kwrd">="server"</span><span class="kwrd">&gt;</span>
+<span class="kwrd">private</span> <span class="kwrd">void</span> FileUploader1_FileNameDetermining(<span class="kwrd">object</span> sender, <span class="kwrd">FileNameDeterminingEventArgs</span> e)
+{
+    <span class="rem">// set the filename here</span>
+    <span class="rem">// you can also use <b>e.File</b> - HttpPostedFile object</span>
+    e.FileName = ...;
+}
+<span class="kwrd">&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">runat</span><span class="kwrd">="server"</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:DirectAmazonUploader</span> <span class="attr">OnFileNameDetermining</span><span class="kwrd">="FileUploader1_FileNameDetermining"</span>
+            <span class="attr">AccessKey</span><span class="kwrd">="WebConfig:AmazonAccessKey"</span>
+            <span class="attr">SecretKey</span><span class="kwrd">="WebConfig:AmazonSecretKey"</span>
+            <span class="attr">BucketName</span><span class="kwrd">="media.flajaxian.com"</span>  <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+<p>The property of <b>FileNameDeterminingEventArgs</b> object, that you can use is <b>FileName</b>. 
+Properties <b>File</b> and <b>CancelProcessing</b> cannot be used because there is no postback to the 
+server this is only a quick ajax call.</p>
+
+
+
+
+
+
+
+<a name="HowToSaveFileNameToDatabase"></a>
+<h3>Saving the name of the uploaded file to a local database</h3>
+
+<p>If you want to save the name of the uploaded file to a database you can use <b>ConfirmUpload</b> event.
+If no handler for this event is specified, no <b>ajax</b> calls are performed back to the server after the file upload.
+But if you specify event handler, then after each file upload, whether successful or not there will be a quick GET 
+<b>ajax</b> request back to the server to confirm the file upload. This is how the server event is triggered. 
+Here is an example of how to use it:</p>
+
+<pre class="csharpcode">
+<span class="kwrd">&lt;</span><span class="html">script</span> <span class="attr">runat</span><span class="kwrd">="server"</span><span class="kwrd">&gt;</span>
+<span class="kwrd">private</span> <span class="kwrd">void</span> FileUploader1_ConfirmUpload(<span class="kwrd">object</span> sender, <span class="kwrd">ConfirmUploadEventArgs</span> e)
+{
+    <span class="rem">// Save the file information to a database here</span>
+}
+<span class="kwrd">&lt;/</span><span class="html">script</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;</span><span class="html">fjx:FileUploader</span> <span class="attr">ID</span><span class="kwrd">="FileUploader1"</span> <span class="attr">runat</span><span class="kwrd">="server"</span><span class="kwrd">&gt;</span>
+    <span class="kwrd">&lt;</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+        <span class="kwrd">&lt;</span><span class="html">fjx:DirectAmazonUploader</span> <span class="attr">OnConfirmUpload</span><span class="kwrd">="FileUploader1_ConfirmUpload"</span>
+            <span class="attr">AccessKey</span><span class="kwrd">="WebConfig:AmazonAccessKey"</span>
+            <span class="attr">SecretKey</span><span class="kwrd">="WebConfig:AmazonSecretKey"</span>
+            <span class="attr">BucketName</span><span class="kwrd">="media.flajaxian.com"</span>  <span class="kwrd">/&gt;</span>
+    <span class="kwrd">&lt;/</span><span class="html">Adapters</span><span class="kwrd">&gt;</span>
+<span class="kwrd">&lt;/</span><span class="html">fjx:FileUploader</span><span class="kwrd">&gt;</span></pre>
+
+<p>The properties of the <b>ConfirmUploadEventArgs</b> object, that you can use are:</p>
+
+
+<table cellpadding="5" cellspacing="0" border="1" style="border-collapse:collapse">
+    <tr>
+        <td><b>Name</b></td><td>The name of the uploaded file</td>
+    </tr>
+    <tr>
+        <td><b>ChangedName</b></td><td>If the name was changed through <b>FileNameDetermining</b> event, new file name will be here</td>
+    </tr>
+    <tr>
+        <td><b>HttpStatus</b></td><td>Integer value of the HTTP status</td>
+    </tr>
+    <tr>
+        <td><b>Bytes</b></td><td>The number of bytes of that file</td>
+    </tr>
+    <tr>
+        <td><b>IsError</b></td><td>Boolean flag indicating whether there has been an error</td>
+    </tr>
+</table>
+
+
+
+<hr/>
+
+<a href="http://www.Flajaxian.com">www.Flajaxian.com - Flajaxian &#169; 2008</a>
+
+</body>
+</html>

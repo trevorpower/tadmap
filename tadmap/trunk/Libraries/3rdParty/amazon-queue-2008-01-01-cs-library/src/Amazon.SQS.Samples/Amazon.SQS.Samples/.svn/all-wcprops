@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS.Samples/Amazon.SQS.Samples
+END
+GetQueueAttributesSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS.Samples/Amazon.SQS.Samples/GetQueueAttributesSample.cs
+END
+SendMessageSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS.Samples/Amazon.SQS.Samples/SendMessageSample.cs
+END
+AmazonSQSSamples.cs
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS.Samples/Amazon.SQS.Samples/AmazonSQSSamples.cs
+END
+ListQueuesSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS.Samples/Amazon.SQS.Samples/ListQueuesSample.cs
+END
+DeleteMessageSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS.Samples/Amazon.SQS.Samples/DeleteMessageSample.cs
+END
+DeleteQueueSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS.Samples/Amazon.SQS.Samples/DeleteQueueSample.cs
+END
+ReceiveMessageSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS.Samples/Amazon.SQS.Samples/ReceiveMessageSample.cs
+END
+SetQueueAttributesSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS.Samples/Amazon.SQS.Samples/SetQueueAttributesSample.cs
+END
+CreateQueueSample.cs
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS.Samples/Amazon.SQS.Samples/CreateQueueSample.cs
+END

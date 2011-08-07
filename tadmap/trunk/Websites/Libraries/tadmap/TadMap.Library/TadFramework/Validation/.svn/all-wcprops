@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/Validation
+END
+BrokenRuleCollection.cs
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/Validation/BrokenRuleCollection.cs
+END
+RuleArgs.cs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/Validation/RuleArgs.cs
+END
+RuleHandler.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/Validation/RuleHandler.cs
+END
+ValidationRules.cs
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/Validation/ValidationRules.cs
+END
+BrokenRule.cs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/Validation/BrokenRule.cs
+END
+ValidationException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Libraries/tadmap/TadMap.Library/TadFramework/Validation/ValidationException.cs
+END

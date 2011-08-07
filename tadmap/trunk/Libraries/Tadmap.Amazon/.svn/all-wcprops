@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/tadmap_tadmap/!svn/ver/257/trunk/Libraries/Tadmap.Amazon
+END
+Key.snk
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Amazon/Key.snk
+END
+BinaryRepsoitory.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/tadmap_tadmap/!svn/ver/257/trunk/Libraries/Tadmap.Amazon/BinaryRepsoitory.cs
+END
+FileUploadAdapter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Amazon/FileUploadAdapter.cs
+END
+Tadmap.Amazon.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Amazon/Tadmap.Amazon.csproj
+END
+MessageQueue.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Amazon/MessageQueue.cs
+END

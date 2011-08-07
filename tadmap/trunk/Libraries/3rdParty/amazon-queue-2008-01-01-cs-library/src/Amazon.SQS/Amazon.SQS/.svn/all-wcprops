@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS
+END
+AmazonSQSClient.cs
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/AmazonSQSClient.cs
+END
+AmazonSQSException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/AmazonSQSException.cs
+END
+AmazonSQS.cs
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/AmazonSQS.cs
+END
+AmazonSQSConfig.cs
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/AmazonSQSConfig.cs
+END

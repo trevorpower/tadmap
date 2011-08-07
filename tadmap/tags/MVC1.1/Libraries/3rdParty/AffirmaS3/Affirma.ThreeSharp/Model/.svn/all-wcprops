@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model
+END
+UrlGetRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/UrlGetRequest.cs
+END
+ACLGetResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/ACLGetResponse.cs
+END
+ObjectGetRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/ObjectGetRequest.cs
+END
+BucketDeleteResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/BucketDeleteResponse.cs
+END
+ObjectCopyResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/ObjectCopyResponse.cs
+END
+UrlGetResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/UrlGetResponse.cs
+END
+BucketListRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/BucketListRequest.cs
+END
+Transfer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/Transfer.cs
+END
+ObjectGetResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/ObjectGetResponse.cs
+END
+ObjectAddRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/ObjectAddRequest.cs
+END
+BucketListResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/BucketListResponse.cs
+END
+Request.cs
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/Request.cs
+END
+ObjectAddResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/ObjectAddResponse.cs
+END
+Response.cs
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/Response.cs
+END
+BucketAddRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/BucketAddRequest.cs
+END
+ObjectDeleteRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/ObjectDeleteRequest.cs
+END
+BucketAddResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/BucketAddResponse.cs
+END
+ObjectDeleteResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/ObjectDeleteResponse.cs
+END
+ACLGetRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/ACLGetRequest.cs
+END
+BucketDeleteRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/BucketDeleteRequest.cs
+END
+ObjectCopyRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/tadmap_tadmap/!svn/ver/103/tags/MVC1.1/Libraries/3rdParty/AffirmaS3/Affirma.ThreeSharp/Model/ObjectCopyRequest.cs
+END

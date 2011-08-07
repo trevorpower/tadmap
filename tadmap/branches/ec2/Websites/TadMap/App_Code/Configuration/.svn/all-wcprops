@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Websites/TadMap/App_Code/Configuration
+END
+Database.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Websites/TadMap/App_Code/Configuration/Database.cs
+END
+S3Storage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Websites/TadMap/App_Code/Configuration/S3Storage.cs
+END

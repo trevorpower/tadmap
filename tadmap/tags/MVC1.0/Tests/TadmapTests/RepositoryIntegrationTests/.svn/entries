@@ -1,0 +1,77 @@
+10
+
+dir
+257
+http://tadmap.unfuddle.com/svn/tadmap_tadmap/tags/MVC1.0/Tests/TadmapTests/RepositoryIntegrationTests
+http://tadmap.unfuddle.com/svn/tadmap_tadmap
+
+
+
+2009-01-20T22:59:20.928627Z
+97
+trevorpower
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+4a648790-0dd6-46be-98e2-83199854fd07
+
+SQL
+dir
+
+Service References
+dir
+
+S3
+dir
+
+RepositoryIntegrationTests.csproj
+file
+
+
+
+
+2011-08-06T18:10:55.405687Z
+6ae5b95ce0d9f205d3164e64b463c87c
+2009-01-20T22:59:20.928627Z
+97
+trevorpower
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4003
+
+Controllers
+dir
+
+Properties
+dir
+

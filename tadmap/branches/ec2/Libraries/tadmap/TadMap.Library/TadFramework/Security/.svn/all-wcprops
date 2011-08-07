@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/Security
+END
+AuthorizationRules.cs
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/Security/AuthorizationRules.cs
+END
+RolesForProperty.cs
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/Security/RolesForProperty.cs
+END
+AccessType.cs
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/Security/AccessType.cs
+END
+BusinessPrincipalBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/Security/BusinessPrincipalBase.cs
+END

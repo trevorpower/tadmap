@@ -1,0 +1,51 @@
+﻿@import url(Master/Master.css);
+@import url(Default/Default.css);
+
+.Item
+{
+    font-family: Verdana;
+}
+
+.Instructions
+{
+    font-family: Arial;
+    color: #666666;
+
+    text-decoration: none;
+    
+    margin-top: 14px;
+    margin-bottom: 18px;
+}
+
+.Instructions A
+{
+    text-decoration: none;
+    color: #6688FF;
+}
+
+.Instructions A:visited
+{
+    color: #6688AA;
+}
+
+.Instructions A:hover
+{
+   text-decoration: underline;
+}
+
+.NoteBox
+{
+   border: none;
+   margin: 5px;
+   float: left;
+   padding: 5px;
+   height: 80px;
+   width: 300px;
+   background: #EEFFEE;
+}
+
+.NoteBox > P
+{
+   margin-top: 0px;
+   margin-bottom: 6px;
+}

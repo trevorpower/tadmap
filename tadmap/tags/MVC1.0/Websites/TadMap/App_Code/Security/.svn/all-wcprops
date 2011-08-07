@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Websites/TadMap/App_Code/Security
+END
+TadMapRoles.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Websites/TadMap/App_Code/Security/TadMapRoles.cs
+END
+OpenId.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Websites/TadMap/App_Code/Security/OpenId.cs
+END
+Authentication.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Websites/TadMap/App_Code/Security/Authentication.cs
+END
+TadMapRoleProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Websites/TadMap/App_Code/Security/TadMapRoleProvider.cs
+END

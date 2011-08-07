@@ -1,0 +1,303 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Amazon.EC2</RootNamespace>
+    <AssemblyName>Amazon.EC2</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Amazon.EC2\*.cs" />
+    <Compile Include="Amazon.EC2\Model\*.cs" />
+    <Compile Include="Amazon.EC2\Mock\*.cs" />
+    <Compile Include="Amazon.EC2\Util\*.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Mock\AllocateAddressResponse.xml">
+      <LogicalName>AllocateAddressResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\AllocateAddressResponse.xslt">
+      <LogicalName>AllocateAddressResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\AssociateAddressResponse.xml">
+      <LogicalName>AssociateAddressResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\AssociateAddressResponse.xslt">
+      <LogicalName>AssociateAddressResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\AttachVolumeResponse.xml">
+      <LogicalName>AttachVolumeResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\AttachVolumeResponse.xslt">
+      <LogicalName>AttachVolumeResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\AuthorizeSecurityGroupIngressResponse.xml">
+      <LogicalName>AuthorizeSecurityGroupIngressResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\AuthorizeSecurityGroupIngressResponse.xslt">
+      <LogicalName>AuthorizeSecurityGroupIngressResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\BundleInstanceResponse.xml">
+      <LogicalName>BundleInstanceResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\BundleInstanceResponse.xslt">
+      <LogicalName>BundleInstanceResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\CancelBundleTaskResponse.xml">
+      <LogicalName>CancelBundleTaskResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\CancelBundleTaskResponse.xslt">
+      <LogicalName>CancelBundleTaskResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\ConfirmProductInstanceResponse.xml">
+      <LogicalName>ConfirmProductInstanceResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\ConfirmProductInstanceResponse.xslt">
+      <LogicalName>ConfirmProductInstanceResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\CreateKeyPairResponse.xml">
+      <LogicalName>CreateKeyPairResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateKeyPairResponse.xslt">
+      <LogicalName>CreateKeyPairResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\CreateSecurityGroupResponse.xml">
+      <LogicalName>CreateSecurityGroupResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateSecurityGroupResponse.xslt">
+      <LogicalName>CreateSecurityGroupResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\CreateSnapshotResponse.xml">
+      <LogicalName>CreateSnapshotResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateSnapshotResponse.xslt">
+      <LogicalName>CreateSnapshotResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\CreateVolumeResponse.xml">
+      <LogicalName>CreateVolumeResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateVolumeResponse.xslt">
+      <LogicalName>CreateVolumeResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DeleteKeyPairResponse.xml">
+      <LogicalName>DeleteKeyPairResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteKeyPairResponse.xslt">
+      <LogicalName>DeleteKeyPairResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DeleteSecurityGroupResponse.xml">
+      <LogicalName>DeleteSecurityGroupResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteSecurityGroupResponse.xslt">
+      <LogicalName>DeleteSecurityGroupResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DeleteSnapshotResponse.xml">
+      <LogicalName>DeleteSnapshotResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteSnapshotResponse.xslt">
+      <LogicalName>DeleteSnapshotResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DeleteVolumeResponse.xml">
+      <LogicalName>DeleteVolumeResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteVolumeResponse.xslt">
+      <LogicalName>DeleteVolumeResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DeregisterImageResponse.xml">
+      <LogicalName>DeregisterImageResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DeregisterImageResponse.xslt">
+      <LogicalName>DeregisterImageResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DescribeAddressesResponse.xml">
+      <LogicalName>DescribeAddressesResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeAddressesResponse.xslt">
+      <LogicalName>DescribeAddressesResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DescribeAvailabilityZonesResponse.xml">
+      <LogicalName>DescribeAvailabilityZonesResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeAvailabilityZonesResponse.xslt">
+      <LogicalName>DescribeAvailabilityZonesResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DescribeBundleTasksResponse.xml">
+      <LogicalName>DescribeBundleTasksResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeBundleTasksResponse.xslt">
+      <LogicalName>DescribeBundleTasksResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DescribeImageAttributeResponse.xml">
+      <LogicalName>DescribeImageAttributeResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeImageAttributeResponse.xslt">
+      <LogicalName>DescribeImageAttributeResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DescribeImagesResponse.xml">
+      <LogicalName>DescribeImagesResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeImagesResponse.xslt">
+      <LogicalName>DescribeImagesResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DescribeInstancesResponse.xml">
+      <LogicalName>DescribeInstancesResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeInstancesResponse.xslt">
+      <LogicalName>DescribeInstancesResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DescribeRegionsResponse.xml">
+      <LogicalName>DescribeRegionsResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeRegionsResponse.xslt">
+      <LogicalName>DescribeRegionsResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DescribeReservedInstancesResponse.xml">
+      <LogicalName>DescribeReservedInstancesResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeReservedInstancesResponse.xslt">
+      <LogicalName>DescribeReservedInstancesResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DescribeReservedInstancesOfferingsResponse.xml">
+      <LogicalName>DescribeReservedInstancesOfferingsResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeReservedInstancesOfferingsResponse.xslt">
+      <LogicalName>DescribeReservedInstancesOfferingsResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DescribeKeyPairsResponse.xml">
+      <LogicalName>DescribeKeyPairsResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeKeyPairsResponse.xslt">
+      <LogicalName>DescribeKeyPairsResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DescribeSecurityGroupsResponse.xml">
+      <LogicalName>DescribeSecurityGroupsResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSecurityGroupsResponse.xslt">
+      <LogicalName>DescribeSecurityGroupsResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DescribeSnapshotsResponse.xml">
+      <LogicalName>DescribeSnapshotsResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSnapshotsResponse.xslt">
+      <LogicalName>DescribeSnapshotsResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DescribeVolumesResponse.xml">
+      <LogicalName>DescribeVolumesResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeVolumesResponse.xslt">
+      <LogicalName>DescribeVolumesResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DetachVolumeResponse.xml">
+      <LogicalName>DetachVolumeResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DetachVolumeResponse.xslt">
+      <LogicalName>DetachVolumeResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\DisassociateAddressResponse.xml">
+      <LogicalName>DisassociateAddressResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\DisassociateAddressResponse.xslt">
+      <LogicalName>DisassociateAddressResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\GetConsoleOutputResponse.xml">
+      <LogicalName>GetConsoleOutputResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\GetConsoleOutputResponse.xslt">
+      <LogicalName>GetConsoleOutputResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\ModifyImageAttributeResponse.xml">
+      <LogicalName>ModifyImageAttributeResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\ModifyImageAttributeResponse.xslt">
+      <LogicalName>ModifyImageAttributeResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\PurchaseReservedInstancesOfferingResponse.xml">
+      <LogicalName>PurchaseReservedInstancesOfferingResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\PurchaseReservedInstancesOfferingResponse.xslt">
+      <LogicalName>PurchaseReservedInstancesOfferingResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\RebootInstancesResponse.xml">
+      <LogicalName>RebootInstancesResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\RebootInstancesResponse.xslt">
+      <LogicalName>RebootInstancesResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\RegisterImageResponse.xml">
+      <LogicalName>RegisterImageResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\RegisterImageResponse.xslt">
+      <LogicalName>RegisterImageResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\ReleaseAddressResponse.xml">
+      <LogicalName>ReleaseAddressResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\ReleaseAddressResponse.xslt">
+      <LogicalName>ReleaseAddressResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\ResetImageAttributeResponse.xml">
+      <LogicalName>ResetImageAttributeResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\ResetImageAttributeResponse.xslt">
+      <LogicalName>ResetImageAttributeResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\RevokeSecurityGroupIngressResponse.xml">
+      <LogicalName>RevokeSecurityGroupIngressResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\RevokeSecurityGroupIngressResponse.xslt">
+      <LogicalName>RevokeSecurityGroupIngressResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\RunInstancesResponse.xml">
+      <LogicalName>RunInstancesResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\RunInstancesResponse.xslt">
+      <LogicalName>RunInstancesResponse.xslt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Mock\TerminateInstancesResponse.xml">
+      <LogicalName>TerminateInstancesResponse.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amazon.EC2\Model\TerminateInstancesResponse.xslt">
+      <LogicalName>TerminateInstancesResponse.xslt</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

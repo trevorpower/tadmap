@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model
+END
+ListQueuesRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/ListQueuesRequest.cs
+END
+SendMessageResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/SendMessageResponse.cs
+END
+DeleteQueueRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/DeleteQueueRequest.cs
+END
+DeleteMessageRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/DeleteMessageRequest.cs
+END
+SetQueueAttributesRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/SetQueueAttributesRequest.cs
+END
+CreateQueueRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/CreateQueueRequest.cs
+END
+ListQueuesResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/ListQueuesResponse.cs
+END
+Message.cs
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/Message.cs
+END
+DeleteQueueResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/DeleteQueueResponse.cs
+END
+DeleteMessageResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/DeleteMessageResponse.cs
+END
+ReceiveMessageResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/ReceiveMessageResult.cs
+END
+SetQueueAttributesResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/SetQueueAttributesResponse.cs
+END
+CreateQueueResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/CreateQueueResponse.cs
+END
+Error.cs
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/Error.cs
+END
+GetQueueAttributesResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/GetQueueAttributesResult.cs
+END
+SendMessageResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/SendMessageResult.cs
+END
+ResponseMetadata.cs
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/ResponseMetadata.cs
+END
+ReceiveMessageRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/ReceiveMessageRequest.cs
+END
+ListQueuesResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/ListQueuesResult.cs
+END
+Attribute.cs
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/Attribute.cs
+END
+GetQueueAttributesRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/GetQueueAttributesRequest.cs
+END
+ReceiveMessageResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/ReceiveMessageResponse.cs
+END
+CreateQueueResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/CreateQueueResult.cs
+END
+SendMessageRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/SendMessageRequest.cs
+END
+ErrorResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/ErrorResponse.cs
+END
+GetQueueAttributesResponse.cs
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-queue-2008-01-01-cs-library/src/Amazon.SQS/Amazon.SQS/Model/GetQueueAttributesResponse.cs
+END

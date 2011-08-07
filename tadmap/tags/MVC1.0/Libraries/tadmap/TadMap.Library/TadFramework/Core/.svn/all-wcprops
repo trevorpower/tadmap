@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Libraries/tadmap/TadMap.Library/TadFramework/Core
+END
+IBusinessObject.cs
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Libraries/tadmap/TadMap.Library/TadFramework/Core/IBusinessObject.cs
+END
+ISaveable.cs
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Libraries/tadmap/TadMap.Library/TadFramework/Core/ISaveable.cs
+END
+IReadOnlyObject.cs
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Libraries/tadmap/TadMap.Library/TadFramework/Core/IReadOnlyObject.cs
+END
+ICommandObject.cs
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Libraries/tadmap/TadMap.Library/TadFramework/Core/ICommandObject.cs
+END
+IEditableCollection.cs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Libraries/tadmap/TadMap.Library/TadFramework/Core/IEditableCollection.cs
+END
+IParent.cs
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Libraries/tadmap/TadMap.Library/TadFramework/Core/IParent.cs
+END
+IReadOnlyCollection.cs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Libraries/tadmap/TadMap.Library/TadFramework/Core/IReadOnlyCollection.cs
+END
+IEditableBusinessObject.cs
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Libraries/tadmap/TadMap.Library/TadFramework/Core/IEditableBusinessObject.cs
+END
+BusinessBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Libraries/tadmap/TadMap.Library/TadFramework/Core/BusinessBase.cs
+END
+ExtendedBindingList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Libraries/tadmap/TadMap.Library/TadFramework/Core/ExtendedBindingList.cs
+END
+IUndoableObject.cs
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Libraries/tadmap/TadMap.Library/TadFramework/Core/IUndoableObject.cs
+END

@@ -1,0 +1,11 @@
+﻿.TextBox
+{
+   background: #FFFFFF url('TextBoxBackground.png') repeat-x scroll 0pt 50%;
+   background-position: top;
+   font-size: 15pt;
+   border: solid 2px #99CC99;
+   color: #336633;
+   height: 24px;
+   width: 377px;
+   padding-top: 1px;
+}

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.OpenIdStub
+END
+Global.asax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.OpenIdStub/Global.asax.cs
+END
+Provider.ashx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.OpenIdStub/Provider.ashx.cs
+END
+Web.config
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.OpenIdStub/Web.config
+END
+Tadmap.Website.OpenIdStub.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.OpenIdStub/Tadmap.Website.OpenIdStub.csproj
+END
+Util.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.OpenIdStub/Util.cs
+END
+Default.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.OpenIdStub/Default.aspx.cs
+END
+Global.asax
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.OpenIdStub/Global.asax
+END
+Provider.ashx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.OpenIdStub/Provider.ashx
+END
+Default.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.OpenIdStub/Default.aspx
+END
+Tadmap.Website.OpenIdStub.csproj.user
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.OpenIdStub/Tadmap.Website.OpenIdStub.csproj.user
+END

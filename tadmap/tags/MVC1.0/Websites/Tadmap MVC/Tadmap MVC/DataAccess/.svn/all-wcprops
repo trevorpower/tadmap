@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Websites/Tadmap%20MVC/Tadmap%20MVC/DataAccess
+END
+IImageRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Websites/Tadmap%20MVC/Tadmap%20MVC/DataAccess/IImageRepository.cs
+END
+IBinaryRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Websites/Tadmap%20MVC/Tadmap%20MVC/DataAccess/IBinaryRepository.cs
+END
+IUploadedFile.cs
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/tadmap_tadmap/!svn/ver/100/tags/MVC1.0/Websites/Tadmap%20MVC/Tadmap%20MVC/DataAccess/IUploadedFile.cs
+END

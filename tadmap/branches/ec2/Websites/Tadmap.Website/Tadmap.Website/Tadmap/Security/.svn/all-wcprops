@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/tadmap_tadmap/!svn/ver/210/branches/ec2/Websites/Tadmap.Website/Tadmap.Website/Tadmap/Security
+END
+OpenId.cs
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/tadmap_tadmap/!svn/ver/210/branches/ec2/Websites/Tadmap.Website/Tadmap.Website/Tadmap/Security/OpenId.cs
+END
+Authentication.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/tadmap_tadmap/!svn/ver/210/branches/ec2/Websites/Tadmap.Website/Tadmap.Website/Tadmap/Security/Authentication.cs
+END
+TadmapIdentity.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/tadmap_tadmap/!svn/ver/210/branches/ec2/Websites/Tadmap.Website/Tadmap.Website/Tadmap/Security/TadmapIdentity.cs
+END
+CookieUserData.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/tadmap_tadmap/!svn/ver/210/branches/ec2/Websites/Tadmap.Website/Tadmap.Website/Tadmap/Security/CookieUserData.cs
+END
+TadMapRoleProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/tadmap_tadmap/!svn/ver/210/branches/ec2/Websites/Tadmap.Website/Tadmap.Website/Tadmap/Security/TadMapRoleProvider.cs
+END

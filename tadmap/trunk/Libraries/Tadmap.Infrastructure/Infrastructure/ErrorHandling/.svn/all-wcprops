@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Infrastructure/Infrastructure/ErrorHandling
+END
+EmailErrorHandler.cs
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Infrastructure/Infrastructure/ErrorHandling/EmailErrorHandler.cs
+END
+IErrorHandler.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/Tadmap.Infrastructure/Infrastructure/ErrorHandling/IErrorHandler.cs
+END

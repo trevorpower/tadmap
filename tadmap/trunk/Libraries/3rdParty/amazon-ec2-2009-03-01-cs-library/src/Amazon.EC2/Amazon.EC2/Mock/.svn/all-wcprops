@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock
+END
+RebootInstancesResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/RebootInstancesResponse.xml
+END
+DescribeImagesResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DescribeImagesResponse.xml
+END
+DescribeRegionsResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DescribeRegionsResponse.xml
+END
+DescribeImageAttributeResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DescribeImageAttributeResponse.xml
+END
+DeleteSecurityGroupResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DeleteSecurityGroupResponse.xml
+END
+ResetImageAttributeResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/ResetImageAttributeResponse.xml
+END
+AuthorizeSecurityGroupIngressResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/AuthorizeSecurityGroupIngressResponse.xml
+END
+RunInstancesResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/RunInstancesResponse.xml
+END
+DescribeAddressesResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DescribeAddressesResponse.xml
+END
+ModifyImageAttributeResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/ModifyImageAttributeResponse.xml
+END
+AmazonEC2Mock.cs
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/AmazonEC2Mock.cs
+END
+DetachVolumeResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DetachVolumeResponse.xml
+END
+DescribeBundleTasksResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DescribeBundleTasksResponse.xml
+END
+DisassociateAddressResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DisassociateAddressResponse.xml
+END
+DescribeKeyPairsResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DescribeKeyPairsResponse.xml
+END
+CreateKeyPairResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/CreateKeyPairResponse.xml
+END
+DescribeReservedInstancesOfferingsResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DescribeReservedInstancesOfferingsResponse.xml
+END
+BundleInstanceResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/BundleInstanceResponse.xml
+END
+DeregisterImageResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DeregisterImageResponse.xml
+END
+TerminateInstancesResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/TerminateInstancesResponse.xml
+END
+CancelBundleTaskResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/CancelBundleTaskResponse.xml
+END
+PurchaseReservedInstancesOfferingResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/PurchaseReservedInstancesOfferingResponse.xml
+END
+DescribeSecurityGroupsResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DescribeSecurityGroupsResponse.xml
+END
+CreateSecurityGroupResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/CreateSecurityGroupResponse.xml
+END
+AssociateAddressResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/AssociateAddressResponse.xml
+END
+DeleteSnapshotResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DeleteSnapshotResponse.xml
+END
+DescribeSnapshotsResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DescribeSnapshotsResponse.xml
+END
+ConfirmProductInstanceResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/ConfirmProductInstanceResponse.xml
+END
+CreateSnapshotResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/CreateSnapshotResponse.xml
+END
+GetConsoleOutputResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/GetConsoleOutputResponse.xml
+END
+ReleaseAddressResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/ReleaseAddressResponse.xml
+END
+DeleteKeyPairResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DeleteKeyPairResponse.xml
+END
+RegisterImageResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/RegisterImageResponse.xml
+END
+DescribeReservedInstancesResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DescribeReservedInstancesResponse.xml
+END
+DescribeInstancesResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DescribeInstancesResponse.xml
+END
+ErrorResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/ErrorResponse.xml
+END
+DescribeAvailabilityZonesResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DescribeAvailabilityZonesResponse.xml
+END
+AllocateAddressResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/AllocateAddressResponse.xml
+END
+DeleteVolumeResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DeleteVolumeResponse.xml
+END
+DescribeVolumesResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/DescribeVolumesResponse.xml
+END
+CreateVolumeResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/CreateVolumeResponse.xml
+END
+RevokeSecurityGroupIngressResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/RevokeSecurityGroupIngressResponse.xml
+END
+AttachVolumeResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Libraries/3rdParty/amazon-ec2-2009-03-01-cs-library/src/Amazon.EC2/Amazon.EC2/Mock/AttachVolumeResponse.xml
+END

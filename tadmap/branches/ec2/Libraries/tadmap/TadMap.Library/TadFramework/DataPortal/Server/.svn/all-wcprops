@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Server
+END
+CallMethodException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Server/CallMethodException.cs
+END
+DataPortal.cs
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Server/DataPortal.cs
+END
+CriteriaBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Server/CriteriaBase.cs
+END
+IDataPosrtalServer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Server/IDataPosrtalServer.cs
+END
+TransactionalDataPortal.cs
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Server/TransactionalDataPortal.cs
+END
+DataPortalContext.cs
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Server/DataPortalContext.cs
+END
+ServicedDataPortal.cs
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Server/ServicedDataPortal.cs
+END
+SimpleDataPortal.cs
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Server/SimpleDataPortal.cs
+END
+DataPortalException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Server/DataPortalException.cs
+END
+DataPortalResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/tadmap_tadmap/!svn/ver/148/branches/ec2/Libraries/tadmap/TadMap.Library/TadFramework/DataPortal/Server/DataPortalResult.cs
+END

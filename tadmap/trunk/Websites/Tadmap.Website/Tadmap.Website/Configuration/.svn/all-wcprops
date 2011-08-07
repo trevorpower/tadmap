@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/tadmap_tadmap/!svn/ver/247/trunk/Websites/Tadmap.Website/Tadmap.Website/Configuration
+END
+appSettings.DEV.config
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.Website/Configuration/appSettings.DEV.config
+END
+appSettings.LIVE.config
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.Website/Configuration/appSettings.LIVE.config
+END
+connectionStrings.LOCAL.config
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.Website/Configuration/connectionStrings.LOCAL.config
+END
+httpRuntime.config
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.Website/Configuration/httpRuntime.config
+END
+connectionStrings.DEV.config
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.Website/Configuration/connectionStrings.DEV.config
+END
+connectionStrings.LIVE.config
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/tadmap_tadmap/!svn/ver/247/trunk/Websites/Tadmap.Website/Tadmap.Website/Configuration/connectionStrings.LIVE.config
+END
+appSettings.LOCAL.config
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/tadmap_tadmap/!svn/ver/231/trunk/Websites/Tadmap.Website/Tadmap.Website/Configuration/appSettings.LOCAL.config
+END
